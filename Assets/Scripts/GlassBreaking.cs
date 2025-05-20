@@ -2,25 +2,25 @@ using UnityEngine;
 
 public class GlassBreaking : MonoBehaviour
 {
-    [Header("Prefab i dŸwiêk")]
-    public GameObject replacementPrefab;   // Prefab rozbitej szyby
-    public AudioClip breakSound;           // DŸwiêk t³uczenia szk³a
+    [Header("Prefab i dÅ¸wiÃªk")]
+    public GameObject replacementPrefab;   // Prefab of glass shards
+    public AudioClip breakSound;           // DÅ¸wiÃªk tÂ³uczenia szkÂ³a
 
     private bool hasBroken = false;
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (hasBroken) return; // zapobiega wielokrotnemu wywo³aniu
+        if (hasBroken) return; // zapobiega wielokrotnemu wywoÂ³aniu
 
         if (collision.CompareTag("Player"))
         {
             hasBroken = true;
 
-            // Odtwórz dŸwiêk
+            // OdtwÃ³rz dÅ¸wiÃªk
             if (breakSound != null)
                 AudioSource.PlayClipAtPoint(breakSound, transform.position);
 
-            // Podmieñ szybê na inny prefab
+            // PodmieÃ± szybÃª na inny prefab
             if (replacementPrefab != null)
             {
                 Instantiate(replacementPrefab, transform.position, transform.rotation);
@@ -31,7 +31,7 @@ public class GlassBreaking : MonoBehaviour
                 Debug.LogWarning("Brak przypisanego replacementPrefab!");
             }
 
-            // Zniszcz obecn¹ szybê
+            // Zniszcz obecnÂ¹ szybÃª
             Destroy(gameObject);
         }
     }
