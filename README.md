@@ -1,14 +1,26 @@
 # Procedural Environment Generator – Unity Game Project
 
-Projekt eksperymentalnej gry tworzonej w Unity, koncentrujący się na systemie proceduralnego generowania otoczenia w czasie rzeczywistym. Celem projektu jest stworzenie skalowalnego i elastycznego systemu, który umożliwia budowę złożonych przestrzeni w sposób w pełni zautomatyzowany, z naciskiem na różnorodność wizualną i logiczne rozmieszczenie elementów.
+This is an experimental Unity game project focused on building a real-time procedural environment generation system. The goal is to create a scalable and flexible framework that can generate complex spaces automatically while maintaining visual diversity and logical placement of elements.
 
-## Co wyróżnia ten projekt?
+## Key Features
 
-- **Segmentowa struktura świata** – otoczenie generowane jest w formie segmentów, które płynnie łączą się ze sobą, tworząc teoretycznie nieskończoną przestrzeń gry.
-- **Losowość z kontrolą** – generacja elementów nie opiera się na całkowitym chaosie. Wykorzystywane są układy i reguły, które zapewniają spójność przestrzeni, a jednocześnie dużą różnorodność.
-- **Hierarchiczna generacja** – większe elementy (np. meble, struktury) są najpierw rozmieszczane, a dopiero potem uzupełniane o mniejsze detale, co pozwala osiągnąć naturalny efekt wizualny i logiczny.
-- **System unikania powtórzeń** – zapobiega generowaniu tych samych segmentów obok siebie, co zwiększa wrażenie unikalności środowiska.
+- **Segment-Based World Structure**  
+  The world is generated in modular segments that seamlessly connect, allowing for virtually infinite level expansion.
 
-- ## Status projektu
+- **Controlled Randomness**  
+  The system avoids pure randomness. Instead, it uses pre-defined layout patterns and logical rules to generate diverse yet coherent environments.
 
-System znajduje się we wczesnej fazie rozwoju. Aktualnie skupia się na stabilnej generacji przestrzeni oraz testowaniu mechaniki segmentowego łączenia otoczenia.
+- **Hierarchical Prop Placement**  
+  Larger structural props (desks, shelves, furniture) are placed first. Smaller decorative or functional items (monitors, books, plants, etc.) are added afterward based on context, creating natural-looking setups.
+
+- **Repetition Avoidance**  
+  A built-in system prevents the same environment segment from being spawned consecutively, increasing perceived variety.
+
+## Project Status
+
+Currently in early development. The core system focuses on runtime generation, seamless segment chaining, and dynamic prop distribution testing.
+
+
+## Author
+
+Developed as a systems design experiment with an emphasis on procedural generation, scalability, and gameplay potential.
