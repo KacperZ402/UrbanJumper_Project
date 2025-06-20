@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\GlassBreaking.cs" />
     <Compile Include="Assets\Scripts\endPlatformTrigger.cs" />
+    <Compile Include="Assets\Scripts\FloorPropSpawner.cs" />
     <Compile Include="Assets\Scripts\PlatformSegmentGenerator.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
   </ItemGroup>
