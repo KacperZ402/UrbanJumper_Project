@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8074157737797187333}
   - component: {fileID: 2161542392593582248}
   - component: {fileID: 1455818246541619239}
+  - component: {fileID: 1319854083942336001}
   m_Layer: 0
   m_Name: CafeChair
   m_TagString: Untagged
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1319854083942336001
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7926258333305165315}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.6061497, y: 10.748217, z: 5.081215}
+  m_Center: {x: -0.034357667, y: 5.3753614, z: 0.0024393797}

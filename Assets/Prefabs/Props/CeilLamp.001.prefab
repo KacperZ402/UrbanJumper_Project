@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 6053561953771947106}
   - component: {fileID: 2143280089048152295}
   - component: {fileID: 7617796985533564479}
+  - component: {fileID: 875385391463306101}
   m_Layer: 0
   m_Name: CeilLamp.001
   m_TagString: Untagged
@@ -179,3 +180,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &875385391463306101
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6681983540424728023}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0000036, y: 1.6923459, z: 10.623066}
+  m_Center: {x: 0, y: -0.8473246, z: 0}

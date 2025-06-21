@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7947547187165205158}
   - component: {fileID: 8994320441703038699}
   - component: {fileID: 2243325566335968215}
+  - component: {fileID: -5850234840981737960}
   m_Layer: 0
   m_Name: partitionWall
   m_TagString: Untagged
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-5850234840981737960
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7688495679254922460}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0620214, y: 5.400121, z: 15.481495}
+  m_Center: {x: 0.000014066696, y: 2.6901834, z: 0.2264533}

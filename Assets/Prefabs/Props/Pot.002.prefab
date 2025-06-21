@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2344843186768795492}
   - component: {fileID: 7936863217306358951}
   - component: {fileID: 1037249240125704303}
+  - component: {fileID: -2239093551913957737}
   m_Layer: 0
   m_Name: Pot.002
   m_TagString: Untagged
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-2239093551913957737
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7444192458501623583}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.7122686, y: 2.7122688, z: 5.5739613}
+  m_Center: {x: 0, y: 1.3561351, z: 0}

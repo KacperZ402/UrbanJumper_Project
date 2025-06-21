@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8728947019876464021}
   - component: {fileID: 5486686716354068117}
   - component: {fileID: 5798991707713250300}
+  - component: {fileID: -8410525537762656009}
   m_Layer: 0
   m_Name: ConfTable
   m_TagString: Untagged
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-8410525537762656009
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5260612243443887680}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 56.897583, y: 10.882678, z: 142.61162}
+  m_Center: {x: 0.0000009536743, y: 4.447739, z: 0}

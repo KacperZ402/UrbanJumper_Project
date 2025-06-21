@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3957487341339785666}
   - component: {fileID: 7927550291449543753}
   - component: {fileID: 2083327008123431702}
+  - component: {fileID: 7252493239987175075}
   m_Layer: 0
   m_Name: puff
   m_TagString: Untagged
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7252493239987175075
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7146157161883085742}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.5472684, y: 4.5472684, z: 4.5472684}
+  m_Center: {x: 0, y: 2.2712586, z: 0}

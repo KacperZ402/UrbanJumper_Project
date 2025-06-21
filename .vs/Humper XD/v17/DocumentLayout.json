@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "E:\\Unity\\Humper XD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{08BE79C7-BFDA-5CEF-C527-DC292CBFA714}|Assembly-CSharp.csproj|e:\\unity\\humper xd\\assets\\scripts\\floorpropspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{08BE79C7-BFDA-5CEF-C527-DC292CBFA714}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\floorpropspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{08BE79C7-BFDA-5CEF-C527-DC292CBFA714}|Assembly-CSharp.csproj|e:\\unity\\humper xd\\assets\\scripts\\floorspawnareaspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08BE79C7-BFDA-5CEF-C527-DC292CBFA714}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\floorspawnareaspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Unity\\Humper XD\\Assets\\Scripts\\FloorPropSpawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\FloorPropSpawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Unity\\Humper XD\\Assets\\Scripts\\PropSpawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,19 +43,30 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FloorPropSpawner.cs",
-              "DocumentMoniker": "E:\\Unity\\Humper XD\\Assets\\Scripts\\FloorPropSpawner.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\FloorPropSpawner.cs",
-              "ToolTip": "E:\\Unity\\Humper XD\\Assets\\Scripts\\FloorPropSpawner.cs",
-              "RelativeToolTip": "Assets\\Scripts\\FloorPropSpawner.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBIAAAAAAAAAAAAAAA==",
+              "Title": "FloorSpawnAreaSpawner.cs",
+              "DocumentMoniker": "E:\\Unity\\Humper XD\\Assets\\Scripts\\FloorSpawnAreaSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\FloorSpawnAreaSpawner.cs",
+              "ToolTip": "E:\\Unity\\Humper XD\\Assets\\Scripts\\FloorSpawnAreaSpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\FloorSpawnAreaSpawner.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAWwCcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T17:27:07.123Z",
+              "WhenOpened": "2025-06-21T16:51:23.657Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "FloorPropSpawner.cs",
+              "DocumentMoniker": "E:\\Unity\\Humper XD\\Assets\\Scripts\\FloorPropSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\FloorPropSpawner.cs",
+              "ToolTip": "E:\\Unity\\Humper XD\\Assets\\Scripts\\FloorPropSpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\FloorPropSpawner.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T17:27:07.123Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "PropSpawner.cs",
               "DocumentMoniker": "E:\\Unity\\Humper XD\\Assets\\Scripts\\PropSpawner.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PropSpawner.cs",
@@ -62,7 +77,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "E:\\Unity\\Humper XD\\Assets\\Scripts\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerMovement.cs",
@@ -74,7 +89,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "endPlatformTrigger.cs",
               "DocumentMoniker": "E:\\Unity\\Humper XD\\Assets\\Scripts\\endPlatformTrigger.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\endPlatformTrigger.cs",
@@ -86,7 +101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "PlatformSegmentGenerator.cs",
               "DocumentMoniker": "E:\\Unity\\Humper XD\\Assets\\Scripts\\PlatformSegmentGenerator.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlatformSegmentGenerator.cs",
