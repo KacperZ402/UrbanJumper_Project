@@ -64,6 +64,7 @@ GameObject:
   - component: {fileID: 3960203714146302199}
   - component: {fileID: 4904336037507403461}
   - component: {fileID: 2622373951591809590}
+  - component: {fileID: -5581880517532138359}
   m_Layer: 6
   m_Name: Receipt.001
   m_TagString: PropsFirts
@@ -159,4 +160,26 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: -1
+  m_Mesh: {fileID: -7863692382135152594, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+--- !u!64 &-5581880517532138359
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4334526074124112171}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -7863692382135152594, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}

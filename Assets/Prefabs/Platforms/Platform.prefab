@@ -336,11 +336,6 @@ MonoBehaviour:
       - {fileID: 5282033231866243942, guid: 9ca6893dbb0aeb443b19b0dcea474658, type: 3}
       - {fileID: 8262014439473995349, guid: 891d0b286a0b29c449f7f0af6a772b4e, type: 3}
       - {fileID: 9129496826926903157, guid: c059c8b9fa296b440b046dec514700e8, type: 3}
-    - groupName: Chairs
-      props:
-      - {fileID: 1032902127296263103, guid: 9c91223e5f17d7741b641fa28894ce3a, type: 3}
-      - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-      - {fileID: 2187849760024080149, guid: 1e68b8c40c9133743b2ce5214fe68cbf, type: 3}
     - groupName: WhiteBoard
       props:
       - {fileID: 3087168174272633846, guid: 14c5e04b7ded36a499ab1db519987a38, type: 3}
@@ -359,19 +354,11 @@ MonoBehaviour:
       - {fileID: 5995609934023705727, guid: 01bb00c76e3fac548ae4869bb55cdd0d, type: 3}
       - {fileID: 4334526074124112171, guid: eac869d98e8429d4aaa969e8dd508ebb, type: 3}
       - {fileID: 5973829685085028941, guid: f2cd6707bdb0fb64fba5c1dd50629b0e, type: 3}
-    - groupName: Chairs
-      props:
-      - {fileID: 1032902127296263103, guid: 9c91223e5f17d7741b641fa28894ce3a, type: 3}
-      - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-      - {fileID: 2187849760024080149, guid: 1e68b8c40c9133743b2ce5214fe68cbf, type: 3}
   - surfaceType: 2
     propGroups:
     - groupName: ConfTable
       props:
       - {fileID: 5260612243443887680, guid: ebd3634f0ae2e8b4dbda22404da6b1b9, type: 3}
-    - groupName: Chairs
-      props:
-      - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
     - groupName: Whiteboard
       props:
       - {fileID: 3087168174272633846, guid: 14c5e04b7ded36a499ab1db519987a38, type: 3}
@@ -381,13 +368,6 @@ MonoBehaviour:
       props:
       - {fileID: 8670931874831189448, guid: 80415f8ba0d4be64cbee3a268da16d2e, type: 3}
       - {fileID: 6563589884813263465, guid: 3f2c6f186e46126479418dca84e5f8af, type: 3}
-    - groupName: Chairs
-      props:
-      - {fileID: 7926258333305165315, guid: 351ccc23db41a0846a3020f4da172614, type: 3}
-      - {fileID: 1765458134263293812, guid: 40eaf0ebc1e5486449c6103bc6aee407, type: 3}
-      - {fileID: 4589359426962682831, guid: e3285efeae0d9ad4d8ab1f74300bf2d9, type: 3}
-      - {fileID: 1739964271291660402, guid: a36ba3bd4ba87964289dfc852eda6e08, type: 3}
-      - {fileID: 7146157161883085742, guid: 27ca389b3ade98847b6d6e0d66af3ca8, type: 3}
   universalProps:
   - {fileID: 8029934943841146467, guid: 0b2239a111fca1949ad27faa6a072240, type: 3}
   - {fileID: 7477574185236790878, guid: 64343bce06d157248a96ce4295794c73, type: 3}
@@ -398,8 +378,7 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.1, y: 0.1, z: 0.1}
-  chairDistanceFromDesk: 6
+  checkBoxSize: {x: 1, y: 1, z: 1}
 --- !u!1 &8669671517421973511
 GameObject:
   m_ObjectHideFlags: 0

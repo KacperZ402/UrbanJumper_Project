@@ -46,10 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 0, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &828755654001281119
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,10 +96,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 0, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &1330061909625277374
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,10 +146,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 0, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &2045557797517839238
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,10 +196,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 0, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &2186766583934354109
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,10 +246,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 180, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &2304957665267367773
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,10 +296,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 0, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &2319021510557608385
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,10 +346,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 0, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &2361543147339685420
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,10 +396,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 0, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &3249041683318330249
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,10 +446,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 180, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &3675484615007309021
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,10 +496,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 180, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &3678559664159653749
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,10 +546,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 180, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &3798759976127338058
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,10 +596,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 0, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &4023561598865616594
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,10 +646,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 180, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &4026874512209150758
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,10 +696,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 0, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &4492280939275039129
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,10 +746,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 0, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &4495112094143490617
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,10 +796,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 180, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &4733119481327743694
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,10 +846,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 180, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &4773297663829801730
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,10 +896,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 180, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &4823736871883407289
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,10 +946,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 0, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &5158041693687362422
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,10 +996,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 180, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &5260612243443887680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,7 +1011,8 @@ GameObject:
   - component: {fileID: 8728947019876464021}
   - component: {fileID: 5486686716354068117}
   - component: {fileID: 5798991707713250300}
-  - component: {fileID: -8410525537762656009}
+  - component: {fileID: 3267421522962917368}
+  - component: {fileID: 2739174114630916494}
   m_Layer: 6
   m_Name: ConfTable
   m_TagString: PropsFirts
@@ -1112,7 +1113,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &-8410525537762656009
+--- !u!64 &3267421522962917368
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5260612243443887680}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6465536171120964589, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+--- !u!65 &2739174114630916494
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1179,10 +1202,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 180, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &6520555420976750616
 GameObject:
   m_ObjectHideFlags: 0
@@ -1229,10 +1252,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 180, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &6803478857377101260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1279,10 +1302,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 180, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &7544706448325447289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1329,10 +1352,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 0, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &7766732369431632432
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,10 +1402,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 180, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &7840720012343516955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,10 +1452,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 180, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &8241620457066014164
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,10 +1502,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 0, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &8917311236766123965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1529,7 +1552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  customRotation: {x: 0, y: 0, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}

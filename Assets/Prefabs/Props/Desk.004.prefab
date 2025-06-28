@@ -51,7 +51,7 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
+  checkBoxSize: {x: 0.1, y: 0.1, z: 0.1}
 --- !u!1 &9129496826926903157
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 6571487389899269642}
   - component: {fileID: 3269445534143354557}
   - component: {fileID: 6053097401800644472}
-  - component: {fileID: 8477870181881062950}
+  - component: {fileID: 2370781486790946400}
   m_Layer: 6
   m_Name: Desk.004
   m_TagString: PropsFirts
@@ -137,8 +137,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8477870181881062950
-BoxCollider:
+--- !u!64 &2370781486790946400
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -155,6 +155,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 13.934757, y: 7.9929304, z: 23.8166}
-  m_Center: {x: -3.483083, y: 4.01347, z: 3.687426}
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5639414666731482059, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
