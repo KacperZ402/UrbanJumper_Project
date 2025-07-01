@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5535663513348537467}
   - component: {fileID: 970766280656563438}
+  - component: {fileID: 2377628258804510037}
   m_Layer: 0
   m_Name: ChairSpawn
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1147291156034699802}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.5, y: 0, z: -13.9}
+  m_LocalPosition: {x: 23.7, y: 0, z: -21.8}
   m_LocalScale: {x: 1, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48,10 +49,31 @@ MonoBehaviour:
   - {fileID: 1032902127296263103, guid: 9c91223e5f17d7741b641fa28894ce3a, type: 3}
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   - {fileID: 2187849760024080149, guid: 1e68b8c40c9133743b2ce5214fe68cbf, type: 3}
+  customRotation: {x: 0, y: 0, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
+--- !u!65 &2377628258804510037
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147291156034699802}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 7.3333373, y: 12.75911, z: 7.333454}
+  m_Center: {x: 0.008463383, y: 6.384711, z: -0.00011265278}
 --- !u!1 &4334526074124112171
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,7 +86,7 @@ GameObject:
   - component: {fileID: 3960203714146302199}
   - component: {fileID: 4904336037507403461}
   - component: {fileID: 2622373951591809590}
-  - component: {fileID: -5581880517532138359}
+  - component: {fileID: 2657894475318603022}
   m_Layer: 6
   m_Name: Receipt.001
   m_TagString: PropsFirts
@@ -161,25 +183,30 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: -1
   m_Mesh: {fileID: -7863692382135152594, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
---- !u!64 &-5581880517532138359
-MeshCollider:
+--- !u!54 &2657894475318603022
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4334526074124112171}
-  m_Material: {fileID: 0}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7863692382135152594, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0

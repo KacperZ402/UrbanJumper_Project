@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5887486349938892742}
   - component: {fileID: 1332804899140965233}
   - component: {fileID: -6125920279878617063}
+  - component: {fileID: 4304974456777716586}
   m_Layer: 7
   m_Name: Monitor
   m_TagString: PropsSecond
@@ -106,3 +107,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0342797, y: 5.0461597, z: 6.073161}
   m_Center: {x: -0.07180847, y: 2.309742, z: -0.00000047683716}
+--- !u!54 &4304974456777716586
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6251078146765852900}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0

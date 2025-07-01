@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 949107095100314023}
   - component: {fileID: 5408865989410460028}
+  - component: {fileID: 3584415244933197633}
   m_Layer: 0
   m_Name: ChairSpawn
   m_TagString: Untagged
@@ -48,10 +49,31 @@ MonoBehaviour:
   - {fileID: 1032902127296263103, guid: 9c91223e5f17d7741b641fa28894ce3a, type: 3}
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   - {fileID: 2187849760024080149, guid: 1e68b8c40c9133743b2ce5214fe68cbf, type: 3}
+  customRotation: {x: 0, y: 0, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
+--- !u!65 &3584415244933197633
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6843649908003689806}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.390576, y: 15.499499, z: 6.3250065}
+  m_Center: {x: -0.03436351, y: 7.2497425, z: -0.55454016}
 --- !u!1 &8262014439473995349
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,6 +86,7 @@ GameObject:
   - component: {fileID: 3547352889742710444}
   - component: {fileID: 5241889567546225059}
   - component: {fileID: 6767655024651588190}
+  - component: {fileID: -9211430507865814627}
   m_Layer: 6
   m_Name: Desk.003
   m_TagString: PropsFirts
@@ -159,3 +182,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.96985, y: 7.8315086, z: 15.516195}
   m_Center: {x: -0.091905594, y: 3.9327593, z: -0.0003540516}
+--- !u!54 &-9211430507865814627
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8262014439473995349}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0

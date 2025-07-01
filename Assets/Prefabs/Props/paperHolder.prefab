@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 475608047454107974}
   - component: {fileID: 8491685277883937685}
   - component: {fileID: 8133677428929160838}
+  - component: {fileID: -3561979743699557078}
   m_Layer: 7
   m_Name: paperHolder
   m_TagString: PropsSecond
@@ -105,3 +106,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.74657476, y: 0.23313688, z: 0.74657476}
   m_Center: {x: 0, y: 0.12499254, z: 0}
+--- !u!54 &-3561979743699557078
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974967344400006511}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0

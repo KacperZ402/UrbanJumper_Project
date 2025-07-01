@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8733435219307822067}
   - component: {fileID: 7964264606881997893}
   - component: {fileID: 6785800849939152964}
+  - component: {fileID: -8199557214465511309}
   m_Layer: 6
   m_Name: Door.002
   m_TagString: PropsFirts
@@ -106,3 +107,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.2769535, y: 21.322298, z: 12.216982}
   m_Center: {x: -1.1380244, y: 10.663501, z: 0.26306605}
+--- !u!54 &-8199557214465511309
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013212257558268496}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0

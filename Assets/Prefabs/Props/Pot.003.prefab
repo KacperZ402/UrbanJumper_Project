@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9211971429105875329}
   - component: {fileID: 7493617935331050858}
   - component: {fileID: -8023370392775004367}
+  - component: {fileID: -4358820332745110486}
   m_Layer: 6
   m_Name: Pot.003
   m_TagString: PropsFirts
@@ -105,3 +106,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.0134695, y: 3.0134695, z: 3.0134695}
   m_Center: {x: 0, y: 1.5025896, z: 0}
+--- !u!54 &-4358820332745110486
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5361303841911357168}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0

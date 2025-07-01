@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7926457547134410970}
   - component: {fileID: 8295666181362974662}
   - component: {fileID: -3773267478851687521}
+  - component: {fileID: 3113706466176429996}
   m_Layer: 7
   m_Name: Box
   m_TagString: PropsSecond
@@ -105,3 +106,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.1063, y: 1.4071918, z: 2.1063}
   m_Center: {x: -0.00000035762787, y: 0.7035953, z: 0}
+--- !u!54 &3113706466176429996
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2656768512314742067}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0

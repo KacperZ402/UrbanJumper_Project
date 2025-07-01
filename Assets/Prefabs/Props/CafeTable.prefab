@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 355554631301833541}
   - component: {fileID: 2386478839333442553}
+  - component: {fileID: 8707315299203057159}
   m_Layer: 0
   m_Name: ChairSpawn
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.05, y: 0, z: -12.51}
-  m_LocalScale: {x: 1, y: 0.9, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5977319264329515398}
@@ -50,10 +51,31 @@ MonoBehaviour:
   - {fileID: 4589359426962682831, guid: e3285efeae0d9ad4d8ab1f74300bf2d9, type: 3}
   - {fileID: 7146157161883085742, guid: 27ca389b3ade98847b6d6e0d66af3ca8, type: 3}
   - {fileID: 1739964271291660402, guid: a36ba3bd4ba87964289dfc852eda6e08, type: 3}
-  customRotation: {x: 0, y: -90, z: 0}
+  customRotation: {x: 0, y: 0, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
+--- !u!65 &8707315299203057159
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3460802612231341897}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 21.1038, y: 15.499499, z: 13.156408}
+  m_Center: {x: -7.390977, y: 7.2497425, z: -0.38897634}
 --- !u!1 &5225549125634731658
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,6 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 122662220814341429}
   - component: {fileID: 4439796363961962882}
+  - component: {fileID: 5000668838470664447}
   m_Layer: 0
   m_Name: ChairSpawn (1)
   m_TagString: Untagged
@@ -79,13 +102,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5225549125634731658}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.22, y: 0, z: 9.95}
-  m_LocalScale: {x: 1, y: 0.9, z: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0.22, y: 0, z: 12.66}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5977319264329515398}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &4439796363961962882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,10 +126,31 @@ MonoBehaviour:
   - {fileID: 1765458134263293812, guid: 40eaf0ebc1e5486449c6103bc6aee407, type: 3}
   - {fileID: 4589359426962682831, guid: e3285efeae0d9ad4d8ab1f74300bf2d9, type: 3}
   - {fileID: 7146157161883085742, guid: 27ca389b3ade98847b6d6e0d66af3ca8, type: 3}
-  customRotation: {x: 0, y: 90, z: 0}
+  customRotation: {x: 0, y: 0, z: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
+--- !u!65 &5000668838470664447
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5225549125634731658}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.8044257, y: 12.700321, z: 8.561592}
+  m_Center: {x: 0.066037536, y: 5.8501596, z: -0.5347719}
 --- !u!1 &5409208123286196890
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,6 +161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1292720915236091003}
   - component: {fileID: 251315677959663088}
+  - component: {fileID: 7668266789708400814}
   m_Layer: 0
   m_Name: ChairSpawn (3)
   m_TagString: Untagged
@@ -132,13 +177,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5409208123286196890}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.85, y: 0, z: 0.27}
-  m_LocalScale: {x: 1, y: 0.9, z: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -10.24, y: 0, z: 0.27}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5977319264329515398}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &251315677959663088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +205,27 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
+--- !u!65 &7668266789708400814
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5409208123286196890}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.8044257, y: 12.700321, z: 8.561592}
+  m_Center: {x: 0.066037536, y: 5.8501596, z: -0.5347719}
 --- !u!1 &8395443704768640959
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,6 +236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7388230852261366119}
   - component: {fileID: 3143685807745825938}
+  - component: {fileID: 8075984140849325485}
   m_Layer: 0
   m_Name: ChairSpawn (2)
   m_TagString: Untagged
@@ -185,13 +252,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8395443704768640959}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 11.89, y: 0, z: 0.27}
-  m_LocalScale: {x: 1, y: 0.9, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5977319264329515398}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!114 &3143685807745825938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +280,27 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
+--- !u!65 &8075984140849325485
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8395443704768640959}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.8044257, y: 12.700321, z: 8.561592}
+  m_Center: {x: 0.066037536, y: 5.8501596, z: -0.5347719}
 --- !u!1 &8670931874831189448
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,6 +313,7 @@ GameObject:
   - component: {fileID: 8162399319901397898}
   - component: {fileID: 2774657888813390849}
   - component: {fileID: 8027337228742419178}
+  - component: {fileID: 838263811465659572}
   m_Layer: 6
   m_Name: CafeTable
   m_TagString: PropsFirts
@@ -322,3 +411,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 12.035066, y: 6.869053, z: 12.035066}
   m_Center: {x: 0, y: 3.4301043, z: 0}
+--- !u!54 &838263811465659572
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8670931874831189448}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0

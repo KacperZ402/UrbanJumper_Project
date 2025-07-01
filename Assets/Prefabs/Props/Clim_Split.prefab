@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6093416845913230435}
   - component: {fileID: 1866190435725377229}
   - component: {fileID: -7394480335356070116}
+  - component: {fileID: -8224066147111660335}
   m_Layer: 6
   m_Name: Clim_Split
   m_TagString: PropsFirts
@@ -106,3 +107,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0437598, y: 3.9350972, z: 13.650435}
   m_Center: {x: 0.0000014901161, y: 0, z: 0}
+--- !u!54 &-8224066147111660335
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5014265574941514652}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0

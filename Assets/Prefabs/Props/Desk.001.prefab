@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8933504833618230169}
   - component: {fileID: 6170776616289247294}
   - component: {fileID: -7517099872088126486}
+  - component: {fileID: 6779766638356481543}
   m_Layer: 6
   m_Name: Desk.001
   m_TagString: PropsFirts
@@ -107,6 +108,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7.14902, y: 7.9929304, z: 16.417988}
   m_Center: {x: -0.090212226, y: 4.01347, z: -0.011880875}
+--- !u!54 &6779766638356481543
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5355091324363903455}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7908430301413101121
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,6 +145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 998788809540377050}
   - component: {fileID: 612214317495093541}
+  - component: {fileID: 8879944205663372683}
   m_Layer: 0
   m_Name: ChairSpawn
   m_TagString: Untagged
@@ -159,3 +188,24 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 200
+--- !u!65 &8879944205663372683
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7908430301413101121}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.390576, y: 15.499499, z: 6.3250065}
+  m_Center: {x: -0.03436351, y: 7.2497425, z: -0.55454016}
