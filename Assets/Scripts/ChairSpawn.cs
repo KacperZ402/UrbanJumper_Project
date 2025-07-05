@@ -6,10 +6,7 @@ public class ChairSpawner : MonoBehaviour
     [Header("Lista prefabów krzese³")]
     public List<GameObject> chairPrefabs;
 
-    [Header("Obrót obiektu (ustawiany w Inspectorze)")]
-    public Vector3 customRotation = Vector3.zero;
-
-    [Header("Warunki kolizji")]
+    [Header("Maska kolizji – np. Default, Environment itp.")]
     public LayerMask collisionMask;
 
     void Start()
@@ -21,55 +18,52 @@ public class ChairSpawner : MonoBehaviour
     {
         if (chairPrefabs == null || chairPrefabs.Count == 0)
         {
-            Debug.LogWarning($"Brak prefabów w ChairSpawner przy {gameObject.name}");
+            Debug.LogWarning($"[ChairSpawner] Brak prefabów krzese³ przy {gameObject.name}");
             return;
         }
 
-        Vector3 spawnPos = transform.position;
         GameObject prefab = chairPrefabs[Random.Range(0, chairPrefabs.Count)];
-        Quaternion rotation = Quaternion.Euler(customRotation);
+        Quaternion spawnRotation = transform.rotation;      //  U¿yj dok³adnej rotacji pustego GameObjectu
+        Vector3 spawnPosition = transform.position;
 
-        if (TrySpawnWithoutCollision(prefab, spawnPos, rotation, out GameObject spawned))
+        if (!CanSpawnWithoutCollision(prefab, spawnPosition, spawnRotation))
         {
-            // Sukces
+            Debug.LogWarning($"[ChairSpawner] Kolizja – nie mo¿na zespawnowaæ krzes³a przy {gameObject.name}");
+            return;
         }
-        else
-        {
-            Debug.LogWarning($"Kolizja – nie mo¿na zespawnowaæ krzes³a przy {gameObject.name}");
-        }
+
+        GameObject spawned = Instantiate(prefab, spawnPosition, spawnRotation, transform);
+        spawned.SetActive(true);
     }
 
-    bool TrySpawnWithoutCollision(GameObject prefab, Vector3 position, Quaternion rotation, out GameObject spawnedObj)
+    bool CanSpawnWithoutCollision(GameObject prefab, Vector3 position, Quaternion rotation)
     {
-        spawnedObj = Instantiate(prefab, position, rotation, transform);
-        spawnedObj.SetActive(false); // tymczasowe wy³¹czenie
+        GameObject temp = Instantiate(prefab, position, rotation);
+        temp.SetActive(false);
 
-        bool hasCollision = false;
-        foreach (Collider col in spawnedObj.GetComponentsInChildren<Collider>())
+        BoxCollider box = temp.GetComponentInChildren<BoxCollider>();
+        if (box == null)
         {
-            if (!col.enabled || col.isTrigger) continue;
+            Debug.LogWarning($"[ChairSpawner] Brak BoxCollidera w prefabie: {prefab.name}");
+            Destroy(temp);
+            return true;
+        }
 
-            Collider[] overlaps = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, collisionMask);
-            foreach (Collider hit in overlaps)
+        Vector3 center = box.bounds.center;
+        Vector3 halfExtents = box.bounds.extents;
+
+        Collider[] hits = Physics.OverlapBox(center, halfExtents, rotation, collisionMask);
+
+        foreach (var hit in hits)
+        {
+            if (!hit.isTrigger && !hit.transform.IsChildOf(temp.transform))
             {
-                if (hit.gameObject != spawnedObj && !hit.isTrigger)
-                {
-                    hasCollision = true;
-                    break;
-                }
+                Destroy(temp);
+                return false;
             }
-
-            if (hasCollision) break;
         }
 
-        if (hasCollision)
-        {
-            Destroy(spawnedObj);
-            spawnedObj = null;
-            return false;
-        }
-
-        spawnedObj.SetActive(true);
+        Destroy(temp);
         return true;
     }
 }

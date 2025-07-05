@@ -375,7 +375,7 @@ MonoBehaviour:
   - {fileID: 5361303841911357168, guid: f9ce1ea9ce139fe46b3e152741e2e499, type: 3}
   minProps: 6
   maxProps: 10
-  cellSize: 5
+  cellSize: 30
 --- !u!1 &8669671517421973511
 GameObject:
   m_ObjectHideFlags: 0
