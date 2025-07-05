@@ -39,56 +39,208 @@ public class FloorSpawnAreaSpawner : MonoBehaviour
     public int minProps = 3;
     public int maxProps = 6;
 
-    [Header("Parametry grida")]
-    [Range(0.5f, 5f)] public float gridCellSize = 1.5f;
+    [Header("Rozmiar jednej kratki (grid cell)")]
+    public float cellSize = 1.0f;
 
-    private void Start()
+    private bool[,] grid;
+    private Vector3 gridOrigin;
+    private int gridSizeX;
+    private int gridSizeZ;
+
+    void Start()
     {
         GenerateProps();
     }
 
     void GenerateProps()
     {
-        if (allowedSurfaceTypes == null || allowedSurfaceTypes.Count == 0) return;
+        if (allowedSurfaceTypes == null || allowedSurfaceTypes.Count == 0)
+        {
+            Debug.LogWarning("Brak dozwolonych typów przestrzeni.");
+            return;
+        }
 
         SurfaceType chosenType = allowedSurfaceTypes[Random.Range(0, allowedSurfaceTypes.Count)];
         SurfacePropSet selectedSet = surfacePropSets.Find(s => s.surfaceType == chosenType);
 
-        if (selectedSet == null || selectedSet.propGroups.Count == 0) return;
+        if (selectedSet == null || selectedSet.propGroups.Count == 0)
+        {
+            Debug.LogWarning($"Brak propów dla typu przestrzeni: {chosenType}");
+            return;
+        }
 
         BoxCollider area = GetComponent<BoxCollider>();
-        Vector3 areaCenter = transform.TransformPoint(area.center);
         Vector3 areaSize = Vector3.Scale(area.size, transform.lossyScale);
-
-        int countX = Mathf.FloorToInt(areaSize.x / gridCellSize);
-        int countZ = Mathf.FloorToInt(areaSize.z / gridCellSize);
-
-        Vector3 startCorner = areaCenter - new Vector3(areaSize.x, 0, areaSize.z) * 0.5f + new Vector3(gridCellSize, 0, gridCellSize) * 0.5f;
+        gridSizeX = Mathf.CeilToInt(areaSize.x / cellSize);
+        gridSizeZ = Mathf.CeilToInt(areaSize.z / cellSize);
+        grid = new bool[gridSizeX, gridSizeZ];
+        gridOrigin = transform.position + transform.rotation * (area.center - area.size * 0.5f);
 
         int totalProps = Random.Range(minProps, maxProps + 1);
+        int[] groupDistribution = GetGroupDistribution(chosenType, selectedSet.propGroups.Count, totalProps);
 
-        List<Vector2Int> availableCells = new List<Vector2Int>();
-        for (int x = 0; x < countX; x++)
+        for (int g = 0; g < selectedSet.propGroups.Count; g++)
         {
-            for (int z = 0; z < countZ; z++)
+            PropGroup group = selectedSet.propGroups[g];
+            int count = groupDistribution[g];
+
+            for (int i = 0; i < count; i++)
             {
-                availableCells.Add(new Vector2Int(x, z));
+                GameObject prefab = group.props[Random.Range(0, group.props.Count)];
+                bool isMainProp = (chosenType == SurfaceType.MeetingRoom && g == 0 && i == 0);
+                TryPlaceProp(prefab, chosenType, g, isMainProp);
             }
         }
 
-        for (int i = 0; i < totalProps && availableCells.Count > 0; i++)
+        // Uniwersalne propy
+        int extraUniversal = Random.Range(0, 3);
+        for (int i = 0; i < extraUniversal; i++)
         {
-            int index = Random.Range(0, availableCells.Count);
-            Vector2Int cell = availableCells[index];
-            availableCells.RemoveAt(index);
-
-            Vector3 spawnPos = startCorner + new Vector3(cell.x * gridCellSize, 0, cell.y * gridCellSize);
-            Quaternion rotation = Quaternion.Euler(0, 90 * Random.Range(0, 4), 0);
-
-            PropGroup group = selectedSet.propGroups[Random.Range(0, selectedSet.propGroups.Count)];
-            GameObject prefab = group.props[Random.Range(0, group.props.Count)];
-
-            Instantiate(prefab, spawnPos, rotation, transform);
+            GameObject uProp = universalProps[Random.Range(0, universalProps.Count)];
+            TryPlaceProp(uProp, chosenType, -1, false);
         }
+    }
+
+
+    int[] GetGroupDistribution(SurfaceType type, int groupCount, int total)
+    {
+        int[] result = new int[groupCount];
+        switch (type)
+        {
+            case SurfaceType.OpenSpace:
+            case SurfaceType.Cafe:
+                result[0] = Mathf.RoundToInt(total * 0.8f);
+                int remA = total - result[0];
+                for (int i = 1; i < groupCount; i++)
+                    result[i] = remA / (groupCount - 1);
+                break;
+
+            case SurfaceType.Reception:
+            case SurfaceType.MeetingRoom:
+                result[0] = 1;
+                int remB = Mathf.Max(0, total - 1);
+                for (int i = 1; i < groupCount; i++)
+                    result[i] = remB / (groupCount - 1);
+                break;
+
+        }
+        return result;
+    }
+
+    void TryPlaceProp(GameObject prefab, SurfaceType type, int groupIndex, bool isMainProp)
+    {
+        // Nazwa prefab'u, który ma byæ zawsze spawnowany – bez walidacji zajêtoœci siatki
+        bool forceSpawn = prefab.name.Contains("MeetingRoomTable");
+
+        if (isMainProp || forceSpawn)
+        {
+            // Wymuszone umieszczenie bez rotacji
+            Quaternion rotation = Quaternion.identity;
+            Vector2Int size = GetColliderBasedSize(prefab, 0, cellSize);
+
+            // Wymuszone po³o¿enie (mo¿esz zmieniæ 0,0 na coœ innego)
+            int startX = 0;
+            int startZ = 0;
+
+            Vector3 worldPos = GridToWorld(startX, startZ, size);
+            GameObject obj = Instantiate(prefab, worldPos, rotation, transform);
+            obj.SetActive(true);
+
+            if (!forceSpawn)
+            {
+                // Zaznacz tylko jeœli to nie by³ wymuszony spawn
+                MarkOccupied(startX, startZ, size);
+            }
+
+            if (forceSpawn)
+            {
+                Debug.LogWarning($"[Spawner] Zespawnowano {prefab.name} BEZ walidacji siatki.");
+            }
+
+            return;
+        }
+
+        // Normalna próba umieszczenia propów
+        for (int attempts = 0; attempts < 30; attempts++)
+        {
+            int angle = 90 * Random.Range(0, 4);
+            Quaternion rotation = Quaternion.Euler(0, angle, 0);
+            Vector2Int size = GetColliderBasedSize(prefab, angle, cellSize);
+
+            int maxX = gridSizeX - size.x;
+            int maxZ = gridSizeZ - size.y;
+
+            if (maxX <= 0 || maxZ <= 0)
+                return;
+
+            int x = Random.Range(0, maxX);
+            int z = Random.Range(0, maxZ);
+
+            if (CanOccupy(x, z, size))
+            {
+                Vector3 worldPos = GridToWorld(x, z, size);
+                GameObject obj = Instantiate(prefab, worldPos, rotation, transform);
+                obj.SetActive(true);
+                MarkOccupied(x, z, size);
+                break;
+            }
+        }
+    }
+
+
+    bool CanOccupy(int startX, int startZ, Vector2Int size)
+    {
+        for (int x = 0; x < size.x; x++)
+        {
+            for (int z = 0; z < size.y; z++)
+            {
+                if (grid[startX + x, startZ + z])
+                    return false;
+            }
+        }
+        return true;
+    }
+
+    void MarkOccupied(int startX, int startZ, Vector2Int size)
+    {
+        for (int x = 0; x < size.x; x++)
+        {
+            for (int z = 0; z < size.y; z++)
+            {
+                grid[startX + x, startZ + z] = true;
+            }
+        }
+    }
+
+    Vector3 GridToWorld(int x, int z, Vector2Int size)
+    {
+        Vector3 offset = new Vector3((x + size.x / 2f) * cellSize, 0f, (z + size.y / 2f) * cellSize);
+        return gridOrigin + transform.rotation * offset;
+    }
+
+    Vector2Int GetColliderBasedSize(GameObject prefab, int angle, float cellSize)
+    {
+        BoxCollider[] colliders = prefab.GetComponentsInChildren<BoxCollider>();
+        if (colliders == null || colliders.Length == 0)
+        {
+            Debug.LogWarning($"Prefab {prefab.name} nie ma ¿adnych BoxColliderów – pomijam.");
+            return Vector2Int.one;
+        }
+
+        Bounds combined = colliders[0].bounds;
+        for (int i = 1; i < colliders.Length; i++)
+        {
+            combined.Encapsulate(colliders[i].bounds);
+        }
+
+        Vector3 size = combined.size;
+
+        float sizeX = (angle == 90 || angle == 270) ? size.z : size.x;
+        float sizeZ = (angle == 90 || angle == 270) ? size.x : size.z;
+
+        int gridX = Mathf.CeilToInt(sizeX / cellSize);
+        int gridZ = Mathf.CeilToInt(sizeZ / cellSize);
+
+        return new Vector2Int(gridX, gridZ);
     }
 }
