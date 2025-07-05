@@ -69,12 +69,7 @@ public class FloorSpawnAreaSpawner : MonoBehaviour
             return;
         }
 
-        BoxCollider area = GetComponent<BoxCollider>();
-        Vector3 areaSize = Vector3.Scale(area.size, transform.lossyScale);
-        gridSizeX = Mathf.CeilToInt(areaSize.x / cellSize);
-        gridSizeZ = Mathf.CeilToInt(areaSize.z / cellSize);
-        grid = new bool[gridSizeX, gridSizeZ];
-        gridOrigin = transform.position + transform.rotation * (area.center - area.size * 0.5f);
+        InitGrid();
 
         int totalProps = Random.Range(minProps, maxProps + 1);
         int[] groupDistribution = GetGroupDistribution(chosenType, selectedSet.propGroups.Count, totalProps);
@@ -82,13 +77,15 @@ public class FloorSpawnAreaSpawner : MonoBehaviour
         for (int g = 0; g < selectedSet.propGroups.Count; g++)
         {
             PropGroup group = selectedSet.propGroups[g];
-            int count = groupDistribution[g];
+            if (group.props == null || group.props.Count == 0) continue;
 
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < groupDistribution[g]; i++)
             {
-                GameObject prefab = group.props[Random.Range(0, group.props.Count)];
+                GameObject prefab = GetRandomProp(group.props);
+                if (prefab == null) continue;
+
                 bool isMainProp = (chosenType == SurfaceType.MeetingRoom && g == 0 && i == 0);
-                TryPlaceProp(prefab, chosenType, g, isMainProp);
+                TryPlaceProp(prefab, isMainProp);
             }
         }
 
@@ -96,71 +93,80 @@ public class FloorSpawnAreaSpawner : MonoBehaviour
         int extraUniversal = Random.Range(0, 3);
         for (int i = 0; i < extraUniversal; i++)
         {
-            GameObject uProp = universalProps[Random.Range(0, universalProps.Count)];
-            TryPlaceProp(uProp, chosenType, -1, false);
+            GameObject uProp = GetRandomProp(universalProps);
+            if (uProp != null)
+                TryPlaceProp(uProp, false);
         }
     }
 
+    void InitGrid()
+    {
+        BoxCollider area = GetComponent<BoxCollider>();
+        Vector3 areaSize = Vector3.Scale(area.size, transform.lossyScale);
+        gridSizeX = Mathf.CeilToInt(areaSize.x / cellSize);
+        gridSizeZ = Mathf.CeilToInt(areaSize.z / cellSize);
+        grid = new bool[gridSizeX, gridSizeZ];
+        gridOrigin = transform.position + transform.rotation * (area.center - area.size * 0.5f);
+    }
+
+    GameObject GetRandomProp(List<GameObject> list) =>
+        list != null && list.Count > 0 ? list[Random.Range(0, list.Count)] : null;
 
     int[] GetGroupDistribution(SurfaceType type, int groupCount, int total)
     {
         int[] result = new int[groupCount];
-        switch (type)
+        if (groupCount == 0 || total == 0) return result;
+
+        if (type == SurfaceType.OpenSpace || type == SurfaceType.Cafe)
         {
-            case SurfaceType.OpenSpace:
-            case SurfaceType.Cafe:
-                result[0] = Mathf.RoundToInt(total * 0.8f);
-                int remA = total - result[0];
-                for (int i = 1; i < groupCount; i++)
-                    result[i] = remA / (groupCount - 1);
-                break;
-
-            case SurfaceType.Reception:
-            case SurfaceType.MeetingRoom:
-                result[0] = 1;
-                int remB = Mathf.Max(0, total - 1);
-                for (int i = 1; i < groupCount; i++)
-                    result[i] = remB / (groupCount - 1);
-                break;
-
+            result[0] = Mathf.RoundToInt(total * 0.8f);
+            int rem = total - result[0];
+            for (int i = 1; i < groupCount; i++)
+                result[i] = rem / (groupCount - 1);
         }
+        else
+        {
+            result[0] = 1;
+            int rem = Mathf.Max(0, total - 1);
+            for (int i = 1; i < groupCount; i++)
+                result[i] = rem / (groupCount - 1);
+        }
+
         return result;
     }
 
-    void TryPlaceProp(GameObject prefab, SurfaceType type, int groupIndex, bool isMainProp)
+    void TryPlaceProp(GameObject prefab, bool isMainProp)
     {
-        // Nazwa prefab'u, który ma byæ zawsze spawnowany – bez walidacji zajêtoœci siatki
         bool forceSpawn = prefab.name.Contains("MeetingRoomTable");
 
         if (isMainProp || forceSpawn)
         {
-            // Wymuszone umieszczenie bez rotacji
-            Quaternion rotation = Quaternion.identity;
-            Vector2Int size = GetColliderBasedSize(prefab, 0, cellSize);
-
-            // Wymuszone po³o¿enie (mo¿esz zmieniæ 0,0 na coœ innego)
-            int startX = 0;
-            int startZ = 0;
-
-            Vector3 worldPos = GridToWorld(startX, startZ, size);
-            GameObject obj = Instantiate(prefab, worldPos, rotation, transform);
-            obj.SetActive(true);
-
-            if (!forceSpawn)
-            {
-                // Zaznacz tylko jeœli to nie by³ wymuszony spawn
-                MarkOccupied(startX, startZ, size);
-            }
-
-            if (forceSpawn)
-            {
-                Debug.LogWarning($"[Spawner] Zespawnowano {prefab.name} BEZ walidacji siatki.");
-            }
-
-            return;
+            PlaceForcedProp(prefab, forceSpawn);
         }
+        else
+        {
+            PlaceRandomly(prefab);
+        }
+    }
 
-        // Normalna próba umieszczenia propów
+    void PlaceForcedProp(GameObject prefab, bool forceSpawn)
+    {
+        Quaternion rotation = Quaternion.identity;
+        Vector2Int size = GetColliderBasedSize(prefab, 0, cellSize);
+        int startX = 0, startZ = 0;
+
+        Vector3 worldPos = GridToWorld(startX, startZ, size);
+        GameObject obj = Instantiate(prefab, worldPos, rotation, transform);
+        obj.SetActive(true);
+
+        if (!forceSpawn)
+            MarkOccupied(startX, startZ, size);
+        else
+            Debug.LogWarning($"[Spawner] Zespawnowano {prefab.name} BEZ walidacji siatki.");
+    }
+
+    void PlaceRandomly(GameObject prefab)
+    {
         for (int attempts = 0; attempts < 30; attempts++)
         {
             int angle = 90 * Random.Range(0, 4);
@@ -186,7 +192,6 @@ public class FloorSpawnAreaSpawner : MonoBehaviour
             }
         }
     }
-
 
     bool CanOccupy(int startX, int startZ, Vector2Int size)
     {
@@ -229,9 +234,7 @@ public class FloorSpawnAreaSpawner : MonoBehaviour
 
         Bounds combined = colliders[0].bounds;
         for (int i = 1; i < colliders.Length; i++)
-        {
             combined.Encapsulate(colliders[i].bounds);
-        }
 
         Vector3 size = combined.size;
 
