@@ -345,6 +345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2290705781437341928}
   - component: {fileID: 188449350245820214}
+  - component: {fileID: 389115671939380748}
   m_Layer: 0
   m_Name: spawnAreaFloor
   m_TagString: Untagged
@@ -386,8 +387,71 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 70, y: 0, z: 220}
+  m_Size: {x: 70, y: 0, z: 190}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &389115671939380748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5348434242348369150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 383376e6c5823da4fb181ce3b355d385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allowedSurfaceTypes: 0000000002000000
+  surfacePropSets:
+  - surfaceType: 0
+    propGroups:
+    - groupName: Desks
+      props:
+      - {fileID: 5730973505550276196, guid: 610cefd687e4ff54087f8e5ea771d863, type: 3}
+      - {fileID: 5355091324363903455, guid: 7b30a2810bef6ae4a90e2b2cbe66e4b7, type: 3}
+      - {fileID: 5282033231866243942, guid: 9ca6893dbb0aeb443b19b0dcea474658, type: 3}
+      - {fileID: 8262014439473995349, guid: 891d0b286a0b29c449f7f0af6a772b4e, type: 3}
+      - {fileID: 9129496826926903157, guid: c059c8b9fa296b440b046dec514700e8, type: 3}
+    - groupName: WhiteBoard
+      props:
+      - {fileID: 3087168174272633846, guid: 14c5e04b7ded36a499ab1db519987a38, type: 3}
+    - groupName: Printers
+      props:
+      - {fileID: 1161818504832517932, guid: 70bcefebfff434b469c84eae7de41133, type: 3}
+      - {fileID: 2005159759960645412, guid: 410c8dd1ee2987e4cafeeb10e80d9334, type: 3}
+    - groupName: Bins
+      props:
+      - {fileID: 7125778133165948343, guid: 5cf80e83c2dbf9e4a8d11b5347243cf4, type: 3}
+      - {fileID: 5637865864060995341, guid: f4bd56637c585b842aa1485245f3a383, type: 3}
+  - surfaceType: 1
+    propGroups:
+    - groupName: Receiptions
+      props:
+      - {fileID: 5995609934023705727, guid: 01bb00c76e3fac548ae4869bb55cdd0d, type: 3}
+      - {fileID: 4334526074124112171, guid: eac869d98e8429d4aaa969e8dd508ebb, type: 3}
+      - {fileID: 5973829685085028941, guid: f2cd6707bdb0fb64fba5c1dd50629b0e, type: 3}
+  - surfaceType: 2
+    propGroups:
+    - groupName: ConfTable
+      props:
+      - {fileID: 5260612243443887680, guid: ebd3634f0ae2e8b4dbda22404da6b1b9, type: 3}
+    - groupName: Whiteboard
+      props:
+      - {fileID: 3087168174272633846, guid: 14c5e04b7ded36a499ab1db519987a38, type: 3}
+  - surfaceType: 3
+    propGroups:
+    - groupName: Tables
+      props:
+      - {fileID: 8670931874831189448, guid: 80415f8ba0d4be64cbee3a268da16d2e, type: 3}
+      - {fileID: 6563589884813263465, guid: 3f2c6f186e46126479418dca84e5f8af, type: 3}
+  universalProps:
+  - {fileID: 8029934943841146467, guid: 0b2239a111fca1949ad27faa6a072240, type: 3}
+  - {fileID: 7477574185236790878, guid: 64343bce06d157248a96ce4295794c73, type: 3}
+  - {fileID: 7444192458501623583, guid: 8f59b7c76ee9ca64d98c2b647a5273e7, type: 3}
+  - {fileID: 5361303841911357168, guid: f9ce1ea9ce139fe46b3e152741e2e499, type: 3}
+  minProps: 10
+  maxProps: 15
+  cellSize: 10
 --- !u!1 &5569874748491711539
 GameObject:
   m_ObjectHideFlags: 0
