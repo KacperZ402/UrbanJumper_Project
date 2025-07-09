@@ -259,6 +259,7 @@ Transform:
   - {fileID: 8947809398088682073}
   - {fileID: 8825096020810219688}
   - {fileID: 1180582209368879666}
+  - {fileID: 1806011169791735392}
   - {fileID: 5488905112360438700}
   - {fileID: 2280002568321827834}
   - {fileID: 8202824966535754665}
@@ -562,6 +563,78 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7109271369551901438}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8361415316495062685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1806011169791735392}
+  - component: {fileID: 2510076374064708048}
+  - component: {fileID: 3913694385936165539}
+  m_Layer: 0
+  m_Name: spawnAreaCeiling (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1806011169791735392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8361415316495062685}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -59, y: 30.4, z: 169.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7109271369551901438}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2510076374064708048
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8361415316495062685}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 47.723938, y: 1, z: 199.43121}
+  m_Center: {x: -56.13803, y: 0, z: 50.284393}
+--- !u!114 &3913694385936165539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8361415316495062685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07e8a7822b4bf644879118e52897840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lampPrefabs:
+  - {fileID: 3694594354911353470, guid: 4dce94e080c36e1458dcf8c5934fb3fd, type: 3}
+  - {fileID: 6681983540424728023, guid: 002387d06bc4505469825057de556367, type: 3}
+  - {fileID: 8556592512537493076, guid: ae6474d88980d9048b58dbd02c728bbb, type: 3}
+  - {fileID: 4606397608354076987, guid: c2f2928cf247ce54aac2633bc5d25c85, type: 3}
+  cellSize: {x: 23, y: 99}
 --- !u!1 &8379198703025574017
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,6 +645,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1180582209368879666}
   - component: {fileID: 166341469095389887}
+  - component: {fileID: 720845258968330289}
   m_Layer: 0
   m_Name: spawnAreaCeiling
   m_TagString: Untagged
@@ -588,7 +662,7 @@ Transform:
   m_GameObject: {fileID: 8379198703025574017}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -59, y: 72.6, z: 169.7}
+  m_LocalPosition: {x: -59, y: 74.2, z: 169.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -615,6 +689,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 160, y: 1, z: 300}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &720845258968330289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8379198703025574017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07e8a7822b4bf644879118e52897840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lampPrefabs:
+  - {fileID: 3694594354911353470, guid: 4dce94e080c36e1458dcf8c5934fb3fd, type: 3}
+  - {fileID: 6681983540424728023, guid: 002387d06bc4505469825057de556367, type: 3}
+  - {fileID: 8556592512537493076, guid: ae6474d88980d9048b58dbd02c728bbb, type: 3}
+  - {fileID: 4606397608354076987, guid: c2f2928cf247ce54aac2633bc5d25c85, type: 3}
+  cellSize: {x: 80, y: 100}
 --- !u!1 &8673321543966342129
 GameObject:
   m_ObjectHideFlags: 0

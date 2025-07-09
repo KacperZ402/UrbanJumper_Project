@@ -196,6 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 730704710842552738}
   - component: {fileID: 1881080497094182469}
+  - component: {fileID: 6490727524304794270}
   m_Layer: 0
   m_Name: spawnAreaCeiling
   m_TagString: Untagged
@@ -212,7 +213,7 @@ Transform:
   m_GameObject: {fileID: 1771296785943696588}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 35.1, y: 31, z: -117}
+  m_LocalPosition: {x: 35.1, y: 30.4, z: -117}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -237,8 +238,26 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 120, y: 0, z: 220}
+  m_Size: {x: 120, y: 1, z: 220}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6490727524304794270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771296785943696588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07e8a7822b4bf644879118e52897840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lampPrefabs:
+  - {fileID: 3694594354911353470, guid: 4dce94e080c36e1458dcf8c5934fb3fd, type: 3}
+  - {fileID: 6681983540424728023, guid: 002387d06bc4505469825057de556367, type: 3}
+  - {fileID: 8556592512537493076, guid: ae6474d88980d9048b58dbd02c728bbb, type: 3}
+  - {fileID: 4606397608354076987, guid: c2f2928cf247ce54aac2633bc5d25c85, type: 3}
+  cellSize: {x: 60, y: 110}
 --- !u!1 &1999569120593360308
 GameObject:
   m_ObjectHideFlags: 0

@@ -587,6 +587,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7359528508902026842}
   - component: {fileID: 5112431178983885895}
+  - component: {fileID: 7453468033779177887}
   m_Layer: 0
   m_Name: spawnAreaCeiling
   m_TagString: Untagged
@@ -603,7 +604,7 @@ Transform:
   m_GameObject: {fileID: 7030713762688476805}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -35.1, y: 63.2, z: 117}
+  m_LocalPosition: {x: -35.1, y: 62.705, z: 117}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -628,8 +629,26 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 100, y: 0, z: 230}
+  m_Size: {x: 100, y: 1, z: 230}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7453468033779177887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7030713762688476805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07e8a7822b4bf644879118e52897840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lampPrefabs:
+  - {fileID: 3694594354911353470, guid: 4dce94e080c36e1458dcf8c5934fb3fd, type: 3}
+  - {fileID: 6681983540424728023, guid: 002387d06bc4505469825057de556367, type: 3}
+  - {fileID: 8556592512537493076, guid: ae6474d88980d9048b58dbd02c728bbb, type: 3}
+  - {fileID: 4606397608354076987, guid: c2f2928cf247ce54aac2633bc5d25c85, type: 3}
+  cellSize: {x: 50, y: 76}
 --- !u!1 &7283217702546363291
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,6 +829,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4764188342730129982}
   - component: {fileID: 7728352634322355147}
+  - component: {fileID: 2607772646663494999}
   m_Layer: 0
   m_Name: spawnAreaCeiling (1)
   m_TagString: Untagged
@@ -826,7 +846,7 @@ Transform:
   m_GameObject: {fileID: 8761809717867574361}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.9, y: 35, z: 117}
+  m_LocalPosition: {x: -0.9, y: 34.4, z: 117}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -851,8 +871,26 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 50, y: 0, z: 230}
+  m_Size: {x: 50, y: 1, z: 230}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2607772646663494999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8761809717867574361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07e8a7822b4bf644879118e52897840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lampPrefabs:
+  - {fileID: 3694594354911353470, guid: 4dce94e080c36e1458dcf8c5934fb3fd, type: 3}
+  - {fileID: 6681983540424728023, guid: 002387d06bc4505469825057de556367, type: 3}
+  - {fileID: 8556592512537493076, guid: ae6474d88980d9048b58dbd02c728bbb, type: 3}
+  - {fileID: 4606397608354076987, guid: c2f2928cf247ce54aac2633bc5d25c85, type: 3}
+  cellSize: {x: 50, y: 76}
 --- !u!1 &8982687355425130885
 GameObject:
   m_ObjectHideFlags: 0
