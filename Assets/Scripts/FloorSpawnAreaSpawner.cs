@@ -23,6 +23,7 @@ public class SurfacePropSet
     public List<PropGroup> propGroups;
 }
 
+
 [RequireComponent(typeof(BoxCollider))]
 public class FloorSpawnAreaSpawner : MonoBehaviour
 {
@@ -63,6 +64,8 @@ public class FloorSpawnAreaSpawner : MonoBehaviour
         GenerateProps();
     }
 
+    public SurfaceType chosenType { get; private set; }
+    
     void GenerateProps()
     {
         if (allowedSurfaceTypes == null || allowedSurfaceTypes.Count == 0)
