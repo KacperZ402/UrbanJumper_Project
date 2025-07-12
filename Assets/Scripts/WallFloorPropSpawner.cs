@@ -16,6 +16,7 @@ public class WallSurfacePropSet
     public List<WallPropGroup> propGroups;
 }
 
+
 [RequireComponent(typeof(BoxCollider))]
 public class WallFloorPropSpawner : MonoBehaviour
 {
@@ -26,7 +27,13 @@ public class WallFloorPropSpawner : MonoBehaviour
     public List<WallSurfacePropSet> wallSurfacePropSets;
 
     [Header("Maksymalna iloœæ propów przy œcianie")]
-    public int maxWallProps = 4;
+    public int maxWallProps = 6;
+
+    [Header("Ustawienia siatki")]
+    public float cellWidth = 1f;
+    public float cellDepth = 1f;
+
+    private List<Vector3> occupiedPositions = new List<Vector3>();
 
     void Start()
     {
@@ -45,7 +52,6 @@ public class WallFloorPropSpawner : MonoBehaviour
             return;
         }
 
-        // Zak³adamy, ¿e ostatnia grupa to propsy przyœcienne (opcjonalnie mo¿na to zmieniæ)
         List<GameObject> wallProps = set.propGroups[set.propGroups.Count - 1].props;
         SpawnWallProps(wallProps);
     }
@@ -55,28 +61,52 @@ public class WallFloorPropSpawner : MonoBehaviour
         if (wallPrefabs == null || wallPrefabs.Count == 0) return;
 
         BoxCollider area = GetComponent<BoxCollider>();
-        if (area == null)
-        {
-            Debug.LogError("Brakuje BoxCollidera.");
-            return;
-        }
-
         Vector3 areaSize = Vector3.Scale(area.size, transform.lossyScale);
 
-        int count = Mathf.Min(maxWallProps, wallPrefabs.Count);
-        float spacing = areaSize.x / (count + 1); // Rozstaw propów
+        int xCells = Mathf.FloorToInt(areaSize.x / cellWidth);
+        int zCells = Mathf.FloorToInt(areaSize.z / cellDepth); // Dodaj w inspektorze `cellDepth` (np. 1f)
 
-        for (int i = 1; i <= count; i++)
+        HashSet<Vector2Int> occupiedCells = new HashSet<Vector2Int>();
+
+        int spawned = 0;
+        int attempts = 0;
+
+        while (spawned < maxWallProps && attempts < 100)
         {
+            int x = Random.Range(0, xCells);
+            int z = Random.Range(0, zCells);
+            Vector2Int cellIndex = new Vector2Int(x, z);
+
+            if (occupiedCells.Contains(cellIndex))
+            {
+                attempts++;
+                continue;
+            }
+
+            float xPos = -areaSize.x / 2f + (x + 0.5f) * cellWidth;
+            float zPos = -areaSize.z / 2f + (z + 0.5f) * cellDepth;
+
+            Vector3 localSpawnPos = new Vector3(xPos, 0f, zPos);
+            Vector3 worldSpawnPos = transform.TransformPoint(area.center + localSpawnPos);
+
             GameObject prefab = wallPrefabs[Random.Range(0, wallPrefabs.Count)];
-            if (prefab == null) continue;
+            GameObject spawnedObj = Instantiate(prefab, worldSpawnPos, Quaternion.identity, transform);
+            spawnedObj.SetActive(true);
 
-            // Pozycja przy jednej z d³u¿szych krawêdzi boxa
-            Vector3 localOffset = new Vector3(-areaSize.x / 2f + spacing * i, 0, -areaSize.z / 2f + 0.5f);
-            Vector3 spawnPos = transform.TransformPoint(area.center + localOffset);
-
-            GameObject spawned = Instantiate(prefab, spawnPos, Quaternion.identity, transform);
-            spawned.SetActive(true);
+            occupiedCells.Add(cellIndex);
+            spawned++;
+            attempts++;
         }
+    }
+
+
+    bool IsOccupied(Vector3 pos)
+    {
+        foreach (var p in occupiedPositions)
+        {
+            if (Vector3.Distance(p, pos) < cellWidth * 0.8f)
+                return true;
+        }
+        return false;
     }
 }

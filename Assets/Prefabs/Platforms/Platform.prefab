@@ -534,6 +534,8 @@ MonoBehaviour:
       - {fileID: 5210366837589952615, guid: c8f5ef29cb1db9a499007fcd99beef7c, type: 3}
       - {fileID: 785908117160298632, guid: 107beab6ca7269746a83de74237b7066, type: 3}
   maxWallProps: 4
+  cellWidth: 10
+  cellDepth: 1
 --- !u!1 &8867484475039330069
 GameObject:
   m_ObjectHideFlags: 0
