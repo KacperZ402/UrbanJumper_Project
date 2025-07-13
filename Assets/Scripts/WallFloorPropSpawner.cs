@@ -20,6 +20,8 @@ public class WallSurfacePropSet
 [RequireComponent(typeof(BoxCollider))]
 public class WallFloorPropSpawner : MonoBehaviour
 {
+    private List<Bounds> blockerBounds = new List<Bounds>();
+
     [Header("Referencja do FloorSpawnera")]
     public FloorSpawnAreaSpawner floorSpawnerRef;
 
@@ -31,30 +33,57 @@ public class WallFloorPropSpawner : MonoBehaviour
 
     [Header("Ustawienia siatki")]
     public float cellWidth = 1f;
-    public float cellDepth = 1f;
+    public float cellLength = 1f;
 
     private List<Vector3> occupiedPositions = new List<Vector3>();
 
-    void Start()
+    void Awake()
     {
         if (floorSpawnerRef == null)
         {
-            Debug.LogError("Brakuje referencji do FloorSpawnAreaSpawner.");
-            return;
+            floorSpawnerRef = GetComponentInParent<FloorSpawnAreaSpawner>();
         }
 
-        SurfaceType surfaceType = floorSpawnerRef.chosenType;
+        if (floorSpawnerRef != null)
+        {
+            floorSpawnerRef.OnSurfaceChosen += HandleSurfaceChosen;
+        }
+        else
+        {
+            Debug.LogWarning("Brakuje referencji do FloorSpawnAreaSpawner.");
+        }
+    }
 
-        WallSurfacePropSet set = wallSurfacePropSets.Find(s => s.surfaceType == surfaceType);
+    void HandleSurfaceChosen(SurfaceType type)
+    {
+        Debug.Log($"[WallPropSpawner] Otrzymano typ przez event: {type}");
+
+        WallSurfacePropSet set = wallSurfacePropSets.Find(s => s.surfaceType == type);
         if (set == null || set.propGroups.Count == 0)
         {
-            Debug.LogWarning($"Brak danych propów œciennych dla: {surfaceType}");
+            Debug.LogWarning($"Brak danych propów œciennych dla: {type}");
             return;
         }
 
-        List<GameObject> wallProps = set.propGroups[set.propGroups.Count - 1].props;
+        List<GameObject> wallProps = new List<GameObject>();
+        foreach (var group in set.propGroups)
+        {
+            wallProps.AddRange(group.props);
+        }
+
+        SpawnBlocker[] blockers = FindObjectsOfType<SpawnBlocker>();
+        foreach (var blocker in blockers)
+        {
+            BoxCollider col = blocker.GetComponent<BoxCollider>();
+            if (col != null)
+            {
+                blockerBounds.Add(col.bounds);
+            }
+        }
+
         SpawnWallProps(wallProps);
     }
+
 
     void SpawnWallProps(List<GameObject> wallPrefabs)
     {
@@ -64,7 +93,7 @@ public class WallFloorPropSpawner : MonoBehaviour
         Vector3 areaSize = Vector3.Scale(area.size, transform.lossyScale);
 
         int xCells = Mathf.FloorToInt(areaSize.x / cellWidth);
-        int zCells = Mathf.FloorToInt(areaSize.z / cellDepth); // Dodaj w inspektorze `cellDepth` (np. 1f)
+        int zCells = Mathf.FloorToInt(areaSize.z / cellLength); // Dodaj w inspektorze `cellDepth` (np. 1f)
 
         HashSet<Vector2Int> occupiedCells = new HashSet<Vector2Int>();
 
@@ -84,10 +113,29 @@ public class WallFloorPropSpawner : MonoBehaviour
             }
 
             float xPos = -areaSize.x / 2f + (x + 0.5f) * cellWidth;
-            float zPos = -areaSize.z / 2f + (z + 0.5f) * cellDepth;
+            float zPos = -areaSize.z / 2f + (z + 0.5f) * cellLength;
 
             Vector3 localSpawnPos = new Vector3(xPos, 0f, zPos);
             Vector3 worldSpawnPos = transform.TransformPoint(area.center + localSpawnPos);
+
+            Bounds cellBounds = new Bounds(worldSpawnPos, new Vector3(cellWidth, 1f, cellLength));
+            bool blocked = false;
+
+            foreach (Bounds b in blockerBounds)
+            {
+                if (b.Intersects(cellBounds))
+                {
+                    blocked = true;
+                    break;
+                }
+            }
+
+            if (blocked || occupiedCells.Contains(cellIndex))
+            {
+                attempts++;
+                continue;
+            }
+
 
             GameObject prefab = wallPrefabs[Random.Range(0, wallPrefabs.Count)];
             GameObject spawnedObj = Instantiate(prefab, worldSpawnPos, Quaternion.identity, transform);
@@ -97,16 +145,5 @@ public class WallFloorPropSpawner : MonoBehaviour
             spawned++;
             attempts++;
         }
-    }
-
-
-    bool IsOccupied(Vector3 pos)
-    {
-        foreach (var p in occupiedPositions)
-        {
-            if (Vector3.Distance(p, pos) < cellWidth * 0.8f)
-                return true;
-        }
-        return false;
     }
 }

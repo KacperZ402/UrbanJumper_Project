@@ -45,6 +45,7 @@ public class FloorSpawnAreaSpawner : MonoBehaviour
 
     private bool[,] grid;
     private Vector3 gridOrigin;
+    private List<Bounds> blockerBounds = new List<Bounds>();
 
     // readonly pola inicjalizowane w InitGrid()
     private int gridSizeX;
@@ -58,6 +59,8 @@ public class FloorSpawnAreaSpawner : MonoBehaviour
         {"pot", new Vector2Int(1, 1)},
         // default 3x3 dla innych
     };
+
+    public event System.Action<SurfaceType> OnSurfaceChosen;
 
     void Start()
     {
@@ -74,13 +77,24 @@ public class FloorSpawnAreaSpawner : MonoBehaviour
             return;
         }
 
-        SurfaceType chosenType = allowedSurfaceTypes[Random.Range(0, allowedSurfaceTypes.Count)];
+        chosenType = allowedSurfaceTypes[Random.Range(0, allowedSurfaceTypes.Count)];
+        OnSurfaceChosen?.Invoke(chosenType);
         SurfacePropSet selectedSet = surfacePropSets.Find(s => s.surfaceType == chosenType);
 
         if (selectedSet == null || selectedSet.propGroups.Count == 0)
         {
             Debug.LogWarning($"Brak propów dla typu przestrzeni: {chosenType}");
             return;
+        }
+
+        SpawnBlocker[] blockers = FindObjectsOfType<SpawnBlocker>();
+        foreach (var blocker in blockers)
+        {
+            BoxCollider col = blocker.GetComponent<BoxCollider>();
+            if (col != null)
+            {
+                blockerBounds.Add(col.bounds);
+            }
         }
 
         InitGrid();
@@ -230,10 +244,24 @@ public class FloorSpawnAreaSpawner : MonoBehaviour
         {
             for (int z = 0; z < size.y; z++)
             {
-                if (startX + x >= gridSizeX || startZ + z >= gridSizeZ) return false; // poza grid
-                if (grid[startX + x, startZ + z]) return false;
+                int gx = startX + x;
+                int gz = startZ + z;
+
+                if (gx >= gridSizeX || gz >= gridSizeZ || grid[gx, gz])
+                    return false;
+
+                // SprawdŸ kolizjê z blockerami
+                Vector3 worldPos = GridToWorld(gx, gz, Vector2Int.one);
+                Bounds cellBounds = new Bounds(worldPos, new Vector3(cellSize, 1f, cellSize));
+
+                foreach (Bounds b in blockerBounds)
+                {
+                    if (b.Intersects(cellBounds))
+                        return false;
+                }
             }
         }
+
         return true;
     }
 
