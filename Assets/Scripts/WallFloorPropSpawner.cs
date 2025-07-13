@@ -138,7 +138,7 @@ public class WallFloorPropSpawner : MonoBehaviour
 
 
             GameObject prefab = wallPrefabs[Random.Range(0, wallPrefabs.Count)];
-            GameObject spawnedObj = Instantiate(prefab, worldSpawnPos, Quaternion.identity, transform);
+            GameObject spawnedObj = Instantiate(prefab, worldSpawnPos, transform.rotation, transform);
             spawnedObj.SetActive(true);
 
             occupiedCells.Add(cellIndex);

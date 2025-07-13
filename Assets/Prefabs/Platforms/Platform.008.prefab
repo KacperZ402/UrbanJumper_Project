@@ -80,7 +80,7 @@ Transform:
   m_GameObject: {fileID: 616060219877164506}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -54.5, y: 2, z: 50}
+  m_LocalPosition: {x: -48.4, y: 2, z: 50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -105,7 +105,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 60, y: 0, z: 80}
+  m_Size: {x: 50, y: 0, z: 80}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6361499597928744671
 MonoBehaviour:
@@ -417,6 +417,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4882314535460933092}
   - component: {fileID: 4954111042421624492}
+  - component: {fileID: 6604055982301510318}
   m_Layer: 0
   m_Name: spawnAreaWall/Floor (2)
   m_TagString: Untagged
@@ -460,6 +461,89 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0, z: 80}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6604055982301510318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5952410776670220109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d2003cfac91773408a1b65cc715921b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorSpawnerRef: {fileID: 8875346372609649815}
+  wallSurfacePropSets:
+  - surfaceType: 0
+    propGroups:
+    - groupName: Bins
+      props:
+      - {fileID: 7125778133165948343, guid: 5cf80e83c2dbf9e4a8d11b5347243cf4, type: 3}
+      - {fileID: 2599582590745318044, guid: c50f3b0af7deb2142bdc3cf0d3e224c1, type: 3}
+      - {fileID: 3557399600744316646, guid: 8197f076fa517674181b0e26809ffbc0, type: 3}
+    - groupName: Lockers
+      props:
+      - {fileID: 6092706038872708450, guid: 714949deb8616cc4e8151c44615df5c3, type: 3}
+      - {fileID: 4688567580912828536, guid: 0a354939dd92a504c8d1bddb582c390e, type: 3}
+    - groupName: Vendings
+      props:
+      - {fileID: 4724843705441785705, guid: 051d990533ccac343a42758b901a8796, type: 3}
+      - {fileID: 8478196239469815202, guid: 7acc6a0687a2f774e91b9dc236c787cf, type: 3}
+    - groupName: Shelf
+      props:
+      - {fileID: 371553703245019956, guid: 313bb7a3ed6b6844a8522d6432dffc01, type: 3}
+      - {fileID: 7824500451609884839, guid: 7985f2efc84a5a640b5d0ded8614617a, type: 3}
+      - {fileID: 4227548258503597153, guid: 5306f2ff5ca638942af81cd1593c876c, type: 3}
+      - {fileID: 5210366837589952615, guid: c8f5ef29cb1db9a499007fcd99beef7c, type: 3}
+      - {fileID: 785908117160298632, guid: 107beab6ca7269746a83de74237b7066, type: 3}
+      - {fileID: 8465555978682467789, guid: 61212dc4a47e607448e7279883c1db2f, type: 3}
+  - surfaceType: 1
+    propGroups:
+    - groupName: Bins
+      props:
+      - {fileID: 7125778133165948343, guid: 5cf80e83c2dbf9e4a8d11b5347243cf4, type: 3}
+      - {fileID: 2599582590745318044, guid: c50f3b0af7deb2142bdc3cf0d3e224c1, type: 3}
+      - {fileID: 3557399600744316646, guid: 8197f076fa517674181b0e26809ffbc0, type: 3}
+    - groupName: Vending
+      props:
+      - {fileID: 4724843705441785705, guid: 051d990533ccac343a42758b901a8796, type: 3}
+      - {fileID: 8478196239469815202, guid: 7acc6a0687a2f774e91b9dc236c787cf, type: 3}
+  - surfaceType: 2
+    propGroups:
+    - groupName: Bins
+      props:
+      - {fileID: 7125778133165948343, guid: 5cf80e83c2dbf9e4a8d11b5347243cf4, type: 3}
+      - {fileID: 2599582590745318044, guid: c50f3b0af7deb2142bdc3cf0d3e224c1, type: 3}
+      - {fileID: 3557399600744316646, guid: 8197f076fa517674181b0e26809ffbc0, type: 3}
+    - groupName: Shelf
+      props:
+      - {fileID: 371553703245019956, guid: 313bb7a3ed6b6844a8522d6432dffc01, type: 3}
+      - {fileID: 7824500451609884839, guid: 7985f2efc84a5a640b5d0ded8614617a, type: 3}
+      - {fileID: 4227548258503597153, guid: 5306f2ff5ca638942af81cd1593c876c, type: 3}
+      - {fileID: 5210366837589952615, guid: c8f5ef29cb1db9a499007fcd99beef7c, type: 3}
+      - {fileID: 785908117160298632, guid: 107beab6ca7269746a83de74237b7066, type: 3}
+  - surfaceType: 3
+    propGroups:
+    - groupName: Bins
+      props:
+      - {fileID: 7125778133165948343, guid: 5cf80e83c2dbf9e4a8d11b5347243cf4, type: 3}
+      - {fileID: 2599582590745318044, guid: c50f3b0af7deb2142bdc3cf0d3e224c1, type: 3}
+      - {fileID: 3557399600744316646, guid: 8197f076fa517674181b0e26809ffbc0, type: 3}
+    - groupName: Vendings
+      props:
+      - {fileID: 4724843705441785705, guid: 051d990533ccac343a42758b901a8796, type: 3}
+      - {fileID: 8478196239469815202, guid: 7acc6a0687a2f774e91b9dc236c787cf, type: 3}
+    - groupName: Shelf
+      props:
+      - {fileID: 371553703245019956, guid: 313bb7a3ed6b6844a8522d6432dffc01, type: 3}
+      - {fileID: 7824500451609884839, guid: 7985f2efc84a5a640b5d0ded8614617a, type: 3}
+      - {fileID: 4227548258503597153, guid: 5306f2ff5ca638942af81cd1593c876c, type: 3}
+      - {fileID: 5210366837589952615, guid: c8f5ef29cb1db9a499007fcd99beef7c, type: 3}
+      - {fileID: 785908117160298632, guid: 107beab6ca7269746a83de74237b7066, type: 3}
+  maxWallProps: 2
+  cellWidth: 1
+  cellLength: 30
 --- !u!1 &6375130219632959782
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,7 +571,7 @@ Transform:
   m_GameObject: {fileID: 6375130219632959782}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -54.5, y: 2, z: 194}
+  m_LocalPosition: {x: -48.4, y: 2, z: 194}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -512,7 +596,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 60, y: 0, z: 60}
+  m_Size: {x: 50, y: 0, z: 60}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8875346372609649815
 MonoBehaviour:
@@ -901,6 +985,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6989602026772844565}
   - component: {fileID: 8998806568007425757}
+  - component: {fileID: 5773264181787081797}
   m_Layer: 0
   m_Name: spawnAreaWall/Floor
   m_TagString: Untagged
@@ -944,6 +1029,89 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0, z: 80}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5773264181787081797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8982687355425130885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d2003cfac91773408a1b65cc715921b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorSpawnerRef: {fileID: 6361499597928744671}
+  wallSurfacePropSets:
+  - surfaceType: 0
+    propGroups:
+    - groupName: Bins
+      props:
+      - {fileID: 7125778133165948343, guid: 5cf80e83c2dbf9e4a8d11b5347243cf4, type: 3}
+      - {fileID: 2599582590745318044, guid: c50f3b0af7deb2142bdc3cf0d3e224c1, type: 3}
+      - {fileID: 3557399600744316646, guid: 8197f076fa517674181b0e26809ffbc0, type: 3}
+    - groupName: Lockers
+      props:
+      - {fileID: 6092706038872708450, guid: 714949deb8616cc4e8151c44615df5c3, type: 3}
+      - {fileID: 4688567580912828536, guid: 0a354939dd92a504c8d1bddb582c390e, type: 3}
+    - groupName: Vendings
+      props:
+      - {fileID: 4724843705441785705, guid: 051d990533ccac343a42758b901a8796, type: 3}
+      - {fileID: 8478196239469815202, guid: 7acc6a0687a2f774e91b9dc236c787cf, type: 3}
+    - groupName: Shelf
+      props:
+      - {fileID: 371553703245019956, guid: 313bb7a3ed6b6844a8522d6432dffc01, type: 3}
+      - {fileID: 7824500451609884839, guid: 7985f2efc84a5a640b5d0ded8614617a, type: 3}
+      - {fileID: 4227548258503597153, guid: 5306f2ff5ca638942af81cd1593c876c, type: 3}
+      - {fileID: 5210366837589952615, guid: c8f5ef29cb1db9a499007fcd99beef7c, type: 3}
+      - {fileID: 785908117160298632, guid: 107beab6ca7269746a83de74237b7066, type: 3}
+      - {fileID: 8465555978682467789, guid: 61212dc4a47e607448e7279883c1db2f, type: 3}
+  - surfaceType: 1
+    propGroups:
+    - groupName: Bins
+      props:
+      - {fileID: 7125778133165948343, guid: 5cf80e83c2dbf9e4a8d11b5347243cf4, type: 3}
+      - {fileID: 2599582590745318044, guid: c50f3b0af7deb2142bdc3cf0d3e224c1, type: 3}
+      - {fileID: 3557399600744316646, guid: 8197f076fa517674181b0e26809ffbc0, type: 3}
+    - groupName: Vending
+      props:
+      - {fileID: 4724843705441785705, guid: 051d990533ccac343a42758b901a8796, type: 3}
+      - {fileID: 8478196239469815202, guid: 7acc6a0687a2f774e91b9dc236c787cf, type: 3}
+  - surfaceType: 2
+    propGroups:
+    - groupName: Bins
+      props:
+      - {fileID: 7125778133165948343, guid: 5cf80e83c2dbf9e4a8d11b5347243cf4, type: 3}
+      - {fileID: 2599582590745318044, guid: c50f3b0af7deb2142bdc3cf0d3e224c1, type: 3}
+      - {fileID: 3557399600744316646, guid: 8197f076fa517674181b0e26809ffbc0, type: 3}
+    - groupName: Shelf
+      props:
+      - {fileID: 371553703245019956, guid: 313bb7a3ed6b6844a8522d6432dffc01, type: 3}
+      - {fileID: 7824500451609884839, guid: 7985f2efc84a5a640b5d0ded8614617a, type: 3}
+      - {fileID: 4227548258503597153, guid: 5306f2ff5ca638942af81cd1593c876c, type: 3}
+      - {fileID: 5210366837589952615, guid: c8f5ef29cb1db9a499007fcd99beef7c, type: 3}
+      - {fileID: 785908117160298632, guid: 107beab6ca7269746a83de74237b7066, type: 3}
+  - surfaceType: 3
+    propGroups:
+    - groupName: Bins
+      props:
+      - {fileID: 7125778133165948343, guid: 5cf80e83c2dbf9e4a8d11b5347243cf4, type: 3}
+      - {fileID: 2599582590745318044, guid: c50f3b0af7deb2142bdc3cf0d3e224c1, type: 3}
+      - {fileID: 3557399600744316646, guid: 8197f076fa517674181b0e26809ffbc0, type: 3}
+    - groupName: Vendings
+      props:
+      - {fileID: 4724843705441785705, guid: 051d990533ccac343a42758b901a8796, type: 3}
+      - {fileID: 8478196239469815202, guid: 7acc6a0687a2f774e91b9dc236c787cf, type: 3}
+    - groupName: Shelf
+      props:
+      - {fileID: 371553703245019956, guid: 313bb7a3ed6b6844a8522d6432dffc01, type: 3}
+      - {fileID: 7824500451609884839, guid: 7985f2efc84a5a640b5d0ded8614617a, type: 3}
+      - {fileID: 4227548258503597153, guid: 5306f2ff5ca638942af81cd1593c876c, type: 3}
+      - {fileID: 5210366837589952615, guid: c8f5ef29cb1db9a499007fcd99beef7c, type: 3}
+      - {fileID: 785908117160298632, guid: 107beab6ca7269746a83de74237b7066, type: 3}
+  maxWallProps: 2
+  cellWidth: 1
+  cellLength: 30
 --- !u!1 &9025277849913515630
 GameObject:
   m_ObjectHideFlags: 0
