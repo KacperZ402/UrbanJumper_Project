@@ -52,38 +52,4 @@ public class CeilingLampSpawner : MonoBehaviour
             }
         }
     }
-
-    // Opcjonalnie: rysuj siatkê w edytorze
-    private void OnDrawGizmosSelected()
-    {
-        if (!Application.isPlaying)
-            DrawGridPreview();
-    }
-
-    void DrawGridPreview()
-    {
-        BoxCollider area = GetComponent<BoxCollider>();
-        Vector3 areaSize = Vector3.Scale(area.size, transform.lossyScale);
-        Vector3 center = transform.TransformPoint(area.center);
-
-        float startX = center.x - areaSize.x / 2f;
-        float startZ = center.z - areaSize.z / 2f;
-        float y = center.y + areaSize.y / 2f;
-
-        int gridCountX = Mathf.FloorToInt(areaSize.x / cellSize.x);
-        int gridCountZ = Mathf.FloorToInt(areaSize.z / cellSize.y);
-
-        Gizmos.color = Color.yellow;
-
-        for (int x = 0; x < gridCountX; x++)
-        {
-            for (int z = 0; z < gridCountZ; z++)
-            {
-                float posX = startX + (x + 0.5f) * cellSize.x;
-                float posZ = startZ + (z + 0.5f) * cellSize.y;
-                Vector3 cubePos = new Vector3(posX, y, posZ);
-                Gizmos.DrawWireCube(cubePos, new Vector3(cellSize.x, 0.1f, cellSize.y));
-            }
-        }
-    }
 }
