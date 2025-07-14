@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class WallPropGroup
-{
-    public string groupName;
-    public List<GameObject> props;
-}
-
-[System.Serializable]
 public class WallSurfacePropSet
 {
     public SurfaceType surfaceType;
-    public List<WallPropGroup> propGroups;
-}
 
+    [Header("Propy stoj¹ce przy œcianie")]
+    public List<GameObject> standingProps;
+
+    [Header("Propy wisz¹ce")]
+    public List<GameObject> hangingProps;
+
+    [Header("Propy stoj¹ce z mo¿liwoœci¹ zawieszenia nad nimi")]
+    public List<GameObject> standingWithHangingAllowed;
+}
 
 [RequireComponent(typeof(BoxCollider))]
 public class WallFloorPropSpawner : MonoBehaviour
@@ -59,18 +59,13 @@ public class WallFloorPropSpawner : MonoBehaviour
         Debug.Log($"[WallPropSpawner] Otrzymano typ przez event: {type}");
 
         WallSurfacePropSet set = wallSurfacePropSets.Find(s => s.surfaceType == type);
-        if (set == null || set.propGroups.Count == 0)
+        if (set == null)
         {
             Debug.LogWarning($"Brak danych propów œciennych dla: {type}");
             return;
         }
 
-        List<GameObject> wallProps = new List<GameObject>();
-        foreach (var group in set.propGroups)
-        {
-            wallProps.AddRange(group.props);
-        }
-
+        blockerBounds.Clear();
         SpawnBlocker[] blockers = FindObjectsOfType<SpawnBlocker>();
         foreach (var blocker in blockers)
         {
@@ -81,9 +76,14 @@ public class WallFloorPropSpawner : MonoBehaviour
             }
         }
 
-        SpawnWallProps(wallProps);
-    }
+        // £¹czymy wszystkie typy propów w jedn¹ listê
+        List<GameObject> allProps = new List<GameObject>();
+        allProps.AddRange(set.standingProps);
+        allProps.AddRange(set.hangingProps);
+        allProps.AddRange(set.standingWithHangingAllowed);
 
+        SpawnWallProps(allProps);
+    }
 
     void SpawnWallProps(List<GameObject> wallPrefabs)
     {
@@ -93,7 +93,7 @@ public class WallFloorPropSpawner : MonoBehaviour
         Vector3 areaSize = Vector3.Scale(area.size, transform.lossyScale);
 
         int xCells = Mathf.FloorToInt(areaSize.x / cellWidth);
-        int zCells = Mathf.FloorToInt(areaSize.z / cellLength); // Dodaj w inspektorze `cellDepth` (np. 1f)
+        int zCells = Mathf.FloorToInt(areaSize.z / cellLength);
 
         HashSet<Vector2Int> occupiedCells = new HashSet<Vector2Int>();
 
@@ -135,7 +135,6 @@ public class WallFloorPropSpawner : MonoBehaviour
                 attempts++;
                 continue;
             }
-
 
             GameObject prefab = wallPrefabs[Random.Range(0, wallPrefabs.Count)];
             GameObject spawnedObj = Instantiate(prefab, worldSpawnPos, transform.rotation, transform);
