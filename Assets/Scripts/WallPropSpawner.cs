@@ -18,12 +18,12 @@ public class WallSurfacePropSet
 }
 
 [RequireComponent(typeof(BoxCollider))]
-public class WallFloorPropSpawner : MonoBehaviour
+public class WallPropSpawner : MonoBehaviour
 {
     private List<Bounds> blockerBounds = new List<Bounds>();
 
     [Header("Referencja do FloorSpawnera")]
-    public FloorSpawnAreaSpawner floorSpawnerRef;
+    public FloorPropSpawner floorSpawnerRef;
 
     [Header("Zestawy propów do œcian")]
     public List<WallSurfacePropSet> wallSurfacePropSets;
@@ -42,7 +42,7 @@ public class WallFloorPropSpawner : MonoBehaviour
     {
         if (floorSpawnerRef == null)
         {
-            floorSpawnerRef = GetComponentInParent<FloorSpawnAreaSpawner>();
+            floorSpawnerRef = GetComponentInParent<FloorPropSpawner>();
         }
 
         if (floorSpawnerRef != null)
@@ -51,7 +51,7 @@ public class WallFloorPropSpawner : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Brakuje referencji do FloorSpawnAreaSpawner.");
+            Debug.LogWarning("Brakuje referencji do FloorPropSpawner.");
         }
     }
 

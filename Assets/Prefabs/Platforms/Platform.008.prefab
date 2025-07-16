@@ -150,9 +150,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4401286797954216141}
   - {fileID: 6924327462974817361}
   - {fileID: 4070387361829735450}
-  - {fileID: 3082020583714747152}
   - {fileID: 7359528508902026842}
   - {fileID: 4764188342730129982}
   - {fileID: 6989602026772844565}
@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 4954111042421624492}
   - component: {fileID: 2460218779055407873}
   m_Layer: 0
-  m_Name: spawnAreaWall
+  m_Name: spawnAreaWall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -619,7 +619,7 @@ MonoBehaviour:
   - {fileID: 8556592512537493076, guid: ae6474d88980d9048b58dbd02c728bbb, type: 3}
   - {fileID: 4606397608354076987, guid: c2f2928cf247ce54aac2633bc5d25c85, type: 3}
   cellSize: {x: 50, y: 76}
---- !u!1 &7461338878176656881
+--- !u!1 &8759791483758805279
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -627,38 +627,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3082020583714747152}
-  - component: {fileID: 4992413969849879328}
-  - component: {fileID: 8832037698729022927}
-  m_Layer: 0
-  m_Name: spawnAreaFloor (2)
+  - component: {fileID: 4401286797954216141}
+  - component: {fileID: 7165882206295343598}
+  - component: {fileID: 7571518868384997052}
+  m_Layer: 3
+  m_Name: ParentDestoryer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3082020583714747152
+--- !u!4 &4401286797954216141
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7461338878176656881}
+  m_GameObject: {fileID: 8759791483758805279}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 40, z: 117}
+  m_LocalPosition: {x: 0, y: 16.6, z: 385.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3029853889042341532}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4992413969849879328
+--- !u!65 &7165882206295343598
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7461338878176656881}
+  m_GameObject: {fileID: 8759791483758805279}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -671,71 +671,20 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 50, y: 0, z: 200}
+  m_Size: {x: 60, y: 30, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8832037698729022927
+--- !u!114 &7571518868384997052
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7461338878176656881}
+  m_GameObject: {fileID: 8759791483758805279}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383376e6c5823da4fb181ce3b355d385, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a71fa74cd4c0604faa32c89a9bb66bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allowedSurfaceTypes: 0300000003000000
-  surfacePropSets:
-  - surfaceType: 0
-    propGroups:
-    - groupName: Desks
-      props:
-      - {fileID: 5730973505550276196, guid: 610cefd687e4ff54087f8e5ea771d863, type: 3}
-      - {fileID: 5355091324363903455, guid: 7b30a2810bef6ae4a90e2b2cbe66e4b7, type: 3}
-      - {fileID: 5282033231866243942, guid: 9ca6893dbb0aeb443b19b0dcea474658, type: 3}
-      - {fileID: 8262014439473995349, guid: 891d0b286a0b29c449f7f0af6a772b4e, type: 3}
-      - {fileID: 9129496826926903157, guid: c059c8b9fa296b440b046dec514700e8, type: 3}
-    - groupName: WhiteBoard
-      props:
-      - {fileID: 3087168174272633846, guid: 14c5e04b7ded36a499ab1db519987a38, type: 3}
-    - groupName: Printers
-      props:
-      - {fileID: 1161818504832517932, guid: 70bcefebfff434b469c84eae7de41133, type: 3}
-      - {fileID: 2005159759960645412, guid: 410c8dd1ee2987e4cafeeb10e80d9334, type: 3}
-    - groupName: Bins
-      props:
-      - {fileID: 7125778133165948343, guid: 5cf80e83c2dbf9e4a8d11b5347243cf4, type: 3}
-      - {fileID: 5637865864060995341, guid: f4bd56637c585b842aa1485245f3a383, type: 3}
-  - surfaceType: 1
-    propGroups:
-    - groupName: Receiptions
-      props:
-      - {fileID: 5995609934023705727, guid: 01bb00c76e3fac548ae4869bb55cdd0d, type: 3}
-      - {fileID: 4334526074124112171, guid: eac869d98e8429d4aaa969e8dd508ebb, type: 3}
-      - {fileID: 5973829685085028941, guid: f2cd6707bdb0fb64fba5c1dd50629b0e, type: 3}
-  - surfaceType: 2
-    propGroups:
-    - groupName: ConfTable
-      props:
-      - {fileID: 5260612243443887680, guid: ebd3634f0ae2e8b4dbda22404da6b1b9, type: 3}
-    - groupName: Whiteboard
-      props:
-      - {fileID: 3087168174272633846, guid: 14c5e04b7ded36a499ab1db519987a38, type: 3}
-  - surfaceType: 3
-    propGroups:
-    - groupName: Tables
-      props:
-      - {fileID: 8670931874831189448, guid: 80415f8ba0d4be64cbee3a268da16d2e, type: 3}
-      - {fileID: 6563589884813263465, guid: 3f2c6f186e46126479418dca84e5f8af, type: 3}
-  universalProps:
-  - {fileID: 8029934943841146467, guid: 0b2239a111fca1949ad27faa6a072240, type: 3}
-  - {fileID: 7477574185236790878, guid: 64343bce06d157248a96ce4295794c73, type: 3}
-  - {fileID: 7444192458501623583, guid: 8f59b7c76ee9ca64d98c2b647a5273e7, type: 3}
-  - {fileID: 5361303841911357168, guid: f9ce1ea9ce139fe46b3e152741e2e499, type: 3}
-  minProps: 10
-  maxProps: 20
-  cellSize: 10
 --- !u!1 &8761809717867574361
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,7 +767,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6989602026772844565}
   - component: {fileID: 8998806568007425757}
-  - component: {fileID: 5773264181787081797}
+  - component: {fileID: 7291920496073090618}
   m_Layer: 0
   m_Name: spawnAreaWall
   m_TagString: Untagged
@@ -862,7 +811,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0, z: 80}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5773264181787081797
+--- !u!114 &7291920496073090618
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -874,25 +823,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d2003cfac91773408a1b65cc715921b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floorSpawnerRef: {fileID: 6361499597928744671}
+  floorSpawnerRef: {fileID: 8875346372609649815}
   wallSurfacePropSets:
   - surfaceType: 0
-    standingProps: []
-    hangingProps: []
-    standingWithHangingAllowed: []
+    standingProps:
+    - {fileID: 6092706038872708450, guid: 714949deb8616cc4e8151c44615df5c3, type: 3}
+    - {fileID: 4688567580912828536, guid: 0a354939dd92a504c8d1bddb582c390e, type: 3}
+    - {fileID: 371553703245019956, guid: 313bb7a3ed6b6844a8522d6432dffc01, type: 3}
+    - {fileID: 7824500451609884839, guid: 7985f2efc84a5a640b5d0ded8614617a, type: 3}
+    - {fileID: 4227548258503597153, guid: 5306f2ff5ca638942af81cd1593c876c, type: 3}
+    - {fileID: 5210366837589952615, guid: c8f5ef29cb1db9a499007fcd99beef7c, type: 3}
+    - {fileID: 785908117160298632, guid: 107beab6ca7269746a83de74237b7066, type: 3}
+    hangingProps:
+    - {fileID: 5014265574941514652, guid: 5c8cfbfb70112d744b3c171143569deb, type: 3}
+    - {fileID: 8675578639384167832, guid: c1cd56efdd558b9478f76a5290c77262, type: 3}
+    - {fileID: 2658061141082470535, guid: fba945be10fc4eb4cb6cbfc31eeac9d9, type: 3}
+    standingWithHangingAllowed:
+    - {fileID: 7125778133165948343, guid: 5cf80e83c2dbf9e4a8d11b5347243cf4, type: 3}
+    - {fileID: 2599582590745318044, guid: c50f3b0af7deb2142bdc3cf0d3e224c1, type: 3}
+    - {fileID: 3557399600744316646, guid: 8197f076fa517674181b0e26809ffbc0, type: 3}
+    - {fileID: 8029934943841146467, guid: 0b2239a111fca1949ad27faa6a072240, type: 3}
+    - {fileID: 7477574185236790878, guid: 64343bce06d157248a96ce4295794c73, type: 3}
+    - {fileID: 7444192458501623583, guid: 8f59b7c76ee9ca64d98c2b647a5273e7, type: 3}
+    - {fileID: 5361303841911357168, guid: f9ce1ea9ce139fe46b3e152741e2e499, type: 3}
+    - {fileID: 785908117160298632, guid: 107beab6ca7269746a83de74237b7066, type: 3}
   - surfaceType: 1
-    standingProps: []
-    hangingProps: []
-    standingWithHangingAllowed: []
+    standingProps:
+    - {fileID: 8478196239469815202, guid: 7acc6a0687a2f774e91b9dc236c787cf, type: 3}
+    - {fileID: 4724843705441785705, guid: 051d990533ccac343a42758b901a8796, type: 3}
+    hangingProps:
+    - {fileID: 2825366734299052165, guid: 969effb5fc11c454ab44e416379b595a, type: 3}
+    - {fileID: 5014265574941514652, guid: 5c8cfbfb70112d744b3c171143569deb, type: 3}
+    standingWithHangingAllowed:
+    - {fileID: 3557399600744316646, guid: 8197f076fa517674181b0e26809ffbc0, type: 3}
+    - {fileID: 2599582590745318044, guid: c50f3b0af7deb2142bdc3cf0d3e224c1, type: 3}
+    - {fileID: 7477574185236790878, guid: 64343bce06d157248a96ce4295794c73, type: 3}
+    - {fileID: 7444192458501623583, guid: 8f59b7c76ee9ca64d98c2b647a5273e7, type: 3}
   - surfaceType: 2
-    standingProps: []
-    hangingProps: []
-    standingWithHangingAllowed: []
+    standingProps:
+    - {fileID: 371553703245019956, guid: 313bb7a3ed6b6844a8522d6432dffc01, type: 3}
+    - {fileID: 7824500451609884839, guid: 7985f2efc84a5a640b5d0ded8614617a, type: 3}
+    hangingProps:
+    - {fileID: 2825366734299052165, guid: 969effb5fc11c454ab44e416379b595a, type: 3}
+    - {fileID: 2658061141082470535, guid: fba945be10fc4eb4cb6cbfc31eeac9d9, type: 3}
+    - {fileID: 5014265574941514652, guid: 5c8cfbfb70112d744b3c171143569deb, type: 3}
+    standingWithHangingAllowed:
+    - {fileID: 3557399600744316646, guid: 8197f076fa517674181b0e26809ffbc0, type: 3}
+    - {fileID: 5361303841911357168, guid: f9ce1ea9ce139fe46b3e152741e2e499, type: 3}
+    - {fileID: 7477574185236790878, guid: 64343bce06d157248a96ce4295794c73, type: 3}
+    - {fileID: 7444192458501623583, guid: 8f59b7c76ee9ca64d98c2b647a5273e7, type: 3}
   - surfaceType: 3
-    standingProps: []
-    hangingProps: []
-    standingWithHangingAllowed: []
+    standingProps:
+    - {fileID: 4227548258503597153, guid: 5306f2ff5ca638942af81cd1593c876c, type: 3}
+    - {fileID: 5210366837589952615, guid: c8f5ef29cb1db9a499007fcd99beef7c, type: 3}
+    hangingProps:
+    - {fileID: 8675578639384167832, guid: c1cd56efdd558b9478f76a5290c77262, type: 3}
+    - {fileID: 2825366734299052165, guid: 969effb5fc11c454ab44e416379b595a, type: 3}
+    - {fileID: 5014265574941514652, guid: 5c8cfbfb70112d744b3c171143569deb, type: 3}
+    standingWithHangingAllowed:
+    - {fileID: 2599582590745318044, guid: c50f3b0af7deb2142bdc3cf0d3e224c1, type: 3}
+    - {fileID: 5637865864060995341, guid: f4bd56637c585b842aa1485245f3a383, type: 3}
+    - {fileID: 3557399600744316646, guid: 8197f076fa517674181b0e26809ffbc0, type: 3}
+    - {fileID: 7477574185236790878, guid: 64343bce06d157248a96ce4295794c73, type: 3}
+    - {fileID: 7444192458501623583, guid: 8f59b7c76ee9ca64d98c2b647a5273e7, type: 3}
+    - {fileID: 5361303841911357168, guid: f9ce1ea9ce139fe46b3e152741e2e499, type: 3}
   maxStandingProps: 3
   maxHangingProps: 1
   cellWidth: 1
-  cellLength: 30
+  cellLength: 25

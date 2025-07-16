@@ -25,7 +25,7 @@ public class SurfacePropSet
 
 
 [RequireComponent(typeof(BoxCollider))]
-public class FloorSpawnAreaSpawner : MonoBehaviour
+public class FloorPropSpawner : MonoBehaviour
 {
     [Header("Mo¿liwe typy przestrzeni (checklista)")]
     public List<SurfaceType> allowedSurfaceTypes;
@@ -276,9 +276,6 @@ public class FloorSpawnAreaSpawner : MonoBehaviour
                 if (gx < gridSizeX && gz < gridSizeZ)
                 {
                     grid[gx, gz] = true;
-                    Debug.DrawLine(GridToWorld(gx, gz, Vector2Int.one) + Vector3.up * 0.1f,
-                                   GridToWorld(gx, gz, Vector2Int.one) + Vector3.up * 2f,
-                                   Color.red, 10f);
                 }
             }
         }
