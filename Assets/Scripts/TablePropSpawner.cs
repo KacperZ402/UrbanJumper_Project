@@ -1,147 +1,156 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
-public enum TableType
+public class TablePropSpawner : MonoBehaviour
 {
-    CaffeTable,
-    Desk,
-    Reception,
-    ConferenceTable
-}
+    public enum TableType { CaffeTable, Desk, Reception, Conference }
 
-public class PropSpawner : MonoBehaviour
-{
+    [Header("General Settings")]
     public TableType tableType;
-    public bool useOwnBoxCollider = true;
-    public bool allowRepeatingProps = false;
+    public bool allowDuplicateProps = true;
+    public bool allowSpawnOnFullSurface = true;
+    public float minDistanceBetweenProps = 0.5f;
+    public int maxAttemptsPerProp = 100;
+    public int propCount = 10;
 
+    [Header("Prop Lists")]
     public List<GameObject> randomProps;
-    public List<GameObject> fixedProps;
+    public List<Transform> staticPropPoints;
+    public List<GameObject> staticProps;
 
-    public List<Transform> fixedPropSpawnPoints; // Sta³e pozycje
-    public List<BoxCollider> customSpawnAreas;   // Dla biurek, recepcji itp.
+    [Header("Spawn Areas")]
+    public List<BoxCollider> spawnAreas;
+    public BoxCollider ownCollider;
 
-    public int maxSpawnAttempts = 10;
+    private List<Vector3> spawnedPositions = new List<Vector3>();
 
-    private BoxCollider ownBoxCollider;
-
-    void Start()
+    private void Start()
     {
-        ownBoxCollider = GetComponent<BoxCollider>();
-        SpawnFixedProps();
+        SpawnStaticProps();
         SpawnRandomProps();
     }
 
-    void SpawnFixedProps()
+    void SpawnStaticProps()
     {
-        for (int i = 0; i < Mathf.Min(fixedProps.Count, fixedPropSpawnPoints.Count); i++)
+        for (int i = 0; i < staticPropPoints.Count; i++)
         {
-            var prefab = fixedProps[i];
-            var point = fixedPropSpawnPoints[i];
-            GameObject spawned = Instantiate(prefab, point.position, point.rotation, transform);
-            spawned.transform.localRotation = point.localRotation;
+            if (i < staticProps.Count && staticProps[i] != null && staticPropPoints[i] != null)
+            {
+                GameObject obj = Instantiate(staticProps[i], staticPropPoints[i].position, staticPropPoints[i].rotation);
+                obj.transform.parent = this.transform;
+                spawnedPositions.Add(staticPropPoints[i].position);
+            }
         }
     }
+
 
     void SpawnRandomProps()
     {
-        List<Vector3> occupiedPositions = new List<Vector3>();
-        List<GameObject> usedPrefabs = new List<GameObject>();
-
-        int spawnCount = randomProps.Count;
-
-        for (int i = 0; i < spawnCount; i++)
+        for (int i = 0; i < propCount; i++)
         {
-            GameObject prefab = randomProps[i];
-
-            if (!allowRepeatingProps && usedPrefabs.Contains(prefab)) continue;
-
+            int attempts = 0;
             bool spawned = false;
 
-            for (int attempt = 0; attempt < maxSpawnAttempts; attempt++)
+            while (attempts < maxAttemptsPerProp && !spawned)
             {
-                Vector3 spawnPos = Vector3.zero;
-
-                switch (tableType)
+                Vector3 candidatePos = GetRandomSpawnPosition();
+                if (IsPositionValid(candidatePos))
                 {
-                    case TableType.CaffeTable:
-                        spawnPos = GetRandomPointInCircle(ownBoxCollider);
-                        break;
-
-                    case TableType.Desk:
-                    case TableType.Reception:
-                    case TableType.ConferenceTable:
-                        spawnPos = GetRandomPointInAreas();
-                        break;
-                }
-
-                if (!IsOverlapping(spawnPos, prefab))
-                {
-                    Quaternion randomRot = Quaternion.Euler(0, Random.Range(0, 360), 0);
-                    GameObject spawnedObj = Instantiate(prefab, spawnPos, randomRot, transform);
-                    occupiedPositions.Add(spawnPos);
-                    usedPrefabs.Add(prefab);
+                    GameObject prefab = GetRandomProp();
+                    GameObject obj = Instantiate(prefab, candidatePos, Quaternion.Euler(0, Random.Range(0f, 360f), 0));
+                    obj.transform.parent = this.transform;
+                    spawnedPositions.Add(candidatePos);
                     spawned = true;
-                    break;
                 }
-            }
-
-            if (!spawned)
-            {
-                Debug.LogWarning($"Could not spawn prop '{prefab.name}' after {maxSpawnAttempts} attempts.");
+                attempts++;
             }
         }
     }
 
-    Vector3 GetRandomPointInCircle(BoxCollider col)
-    {
-        Vector3 center = col.bounds.center;
-        float radius = Mathf.Min(col.bounds.extents.x, col.bounds.extents.z) - 1f; // Margines 1 jednostki
+    private List<GameObject> availablePrefabs = new List<GameObject>();
 
-        for (int i = 0; i < maxSpawnAttempts; i++)
+    private GameObject GetRandomProp()
+    {
+        if (allowDuplicateProps)
         {
-            Vector2 rand = Random.insideUnitCircle * radius;
-            Vector3 point = new Vector3(center.x + rand.x, center.y + col.bounds.extents.y, center.z + rand.y);
-
-            if (Physics.Raycast(point + Vector3.up * 2, Vector3.down, out RaycastHit hit, 4f))
-            {
-                return hit.point;
-            }
+            return randomProps[Random.Range(0, randomProps.Count)];
         }
-
-        return center;
-    }
-
-    Vector3 GetRandomPointInAreas()
-    {
-        List<BoxCollider> areas = useOwnBoxCollider ? new List<BoxCollider> { ownBoxCollider } : customSpawnAreas;
-        if (areas.Count == 0) return transform.position;
-
-        BoxCollider area = areas[Random.Range(0, areas.Count)];
-
-        Vector3 min = area.bounds.min;
-        Vector3 max = area.bounds.max;
-
-        Vector3 point = new Vector3(
-            Random.Range(min.x, max.x),
-            max.y,
-            Random.Range(min.z, max.z)
-        );
-
-        return point;
-    }
-
-    bool IsOverlapping(Vector3 position, GameObject prefab)
-    {
-        float radius = 0.3f; // Szacowany promieñ obiektu
-        Collider[] colliders = Physics.OverlapSphere(position, radius);
-
-        foreach (var col in colliders)
+        else
         {
-            if (col.gameObject.transform.IsChildOf(this.transform))
-                return true;
+            if (availablePrefabs.Count == 0)
+            {
+                // Skopiuj oryginaln¹ listê losowych propów do u¿ycia bez duplikatów
+                availablePrefabs = new List<GameObject>(randomProps);
+            }
+
+            int index = Random.Range(0, availablePrefabs.Count);
+            GameObject chosen = availablePrefabs[index];
+            availablePrefabs.RemoveAt(index); // Usuwamy, ¿eby nie wypad³ drugi raz
+            return chosen;
+        }
+    }
+
+    Vector3 GetRandomSpawnPosition()
+    {
+        switch (tableType)
+        {
+            case TableType.CaffeTable:
+                return GetRandomPointInCircle();
+            case TableType.Desk:
+            case TableType.Reception:
+            case TableType.Conference:
+                return GetRandomPointInBoxes();
+            default:
+                return transform.position;
+        }
+    }
+    Vector3 GetRandomPointInCircle()
+    {
+        Vector3 center = ownCollider.bounds.center;
+        float radius = Mathf.Min(ownCollider.bounds.extents.x, ownCollider.bounds.extents.z) - 1f; // margines
+        Vector2 point2D = Random.insideUnitCircle * radius;
+        float y = ownCollider.bounds.max.y;
+        return new Vector3(center.x + point2D.x, y, center.z + point2D.y);
+    }
+
+    Vector3 GetRandomPointInBoxes()
+    {
+        if (!allowSpawnOnFullSurface || spawnAreas.Count == 0)
+        {
+            return GetRandomPointOnOwnCollider();
         }
 
-        return false;
+        BoxCollider area = spawnAreas[Random.Range(0, spawnAreas.Count)];
+        Bounds bounds = area.bounds;
+
+        float x = Random.Range(bounds.min.x, bounds.max.x);
+        float z = Random.Range(bounds.min.z, bounds.max.z);
+        float y = bounds.max.y;
+
+        return new Vector3(x, y, z);
+    }
+
+    Vector3 GetRandomPointOnOwnCollider()
+    {
+        if (ownCollider == null) return transform.position;
+
+        Bounds bounds = ownCollider.bounds;
+
+        float x = Random.Range(bounds.min.x, bounds.max.x);
+        float z = Random.Range(bounds.min.z, bounds.max.z);
+        float y = bounds.max.y;
+
+        return new Vector3(x, y, z);
+    }
+
+    bool IsPositionValid(Vector3 candidate)
+    {
+        foreach (Vector3 pos in spawnedPositions)
+        {
+            float dist = Vector2.Distance(new Vector2(candidate.x, candidate.z), new Vector2(pos.x, pos.z));
+            if (dist < minDistanceBetweenProps)
+                return false;
+        }
+        return true;
     }
 }

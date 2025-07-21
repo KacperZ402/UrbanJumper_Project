@@ -256,20 +256,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: babda978807e55b4ebf2abb058914506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tableType: 3
-  fixedPropPoints: []
-  fixedProps: []
+  tableType: 0
+  allowDuplicateProps: 1
+  allowSpawnOnFullSurface: 1
+  minDistanceBetweenProps: 2
+  maxAttemptsPerProp: 2
+  propCount: 5
   randomProps:
   - {fileID: 6968855280722684027, guid: b380daaaae611624cb4c2534261291dd, type: 3}
   - {fileID: 8938438171942220769, guid: ad87baa96049e6644a548fe6abf92809, type: 3}
   - {fileID: 9121763343966210386, guid: 07fdf7c532d9643439135fa7cfe1d13b, type: 3}
   - {fileID: 1396623074937728873, guid: 5b8b6ac61f231c440b72c39ae9c9039c, type: 3}
-  boxColliders: []
-  allowRandomSpawnOnSurface: 1
-  minRandomProps: 2
-  maxRandomProps: 5
-  surfaceOffset: 0
-  caffeTableMargin: 1
+  staticPropPoints: []
+  staticProps: []
+  spawnAreas: []
+  ownCollider: {fileID: 7092604796637594266}
 --- !u!23 &2774657888813390849
 MeshRenderer:
   m_ObjectHideFlags: 0

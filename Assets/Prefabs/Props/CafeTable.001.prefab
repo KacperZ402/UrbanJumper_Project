@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 4445987524752046284}
   - component: {fileID: 7134383001944323258}
   - component: {fileID: -6558268052552701683}
+  - component: {fileID: 7574588399999564732}
   m_Layer: 6
   m_Name: CafeTable.001
   m_TagString: PropsFirts
@@ -307,3 +308,32 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 9.682585, y: 6.5135145, z: 9.682586}
   m_Center: {x: 0.0000026226044, y: 3.4020987, z: -0.0000014305115}
+--- !u!114 &7574588399999564732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6563589884813263465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: babda978807e55b4ebf2abb058914506, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tableType: 0
+  allowDuplicateProps: 1
+  allowSpawnOnFullSurface: 1
+  minDistanceBetweenProps: 2
+  maxAttemptsPerProp: 2
+  propCount: 5
+  randomProps:
+  - {fileID: 6968855280722684027, guid: b380daaaae611624cb4c2534261291dd, type: 3}
+  - {fileID: 8938438171942220769, guid: ad87baa96049e6644a548fe6abf92809, type: 3}
+  - {fileID: 9121763343966210386, guid: 07fdf7c532d9643439135fa7cfe1d13b, type: 3}
+  - {fileID: 1396623074937728873, guid: 5b8b6ac61f231c440b72c39ae9c9039c, type: 3}
+  - {fileID: 2260623764155776367, guid: e5a08604969d8504ca986a9a22aaf4f1, type: 3}
+  - {fileID: 4305957717452238726, guid: 566fb8b3b877d5243a2d083373fdebd3, type: 3}
+  staticPropPoints: []
+  staticProps: []
+  spawnAreas: []
+  ownCollider: {fileID: -6558268052552701683}
