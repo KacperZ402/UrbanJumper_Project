@@ -47,10 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 0, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &3414754884660595745
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -119,10 +115,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 0, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &3915405300305255251
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -191,10 +183,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 0, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &5565874491314771913
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -263,10 +251,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 0, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &2394275078480827883
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -335,10 +319,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 180, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &3783033868683705044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -407,10 +387,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 0, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &9021054756535965023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -479,10 +455,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 0, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &5843073491277752584
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -551,10 +523,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 0, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &1516614179493528120
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -623,10 +591,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 180, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &1715053721705121552
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -695,10 +659,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 180, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &3056834482031136820
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -767,10 +727,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 180, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &7408508186658031469
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -839,10 +795,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 0, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &6427632890101132917
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -911,10 +863,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 180, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &2040543999646594094
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -983,10 +931,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 0, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &2680312013668662441
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1055,10 +999,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 0, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &8987354356167527773
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1127,10 +1067,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 180, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &9144319839446773757
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1199,10 +1135,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 180, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &4670562616267408019
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1271,10 +1203,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 180, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &5870014692615025001
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1343,10 +1271,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 0, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &5854454272191316115
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1415,10 +1339,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 180, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &2662319992104660438
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1452,7 +1372,6 @@ GameObject:
   - component: {fileID: 5486686716354068117}
   - component: {fileID: 5798991707713250300}
   - component: {fileID: 3267421522962917368}
-  - component: {fileID: -2856889824351709469}
   m_Layer: 6
   m_Name: ConfTable
   m_TagString: PropsFirts
@@ -1575,33 +1494,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6465536171120964589, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
---- !u!54 &-2856889824351709469
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5260612243443887680}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 0
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &5726456370108576654
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,10 +1541,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 180, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &5347711742570553271
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1721,10 +1609,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 180, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &4372923540145402229
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1793,10 +1677,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 180, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &5262566132226045355
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1865,10 +1745,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 0, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &5510899863845551593
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1937,10 +1813,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 180, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &5281542658251449586
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2009,10 +1881,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 180, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &6775989219547499952
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2081,10 +1949,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 0, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &992286479848196053
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2153,10 +2017,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chairPrefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
-  customRotation: {x: 0, y: 0, z: 0}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!65 &4698435109554237130
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 4135092679817126306}
   - component: {fileID: 5010947526280700242}
   - component: {fileID: -379836197188300111}
-  - component: {fileID: -827737765198215845}
   m_Layer: 7
   m_Name: OrganizerPapier
   m_TagString: PropsSecond
@@ -191,33 +190,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.8424382, y: 1.7991917, z: 2.797054}
   m_Center: {x: 0, y: 0.84162414, z: 0}
---- !u!54 &-827737765198215845
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3228408498422603129}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 0
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &8304536481789972570
 GameObject:
   m_ObjectHideFlags: 0

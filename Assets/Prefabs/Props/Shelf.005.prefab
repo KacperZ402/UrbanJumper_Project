@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 186215343659357513}
   - component: {fileID: 4055404007085054763}
   - component: {fileID: 1276038720442468438}
-  - component: {fileID: 2224715853553295099}
   m_Layer: 6
   m_Name: Shelf.005
   m_TagString: PropsFirts
@@ -106,33 +105,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.9957595, y: 8.269346, z: 10.652385}
   m_Center: {x: 0.21856827, y: 1.0506362, z: -0.11934757}
---- !u!54 &2224715853553295099
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4690978625097216527}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 0
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &8675578639384167832
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +114,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2898752190235773068}
-  - component: {fileID: 7500327598695437737}
   m_Layer: 6
   m_Name: Shelf.005
   m_TagString: PropsFirts
@@ -166,11 +137,3 @@ Transform:
   - {fileID: 2839987839144373290}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7500327598695437737
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8675578639384167832}
-  m_Mesh: {fileID: 8797021024678828191, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}

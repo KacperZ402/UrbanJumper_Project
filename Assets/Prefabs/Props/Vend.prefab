@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2036683013948284446}
   - component: {fileID: 2170933376476554866}
   - component: {fileID: 6750444418882962859}
-  - component: {fileID: 7210709069579182199}
   m_Layer: 6
   m_Name: Vend
   m_TagString: PropsFirts
@@ -107,33 +106,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8.813854, y: 21.175142, z: 12.659142}
   m_Center: {x: -0.3241248, y: 10.834443, z: 0.32881808}
---- !u!54 &7210709069579182199
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3936882318964705670}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 0
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &4724843705441785705
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +115,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1647700897454895169}
-  - component: {fileID: 5874132627270003590}
   m_Layer: 6
   m_Name: Vend
   m_TagString: PropsFirts
@@ -167,11 +138,3 @@ Transform:
   - {fileID: 969301796796232781}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5874132627270003590
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4724843705441785705}
-  m_Mesh: {fileID: 6006761603033226029, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}

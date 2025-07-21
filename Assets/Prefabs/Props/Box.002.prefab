@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4601979392689450216}
   - component: {fileID: 3848897167428129686}
   - component: {fileID: 765270832487345939}
-  - component: {fileID: 1933119340239254051}
   m_Layer: 7
   m_Name: Box.002
   m_TagString: PropsSecond
@@ -106,33 +105,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.032101, y: 2.0046313, z: 3.0201485}
   m_Center: {x: -0.0059762, y: 1.0023149, z: 0}
---- !u!54 &1933119340239254051
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 409522676810955329}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 0
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &4905703018966961456
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +114,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7146751386248720323}
-  - component: {fileID: 3161935949799609471}
   m_Layer: 7
   m_Name: Box.002
   m_TagString: PropsSecond
@@ -166,11 +137,3 @@ Transform:
   - {fileID: 2490621366258379684}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3161935949799609471
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4905703018966961456}
-  m_Mesh: {fileID: 8598599596271745766, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}

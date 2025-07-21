@@ -9,10 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7113360799644004824}
-  - component: {fileID: 1760537654759175784}
-  - component: {fileID: 732335482689245521}
-  - component: {fileID: -8079335546478973131}
-  - component: {fileID: 533879033263452475}
   m_Layer: 7
   m_Name: spoon
   m_TagString: PropsSecond
@@ -28,28 +24,63 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396623074937728873}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.007736161, y: -0.00047406735, z: -0.000060243136, w: 0.99996996}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1451676531707168044}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1760537654759175784
+  m_LocalEulerAnglesHint: {x: -0.887, y: -0.054, z: -0.006}
+--- !u!1 &7182748311385789598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1451676531707168044}
+  - component: {fileID: 6047596519313626425}
+  - component: {fileID: 1813077608989354582}
+  - component: {fileID: 744226953889194006}
+  m_Layer: 7
+  m_Name: spoon
+  m_TagString: PropsSecond
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1451676531707168044
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7182748311385789598}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.010055834, y: 0.0019110305, z: 0.000067798435, w: 0.99994767}
+  m_LocalPosition: {x: -0, y: 0.045, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7113360799644004824}
+  m_LocalEulerAnglesHint: {x: -1.152, y: 0.219, z: 0.006}
+--- !u!33 &6047596519313626425
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1396623074937728873}
+  m_GameObject: {fileID: 7182748311385789598}
   m_Mesh: {fileID: -760733123537448851, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
---- !u!23 &732335482689245521
+--- !u!23 &1813077608989354582
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1396623074937728873}
+  m_GameObject: {fileID: 7182748311385789598}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -85,13 +116,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &-8079335546478973131
+--- !u!65 &744226953889194006
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1396623074937728873}
+  m_GameObject: {fileID: 7182748311385789598}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -106,30 +137,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.32907188, y: 0.06985709, z: 1.452554}
   m_Center: {x: 0.000036276877, y: -0.0069696074, z: -0.09955627}
---- !u!54 &533879033263452475
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1396623074937728873}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 0
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 0

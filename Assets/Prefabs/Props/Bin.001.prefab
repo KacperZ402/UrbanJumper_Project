@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1033023702252863231}
-  - component: {fileID: 4136700743607601195}
   m_Layer: 6
   m_Name: Bin.001
   m_TagString: PropsFirts
@@ -33,14 +32,6 @@ Transform:
   - {fileID: 7274818017611788795}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4136700743607601195
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2599582590745318044}
-  m_Mesh: {fileID: -8726794604774076738, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
 --- !u!1 &4918750748953536739
 GameObject:
   m_ObjectHideFlags: 0

@@ -48,9 +48,6 @@ MonoBehaviour:
   - {fileID: 1032902127296263103, guid: 9c91223e5f17d7741b641fa28894ce3a, type: 3}
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   - {fileID: 2187849760024080149, guid: 1e68b8c40c9133743b2ce5214fe68cbf, type: 3}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!1 &5995609934023705727
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,7 +60,6 @@ GameObject:
   - component: {fileID: 4225978861861232885}
   - component: {fileID: 6975369551005225585}
   - component: {fileID: 146856172997297512}
-  - component: {fileID: 8236693078934228326}
   m_Layer: 6
   m_Name: Receipt
   m_TagString: PropsFirts
@@ -159,30 +155,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 32.627357, y: 11.699233, z: 8.264649}
   m_Center: {x: 0.2894144, y: 5.8502135, z: 0.022242546}
---- !u!54 &8236693078934228326
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5995609934023705727}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 0
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 0

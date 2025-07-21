@@ -50,9 +50,6 @@ MonoBehaviour:
   - {fileID: 4589359426962682831, guid: e3285efeae0d9ad4d8ab1f74300bf2d9, type: 3}
   - {fileID: 7146157161883085742, guid: 27ca389b3ade98847b6d6e0d66af3ca8, type: 3}
   - {fileID: 1739964271291660402, guid: a36ba3bd4ba87964289dfc852eda6e08, type: 3}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!1 &5225549125634731658
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,9 +99,6 @@ MonoBehaviour:
   - {fileID: 1765458134263293812, guid: 40eaf0ebc1e5486449c6103bc6aee407, type: 3}
   - {fileID: 4589359426962682831, guid: e3285efeae0d9ad4d8ab1f74300bf2d9, type: 3}
   - {fileID: 7146157161883085742, guid: 27ca389b3ade98847b6d6e0d66af3ca8, type: 3}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!1 &5409208123286196890
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,9 +148,6 @@ MonoBehaviour:
   - {fileID: 1765458134263293812, guid: 40eaf0ebc1e5486449c6103bc6aee407, type: 3}
   - {fileID: 4589359426962682831, guid: e3285efeae0d9ad4d8ab1f74300bf2d9, type: 3}
   - {fileID: 7146157161883085742, guid: 27ca389b3ade98847b6d6e0d66af3ca8, type: 3}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!1 &8395443704768640959
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,9 +197,6 @@ MonoBehaviour:
   - {fileID: 1765458134263293812, guid: 40eaf0ebc1e5486449c6103bc6aee407, type: 3}
   - {fileID: 4589359426962682831, guid: e3285efeae0d9ad4d8ab1f74300bf2d9, type: 3}
   - {fileID: 7146157161883085742, guid: 27ca389b3ade98847b6d6e0d66af3ca8, type: 3}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!1 &8670931874831189448
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,9 +207,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5977319264329515398}
   - component: {fileID: 8162399319901397898}
+  - component: {fileID: 7469102558184810331}
   - component: {fileID: 2774657888813390849}
-  - component: {fileID: 8027337228742419178}
-  - component: {fileID: 838263811465659572}
+  - component: {fileID: 7092604796637594266}
   m_Layer: 6
   m_Name: CafeTable
   m_TagString: PropsFirts
@@ -256,6 +244,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8670931874831189448}
   m_Mesh: {fileID: -6282702796060368658, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+--- !u!114 &7469102558184810331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8670931874831189448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: babda978807e55b4ebf2abb058914506, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tableType: 3
+  fixedPropPoints: []
+  fixedProps: []
+  randomProps:
+  - {fileID: 6968855280722684027, guid: b380daaaae611624cb4c2534261291dd, type: 3}
+  - {fileID: 8938438171942220769, guid: ad87baa96049e6644a548fe6abf92809, type: 3}
+  - {fileID: 9121763343966210386, guid: 07fdf7c532d9643439135fa7cfe1d13b, type: 3}
+  - {fileID: 1396623074937728873, guid: 5b8b6ac61f231c440b72c39ae9c9039c, type: 3}
+  boxColliders: []
+  allowRandomSpawnOnSurface: 1
+  minRandomProps: 2
+  maxRandomProps: 5
+  surfaceOffset: 0
+  caffeTableMargin: 1
 --- !u!23 &2774657888813390849
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -298,7 +312,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8027337228742419178
+--- !u!65 &7092604796637594266
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -319,30 +333,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 12.035066, y: 6.869053, z: 12.035066}
   m_Center: {x: 0, y: 3.4301043, z: 0}
---- !u!54 &838263811465659572
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8670931874831189448}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 0
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 0

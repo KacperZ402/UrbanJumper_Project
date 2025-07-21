@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7632457550731711642}
   - component: {fileID: 3977996916300972708}
   - component: {fileID: 5699538874162127189}
-  - component: {fileID: 840098533116493785}
   m_Layer: 7
   m_Name: Plant.002
   m_TagString: PropsSecond
@@ -107,33 +106,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.9030912, y: 6.0532603, z: 4.4959383}
   m_Center: {x: 0.66060984, y: 5.624319, z: 0.04891181}
---- !u!54 &840098533116493785
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4617102065263317577}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 0
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &8434599204828852530
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +115,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7710149177368685831}
-  - component: {fileID: 4214227936763495335}
   m_Layer: 7
   m_Name: Plant.002
   m_TagString: PropsSecond
@@ -167,11 +138,3 @@ Transform:
   - {fileID: 6659461312127422885}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4214227936763495335
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8434599204828852530}
-  m_Mesh: {fileID: 1076494578495454512, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}

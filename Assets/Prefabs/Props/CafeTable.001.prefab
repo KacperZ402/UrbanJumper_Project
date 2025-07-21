@@ -49,9 +49,6 @@ MonoBehaviour:
   - {fileID: 1765458134263293812, guid: 40eaf0ebc1e5486449c6103bc6aee407, type: 3}
   - {fileID: 4589359426962682831, guid: e3285efeae0d9ad4d8ab1f74300bf2d9, type: 3}
   - {fileID: 7146157161883085742, guid: 27ca389b3ade98847b6d6e0d66af3ca8, type: 3}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!1 &3257509533690607366
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,9 +98,6 @@ MonoBehaviour:
   - {fileID: 1765458134263293812, guid: 40eaf0ebc1e5486449c6103bc6aee407, type: 3}
   - {fileID: 4589359426962682831, guid: e3285efeae0d9ad4d8ab1f74300bf2d9, type: 3}
   - {fileID: 7146157161883085742, guid: 27ca389b3ade98847b6d6e0d66af3ca8, type: 3}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!1 &4166608591133277653
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,9 +148,6 @@ MonoBehaviour:
   - {fileID: 4589359426962682831, guid: e3285efeae0d9ad4d8ab1f74300bf2d9, type: 3}
   - {fileID: 7146157161883085742, guid: 27ca389b3ade98847b6d6e0d66af3ca8, type: 3}
   - {fileID: 1739964271291660402, guid: a36ba3bd4ba87964289dfc852eda6e08, type: 3}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!1 &5416262828878117660
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,9 +197,6 @@ MonoBehaviour:
   - {fileID: 1765458134263293812, guid: 40eaf0ebc1e5486449c6103bc6aee407, type: 3}
   - {fileID: 4589359426962682831, guid: e3285efeae0d9ad4d8ab1f74300bf2d9, type: 3}
   - {fileID: 7146157161883085742, guid: 27ca389b3ade98847b6d6e0d66af3ca8, type: 3}
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 200
 --- !u!1 &6563589884813263465
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +209,6 @@ GameObject:
   - component: {fileID: 4445987524752046284}
   - component: {fileID: 7134383001944323258}
   - component: {fileID: -6558268052552701683}
-  - component: {fileID: 7082194037468537314}
   m_Layer: 6
   m_Name: CafeTable.001
   m_TagString: PropsFirts
@@ -320,30 +307,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 9.682585, y: 6.5135145, z: 9.682586}
   m_Center: {x: 0.0000026226044, y: 3.4020987, z: -0.0000014305115}
---- !u!54 &7082194037468537314
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6563589884813263465}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 0
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 0

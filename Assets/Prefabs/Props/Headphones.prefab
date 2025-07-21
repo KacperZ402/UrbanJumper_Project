@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4070877373635861176}
   - component: {fileID: 6357078916583083360}
   - component: {fileID: -506449343222212946}
-  - component: {fileID: 4706679014792068110}
   m_Layer: 7
   m_Name: Headphones
   m_TagString: PropsSecond
@@ -107,30 +106,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.5164484, y: 0.7245069, z: 1.6325997}
   m_Center: {x: -0.42101866, y: 0.024001598, z: 0.0008904338}
---- !u!54 &4706679014792068110
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5133079190399683644}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 0
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 0

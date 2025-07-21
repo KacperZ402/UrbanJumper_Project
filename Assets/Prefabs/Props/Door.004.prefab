@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2660666718564016559}
-  - component: {fileID: 6613639928440675725}
   m_Layer: 6
   m_Name: Door.004
   m_TagString: PropsFirts
@@ -33,14 +32,6 @@ Transform:
   - {fileID: 5152309806315483904}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6613639928440675725
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2934754657304379234}
-  m_Mesh: {fileID: -5580382859956264437, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
 --- !u!1 &5108549475479935356
 GameObject:
   m_ObjectHideFlags: 0
@@ -52,7 +43,6 @@ GameObject:
   - component: {fileID: 5152309806315483904}
   - component: {fileID: 7894024743363426266}
   - component: {fileID: 5108113621424683945}
-  - component: {fileID: 5872224327130633723}
   - component: {fileID: 2300607852570378624}
   m_Layer: 6
   m_Name: Door.004
@@ -127,27 +117,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5872224327130633723
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5108549475479935356}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.3054824, y: 21.3223, z: 12.216981}
-  m_Center: {x: -1.1533422, y: 10.631386, z: 0.12907887}
 --- !u!54 &2300607852570378624
 Rigidbody:
   m_ObjectHideFlags: 0

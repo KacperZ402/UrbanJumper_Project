@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3556144720880686993}
   - component: {fileID: 4352272504030244553}
   - component: {fileID: 7142387496640628339}
-  - component: {fileID: -8423155212631173631}
   m_Layer: 7
   m_Name: Laptop
   m_TagString: PropsSecond
@@ -107,30 +106,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.4212036, y: 3.0421467, z: 4.891039}
   m_Center: {x: 0.2738173, y: 1.5222218, z: -0.0015801191}
---- !u!54 &-8423155212631173631
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8581063576903747485}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 0
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 0
