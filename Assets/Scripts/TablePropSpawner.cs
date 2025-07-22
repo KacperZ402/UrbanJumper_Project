@@ -32,13 +32,27 @@ public class TablePropSpawner : MonoBehaviour
 
     void SpawnStaticProps()
     {
-        for (int i = 0; i < staticPropPoints.Count; i++)
+        List<int> indices = new List<int>();
+        for (int i = 0; i < Mathf.Min(staticPropPoints.Count, staticProps.Count); i++)
+            indices.Add(i);
+
+        Shuffle(indices);
+
+        foreach (int i in indices)
         {
-            if (i < staticProps.Count && staticProps[i] != null && staticPropPoints[i] != null)
+            Transform point = staticPropPoints[i];
+            GameObject prefab = staticProps[i];
+
+            if (point != null && prefab != null)
             {
-                GameObject obj = Instantiate(staticProps[i], staticPropPoints[i].position, staticPropPoints[i].rotation);
+                // Tylko sprawdzamy czy ktoœ ju¿ siê nie zrespi³ dok³adnie tutaj
+                if (spawnedPositions.Contains(point.position))
+                    continue;
+
+                GameObject obj = Instantiate(prefab, point.position, point.rotation);
                 obj.transform.parent = this.transform;
-                spawnedPositions.Add(staticPropPoints[i].position);
+
+                spawnedPositions.Add(point.position);
             }
         }
     }
@@ -152,5 +166,15 @@ public class TablePropSpawner : MonoBehaviour
                 return false;
         }
         return true;
+    }
+    void Shuffle<T>(List<T> list)
+    {
+        for (int i = 0; i < list.Count; i++)
+        {
+            int rnd = Random.Range(i, list.Count);
+            T temp = list[i];
+            list[i] = list[rnd];
+            list[rnd] = temp;
+        }
     }
 }
