@@ -45,7 +45,6 @@ public class TablePropSpawner : MonoBehaviour
 
             if (point != null && prefab != null)
             {
-                // Tylko sprawdzamy czy ktoœ ju¿ siê nie zrespi³ dok³adnie tutaj
                 if (spawnedPositions.Contains(point.position))
                     continue;
 
@@ -93,13 +92,12 @@ public class TablePropSpawner : MonoBehaviour
         {
             if (availablePrefabs.Count == 0)
             {
-                // Skopiuj oryginaln¹ listê losowych propów do u¿ycia bez duplikatów
                 availablePrefabs = new List<GameObject>(randomProps);
             }
 
             int index = Random.Range(0, availablePrefabs.Count);
             GameObject chosen = availablePrefabs[index];
-            availablePrefabs.RemoveAt(index); // Usuwamy, ¿eby nie wypad³ drugi raz
+            availablePrefabs.RemoveAt(index);
             return chosen;
         }
     }

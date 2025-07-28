@@ -192,7 +192,6 @@ public class FloorPropSpawner : MonoBehaviour
 
     void TryPlaceProp(GameObject prefab, bool isMainProp)
     {
-        // uproszczone - nie powielamy PlaceProp
         bool forceSpawn = prefab.name.ToLower().Contains("meetingroomtable") || isMainProp;
         PlaceProp(prefab, forceSpawn);
     }
@@ -250,7 +249,6 @@ public class FloorPropSpawner : MonoBehaviour
                 if (gx >= gridSizeX || gz >= gridSizeZ || grid[gx, gz])
                     return false;
 
-                // SprawdŸ kolizjê z blockerami
                 Vector3 worldPos = GridToWorld(gx, gz, Vector2Int.one);
                 Bounds cellBounds = new Bounds(worldPos, new Vector3(cellSize, 1f, cellSize));
 
@@ -296,8 +294,6 @@ public class FloorPropSpawner : MonoBehaviour
             if (key.Contains(pair.Key))
                 return pair.Value;
         }
-
-        // default size jeœli brak dopasowania
         return new Vector2Int(3, 3);
     }
 }
