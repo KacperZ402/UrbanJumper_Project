@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 1032902127296263103, guid: 9c91223e5f17d7741b641fa28894ce3a, type: 3}
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   - {fileID: 2187849760024080149, guid: 1e68b8c40c9133743b2ce5214fe68cbf, type: 3}

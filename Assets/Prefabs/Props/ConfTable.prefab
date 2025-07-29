@@ -45,8 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &3414754884660595745
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -113,8 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &3915405300305255251
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -181,8 +183,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &5565874491314771913
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -249,8 +252,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &2394275078480827883
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -317,8 +321,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &3783033868683705044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -385,8 +390,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &9021054756535965023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -453,8 +459,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &5843073491277752584
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -521,8 +528,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &1516614179493528120
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -589,8 +597,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &1715053721705121552
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -657,8 +666,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &3056834482031136820
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -725,8 +735,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &7408508186658031469
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -793,8 +804,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &6427632890101132917
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -861,8 +873,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &2040543999646594094
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -929,8 +942,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &2680312013668662441
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -997,8 +1011,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &8987354356167527773
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1065,8 +1080,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &9144319839446773757
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1133,8 +1149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &4670562616267408019
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1201,8 +1218,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &5870014692615025001
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1269,8 +1287,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &5854454272191316115
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1337,8 +1356,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &2662319992104660438
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1539,8 +1559,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &5347711742570553271
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1607,8 +1628,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &4372923540145402229
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1675,8 +1697,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &5262566132226045355
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1743,8 +1766,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &5510899863845551593
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1811,8 +1835,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &5281542658251449586
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1879,8 +1904,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &6775989219547499952
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1947,8 +1973,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &992286479848196053
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2015,8 +2042,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chairPrefabs:
+  prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
+  spawnChance: 1
 --- !u!65 &4698435109554237130
 BoxCollider:
   m_ObjectHideFlags: 0
