@@ -593,7 +593,7 @@ Transform:
   m_GameObject: {fileID: 2295401933671264509}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -63.4, y: 2, z: 194.4}
+  m_LocalPosition: {x: -63.4, y: 2, z: 199.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -618,7 +618,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 90, y: 0, z: 320}
+  m_Size: {x: 90, y: 0, z: 360}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4383404879755171900
 MonoBehaviour:
@@ -643,9 +643,6 @@ MonoBehaviour:
       - {fileID: 5282033231866243942, guid: 9ca6893dbb0aeb443b19b0dcea474658, type: 3}
       - {fileID: 8262014439473995349, guid: 891d0b286a0b29c449f7f0af6a772b4e, type: 3}
       - {fileID: 9129496826926903157, guid: c059c8b9fa296b440b046dec514700e8, type: 3}
-    - groupName: WhiteBoard
-      props:
-      - {fileID: 3087168174272633846, guid: 14c5e04b7ded36a499ab1db519987a38, type: 3}
     - groupName: Printers
       props:
       - {fileID: 1161818504832517932, guid: 70bcefebfff434b469c84eae7de41133, type: 3}

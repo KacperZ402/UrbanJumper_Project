@@ -477,9 +477,6 @@ MonoBehaviour:
       - {fileID: 5282033231866243942, guid: 9ca6893dbb0aeb443b19b0dcea474658, type: 3}
       - {fileID: 8262014439473995349, guid: 891d0b286a0b29c449f7f0af6a772b4e, type: 3}
       - {fileID: 9129496826926903157, guid: c059c8b9fa296b440b046dec514700e8, type: 3}
-    - groupName: WhiteBoard
-      props:
-      - {fileID: 3087168174272633846, guid: 14c5e04b7ded36a499ab1db519987a38, type: 3}
     - groupName: Printers
       props:
       - {fileID: 1161818504832517932, guid: 70bcefebfff434b469c84eae7de41133, type: 3}
@@ -1456,9 +1453,6 @@ MonoBehaviour:
       - {fileID: 5282033231866243942, guid: 9ca6893dbb0aeb443b19b0dcea474658, type: 3}
       - {fileID: 8262014439473995349, guid: 891d0b286a0b29c449f7f0af6a772b4e, type: 3}
       - {fileID: 9129496826926903157, guid: c059c8b9fa296b440b046dec514700e8, type: 3}
-    - groupName: WhiteBoard
-      props:
-      - {fileID: 3087168174272633846, guid: 14c5e04b7ded36a499ab1db519987a38, type: 3}
     - groupName: Printers
       props:
       - {fileID: 1161818504832517932, guid: 70bcefebfff434b469c84eae7de41133, type: 3}
