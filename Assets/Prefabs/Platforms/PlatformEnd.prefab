@@ -1107,6 +1107,55 @@ MonoBehaviour:
   maxHangingProps: 2
   cellWidth: 1
   cellLength: 25
+--- !u!1 &5495397189831308061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4526366533798863608}
+  - component: {fileID: 2418440897197077714}
+  m_Layer: 0
+  m_Name: RoadGen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4526366533798863608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5495397189831308061}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.7999573, y: -328.5003, z: -303.91602}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 156666610245668184}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2418440897197077714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5495397189831308061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 083478526eaaeda4dbe6b489dee63c14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roadPrefabs:
+  - {fileID: 5213751167925990710, guid: 309aaa4d41f09a348bac0c8c150a008b, type: 3}
+  - {fileID: 6878449068442612945, guid: c762be45074ba7149977b846ee354002, type: 3}
+  - {fileID: 829835764221397866, guid: a356712c3414bf34ca4f5c56327e9000, type: 3}
+  maxSegments: 5
 --- !u!1 &5792495603566576878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,6 +1429,7 @@ Transform:
   - {fileID: 8583175430131232027}
   - {fileID: 7102123301043825121}
   - {fileID: 5700757262951930437}
+  - {fileID: 4526366533798863608}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!33 &4931596345332261265
