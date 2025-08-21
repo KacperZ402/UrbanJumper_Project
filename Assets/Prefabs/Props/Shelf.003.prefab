@@ -553,9 +553,6 @@ MonoBehaviour:
     - {fileID: 5549667028470444186, guid: 27b332dcbb0882d4fa3da09389405fe6, type: 3}
     - {fileID: 4905703018966961456, guid: c0f84a86b59edef46bb06f3abaf7c366, type: 3}
     spawnMultiple: 0
-  - type: 2
-    prefabs: []
-    spawnMultiple: 1
   spacing: 1.15
   maxPropsPerZone: 2
 --- !u!1 &8312256357319228795

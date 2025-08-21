@@ -1033,6 +1033,7 @@ MonoBehaviour:
   - {fileID: 6013212257558268496, guid: 8d9bee446ccd2914688e683a5b99c542, type: 3}
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   spawnChance: 0.5
+  ignoreSpawnBlockers: 1
 --- !u!1 &2326611640691131392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,6 +1380,7 @@ MonoBehaviour:
   - {fileID: 6013212257558268496, guid: 8d9bee446ccd2914688e683a5b99c542, type: 3}
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   spawnChance: 0.5
+  ignoreSpawnBlockers: 1
 --- !u!1 &3910556116057401102
 GameObject:
   m_ObjectHideFlags: 0

@@ -420,6 +420,7 @@ MonoBehaviour:
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   - {fileID: 1710836312514886294, guid: 451f4975d834f3945960f6210d0fbf71, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 1
 --- !u!1 &3800783138301833821
 GameObject:
   m_ObjectHideFlags: 0

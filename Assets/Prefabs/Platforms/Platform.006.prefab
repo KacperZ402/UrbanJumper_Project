@@ -1593,6 +1593,7 @@ MonoBehaviour:
   - {fileID: 6013212257558268496, guid: 8d9bee446ccd2914688e683a5b99c542, type: 3}
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   spawnChance: 0.5
+  ignoreSpawnBlockers: 1
 --- !u!1 &4536694226123550983
 GameObject:
   m_ObjectHideFlags: 0
@@ -2371,6 +2372,7 @@ MonoBehaviour:
   - {fileID: 6013212257558268496, guid: 8d9bee446ccd2914688e683a5b99c542, type: 3}
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   spawnChance: 0.5
+  ignoreSpawnBlockers: 1
 --- !u!1 &7092388636706846795
 GameObject:
   m_ObjectHideFlags: 0
@@ -2915,6 +2917,7 @@ MonoBehaviour:
   - {fileID: 6013212257558268496, guid: 8d9bee446ccd2914688e683a5b99c542, type: 3}
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   spawnChance: 0.5
+  ignoreSpawnBlockers: 1
 --- !u!1 &9179666319202356669
 GameObject:
   m_ObjectHideFlags: 0

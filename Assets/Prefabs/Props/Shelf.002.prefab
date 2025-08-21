@@ -338,11 +338,6 @@ MonoBehaviour:
     - {fileID: 5549667028470444186, guid: 27b332dcbb0882d4fa3da09389405fe6, type: 3}
     - {fileID: 4905703018966961456, guid: c0f84a86b59edef46bb06f3abaf7c366, type: 3}
     spawnMultiple: 0
-  - type: 2
-    prefabs:
-    - {fileID: 5160865566545506121, guid: e35639a34cbac364f9b97f136195fec4, type: 3}
-    - {fileID: 404906920927208216, guid: c5681eb134747ae46b149c0fa70424b2, type: 3}
-    spawnMultiple: 1
   spacing: 1.15
   maxPropsPerZone: 3
 --- !u!1 &4962456008366365378

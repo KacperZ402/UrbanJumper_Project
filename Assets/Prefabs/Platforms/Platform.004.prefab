@@ -48,7 +48,8 @@ MonoBehaviour:
   - {fileID: 4775136320122813260, guid: 11cb71bce2b2d0740b54d270cbb38895, type: 3}
   - {fileID: 6013212257558268496, guid: 8d9bee446ccd2914688e683a5b99c542, type: 3}
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
-  spawnChance: 0.915
+  spawnChance: 0.807
+  ignoreSpawnBlockers: 1
 --- !u!1 &1072524266682832930
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,7 +345,8 @@ MonoBehaviour:
   - {fileID: 4775136320122813260, guid: 11cb71bce2b2d0740b54d270cbb38895, type: 3}
   - {fileID: 6013212257558268496, guid: 8d9bee446ccd2914688e683a5b99c542, type: 3}
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
-  spawnChance: 1
+  spawnChance: 0.807
+  ignoreSpawnBlockers: 1
 --- !u!1 &1874657978394866669
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +395,8 @@ MonoBehaviour:
   - {fileID: 4775136320122813260, guid: 11cb71bce2b2d0740b54d270cbb38895, type: 3}
   - {fileID: 6013212257558268496, guid: 8d9bee446ccd2914688e683a5b99c542, type: 3}
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
-  spawnChance: 1
+  spawnChance: 0.807
+  ignoreSpawnBlockers: 1
 --- !u!1 &1962711171734680149
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,7 +650,8 @@ MonoBehaviour:
   - {fileID: 4775136320122813260, guid: 11cb71bce2b2d0740b54d270cbb38895, type: 3}
   - {fileID: 6013212257558268496, guid: 8d9bee446ccd2914688e683a5b99c542, type: 3}
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
-  spawnChance: 0.915
+  spawnChance: 0.807
+  ignoreSpawnBlockers: 1
 --- !u!1 &3474484121117140974
 GameObject:
   m_ObjectHideFlags: 0
@@ -1889,7 +1893,8 @@ MonoBehaviour:
   - {fileID: 4775136320122813260, guid: 11cb71bce2b2d0740b54d270cbb38895, type: 3}
   - {fileID: 6013212257558268496, guid: 8d9bee446ccd2914688e683a5b99c542, type: 3}
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
-  spawnChance: 1
+  spawnChance: 0.807
+  ignoreSpawnBlockers: 1
 --- !u!1 &8222744024743210334
 GameObject:
   m_ObjectHideFlags: 0
@@ -2206,7 +2211,8 @@ MonoBehaviour:
   - {fileID: 4775136320122813260, guid: 11cb71bce2b2d0740b54d270cbb38895, type: 3}
   - {fileID: 6013212257558268496, guid: 8d9bee446ccd2914688e683a5b99c542, type: 3}
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
-  spawnChance: 1
+  spawnChance: 0.807
+  ignoreSpawnBlockers: 1
 --- !u!1 &8823758135525014528
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,30 +1,58 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 
 public class SingleObjectSpawner : MonoBehaviour
 {
-    [Header("Lista prefab�w")]
+    [Header("Lista prefabów")]
     public List<GameObject> prefabs;
 
-    [Header("Szansa na respawn (0�1)")]
+    [Header("Szansa na respawn (0–1)")]
     [Range(0f, 1f)]
     public float spawnChance = 1f;
 
+    [Header("Ignoruj SpawnBlockery")]
+    public bool ignoreSpawnBlockers = false;
+
     void Start()
     {
+        // Losowa szansa
         if (Random.value > spawnChance)
         {
+            Destroy(gameObject);
             return;
         }
+
+        // Sprawdzenie blockerów (jeśli nie ignorujemy)
+        if (!ignoreSpawnBlockers && IsBlocked())
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         SpawnObject();
-        Destroy(transform.gameObject);
+        Destroy(gameObject);
+    }
+
+    bool IsBlocked()
+    {
+        Collider[] hits = Physics.OverlapSphere(transform.position, 0.1f);
+
+        foreach (var hit in hits)
+        {
+            if (hit.GetComponent<SpawnBlocker>() != null)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     void SpawnObject()
     {
         if (prefabs == null || prefabs.Count == 0)
         {
-            Debug.LogWarning($"[SingleObjectSpawner] Brak prefab�w przy {gameObject.name}");
+            Debug.LogWarning($"[SingleObjectSpawner] Brak prefabów przy {gameObject.name}");
             return;
         }
 
@@ -32,7 +60,6 @@ public class SingleObjectSpawner : MonoBehaviour
         Quaternion spawnRotation = transform.rotation;
         Vector3 spawnPosition = transform.position;
 
-        // Ustaw rodzica na tego samego, co obiekt z tym skryptem
         Transform parent = transform.parent;
 
         GameObject spawned = Instantiate(prefab, spawnPosition, spawnRotation, parent);

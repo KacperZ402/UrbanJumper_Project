@@ -11,7 +11,7 @@ public class RoadGenerator : MonoBehaviour
 
     void Start()
     {
-        GenerateRoad(transform.position, 0, 1);
+        GenerateRoad(transform.position, 0, 0);
     }
 
     void GenerateRoad(Vector3 position, int count, int sinceLastCross)
