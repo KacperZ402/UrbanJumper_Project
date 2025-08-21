@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -4.03, y: -0, z: -2}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -44,8 +44,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: []
+  prefabs:
+  - {fileID: 6063407366461081524, guid: 689745f2ced7aa1499020cd953d39a33, type: 3}
+  - {fileID: 688608986512143625, guid: 0ceb56d443093fe4593a4196aa88c870, type: 3}
+  - {fileID: 5612047053593350019, guid: c18fb1da1aa7e3044bde1eb3dacf0dc0, type: 3}
+  - {fileID: 1864584767986740901, guid: e26a381718c36984183bf8799b51021b, type: 3}
+  - {fileID: 6920483366644530932, guid: 5ec24c4a87c31ab4a86d2a636056ddd6, type: 3}
+  - {fileID: 8271108313155889706, guid: c81607ea55b181445bb760629af777f5, type: 3}
+  - {fileID: 8271108313155889706, guid: c81607ea55b181445bb760629af777f5, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!1 &751411842200999277
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,7 +81,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -4.03, y: -0, z: 2.02}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -90,8 +98,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: []
+  prefabs:
+  - {fileID: 6063407366461081524, guid: 689745f2ced7aa1499020cd953d39a33, type: 3}
+  - {fileID: 688608986512143625, guid: 0ceb56d443093fe4593a4196aa88c870, type: 3}
+  - {fileID: 5612047053593350019, guid: c18fb1da1aa7e3044bde1eb3dacf0dc0, type: 3}
+  - {fileID: 1864584767986740901, guid: e26a381718c36984183bf8799b51021b, type: 3}
+  - {fileID: 6920483366644530932, guid: 5ec24c4a87c31ab4a86d2a636056ddd6, type: 3}
+  - {fileID: 8271108313155889706, guid: c81607ea55b181445bb760629af777f5, type: 3}
+  - {fileID: 8271108313155889706, guid: c81607ea55b181445bb760629af777f5, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!1 &2318653164432856845
 GameObject:
   m_ObjectHideFlags: 0
