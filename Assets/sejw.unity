@@ -447,7 +447,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 2000
   field of view: 63
   orthographic: 0
   orthographic size: 5
@@ -512,6 +512,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 543450651951869837}
     m_Modifications:
+    - target: {fileID: 266496605668085262, guid: 0ebba9d6daff139479f366b32538c285, type: 3}
+      propertyPath: ignoreSpawnBlockers
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 753767891026753098, guid: 0ebba9d6daff139479f366b32538c285, type: 3}
       propertyPath: m_Name
       value: PlatformStart
@@ -555,6 +559,10 @@ PrefabInstance:
     - target: {fileID: 5636834610737810252, guid: 0ebba9d6daff139479f366b32538c285, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400429622493093123, guid: 0ebba9d6daff139479f366b32538c285, type: 3}
+      propertyPath: ignoreSpawnBlockers
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7242149381248197795, guid: 0ebba9d6daff139479f366b32538c285, type: 3}
       propertyPath: maxPlatforms
