@@ -136,5 +136,5 @@ MonoBehaviour:
   - {fileID: 671398448496272642, guid: 8d9a386a2e805be43829a7e3d9ac0826, type: 3}
   - {fileID: 5366085297838093322, guid: 55fc82c7a7e5bda4f8c5e581ca908c6d, type: 3}
   - {fileID: 904176830914616866, guid: 63192ad1e53bdf041bdf659b41f41523, type: 3}
-  spawnChance: 0.5
+  spawnChance: 0.6
   ignoreSpawnBlockers: 1
