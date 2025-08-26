@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7114193933592006025}
   - component: {fileID: 7755326883823780427}
   - component: {fileID: 3457190074530380350}
+  - component: {fileID: 3075559679369162282}
   m_Layer: 7
   m_Name: Organizer
   m_TagString: PropsSecond
@@ -105,3 +106,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.23758, y: 3.9267821, z: 1.0424086}
   m_Center: {x: 0.016661644, y: 1.9645977, z: 0}
+--- !u!114 &3075559679369162282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5160865566545506121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb007a97ef38c5e458e0eda78ac593d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialIndex: 0
+  replacementMaterials:
+  - {fileID: -8246989816339099068, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+  - {fileID: 8347930161308891297, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+  - {fileID: 2291544387989599441, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+  - {fileID: 420651758147130266, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+  - {fileID: 2078269492826326854, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+  - {fileID: 7421422273566127600, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}

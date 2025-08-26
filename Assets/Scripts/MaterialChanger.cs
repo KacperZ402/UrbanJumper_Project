@@ -1,30 +1,35 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class MaterialReplacer : MonoBehaviour
+public class RandomMaterialReplacer : MonoBehaviour
 {
-    [Header("Materia³y do podmiany")]
-    [SerializeField] private List<Material> oldMaterials = new List<Material>();
+    [Tooltip("Który slot materia³u ma byæ podmieniany (0 = pierwszy)")]
+    [SerializeField] private int materialIndex = 0;
 
-    [Header("Nowe materia³y (kolejno odpowiadaj¹ce powy¿szym)")]
-    [SerializeField] private List<Material> newMaterials = new List<Material>();
+    [Tooltip("Lista materia³ów do losowego wyboru")]
+    [SerializeField] private List<Material> replacementMaterials = new List<Material>();
 
     void Start()
     {
-        Renderer rend = GetComponent<Renderer>();
-        if (rend == null) return;
+        ApplyRandomMaterial();
+    }
 
-        Material[] mats = rend.materials;
+    public void ApplyRandomMaterial()
+    {
+        if (replacementMaterials.Count == 0) return;
 
-        for (int i = 0; i < mats.Length; i++)
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
+
+        foreach (Renderer rend in renderers)
         {
-            int index = oldMaterials.IndexOf(mats[i]); // sprawdzamy czy materia³ jest na liœcie
-            if (index != -1 && index < newMaterials.Count && newMaterials[index] != null)
+            Material[] mats = rend.materials; // tworzy kopiê materia³ów dla tego obiektu
+
+            if (materialIndex >= 0 && materialIndex < mats.Length)
             {
-                mats[i] = newMaterials[index]; // podmieniamy
+                Material randomMat = replacementMaterials[Random.Range(0, replacementMaterials.Count)];
+                mats[materialIndex] = randomMat;
+                rend.materials = mats; // nadpisanie tablicy
             }
         }
-
-        rend.materials = mats; // aktualizacja
     }
 }

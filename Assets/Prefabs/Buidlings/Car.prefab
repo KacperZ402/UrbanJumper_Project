@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5415201846079140011}
   - component: {fileID: 6165085685396193538}
   - component: {fileID: 3562650960889477569}
+  - component: {fileID: 3130440168277045951}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -88,6 +89,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3130440168277045951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671398448496272642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb007a97ef38c5e458e0eda78ac593d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialIndex: 0
+  replacementMaterials:
+  - {fileID: 2858133786323817603, guid: fcf13579d9202b54ea7b6a9a2f77162d, type: 3}
+  - {fileID: -3151865717062477716, guid: fcf13579d9202b54ea7b6a9a2f77162d, type: 3}
+  - {fileID: -7966666216384106780, guid: fcf13579d9202b54ea7b6a9a2f77162d, type: 3}
+  - {fileID: -5911626295789547704, guid: fcf13579d9202b54ea7b6a9a2f77162d, type: 3}
+  - {fileID: 2065648166031764267, guid: fcf13579d9202b54ea7b6a9a2f77162d, type: 3}
 --- !u!1 &7356675081909620536
 GameObject:
   m_ObjectHideFlags: 0

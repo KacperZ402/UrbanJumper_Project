@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8692070257637889461}
   - component: {fileID: 8412583756120048079}
   - component: {fileID: 4748104489553494356}
+  - component: {fileID: 3385137235962196413}
   m_Layer: 7
   m_Name: Laptop
   m_TagString: PropsSecond
@@ -63,7 +64,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: -5976601864653938731, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
-  - {fileID: -5136184164288996182, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+  - {fileID: 8664406643028496723, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,6 +107,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.4212036, y: 3.0421467, z: 4.891039}
   m_Center: {x: 0.2738173, y: 1.5222218, z: -0.0015801191}
+--- !u!114 &3385137235962196413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754951862199696959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb007a97ef38c5e458e0eda78ac593d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialIndex: 0
+  replacementMaterials:
+  - {fileID: -6803337679141779942, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+  - {fileID: -5136184164288996182, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+  - {fileID: -5976601864653938731, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
 --- !u!1 &8581063576903747485
 GameObject:
   m_ObjectHideFlags: 0
