@@ -32,7 +32,7 @@ public class PlatformSegmentGenerator : MonoBehaviour
         }
 
         // Na koñcu generujemy endPlatform
-        GameObject endPlatform = Instantiate(endPlatformPrefab, currentSpawnPoint.position, Quaternion.Euler(0, 180, 0));
+        GameObject endPlatform = Instantiate(endPlatformPrefab, currentSpawnPoint.position, Quaternion.Euler(0, 0, 0));
     }
 
     GameObject GetRandomPlatform()
