@@ -9,12 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2482100423387764401}
+  - component: {fileID: 8340373785257637363}
   - component: {fileID: 1328806165703341840}
   - component: {fileID: 7624627382782277600}
   - component: {fileID: -4542344893108159318}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Chair
-  m_TagString: PropsFirts
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,6 +35,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8340373785257637363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032902127296263103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1032902127296263103}
 --- !u!33 &1328806165703341840
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6924327462974817361}
   - component: {fileID: 9116922907733402315}
   - component: {fileID: 6361499597928744671}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,11 +126,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3029853889042341532}
+  - component: {fileID: -5822132650213231379}
   - component: {fileID: 6640358161550277062}
   - component: {fileID: 1402311181950906075}
   - component: {fileID: 9090608853906677084}
   - component: {fileID: 747896972481789172}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Platform.008
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -163,6 +164,19 @@ Transform:
   - {fileID: 7811812744876906856}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-5822132650213231379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557153987380402888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1557153987380402888}
 --- !u!33 &6640358161550277062
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -278,7 +292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 520541281913894433}
   - component: {fileID: 6392705002541409052}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +385,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7811812744876906856}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: endPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,7 +417,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5617697601429032689}
   - component: {fileID: 699722190505769986}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -498,7 +512,7 @@ GameObject:
   - component: {fileID: 4882314535460933092}
   - component: {fileID: 4954111042421624492}
   - component: {fileID: 2460218779055407873}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaWall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -633,7 +647,7 @@ GameObject:
   - component: {fileID: 5340302278325607922}
   - component: {fileID: 8493492400546504985}
   - component: {fileID: 6033389225929064704}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -738,7 +752,7 @@ GameObject:
   - component: {fileID: 4070387361829735450}
   - component: {fileID: 8100255486785053128}
   - component: {fileID: 8875346372609649815}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaFloor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -855,7 +869,7 @@ GameObject:
   - component: {fileID: 7359528508902026842}
   - component: {fileID: 5112431178983885895}
   - component: {fileID: 7453468033779177887}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -927,7 +941,7 @@ GameObject:
   - component: {fileID: 4401286797954216141}
   - component: {fileID: 7165882206295343598}
   - component: {fileID: 7571518868384997052}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: ParentDestoryer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -982,6 +996,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a71fa74cd4c0604faa32c89a9bb66bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTag: Player
+  keepLayerName: Keep
 --- !u!1 &8761809717867574361
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,7 +1009,7 @@ GameObject:
   - component: {fileID: 4764188342730129982}
   - component: {fileID: 7728352634322355147}
   - component: {fileID: 2607772646663494999}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaCeiling (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1065,7 +1081,7 @@ GameObject:
   - component: {fileID: 6989602026772844565}
   - component: {fileID: 8998806568007425757}
   - component: {fileID: 7291920496073090618}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

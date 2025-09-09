@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3886408626643871894}
   - component: {fileID: 1419642851525679525}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (07)
-  m_TagString: Untagged
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,9 +63,9 @@ GameObject:
   m_Component:
   - component: {fileID: 318887979133459360}
   - component: {fileID: 341935731329655945}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (06)
-  m_TagString: Untagged
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,9 +116,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4066538057689884307}
   - component: {fileID: 2219843538771984914}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (5)
-  m_TagString: Untagged
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,9 +168,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 454716485011771234}
-  m_Layer: 6
+  - component: {fileID: 7640179731055338199}
+  m_Layer: 0
   m_Name: Shelf.002
-  m_TagString: PropsFirts
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,6 +198,19 @@ Transform:
   - {fileID: 3886408626643871894}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7640179731055338199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4227548258503597153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4227548258503597153}
 --- !u!1 &4598867697850639187
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,9 +224,9 @@ GameObject:
   - component: {fileID: 5997544256863556163}
   - component: {fileID: 8944988019116042999}
   - component: {fileID: 1727521475922779152}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Shelf.002
-  m_TagString: PropsFirts
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -350,9 +364,9 @@ GameObject:
   m_Component:
   - component: {fileID: 563963445900805588}
   - component: {fileID: 3362249927901703011}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (6)
-  m_TagString: Untagged
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -403,9 +417,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8666996410831099336}
   - component: {fileID: 6240376285051245169}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (08)
-  m_TagString: Untagged
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -456,9 +470,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5956361909735210087}
   - component: {fileID: 7704987293031476820}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (09)
-  m_TagString: Untagged
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

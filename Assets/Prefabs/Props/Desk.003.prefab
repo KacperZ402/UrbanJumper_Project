@@ -194,6 +194,8 @@ MonoBehaviour:
   - {fileID: 1032902127296263103, guid: 9c91223e5f17d7741b641fa28894ce3a, type: 3}
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   - {fileID: 2187849760024080149, guid: 1e68b8c40c9133743b2ce5214fe68cbf, type: 3}
+  spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!1 &8262014439473995349
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,13 +205,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1092751265621269087}
+  - component: {fileID: -8381371547107813198}
   - component: {fileID: 3547352889742710444}
   - component: {fileID: 5241889567546225059}
   - component: {fileID: 6767655024651588190}
   - component: {fileID: 3883699813347962353}
   m_Layer: 6
   m_Name: Desk.003
-  m_TagString: PropsFirts
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -234,6 +237,19 @@ Transform:
   - {fileID: 949107095100314023}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-8381371547107813198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8262014439473995349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8262014439473995349}
 --- !u!33 &3547352889742710444
 MeshFilter:
   m_ObjectHideFlags: 0

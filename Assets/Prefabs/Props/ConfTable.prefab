@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1897996555782146205}
   - component: {fileID: 4570348750658021897}
   - component: {fileID: 3414754884660595745}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,6 +48,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &3414754884660595745
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79,7 +80,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1773790982033430388}
   - component: {fileID: 8124745891334255507}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +134,7 @@ GameObject:
   - component: {fileID: 6373229089152222790}
   - component: {fileID: 6089497572070783861}
   - component: {fileID: 3915405300305255251}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,6 +171,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &3915405300305255251
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -202,7 +204,7 @@ GameObject:
   - component: {fileID: 407763422584949501}
   - component: {fileID: 3339505895572005075}
   - component: {fileID: 5565874491314771913}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,6 +241,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &5565874491314771913
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -271,7 +274,7 @@ GameObject:
   - component: {fileID: 3289740172125641155}
   - component: {fileID: 1140004532690578992}
   - component: {fileID: 2394275078480827883}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,6 +311,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &2394275078480827883
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -340,7 +344,7 @@ GameObject:
   - component: {fileID: 6640875505640023257}
   - component: {fileID: 2798360578957351505}
   - component: {fileID: 3783033868683705044}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,6 +381,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &3783033868683705044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -409,7 +414,7 @@ GameObject:
   - component: {fileID: 2825207712218760350}
   - component: {fileID: 39168052357230588}
   - component: {fileID: 9021054756535965023}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,6 +451,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &9021054756535965023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -478,7 +484,7 @@ GameObject:
   - component: {fileID: 8838741732037235492}
   - component: {fileID: 3916424920900946338}
   - component: {fileID: 5843073491277752584}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,6 +521,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &5843073491277752584
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -547,7 +554,7 @@ GameObject:
   - component: {fileID: 4061645254510982898}
   - component: {fileID: 4241292605431415895}
   - component: {fileID: 1516614179493528120}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,6 +591,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &1516614179493528120
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -615,7 +623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8145710193385533705}
   - component: {fileID: 8009460406875337040}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,7 +677,7 @@ GameObject:
   - component: {fileID: 6035686020997048036}
   - component: {fileID: 5708295167003096992}
   - component: {fileID: 1715053721705121552}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -706,6 +714,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &1715053721705121552
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -738,7 +747,7 @@ GameObject:
   - component: {fileID: 4016981797001481574}
   - component: {fileID: 2031147773600899150}
   - component: {fileID: 3056834482031136820}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -775,6 +784,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &3056834482031136820
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -807,7 +817,7 @@ GameObject:
   - component: {fileID: 1791040473446203115}
   - component: {fileID: 920901458400162296}
   - component: {fileID: 7408508186658031469}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -844,6 +854,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &7408508186658031469
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -876,7 +887,7 @@ GameObject:
   - component: {fileID: 8920790510272977746}
   - component: {fileID: 4080826601965502631}
   - component: {fileID: 6427632890101132917}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -913,6 +924,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &6427632890101132917
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -945,7 +957,7 @@ GameObject:
   - component: {fileID: 7896648391743370636}
   - component: {fileID: 1025642737336786743}
   - component: {fileID: 2040543999646594094}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -982,6 +994,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &2040543999646594094
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1014,7 +1027,7 @@ GameObject:
   - component: {fileID: 4468717478453211696}
   - component: {fileID: 8517908104571601326}
   - component: {fileID: 2680312013668662441}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1051,6 +1064,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &2680312013668662441
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1083,7 +1097,7 @@ GameObject:
   - component: {fileID: 3124207136872478827}
   - component: {fileID: 7207481767516393344}
   - component: {fileID: 8987354356167527773}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1120,6 +1134,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &8987354356167527773
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1152,7 +1167,7 @@ GameObject:
   - component: {fileID: 4127724026853066301}
   - component: {fileID: 6201617640130125445}
   - component: {fileID: 9144319839446773757}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1189,6 +1204,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &9144319839446773757
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1221,7 +1237,7 @@ GameObject:
   - component: {fileID: 969593258142368345}
   - component: {fileID: 6054269232091395408}
   - component: {fileID: 4670562616267408019}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1258,6 +1274,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &4670562616267408019
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1290,7 +1307,7 @@ GameObject:
   - component: {fileID: 7574762576346798210}
   - component: {fileID: 5556216881349239021}
   - component: {fileID: 5870014692615025001}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1327,6 +1344,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &5870014692615025001
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1359,7 +1377,7 @@ GameObject:
   - component: {fileID: 6167515497868413190}
   - component: {fileID: 6287088997031102959}
   - component: {fileID: 5854454272191316115}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1396,6 +1414,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &5854454272191316115
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1428,7 +1447,7 @@ GameObject:
   - component: {fileID: 8461302573602144376}
   - component: {fileID: 7610971917045934842}
   - component: {fileID: 2662319992104660438}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1465,6 +1484,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &2662319992104660438
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1495,13 +1515,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8728947019876464021}
+  - component: {fileID: 34704858903016976}
   - component: {fileID: 5486686716354068117}
   - component: {fileID: 5798991707713250300}
   - component: {fileID: 3267421522962917368}
   - component: {fileID: 7048444714813508677}
   m_Layer: 6
   m_Name: ConfTable
-  m_TagString: PropsFirts
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1553,6 +1574,19 @@ Transform:
   - {fileID: 1791040473446203115}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &34704858903016976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5260612243443887680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5260612243443887680}
 --- !u!33 &5486686716354068117
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1668,7 +1702,7 @@ GameObject:
   - component: {fileID: 9174964370467633474}
   - component: {fileID: 5813398030369466851}
   - component: {fileID: 5347711742570553271}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1705,6 +1739,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &5347711742570553271
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1736,7 +1771,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3951152515552400881}
   - component: {fileID: 6725557766809078234}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1790,7 +1825,7 @@ GameObject:
   - component: {fileID: 987098226441361726}
   - component: {fileID: 8758390899772699839}
   - component: {fileID: 4372923540145402229}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1827,6 +1862,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &4372923540145402229
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1859,7 +1895,7 @@ GameObject:
   - component: {fileID: 7528669706598476909}
   - component: {fileID: 7791447458849155087}
   - component: {fileID: 5262566132226045355}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1896,6 +1932,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &5262566132226045355
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1928,7 +1965,7 @@ GameObject:
   - component: {fileID: 5188999539924659665}
   - component: {fileID: 4769845364621017077}
   - component: {fileID: 5510899863845551593}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1965,6 +2002,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &5510899863845551593
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1997,7 +2035,7 @@ GameObject:
   - component: {fileID: 7461526488380427172}
   - component: {fileID: 7967271398245019853}
   - component: {fileID: 5281542658251449586}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2034,6 +2072,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &5281542658251449586
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2066,7 +2105,7 @@ GameObject:
   - component: {fileID: 8117941036390634402}
   - component: {fileID: 7562017971830857834}
   - component: {fileID: 6775989219547499952}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2103,6 +2142,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &6775989219547499952
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2135,7 +2175,7 @@ GameObject:
   - component: {fileID: 6074674412937389167}
   - component: {fileID: 1352989313971392026}
   - component: {fileID: 992286479848196053}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2172,6 +2212,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &992286479848196053
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2203,7 +2244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6033075615779958615}
   - component: {fileID: 8491573936748798534}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2257,7 +2298,7 @@ GameObject:
   - component: {fileID: 6052603984021794791}
   - component: {fileID: 8353438030936392984}
   - component: {fileID: 4698435109554237130}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2294,6 +2335,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!65 &4698435109554237130
 BoxCollider:
   m_ObjectHideFlags: 0

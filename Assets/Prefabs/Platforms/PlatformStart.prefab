@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1830778388566428004}
   - component: {fileID: 5282035679659447}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 8392341410691900164}
   - component: {fileID: 7849237795904675649}
   - component: {fileID: 9113289435992472573}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,12 +170,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5636834610737810252}
+  - component: {fileID: -3742280292109411937}
   - component: {fileID: 7242149381248197795}
   - component: {fileID: 3722331385976495221}
   - component: {fileID: 7149305330535527824}
   - component: {fileID: 4124665108483636086}
   - component: {fileID: 5190631473770591159}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: PlatformStart
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -222,6 +223,19 @@ Transform:
   - {fileID: 718892925078975277}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-3742280292109411937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753767891026753098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 753767891026753098}
 --- !u!114 &7242149381248197795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,7 +379,7 @@ GameObject:
   - component: {fileID: 434503771574229669}
   - component: {fileID: 4274563125338341569}
   - component: {fileID: 8407485428239132081}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BreakableGlass (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -510,7 +524,7 @@ GameObject:
   - component: {fileID: 1951495687985713620}
   - component: {fileID: 1731011385057697360}
   - component: {fileID: 5148864308792200964}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaFloor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -627,7 +641,7 @@ GameObject:
   - component: {fileID: 6266397163241758925}
   - component: {fileID: 9057310048154925826}
   - component: {fileID: 3131245881651886625}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaCeiling (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -702,7 +716,7 @@ GameObject:
   - component: {fileID: 4733157883804343616}
   - component: {fileID: 7070319258330571623}
   - component: {fileID: 8973363852958866796}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BreakableGlass (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -850,7 +864,7 @@ GameObject:
   - component: {fileID: 1264375286067175415}
   - component: {fileID: 8923065885137017991}
   - component: {fileID: 2922451093080518024}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BreakableGlass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -994,7 +1008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4741657767823405814}
   - component: {fileID: 6400429622493093123}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1044,7 +1058,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7264148615570751675}
   - component: {fileID: 3196982312227010806}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: endPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1104,7 +1118,7 @@ GameObject:
   - component: {fileID: 1620932788458606380}
   - component: {fileID: 6292434397434060487}
   - component: {fileID: 302487787154356751}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaCeiling (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1176,7 +1190,7 @@ GameObject:
   - component: {fileID: 5078072731247351111}
   - component: {fileID: 6279818596041891192}
   - component: {fileID: 1538856307187958297}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1247,7 +1261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2849923081651837934}
   - component: {fileID: 7360727345559904090}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1341,7 +1355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 185273217994261502}
   - component: {fileID: 266496605668085262}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1395,7 +1409,7 @@ GameObject:
   - component: {fileID: 8347954007377746292}
   - component: {fileID: 154481245048952877}
   - component: {fileID: 819913849543591020}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BreakableGlass (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1540,7 +1554,7 @@ GameObject:
   - component: {fileID: 2402143414906507875}
   - component: {fileID: 3760984979613518342}
   - component: {fileID: 230320566194995610}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaWall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1674,7 +1688,7 @@ GameObject:
   - component: {fileID: 1333025722728562934}
   - component: {fileID: 2823136102473945930}
   - component: {fileID: 3478919099792771827}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: ParentDestoryer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1729,6 +1743,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a71fa74cd4c0604faa32c89a9bb66bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTag: Player
+  keepLayerName: Keep
 --- !u!1 &4351972482506318920
 GameObject:
   m_ObjectHideFlags: 0
@@ -1740,7 +1756,7 @@ GameObject:
   - component: {fileID: 3659038837594314004}
   - component: {fileID: 2316756917991752780}
   - component: {fileID: 7582320307291761251}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1810,7 +1826,7 @@ GameObject:
   - component: {fileID: 8243839543926468218}
   - component: {fileID: 1632093920900666069}
   - component: {fileID: 2991132073441309809}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BreakableGlass (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1958,7 +1974,7 @@ GameObject:
   - component: {fileID: 5831043984386558566}
   - component: {fileID: 89238590501416209}
   - component: {fileID: 5149818382059679546}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BreakableGlass (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2103,7 +2119,7 @@ GameObject:
   - component: {fileID: 2671804852333396448}
   - component: {fileID: 985219686108820068}
   - component: {fileID: 3494347891148201882}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2220,7 +2236,7 @@ GameObject:
   - component: {fileID: 1389425499557297323}
   - component: {fileID: 6216228933694836173}
   - component: {fileID: 7611497557243092744}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaFloor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2337,7 +2353,7 @@ GameObject:
   - component: {fileID: 786555492788502640}
   - component: {fileID: 8460438438660604683}
   - component: {fileID: 2098292096621640536}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaWall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2471,7 +2487,7 @@ GameObject:
   - component: {fileID: 6500804600403576904}
   - component: {fileID: 3546371408408363256}
   - component: {fileID: 9010481244224110895}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2608,7 +2624,7 @@ GameObject:
   - component: {fileID: 2465007101545445935}
   - component: {fileID: 2049700195041985533}
   - component: {fileID: 4327134530332900161}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BreakableGlass (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2756,7 +2772,7 @@ GameObject:
   - component: {fileID: 8148654870690697544}
   - component: {fileID: 7347128619888407448}
   - component: {fileID: 5545304573267703078}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BreakableGlass (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2904,7 +2920,7 @@ GameObject:
   - component: {fileID: 7324180905497684409}
   - component: {fileID: 9208328875724279162}
   - component: {fileID: 6655739946317309092}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BreakableGlass (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3052,7 +3068,7 @@ GameObject:
   - component: {fileID: 7086266873518837619}
   - component: {fileID: 6319375025925218909}
   - component: {fileID: 2261069476080903421}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BreakableGlass (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

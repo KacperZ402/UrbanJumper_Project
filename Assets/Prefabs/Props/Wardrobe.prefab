@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1740673179521713096}
   - component: {fileID: 4160589408119882560}
   - component: {fileID: 550993807215540621}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Wardrobe
-  m_TagString: PropsFirts
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,9 +115,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9026505474478855454}
-  m_Layer: 6
+  - component: {fileID: -7264367093443865607}
+  m_Layer: 0
   m_Name: Wardrobe
-  m_TagString: PropsFirts
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,3 +139,16 @@ Transform:
   - {fileID: 3920677495311274098}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-7264367093443865607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8465555978682467789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8465555978682467789}

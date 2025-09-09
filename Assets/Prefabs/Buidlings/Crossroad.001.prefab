@@ -199,6 +199,7 @@ GameObject:
   - component: {fileID: 6271296864101294564}
   - component: {fileID: 2234822080534135834}
   - component: {fileID: 7028447370665822769}
+  - component: {fileID: -7799942847845697013}
   m_Layer: 0
   m_Name: Crossroad.001
   m_TagString: Untagged
@@ -278,6 +279,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-7799942847845697013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6878449068442612945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6878449068442612945}
 --- !u!1 &8986356332730294202
 GameObject:
   m_ObjectHideFlags: 0

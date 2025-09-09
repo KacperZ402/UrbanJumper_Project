@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7700301523761811569}
   - component: {fileID: 5633472483169650494}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,6 +48,8 @@ MonoBehaviour:
   - {fileID: 7926258333305165315, guid: 351ccc23db41a0846a3020f4da172614, type: 3}
   - {fileID: 1765458134263293812, guid: 40eaf0ebc1e5486449c6103bc6aee407, type: 3}
   - {fileID: 4589359426962682831, guid: e3285efeae0d9ad4d8ab1f74300bf2d9, type: 3}
+  spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!1 &3257509533690607366
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,7 +60,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8124560809172405370}
   - component: {fileID: 1192153445248618413}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,6 +98,8 @@ MonoBehaviour:
   - {fileID: 7926258333305165315, guid: 351ccc23db41a0846a3020f4da172614, type: 3}
   - {fileID: 1765458134263293812, guid: 40eaf0ebc1e5486449c6103bc6aee407, type: 3}
   - {fileID: 4589359426962682831, guid: e3285efeae0d9ad4d8ab1f74300bf2d9, type: 3}
+  spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!1 &4166608591133277653
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,7 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2212666303203332888}
   - component: {fileID: 4555378040084418135}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,6 +149,8 @@ MonoBehaviour:
   - {fileID: 1765458134263293812, guid: 40eaf0ebc1e5486449c6103bc6aee407, type: 3}
   - {fileID: 4589359426962682831, guid: e3285efeae0d9ad4d8ab1f74300bf2d9, type: 3}
   - {fileID: 1739964271291660402, guid: a36ba3bd4ba87964289dfc852eda6e08, type: 3}
+  spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!1 &5416262828878117660
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1134189533576112215}
   - component: {fileID: 4072901930037489902}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,6 +199,8 @@ MonoBehaviour:
   - {fileID: 7926258333305165315, guid: 351ccc23db41a0846a3020f4da172614, type: 3}
   - {fileID: 1765458134263293812, guid: 40eaf0ebc1e5486449c6103bc6aee407, type: 3}
   - {fileID: 4589359426962682831, guid: e3285efeae0d9ad4d8ab1f74300bf2d9, type: 3}
+  spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!1 &6563589884813263465
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,13 +210,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6022466752296483105}
+  - component: {fileID: 6228627893335520859}
   - component: {fileID: 4445987524752046284}
   - component: {fileID: 7134383001944323258}
   - component: {fileID: -6558268052552701683}
   - component: {fileID: 7574588399999564732}
   m_Layer: 6
   m_Name: CafeTable.001
-  m_TagString: PropsFirts
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,6 +241,19 @@ Transform:
   - {fileID: 8124560809172405370}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6228627893335520859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6563589884813263465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6563589884813263465}
 --- !u!33 &4445987524752046284
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3103204860109359684}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: endPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 950033779179692579}
   - component: {fileID: 4979891304844544758}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 423853515487109470}
   - component: {fileID: 4073817634303020937}
   - component: {fileID: 7427618174794882253}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 6883529267182606656}
   - component: {fileID: 7554708620578420996}
   - component: {fileID: 6476844328584178556}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: ParentDestoryer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,6 +297,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a71fa74cd4c0604faa32c89a9bb66bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTag: Player
+  keepLayerName: Keep
 --- !u!1 &4641588981455768382
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +310,7 @@ GameObject:
   - component: {fileID: 8305211288247645504}
   - component: {fileID: 9047637952694374012}
   - component: {fileID: 6254499978140230828}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,11 +425,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3577089469377643855}
+  - component: {fileID: 5196490384844364744}
   - component: {fileID: 1148720704150646932}
   - component: {fileID: 9133706699095188147}
   - component: {fileID: 3837609633533978125}
   - component: {fileID: 7228860420985724227}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Platform.009
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -455,6 +458,19 @@ Transform:
   - {fileID: 3103204860109359684}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5196490384844364744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7363166912716445862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7363166912716445862}
 --- !u!33 &1148720704150646932
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -569,7 +585,7 @@ GameObject:
   - component: {fileID: 1789674247812140407}
   - component: {fileID: 1863950076178166627}
   - component: {fileID: 5197570839159052883}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,12 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7947547187165205158}
+  - component: {fileID: 1095076867345893720}
   - component: {fileID: 8994320441703038699}
   - component: {fileID: 2243325566335968215}
   - component: {fileID: -5850234840981737960}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: partitionWall
-  m_TagString: PropsSecond
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,6 +35,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1095076867345893720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7688495679254922460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7688495679254922460}
 --- !u!33 &8994320441703038699
 MeshFilter:
   m_ObjectHideFlags: 0

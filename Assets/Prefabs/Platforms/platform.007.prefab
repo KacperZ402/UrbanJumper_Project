@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8261481243541480612}
   - component: {fileID: 440142251017512368}
   - component: {fileID: 6701372184540505087}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 7807602684566798065}
   - component: {fileID: 1140045586875872307}
   - component: {fileID: 3011038403223663036}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,11 +148,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 967635709878816519}
+  - component: {fileID: -9056799034040071316}
   - component: {fileID: 4234052257508769954}
   - component: {fileID: 2100532652700382312}
   - component: {fileID: 1241633117302009037}
   - component: {fileID: 4627141096276968472}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: platform.007
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -188,6 +189,19 @@ Transform:
   - {fileID: 5795923962479309191}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-9056799034040071316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443159406008276413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 443159406008276413}
 --- !u!33 &4234052257508769954
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -304,7 +318,7 @@ GameObject:
   - component: {fileID: 8589380022760814798}
   - component: {fileID: 5656287050071553617}
   - component: {fileID: 1572597819149123229}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -438,7 +452,7 @@ GameObject:
   - component: {fileID: 5410461564666850648}
   - component: {fileID: 1926500069631380256}
   - component: {fileID: 6000372600463284683}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -503,7 +517,7 @@ GameObject:
   m_Component:
   - component: {fileID: 476192328586003019}
   - component: {fileID: 2032072949336661685}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -554,7 +568,7 @@ GameObject:
   - component: {fileID: 4456220509180293142}
   - component: {fileID: 7173448386709407920}
   - component: {fileID: 1790567229045120165}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,7 +632,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5795923962479309191}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: endPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -650,7 +664,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5857716638937043831}
   - component: {fileID: 6205520681830859417}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -745,7 +759,7 @@ GameObject:
   - component: {fileID: 1287895110438025081}
   - component: {fileID: 6292232502060252590}
   - component: {fileID: 1471479688080438833}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: ParentDestoryer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -800,6 +814,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a71fa74cd4c0604faa32c89a9bb66bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTag: Player
+  keepLayerName: Keep
 --- !u!1 &5539438504696349297
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,7 +826,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6494919679928246313}
   - component: {fileID: 4769971446699678335}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -861,7 +877,7 @@ GameObject:
   - component: {fileID: 4367352995874742795}
   - component: {fileID: 8140633332902544788}
   - component: {fileID: 4974179102187289947}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -928,7 +944,7 @@ GameObject:
   - component: {fileID: 5069613458276061074}
   - component: {fileID: 8826897073540842874}
   - component: {fileID: 579075967375195402}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -994,7 +1010,7 @@ GameObject:
   - component: {fileID: 9141700827119231746}
   - component: {fileID: 6405658987493145929}
   - component: {fileID: 6903164651661230105}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1111,7 +1127,7 @@ GameObject:
   - component: {fileID: 182822638617133602}
   - component: {fileID: 5425229285953558013}
   - component: {fileID: 5775913013704790013}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1176,7 +1192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4616211892472026213}
   - component: {fileID: 6755963609287352854}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1272,7 +1288,7 @@ GameObject:
   - component: {fileID: 7099079670275221314}
   - component: {fileID: 7866897033409776396}
   - component: {fileID: 2111503734065589289}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8282843735504160317}
-  m_Layer: 7
+  - component: {fileID: -598574175352226597}
+  m_Layer: 9
   m_Name: Plant.001
-  m_TagString: PropsSecond
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,6 +33,19 @@ Transform:
   - {fileID: 6886089035603365250}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-598574175352226597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4726043695669016035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4726043695669016035}
 --- !u!1 &6440351420008649744
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,9 +58,9 @@ GameObject:
   - component: {fileID: 3940125132518460671}
   - component: {fileID: 8357660524429519319}
   - component: {fileID: 1194518876760576911}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Plant.001
-  m_TagString: PropsSecond
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

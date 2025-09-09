@@ -46,9 +46,8 @@ public class CeilingLampSpawner : MonoBehaviour
 
                 Vector3 spawnPos = new Vector3(posX, y, posZ);
 
-                GameObject lamp = Instantiate(chosenLamp, spawnPos, chosenLamp.transform.rotation, transform);
+                GameObject lamp = SingleObjectPool.Instance.Get(chosenLamp, spawnPos, chosenLamp.transform.rotation, transform);
                 lamp.transform.localScale = Vector3.one;
-                lamp.SetActive(true);
             }
         }
     }

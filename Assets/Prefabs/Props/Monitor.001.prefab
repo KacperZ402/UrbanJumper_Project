@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4939084179212602164}
   - component: {fileID: 595621039406601894}
   - component: {fileID: 7473146433144993151}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Monitor.001
-  m_TagString: PropsSecond
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,9 +115,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5886693482163950355}
+  - component: {fileID: -299602284067065856}
   m_Layer: 7
   m_Name: Monitor.001
-  m_TagString: PropsSecond
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,6 +141,19 @@ Transform:
   - {fileID: 350708471713672711}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-299602284067065856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5126123372884139138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5126123372884139138}
 --- !u!1001 &3579368280108178381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -151,6 +165,14 @@ PrefabInstance:
     - target: {fileID: 60470846310088497, guid: a812967bb4fe5554faab44d93f5c479c, type: 3}
       propertyPath: m_Name
       value: keyboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 60470846310088497, guid: a812967bb4fe5554faab44d93f5c479c, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 60470846310088497, guid: a812967bb4fe5554faab44d93f5c479c, type: 3}
+      propertyPath: m_TagString
+      value: Prop
       objectReference: {fileID: 0}
     - target: {fileID: 3851016402581370314, guid: a812967bb4fe5554faab44d93f5c479c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -213,6 +235,14 @@ PrefabInstance:
     - target: {fileID: 473143057477784760, guid: 24d38628809a4ba4eb6ded3d34022edd, type: 3}
       propertyPath: m_Name
       value: Computer
+      objectReference: {fileID: 0}
+    - target: {fileID: 473143057477784760, guid: 24d38628809a4ba4eb6ded3d34022edd, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 473143057477784760, guid: 24d38628809a4ba4eb6ded3d34022edd, type: 3}
+      propertyPath: m_TagString
+      value: Prop
       objectReference: {fileID: 0}
     - target: {fileID: 2182482038496110211, guid: 24d38628809a4ba4eb6ded3d34022edd, type: 3}
       propertyPath: m_LocalPosition.x

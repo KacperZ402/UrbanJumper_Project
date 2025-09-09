@@ -133,8 +133,8 @@ public class WallPropSpawner : MonoBehaviour
             }
 
             GameObject prefab = baseProps[Random.Range(0, baseProps.Count)];
-            GameObject spawnedObj = Instantiate(prefab, worldSpawnPos, transform.rotation, transform);
-            spawnedObj.SetActive(true);
+            GameObject obj = SingleObjectPool.Instance.Get(prefab, worldSpawnPos, transform.rotation, transform);
+
 
             occupiedCells.Add(cellIndex);
             if (standingWithHanging.Contains(prefab))
@@ -177,8 +177,8 @@ public class WallPropSpawner : MonoBehaviour
             }
 
             GameObject hangingPrefab = hanging[Random.Range(0, hanging.Count)];
-            GameObject hangingObj = Instantiate(hangingPrefab, hangingPos, transform.rotation, transform);
-            hangingObj.SetActive(true);
+            GameObject obj = SingleObjectPool.Instance.Get(hangingPrefab, hangingPos, transform.rotation, transform);
+
 
             hangingOccupiedCells.Add(cellIndex); // Zaznacz, ¿e ta komórka ma hanging propa
             hangingSpawned++;

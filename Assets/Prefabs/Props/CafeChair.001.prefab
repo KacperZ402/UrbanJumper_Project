@@ -9,12 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3227705333211461061}
+  - component: {fileID: 672794490398024270}
   - component: {fileID: 6376122356739139644}
   - component: {fileID: 2379275325642585717}
   - component: {fileID: -6128469265545089683}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: CafeChair.001
-  m_TagString: PropsFirts
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,6 +36,19 @@ Transform:
   - {fileID: 6651339489059727022}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &672794490398024270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765458134263293812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1765458134263293812}
 --- !u!33 &6376122356739139644
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -117,7 +131,7 @@ GameObject:
   - component: {fileID: 6651339489059727022}
   - component: {fileID: 3900295538504954335}
   - component: {fileID: 373979995619060045}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

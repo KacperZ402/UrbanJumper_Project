@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 344353313873970151}
   - component: {fileID: 600123078499930375}
   - component: {fileID: 2081830227429584143}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (4)
-  m_TagString: Untagged
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,9 +75,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 166939595113022606}
-  m_Layer: 6
+  - component: {fileID: 6130890763089627938}
+  m_Layer: 9
   m_Name: couch
-  m_TagString: PropsFirts
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +100,19 @@ Transform:
   - {fileID: 6178014338534909072}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6130890763089627938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739964271291660402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1739964271291660402}
 --- !u!1001 &5923937974459417467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -147,9 +161,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2808712050201258754, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -2808712050201258754, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+      propertyPath: m_TagString
+      value: Prop
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
       propertyPath: m_Name
       value: allModels
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+      propertyPath: m_TagString
+      value: Prop
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

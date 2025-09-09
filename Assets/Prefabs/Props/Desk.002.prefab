@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1957221975367307675}
   - component: {fileID: 4106706007496015129}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3292430646930133971}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Monitor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1285085290133910782}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: NoteBook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,13 +124,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2345070588172870060}
+  - component: {fileID: -171419262121735314}
   - component: {fileID: 5819757224210630201}
   - component: {fileID: 1625104097233476396}
   - component: {fileID: 1421839313518539543}
   - component: {fileID: 8791124932688913420}
   m_Layer: 6
   m_Name: Desk.002
-  m_TagString: PropsFirts
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,6 +156,19 @@ Transform:
   - {fileID: 6328108413089986560}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-171419262121735314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5282033231866243942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5282033231866243942}
 --- !u!33 &5819757224210630201
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -277,7 +291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4779777429748417133}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Monitor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +323,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6328108413089986560}
   - component: {fileID: 1927964296631803600}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,3 +362,4 @@ MonoBehaviour:
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   - {fileID: 2187849760024080149, guid: 1e68b8c40c9133743b2ce5214fe68cbf, type: 3}
   spawnChance: 1
+  ignoreSpawnBlockers: 0

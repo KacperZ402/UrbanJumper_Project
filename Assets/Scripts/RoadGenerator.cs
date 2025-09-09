@@ -18,20 +18,21 @@ public class RoadGenerator : MonoBehaviour
     {
         if (count >= maxSegments) return;
 
-        // Wybór prefabu
+        // Wybór prefabów
         GameObject prefab = ChoosePrefab(sinceLastCross);
 
-        // Spawn
-        GameObject obj = Instantiate(prefab, position, Quaternion.identity, transform);
+        // Spawn z poolingu
+        GameObject obj = SingleObjectPool.Instance.Get(prefab, position, Quaternion.identity, transform);
+
         Transform endPoint = obj.transform.Find("EndPoint");
 
-        // Jeśli T → koniec
+        // Jeśli T → zakończ generowanie
         if (roadPrefabs.IndexOf(prefab) == roadPrefabs.Count - 1) return;
 
         // Ustaw licznik od skrzyżowania
         int nextSince = roadPrefabs.IndexOf(prefab) == 0 ? sinceLastCross + 1 : 0;
 
-        // Spawn next
+        // Spawn next segment
         if (endPoint != null)
         {
             GenerateRoad(endPoint.position, count + 1, nextSince);

@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4084464787904843645}
-  m_Layer: 6
+  - component: {fileID: -3702232154600679816}
+  m_Layer: 0
   m_Name: Pot.003
-  m_TagString: PropsFirts
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,6 +33,19 @@ Transform:
   - {fileID: 625669679082910737}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-3702232154600679816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5361303841911357168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5361303841911357168}
 --- !u!1 &5592112485474452068
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,9 +60,9 @@ GameObject:
   - component: {fileID: 697653859860475125}
   - component: {fileID: 2325879778690190897}
   - component: {fileID: 5116240885907170111}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Pot.003
-  m_TagString: PropsFirts
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6895997817610212463}
   - component: {fileID: 3118014638481773227}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (09)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1055614326435740977}
   - component: {fileID: 293329625009142975}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7125173328117475987}
   - component: {fileID: 3250196569657254716}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (06)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2177122711761743730}
   - component: {fileID: 5039426395797161040}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (04)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4140527671309929647}
   - component: {fileID: 4709451328454281033}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3021616881663043109}
   - component: {fileID: 2208324273263725177}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (08)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6236747795084098621}
   - component: {fileID: 1605461880710539317}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (07)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,9 +384,9 @@ GameObject:
   - component: {fileID: 4055404007085054763}
   - component: {fileID: 1276038720442468438}
   - component: {fileID: 174880591598234304}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Shelf.005
-  m_TagString: PropsFirts
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -529,7 +529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5427390120378105521}
   - component: {fileID: 7844144222757316763}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (05)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -582,7 +582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5066435569033278438}
   - component: {fileID: 6508278029664799374}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -634,9 +634,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2898752190235773068}
-  m_Layer: 6
+  - component: {fileID: -143239574833624204}
+  m_Layer: 0
   m_Name: Shelf.005
-  m_TagString: PropsFirts
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -666,3 +667,16 @@ Transform:
   - {fileID: 2839987839144373290}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-143239574833624204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8675578639384167832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8675578639384167832}

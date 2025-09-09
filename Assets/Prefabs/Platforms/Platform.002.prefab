@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 851117700469277202}
   - component: {fileID: 3270124471167917985}
   - component: {fileID: 451751208524195804}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 3978714222659241369}
   - component: {fileID: 6201021664643171648}
   - component: {fileID: 1943411175941621486}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 7397339822348465570}
   - component: {fileID: 263764593959003452}
   - component: {fileID: 535607398199518636}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 1195256912041361011}
   - component: {fileID: 5188294934952450943}
   - component: {fileID: 632739348669938648}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: ParentDestoryer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,6 +440,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a71fa74cd4c0604faa32c89a9bb66bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTag: Player
+  keepLayerName: Keep
 --- !u!1 &4217420202273006542
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,7 +453,7 @@ GameObject:
   - component: {fileID: 788633743225232533}
   - component: {fileID: 765252888200424572}
   - component: {fileID: 10105199431709957}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -518,7 +520,7 @@ GameObject:
   - component: {fileID: 8004911039855942182}
   - component: {fileID: 3568201294287005363}
   - component: {fileID: 8928981036201940934}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -651,7 +653,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7099517470379407911}
   - component: {fileID: 7277472528482714344}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -744,11 +746,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2182036891469681534}
+  - component: {fileID: 3476673526192292089}
   - component: {fileID: 4377356657457587031}
   - component: {fileID: 5860260340036757517}
   - component: {fileID: 3800688602430764606}
   - component: {fileID: 7945246667250876794}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Platform.002
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -781,6 +784,19 @@ Transform:
   - {fileID: 3258975614056468491}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3476673526192292089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5040205650557060116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5040205650557060116}
 --- !u!33 &4377356657457587031
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -895,7 +911,7 @@ GameObject:
   - component: {fileID: 2290705781437341928}
   - component: {fileID: 188449350245820214}
   - component: {fileID: 389115671939380748}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1011,7 +1027,7 @@ GameObject:
   m_Component:
   - component: {fileID: 858582677525447231}
   - component: {fileID: 441932481256581274}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1106,7 +1122,7 @@ GameObject:
   - component: {fileID: 3258975614056468491}
   - component: {fileID: 8305658940445099850}
   - component: {fileID: 1994851947278399818}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1176,7 +1192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7283634732235882533}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: endPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1208,7 +1224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5438172224325663332}
   - component: {fileID: 7460982832766306135}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}

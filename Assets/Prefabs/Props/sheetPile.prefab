@@ -9,12 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9079923125519569576}
+  - component: {fileID: -3940669185933491430}
   - component: {fileID: 836002467700080245}
   - component: {fileID: 5376614928449334947}
   - component: {fileID: -4749644617932713838}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: sheetPile
-  m_TagString: PropsFirts
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,6 +36,19 @@ Transform:
   - {fileID: 2411530141843865479}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-3940669185933491430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780444778341322641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 780444778341322641}
 --- !u!33 &836002467700080245
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -117,6 +131,14 @@ PrefabInstance:
     - target: {fileID: 1974967344400006511, guid: 993262c3569ad9442b79f38f54bc20e4, type: 3}
       propertyPath: m_Name
       value: paperHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974967344400006511, guid: 993262c3569ad9442b79f38f54bc20e4, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974967344400006511, guid: 993262c3569ad9442b79f38f54bc20e4, type: 3}
+      propertyPath: m_TagString
+      value: PropsSecond
       objectReference: {fileID: 0}
     - target: {fileID: 2387050266007168439, guid: 993262c3569ad9442b79f38f54bc20e4, type: 3}
       propertyPath: m_LocalPosition.x

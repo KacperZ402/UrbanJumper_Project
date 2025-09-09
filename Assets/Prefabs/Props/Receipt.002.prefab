@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3397712543800856984}
   - component: {fileID: 1526246061584233921}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: SpawnArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7434893850003677633}
   - component: {fileID: 5440245162055399272}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: SpawnArea (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8879347335498670707}
   - component: {fileID: 6665703092159285855}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: SpawnArea (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4545347635929345167}
   - component: {fileID: 1724568686622494798}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: SpawnArea (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,13 +221,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2266744507106161774}
+  - component: {fileID: -7613547645696658291}
   - component: {fileID: 9141511294789105322}
   - component: {fileID: 838369748172237766}
   - component: {fileID: -8176531841328581807}
   - component: {fileID: 5911656634105056358}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Receipt.002
-  m_TagString: PropsFirts
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -255,6 +256,19 @@ Transform:
   - {fileID: 5645852828382162886}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-7613547645696658291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5973829685085028941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5973829685085028941}
 --- !u!33 &9141511294789105322
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -377,7 +391,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6050514584211446374}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Monitor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +422,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7214020504507538885}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Monitor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,7 +454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3865851835338323262}
   - component: {fileID: 738511131460581219}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,6 +492,8 @@ MonoBehaviour:
   - {fileID: 1032902127296263103, guid: 9c91223e5f17d7741b641fa28894ce3a, type: 3}
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   - {fileID: 2187849760024080149, guid: 1e68b8c40c9133743b2ce5214fe68cbf, type: 3}
+  spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!1 &9114776543008708241
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,7 +503,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5645852828382162886}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Laptop
   m_TagString: Untagged
   m_Icon: {fileID: 0}

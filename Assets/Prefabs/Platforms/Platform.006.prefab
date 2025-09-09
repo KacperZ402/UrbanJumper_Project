@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4552390492684053606}
   - component: {fileID: 3471366668187814988}
   - component: {fileID: 7185449899640010705}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 8938957390346558882}
   - component: {fileID: 538637270556055968}
   - component: {fileID: 8514465849360576126}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 3573422282671212675}
   - component: {fileID: 470202131659978416}
   - component: {fileID: 9070375671515348210}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,11 +207,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2136198919466417534}
+  - component: {fileID: -8776582026797520946}
   - component: {fileID: 3733998572503400866}
   - component: {fileID: 4512550211066651554}
   - component: {fileID: 1463146466559609935}
   - component: {fileID: 5844679616634695767}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Platform.006
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -270,6 +271,19 @@ Transform:
   - {fileID: 7730297526271210771}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-8776582026797520946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939944336869111405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 939944336869111405}
 --- !u!33 &3733998572503400866
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -385,7 +399,7 @@ GameObject:
   - component: {fileID: 4796193114724204662}
   - component: {fileID: 4626624854723157848}
   - component: {fileID: 6986352897335882409}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,7 +465,7 @@ GameObject:
   - component: {fileID: 7294567996307925005}
   - component: {fileID: 6272888233144063620}
   - component: {fileID: 6724627374566124240}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -517,7 +531,7 @@ GameObject:
   - component: {fileID: 8869511607795696546}
   - component: {fileID: 1638458227463096319}
   - component: {fileID: 9130199501394669749}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -583,7 +597,7 @@ GameObject:
   - component: {fileID: 8679704782989755064}
   - component: {fileID: 1292572372597278434}
   - component: {fileID: 4383404879755171900}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -697,7 +711,7 @@ GameObject:
   - component: {fileID: 4839310372325193331}
   - component: {fileID: 1504757994052677319}
   - component: {fileID: 5343443867196564283}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -763,7 +777,7 @@ GameObject:
   - component: {fileID: 469907678895044271}
   - component: {fileID: 9054822965190107238}
   - component: {fileID: 1361149516729284}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -835,7 +849,7 @@ GameObject:
   - component: {fileID: 8034275438759563406}
   - component: {fileID: 5406467708667521090}
   - component: {fileID: 1478062859230113000}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -901,7 +915,7 @@ GameObject:
   - component: {fileID: 6803691452237110310}
   - component: {fileID: 2660247732967896667}
   - component: {fileID: 8103445213404024632}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: ParentDestoryer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -956,6 +970,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a71fa74cd4c0604faa32c89a9bb66bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTag: Player
+  keepLayerName: Keep
 --- !u!1 &3296924027956428446
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,7 +983,7 @@ GameObject:
   - component: {fileID: 3545836359650376302}
   - component: {fileID: 5605978698175239877}
   - component: {fileID: 1786693599011993438}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1100,7 +1116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3715232200855618009}
   - component: {fileID: 4719853848688775787}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1195,7 +1211,7 @@ GameObject:
   - component: {fileID: 7564833033289798290}
   - component: {fileID: 5261183480683336279}
   - component: {fileID: 394694857832094558}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1261,7 +1277,7 @@ GameObject:
   - component: {fileID: 4025528723243334489}
   - component: {fileID: 3631958669984187088}
   - component: {fileID: 9211054663883785}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1327,7 +1343,7 @@ GameObject:
   - component: {fileID: 3054589307876148790}
   - component: {fileID: 1211515800247602118}
   - component: {fileID: 560083194751348499}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaWall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1460,7 +1476,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8915466787274711739}
   - component: {fileID: 5322359895699612992}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1554,7 +1570,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1362044831266263827}
   - component: {fileID: 6634161186255976030}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1605,7 +1621,7 @@ GameObject:
   - component: {fileID: 4719523554932660190}
   - component: {fileID: 1919812082677145712}
   - component: {fileID: 6832712086937776146}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1671,7 +1687,7 @@ GameObject:
   - component: {fileID: 7616187105032468474}
   - component: {fileID: 5898863626017291271}
   - component: {fileID: 2882218654763802810}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1737,7 +1753,7 @@ GameObject:
   - component: {fileID: 1443882072325838967}
   - component: {fileID: 8162303770271404224}
   - component: {fileID: 6778799594711126789}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1803,7 +1819,7 @@ GameObject:
   - component: {fileID: 1011336657701553299}
   - component: {fileID: 6557706868099798998}
   - component: {fileID: 3968224432621365301}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1869,7 +1885,7 @@ GameObject:
   - component: {fileID: 5394892416485745716}
   - component: {fileID: 149552617771537766}
   - component: {fileID: 9218966627136321475}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1935,7 +1951,7 @@ GameObject:
   - component: {fileID: 7348218596603017608}
   - component: {fileID: 2463565689910576878}
   - component: {fileID: 4270964425716436471}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaWall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2069,7 +2085,7 @@ GameObject:
   - component: {fileID: 2719349901076810572}
   - component: {fileID: 8003354468956556550}
   - component: {fileID: 2941523911101562132}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2135,7 +2151,7 @@ GameObject:
   - component: {fileID: 4467438367843280632}
   - component: {fileID: 3473358433323740470}
   - component: {fileID: 7700043190660771833}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2201,7 +2217,7 @@ GameObject:
   - component: {fileID: 1885579545292897229}
   - component: {fileID: 6470084117275255898}
   - component: {fileID: 5194284620974159371}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2267,7 +2283,7 @@ GameObject:
   - component: {fileID: 7946973556470526930}
   - component: {fileID: 913260442815332716}
   - component: {fileID: 2131292837111474248}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2333,7 +2349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1925588400106197939}
   - component: {fileID: 4033802959232913212}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2384,7 +2400,7 @@ GameObject:
   - component: {fileID: 1667720173939591078}
   - component: {fileID: 235758834739862186}
   - component: {fileID: 987882676374265128}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2450,7 +2466,7 @@ GameObject:
   - component: {fileID: 783161117396342613}
   - component: {fileID: 6030577082012808484}
   - component: {fileID: 7142005287670626545}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2516,7 +2532,7 @@ GameObject:
   - component: {fileID: 7109675698638632060}
   - component: {fileID: 2799573073377992733}
   - component: {fileID: 1643692909830431119}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2583,7 +2599,7 @@ GameObject:
   - component: {fileID: 3532821576461807528}
   - component: {fileID: 5876568819451857206}
   - component: {fileID: 4344388245725170713}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2649,7 +2665,7 @@ GameObject:
   - component: {fileID: 6463939143621247044}
   - component: {fileID: 1585455133730587621}
   - component: {fileID: 4048439844021472887}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2714,7 +2730,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7730297526271210771}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: endPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2747,7 +2763,7 @@ GameObject:
   - component: {fileID: 5627816466695721921}
   - component: {fileID: 6399395626844435649}
   - component: {fileID: 6191896428649970073}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2813,7 +2829,7 @@ GameObject:
   - component: {fileID: 5469374125011535291}
   - component: {fileID: 3014208556106289077}
   - component: {fileID: 5389347638690492576}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2878,7 +2894,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2495929538106696132}
   - component: {fileID: 746863879719147749}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2930,7 +2946,7 @@ GameObject:
   - component: {fileID: 4242456933478797214}
   - component: {fileID: 6630428138586124657}
   - component: {fileID: 1050987030833409041}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3035,7 +3051,7 @@ GameObject:
   - component: {fileID: 3733362912333569352}
   - component: {fileID: 7897547844033441584}
   - component: {fileID: 2291607807535749956}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

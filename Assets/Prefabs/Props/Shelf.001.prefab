@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1226320423883638832}
   - component: {fileID: 2027160957686411007}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   m_Component:
   - component: {fileID: 859321504413379473}
   - component: {fileID: 2629747737251198445}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (07)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6316206917381789206}
   - component: {fileID: 1444000517345923780}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (06)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7237571535257183911}
   - component: {fileID: 227251360407608366}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5625288905868963239}
   - component: {fileID: 8475991283820691380}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5124656783858967778}
   - component: {fileID: 4492739505305301660}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (08)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 798520348009130509}
   - component: {fileID: 6447384242131440592}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,7 +381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9127942629387155237}
   - component: {fileID: 5408199770052850691}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2160241108590338990}
   - component: {fileID: 6306215552418588061}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -490,7 +490,7 @@ GameObject:
   - component: {fileID: 8777732756214741769}
   - component: {fileID: 7751261339150922589}
   - component: {fileID: 822118953134803725}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Shelf.001
   m_TagString: PropsFirts
   m_Icon: {fileID: 0}
@@ -644,7 +644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2578397152365993893}
   - component: {fileID: 695495113247157835}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -697,7 +697,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5136784115630282857}
   - component: {fileID: 3176563758579147541}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -749,9 +749,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7517353839479620193}
-  m_Layer: 6
+  - component: {fileID: 8128111471648177960}
+  m_Layer: 0
   m_Name: Shelf.001
-  m_TagString: PropsFirts
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -788,6 +789,19 @@ Transform:
   - {fileID: 6504631075339327194}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8128111471648177960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7824500451609884839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7824500451609884839}
 --- !u!1 &7960585800583482267
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,7 +812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5889041782612905757}
   - component: {fileID: 7186950001677984717}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -851,7 +865,7 @@ GameObject:
   m_Component:
   - component: {fileID: 14090269646357378}
   - component: {fileID: 4279008858026381030}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -904,7 +918,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8215215611731518869}
   - component: {fileID: 41582435098401646}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -957,7 +971,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3174584296530191475}
   - component: {fileID: 5555874314453254559}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1010,7 +1024,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6594718826657251051}
   - component: {fileID: 3798033154065023938}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea (09)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2449414106407086313}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Monitor
-  m_TagString: Untagged
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,9 +41,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1794821216292510013}
   - component: {fileID: 6848330625189645686}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn
-  m_TagString: Untagged
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,6 +79,8 @@ MonoBehaviour:
   - {fileID: 1032902127296263103, guid: 9c91223e5f17d7741b641fa28894ce3a, type: 3}
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   - {fileID: 2187849760024080149, guid: 1e68b8c40c9133743b2ce5214fe68cbf, type: 3}
+  spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!1 &4181316153237307007
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,9 +90,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8718848587031649499}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Monitor (1)
-  m_TagString: Untagged
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,9 +122,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9024494549575037850}
   - component: {fileID: 116411878558692212}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea
-  m_TagString: Untagged
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,13 +174,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7094069025490650414}
+  - component: {fileID: -5077946716302746305}
   - component: {fileID: 6911764810801001494}
   - component: {fileID: 4840266882132632198}
   - component: {fileID: 6147406100922369909}
   - component: {fileID: 6191142208875580871}
   m_Layer: 6
   m_Name: Desk
-  m_TagString: PropsFirts
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,6 +206,19 @@ Transform:
   - {fileID: 9024494549575037850}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-5077946716302746305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5730973505550276196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5730973505550276196}
 --- !u!33 &6911764810801001494
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -326,9 +342,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1200761400356788320}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: NoteBook
-  m_TagString: Untagged
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

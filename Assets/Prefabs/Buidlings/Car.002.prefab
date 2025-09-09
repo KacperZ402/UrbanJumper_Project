@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2800394445316377603}
   - component: {fileID: 6822256395366924082}
   - component: {fileID: 8438054531463174167}
+  - component: {fileID: 723171833396017911}
   - component: {fileID: 6679596799682723202}
   m_Layer: 0
   m_Name: Car.002
@@ -89,6 +90,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &723171833396017911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904176830914616866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 904176830914616866}
 --- !u!114 &6679596799682723202
 MonoBehaviour:
   m_ObjectHideFlags: 0

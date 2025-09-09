@@ -207,7 +207,6 @@ public class FloorPropSpawner : MonoBehaviour
         {
             angle = 90 * Random.Range(0, 4);
             rotation = Quaternion.Euler(0, angle, 0);
-            // obracamy size jeœli k¹t 90 lub 270
             if (angle == 90 || angle == 270)
                 size = new Vector2Int(size.y, size.x);
         }
@@ -229,8 +228,10 @@ public class FloorPropSpawner : MonoBehaviour
             if (forceSpawn || CanOccupy(x, z, size))
             {
                 Vector3 worldPos = GridToWorld(x, z, size);
-                GameObject obj = Instantiate(prefab, worldPos, rotation, transform);
+
+                GameObject obj = SingleObjectPool.Instance.Get(prefab, worldPos, rotation, transform);
                 obj.SetActive(true);
+
                 MarkOccupied(x, z, size);
                 break;
             }

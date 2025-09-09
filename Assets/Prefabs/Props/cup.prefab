@@ -9,12 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8723074393206273042}
+  - component: {fileID: -4704615389032061947}
   - component: {fileID: 5692038198155706433}
   - component: {fileID: 7830124284774638638}
   - component: {fileID: 5961225874491661335}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: cup
-  m_TagString: PropsSecond
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,6 +35,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4704615389032061947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6968855280722684027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6968855280722684027}
 --- !u!33 &5692038198155706433
 MeshFilter:
   m_ObjectHideFlags: 0

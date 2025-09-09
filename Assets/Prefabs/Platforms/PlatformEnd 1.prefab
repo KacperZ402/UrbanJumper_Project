@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 634947726159915461}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: End_endPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 6635174874401388568}
   - component: {fileID: 8100140115974059935}
   - component: {fileID: 1759425637140286758}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BreakableGlass (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 2469375676952017293}
   - component: {fileID: 3377252725646374947}
   - component: {fileID: 7025259847481969583}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 504415334860331984}
   - component: {fileID: 6547452419019806422}
   - component: {fileID: 337028044119774438}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BuldingSpawnBlocker (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 8526128113872830746}
   - component: {fileID: 6086811369522314037}
   - component: {fileID: 1602984241961788960}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3854793578619170764}
   - component: {fileID: 1100828641397259335}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RoadGen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 2524963790498093937}
   - component: {fileID: 4145717507016961557}
   - component: {fileID: 6984527524084899576}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: ParentDestoryer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,6 +484,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a71fa74cd4c0604faa32c89a9bb66bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTag: Player
+  keepLayerName: Keep
 --- !u!1 &3886812320719575192
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,7 +499,7 @@ GameObject:
   - component: {fileID: 4775764866100124148}
   - component: {fileID: 4297523503149664104}
   - component: {fileID: 3347784822779951948}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BreakableGlass (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -631,7 +633,7 @@ GameObject:
   - component: {fileID: 8647965950464795308}
   - component: {fileID: 4644341396270570372}
   - component: {fileID: 4739680400278639968}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SegmentTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -774,7 +776,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3667223973318620}
   - component: {fileID: 7013757813133949623}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -869,7 +871,7 @@ GameObject:
   - component: {fileID: 4307646050713193336}
   - component: {fileID: 3148883974564186416}
   - component: {fileID: 1421223704739556969}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BuldingSpawnBlocker (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -933,7 +935,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5422307043490228860}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: endPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -965,7 +967,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2953364800899549690}
   - component: {fileID: 6906778204342159592}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1015,7 +1017,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9160799775608196715}
   - component: {fileID: 8814243358198162989}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1113,7 +1115,7 @@ GameObject:
   - component: {fileID: 8667173035255156596}
   - component: {fileID: 4681927487157885398}
   - component: {fileID: 2878106360847252505}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BreakableGlass (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1256,6 +1258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3354935812073546010}
+  - component: {fileID: 784996358865920059}
   - component: {fileID: 6315533851463881189}
   - component: {fileID: 8083935715698130461}
   - component: {fileID: 4528582987738418977}
@@ -1299,6 +1302,19 @@ Transform:
   - {fileID: 634947726159915461}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &784996358865920059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7572382710790843361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7572382710790843361}
 --- !u!33 &6315533851463881189
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1412,7 +1428,7 @@ GameObject:
   m_Component:
   - component: {fileID: 301732286911307814}
   - component: {fileID: 4355596859729902379}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1463,7 +1479,7 @@ GameObject:
   - component: {fileID: 1805276354960514944}
   - component: {fileID: 5307381206457095618}
   - component: {fileID: 2199452419534316381}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1597,7 +1613,7 @@ GameObject:
   - component: {fileID: 1961955312162989639}
   - component: {fileID: 4337236590475262308}
   - component: {fileID: 4897222740175204421}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnAreaFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1714,7 +1730,7 @@ GameObject:
   - component: {fileID: 5148190814900206494}
   - component: {fileID: 5957889926867010598}
   - component: {fileID: 3066529126480045050}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

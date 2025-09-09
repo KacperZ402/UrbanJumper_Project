@@ -16,21 +16,12 @@ public class SingleObjectSpawner : MonoBehaviour
     void Start()
     {
         // Losowa szansa
-        if (Random.value > spawnChance)
-        {
-            Destroy(gameObject);
-            return;
-        }
+        if (Random.value > spawnChance) return;
 
         // Sprawdzenie blockerów (jeśli nie ignorujemy)
-        if (!ignoreSpawnBlockers && IsBlocked())
-        {
-            Destroy(gameObject);
-            return;
-        }
+        if (!ignoreSpawnBlockers && IsBlocked()) return;
 
         SpawnObject();
-        Destroy(gameObject);
     }
 
     bool IsBlocked()
@@ -59,10 +50,9 @@ public class SingleObjectSpawner : MonoBehaviour
         GameObject prefab = prefabs[Random.Range(0, prefabs.Count)];
         Quaternion spawnRotation = transform.rotation;
         Vector3 spawnPosition = transform.position;
-
         Transform parent = transform.parent;
 
-        GameObject spawned = Instantiate(prefab, spawnPosition, spawnRotation, parent);
+        GameObject spawned = SingleObjectPool.Instance.Get(prefab, spawnPosition, spawnRotation, parent);
         spawned.SetActive(true);
     }
 }

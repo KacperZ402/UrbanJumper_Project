@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2886642590500623173}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Monitor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1973746861555009474}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Laptop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5621160297154558595}
   - component: {fileID: 3784417191596829286}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,6 +110,8 @@ MonoBehaviour:
   - {fileID: 1032902127296263103, guid: 9c91223e5f17d7741b641fa28894ce3a, type: 3}
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
   - {fileID: 2187849760024080149, guid: 1e68b8c40c9133743b2ce5214fe68cbf, type: 3}
+  spawnChance: 1
+  ignoreSpawnBlockers: 0
 --- !u!1 &4334526074124112171
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,9 +121,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3816347875205928582}
-  m_Layer: 6
+  - component: {fileID: 2520874332326201736}
+  m_Layer: 0
   m_Name: Receipt.001
-  m_TagString: PropsFirts
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,6 +150,19 @@ Transform:
   - {fileID: 1973746861555009474}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2520874332326201736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4334526074124112171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4334526074124112171}
 --- !u!1 &4580639949567387545
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +176,7 @@ GameObject:
   - component: {fileID: 930735390460463868}
   - component: {fileID: 6040390444374198885}
   - component: {fileID: 7836448359082376474}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Receipt.001
   m_TagString: PropsFirts
   m_Icon: {fileID: 0}
@@ -304,7 +320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6606902196326084158}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Monitor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2191319589196380207}
   - component: {fileID: 2026276892648043500}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: SpawnArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,7 +405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4982231064504445594}
   - component: {fileID: 240041423677910732}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: SpawnArea (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

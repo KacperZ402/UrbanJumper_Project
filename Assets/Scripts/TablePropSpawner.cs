@@ -23,6 +23,7 @@ public class TablePropSpawner : MonoBehaviour
     public BoxCollider ownCollider;
 
     private List<Vector3> spawnedPositions = new List<Vector3>();
+    private List<GameObject> availablePrefabs = new List<GameObject>();
 
     private void Start()
     {
@@ -43,20 +44,18 @@ public class TablePropSpawner : MonoBehaviour
             Transform point = staticPropPoints[i];
             GameObject prefab = staticProps[i];
 
-            if (point != null && prefab != null)
+            if (point != null && prefab != null && !spawnedPositions.Contains(point.position))
             {
-                if (spawnedPositions.Contains(point.position))
-                    continue;
+                GameObject obj = SingleObjectPool.Instance.Get(prefab, point.position, point.rotation, this.transform);
 
-                GameObject obj = Instantiate(prefab, point.position, point.rotation);
-                obj.transform.parent = this.transform;
+                PoolableObject po = obj.GetComponent<PoolableObject>();
+                if (po != null && po.prefab == null)
+                    po.Init(prefab);
 
                 spawnedPositions.Add(point.position);
             }
         }
     }
-
-
     void SpawnRandomProps()
     {
         for (int i = 0; i < propCount; i++)
@@ -70,8 +69,12 @@ public class TablePropSpawner : MonoBehaviour
                 if (IsPositionValid(candidatePos))
                 {
                     GameObject prefab = GetRandomProp();
-                    GameObject obj = Instantiate(prefab, candidatePos, Quaternion.Euler(0, Random.Range(0f, 360f), 0));
-                    obj.transform.parent = this.transform;
+                    GameObject obj = SingleObjectPool.Instance.Get(prefab, candidatePos, Quaternion.Euler(0, Random.Range(0f, 360f), 0), this.transform);
+
+                    PoolableObject po = obj.GetComponent<PoolableObject>();
+                    if (po != null && po.prefab == null)
+                        po.Init(prefab);
+
                     spawnedPositions.Add(candidatePos);
                     spawned = true;
                 }
@@ -79,9 +82,6 @@ public class TablePropSpawner : MonoBehaviour
             }
         }
     }
-
-    private List<GameObject> availablePrefabs = new List<GameObject>();
-
     private GameObject GetRandomProp()
     {
         if (allowDuplicateProps)
@@ -116,10 +116,11 @@ public class TablePropSpawner : MonoBehaviour
                 return transform.position;
         }
     }
+
     Vector3 GetRandomPointInCircle()
     {
         Vector3 center = ownCollider.bounds.center;
-        float radius = Mathf.Min(ownCollider.bounds.extents.x, ownCollider.bounds.extents.z) - 1f; // margines
+        float radius = Mathf.Min(ownCollider.bounds.extents.x, ownCollider.bounds.extents.z) - 1f;
         Vector2 point2D = Random.insideUnitCircle * radius;
         float y = ownCollider.bounds.max.y;
         return new Vector3(center.x + point2D.x, y, center.z + point2D.y);
@@ -128,9 +129,7 @@ public class TablePropSpawner : MonoBehaviour
     Vector3 GetRandomPointInBoxes()
     {
         if (!allowSpawnOnFullSurface || spawnAreas.Count == 0)
-        {
             return GetRandomPointOnOwnCollider();
-        }
 
         BoxCollider area = spawnAreas[Random.Range(0, spawnAreas.Count)];
         Bounds bounds = area.bounds;
@@ -145,7 +144,6 @@ public class TablePropSpawner : MonoBehaviour
     Vector3 GetRandomPointOnOwnCollider()
     {
         if (ownCollider == null) return transform.position;
-
         Bounds bounds = ownCollider.bounds;
 
         float x = Random.Range(bounds.min.x, bounds.max.x);
@@ -165,6 +163,7 @@ public class TablePropSpawner : MonoBehaviour
         }
         return true;
     }
+
     void Shuffle<T>(List<T> list)
     {
         for (int i = 0; i < list.Count; i++)
