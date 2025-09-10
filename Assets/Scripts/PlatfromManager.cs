@@ -1,16 +1,19 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class PlatformManager : MonoBehaviour
 {
-    [Header("Prefaby segmentów")]
+    [Header("Prefaby segmentÃ³w")]
     public GameObject[] regularPlatforms;
     public GameObject endPlatformPrefab;
 
-    [Header("Zakres liczby segmentów")]
+    [Header("Zakres liczby segmentÃ³w")]
     public int minSegments = 10;
     public int maxSegments = 20;
 
-    private int lastIndex = -1;   // do kontroli ¿eby nie powtarzaæ tego samego segmentu
+    [Header("Ile segmentÃ³w spawnujemy od razu na starcie")]
+    public int initialSpawnCount = 3;
+
+    private int lastIndex = -1;   // Å¼eby nie powtarzaÄ‡ segmentu
     private int spawnedCount = 0;
     private int targetCount = 0;
 
@@ -19,43 +22,73 @@ public class PlatformManager : MonoBehaviour
         StartNewCycle();
     }
 
-    /// <summary>
-    /// Wywo³ywane przez trigger endpointa.
-    /// </summary>
-    public void SpawnNext(Transform endPoint)
-    {
-        if (spawnedCount >= targetCount)
-        {
-            // Postaw koñcow¹ platformê
-            Instantiate(endPlatformPrefab, endPoint.position, endPoint.rotation);
-            Debug.Log("Postawiono EndPlatform – cykl zakoñczony!");
-
-            // Nowy cykl
-            StartNewCycle();
-            return;
-        }
-
-        int newIndex = GetRandomIndexDifferentFromLast();
-        GameObject segment = Instantiate(
-            regularPlatforms[newIndex],
-            endPoint.position,
-            endPoint.rotation
-        );
-
-        lastIndex = newIndex;
-        spawnedCount++;
-    }
-
-    /// <summary>
-    /// Rozpoczyna now¹ rundê spawnowania.
-    /// </summary>
     private void StartNewCycle()
     {
         spawnedCount = 0;
         lastIndex = -1;
         targetCount = Random.Range(minSegments, maxSegments + 1);
+        Debug.Log($"Nowy cykl: do wygenerowania {targetCount} segmentÃ³w.");
 
-        Debug.Log($"Nowy cykl: do wygenerowania {targetCount} segmentów.");
+        // Spawn pierwszych kilku segmentÃ³w od razu
+        Transform spawnPoint = transform; // startowa pozycja (np. start platformy)
+        for (int i = 0; i < initialSpawnCount; i++)
+        {
+            SpawnSegmentAt(spawnPoint);
+            spawnPoint = GetSegmentEndPoint(); // ustawiamy kolejny spawnPoint
+        }
+    }
+
+    /// <summary>
+    /// WywoÅ‚ywane przez trigger segmentu
+    /// </summary>
+    public void SpawnNext(Transform triggerParentEndPoint)
+    {
+        if (spawnedCount >= targetCount)
+        {
+            // Spawn EndPlatform
+            Instantiate(endPlatformPrefab, triggerParentEndPoint.position, triggerParentEndPoint.rotation);
+            Debug.Log("Postawiono EndPlatform â€“ cykl zakoÅ„czony!");
+            StartNewCycle();
+            return;
+        }
+
+        SpawnSegmentAt(triggerParentEndPoint);
+    }
+
+    private void SpawnSegmentAt(Transform spawnPoint)
+    {
+        int newIndex = GetRandomIndexDifferentFromLast();
+        GameObject segment = Instantiate(
+            regularPlatforms[newIndex],
+            spawnPoint.position,
+            spawnPoint.rotation
+        );
+
+        lastIndex = newIndex;
+        spawnedCount++;
+
+        // ZnajdÅº trigger w segmencie i przypisz mu PlatformManager
+        EndPointTrigger trigger = segment.GetComponentInChildren<EndPointTrigger>();
+        if (trigger != null)
+        {
+            trigger.manager = this;
+        }
+        else
+        {
+            Debug.LogWarning("Brak EndPointTrigger w segmencie!");
+        }
+    }
+
+    private Transform GetSegmentEndPoint()
+    {
+        // Pobiera endpoint ostatnio zrespionego segmentu
+        GameObject lastSegment = GameObject.FindGameObjectsWithTag("Segment")?[GameObject.FindGameObjectsWithTag("Segment").Length - 1];
+        if (lastSegment != null)
+        {
+            Transform endPoint = lastSegment.transform.Find("endPoint");
+            if (endPoint != null) return endPoint;
+        }
+        return transform; // fallback na start
     }
 
     private int GetRandomIndexDifferentFromLast()

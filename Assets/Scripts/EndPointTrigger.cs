@@ -2,21 +2,20 @@ using UnityEngine;
 
 public class EndPointTrigger : MonoBehaviour
 {
-    public string playerTag = "Player";
+    public PlatformManager manager;
     private bool triggered = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (triggered) return;
-        if (!other.CompareTag(playerTag)) return;
+        if (triggered || !other.CompareTag("Player")) return;
 
         triggered = true;
 
-        PlatformManager manager = FindObjectOfType<PlatformManager>();
         if (manager != null)
         {
-            manager.SpawnNext(transform.parent);
-            // parent = endPoint, bo trigger jest jego dzieckiem
+            manager.SpawnNext(transform.parent); // spawn segmentu na pozycji rodzica
         }
+
+        Destroy(gameObject); // usuwamy trigger po u¿yciu
     }
 }
