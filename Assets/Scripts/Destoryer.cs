@@ -19,11 +19,14 @@ public class SegmentReturnTrigger : MonoBehaviour
     {
         if (!other.CompareTag(playerTag)) return;
 
-        // Zwróæ wszystkie PoolableObject bêd¹ce dzieæmi segmentu, czyli rodzica triggera
-        Transform segmentTransform = transform.parent; // parent triggera = segment
+        // Segment = rodzic triggera
+        Transform segmentTransform = transform.parent;
         if (segmentTransform != null)
         {
+            // 1. Zwróæ wszystkie dzieci
             ReturnChildProps(segmentTransform);
+            // 2. Zniszcz Segment
+            Destroy(transform.parent.gameObject);
         }
     }
 
@@ -44,11 +47,11 @@ public class SegmentReturnTrigger : MonoBehaviour
                 }
             }
 
+            // Rekurencyjnie zwracamy dzieci dziecka
             if (child.childCount > 0)
             {
                 ReturnChildProps(child);
             }
         }
     }
-
 }

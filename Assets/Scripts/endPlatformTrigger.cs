@@ -16,7 +16,8 @@ public class endPlaftormTrigger : MonoBehaviour
 
         if (spawnPoint != null)
         {
-            Instantiate(startPlatformPrefab, spawnPoint.position, Quaternion.identity);
+            Instantiate(startPlatformPrefab,spawnPoint.position, Quaternion.identity
+        );
         }
         else
         {

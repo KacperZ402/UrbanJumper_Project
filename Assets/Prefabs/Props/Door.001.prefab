@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 447674729758068232}
   - component: {fileID: 2159333711788902306}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Door.001
   m_TagString: Prop
   m_Icon: {fileID: 0}

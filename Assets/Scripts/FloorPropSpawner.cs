@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections.Generic;
 
 public enum SurfaceType
@@ -27,16 +27,16 @@ public class SurfacePropSet
 [RequireComponent(typeof(BoxCollider))]
 public class FloorPropSpawner : MonoBehaviour
 {
-    [Header("Mo¿liwe typy przestrzeni (checklista)")]
+    [Header("MoÂ¿liwe typy przestrzeni (checklista)")]
     public List<SurfaceType> allowedSurfaceTypes;
 
-    [Header("PropSet dla ka¿dego typu przestrzeni")]
+    [Header("PropSet dla kaÂ¿dego typu przestrzeni")]
     public List<SurfacePropSet> surfacePropSets;
 
     [Header("Propy uniwersalne (np. doniczki)")]
     public List<GameObject> universalProps;
 
-    [Header("Iloœæ propów do wygenerowania")]
+    [Header("IloÅ“Ã¦ propÃ³w do wygenerowania")]
     public int minProps = 3;
     public int maxProps = 6;
 
@@ -51,7 +51,7 @@ public class FloorPropSpawner : MonoBehaviour
     private int gridSizeX;
     private int gridSizeZ;
 
-    // Mapowanie nazw prefabów na rozmiary, unikamy magicznych liczb
+    // Mapowanie nazw prefabÃ³w na rozmiary, unikamy magicznych liczb
     private readonly Dictionary<string, Vector2Int> prefabSizes = new Dictionary<string, Vector2Int>()
     {
         {"conftable", new Vector2Int(6, 15)},
@@ -61,19 +61,18 @@ public class FloorPropSpawner : MonoBehaviour
     };
 
     public event System.Action<SurfaceType> OnSurfaceChosen;
-
     void Start()
     {
         GenerateProps();
     }
 
     public SurfaceType chosenType { get; private set; }
-    
+
     void GenerateProps()
     {
         if (allowedSurfaceTypes == null || allowedSurfaceTypes.Count == 0)
         {
-            Debug.LogWarning("Brak dozwolonych typów przestrzeni.");
+            Debug.LogWarning("Brak dozwolonych typÃ³w przestrzeni.");
             return;
         }
 
@@ -83,7 +82,7 @@ public class FloorPropSpawner : MonoBehaviour
 
         if (selectedSet == null || selectedSet.propGroups.Count == 0)
         {
-            Debug.LogWarning($"Brak propów dla typu przestrzeni: {chosenType}");
+            Debug.LogWarning($"Brak propÃ³w dla typu przestrzeni: {chosenType}");
             return;
         }
 
@@ -126,7 +125,6 @@ public class FloorPropSpawner : MonoBehaviour
                 TryPlaceProp(uProp, false);
         }
     }
-
     void InitGrid()
     {
         BoxCollider area = GetComponent<BoxCollider>();
@@ -136,15 +134,14 @@ public class FloorPropSpawner : MonoBehaviour
         gridSizeZ = Mathf.CeilToInt(areaSize.z / cellSize);
         grid = new bool[gridSizeX, gridSizeZ];
 
-        // Ustawiamy dolny-lewy róg siatki wzglêdem œwiata
+        // Ustawiamy dolny-lewy rÃ³g siatki wzglÃªdem Å“wiata
         Vector3 localOrigin = area.center - areaSize * 0.5f;
         gridOrigin = transform.TransformPoint(localOrigin);
     }
 
-    // Wyra¿enie lambda dla losowego wyboru propa
+    // WyraÂ¿enie lambda dla losowego wyboru propa
     GameObject GetRandomProp(List<GameObject> list) =>
         list != null && list.Count > 0 ? list[Random.Range(0, list.Count)] : null;
-
     int[] GetGroupDistribution(SurfaceType type, int groupCount, int total)
     {
         int[] result = new int[groupCount];
@@ -152,16 +149,16 @@ public class FloorPropSpawner : MonoBehaviour
 
         if (type == SurfaceType.OpenSpace || type == SurfaceType.Cafe)
         {
-            // G³ówna grupa dostaje 80% propów
+            // GÂ³Ã³wna grupa dostaje 80% propÃ³w
             int mainCount = Mathf.RoundToInt(total * 0.8f);
             result[0] = mainCount;
             int rem = total - mainCount;
 
-            // Równo dzielimy pozosta³e propy pomiêdzy pozosta³e grupy
+            // RÃ³wno dzielimy pozostaÂ³e propy pomiÃªdzy pozostaÂ³e grupy
             for (int i = 1; i < groupCount; i++)
                 result[i] = rem / (groupCount - 1);
 
-            // Dla reszty dodajemy po 1 do pierwszych grup, jeœli zosta³y jakieœ z zaokr¹gleñ
+            // Dla reszty dodajemy po 1 do pierwszych grup, jeÅ“li zostaÂ³y jakieÅ“ z zaokrÂ¹gleÃ±
             int assigned = mainCount;
             for (int i = 1; i < groupCount; i++)
                 assigned += result[i];
@@ -172,7 +169,7 @@ public class FloorPropSpawner : MonoBehaviour
         }
         else
         {
-            // MeetingRoom, Reception - 1 g³ówny prop, reszta równo podzielona
+            // MeetingRoom, Reception - 1 gÂ³Ã³wny prop, reszta rÃ³wno podzielona
             result[0] = 1;
             int rem = Mathf.Max(0, total - 1);
             for (int i = 1; i < groupCount; i++)
@@ -195,7 +192,6 @@ public class FloorPropSpawner : MonoBehaviour
         bool forceSpawn = prefab.name.ToLower().Contains("meetingroomtable") || isMainProp;
         PlaceProp(prefab, forceSpawn);
     }
-
     void PlaceProp(GameObject prefab, bool forceSpawn)
     {
         Vector2Int size = GetColliderBasedSize(prefab);
@@ -216,7 +212,7 @@ public class FloorPropSpawner : MonoBehaviour
 
         if (maxX < 0 || maxZ < 0)
         {
-            Debug.LogWarning($"Prefab {prefab.name} jest za du¿y na grid.");
+            Debug.LogWarning($"Prefab {prefab.name} jest za duÂ¿y na grid.");
             return;
         }
 
@@ -237,7 +233,6 @@ public class FloorPropSpawner : MonoBehaviour
             }
         }
     }
-
     bool CanOccupy(int startX, int startZ, Vector2Int size)
     {
         for (int x = 0; x < size.x; x++)

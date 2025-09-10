@@ -25,7 +25,7 @@ public class TablePropSpawner : MonoBehaviour
     private List<Vector3> spawnedPositions = new List<Vector3>();
     private List<GameObject> availablePrefabs = new List<GameObject>();
 
-    private void Start()
+    private void OnEnable()
     {
         SpawnStaticProps();
         SpawnRandomProps();

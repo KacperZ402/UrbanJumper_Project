@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 2161542392593582248}
   - component: {fileID: 1455818246541619239}
   - component: {fileID: 1319854083942336001}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: CafeChair
   m_TagString: Prop
   m_Icon: {fileID: 0}

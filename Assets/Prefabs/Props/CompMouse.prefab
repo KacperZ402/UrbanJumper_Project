@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 619737565116158898}
   - component: {fileID: 4837475241226908091}
   - component: {fileID: 6015476654821886263}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: CompMouse
   m_TagString: Prop
   m_Icon: {fileID: 0}

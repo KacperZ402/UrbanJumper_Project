@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7397713726077563300}
   - component: {fileID: 2127292706775800253}
   - component: {fileID: -3576977277559093707}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: PaperRoll
   m_TagString: Prop
   m_Icon: {fileID: 0}

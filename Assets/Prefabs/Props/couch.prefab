@@ -76,7 +76,7 @@ GameObject:
   m_Component:
   - component: {fileID: 166939595113022606}
   - component: {fileID: 6130890763089627938}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: couch
   m_TagString: Prop
   m_Icon: {fileID: 0}

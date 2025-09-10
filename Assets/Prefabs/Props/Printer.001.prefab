@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2787338668562809742}
   - component: {fileID: 2473337805835586272}
   - component: {fileID: -4523592547215045280}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Printer.001
   m_TagString: Prop
   m_Icon: {fileID: 0}

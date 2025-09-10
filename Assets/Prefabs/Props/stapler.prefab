@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5323305813143796399}
   - component: {fileID: 3821339205328980545}
   - component: {fileID: 6901604771064682917}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: stapler
   m_TagString: Prop
   m_Icon: {fileID: 0}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2143280089048152295}
   - component: {fileID: 7617796985533564479}
   - component: {fileID: 875385391463306101}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: CeilLamp.001
   m_TagString: Prop
   m_Icon: {fileID: 0}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3119406891486787453}
   - component: {fileID: 970752516433305679}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: TV
   m_TagString: Prop
   m_Icon: {fileID: 0}

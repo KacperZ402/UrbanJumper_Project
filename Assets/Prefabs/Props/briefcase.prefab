@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3175975834088283335}
   - component: {fileID: 3752418192984422496}
   - component: {fileID: 1602129512295346903}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: briefcase
   m_TagString: Prop
   m_Icon: {fileID: 0}

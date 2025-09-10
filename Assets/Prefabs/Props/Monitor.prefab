@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5480957832674407572}
   - component: {fileID: 2460054904373520813}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Monitor
   m_TagString: Prop
   m_Icon: {fileID: 0}

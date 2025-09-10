@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 5241889567546225059}
   - component: {fileID: 6767655024651588190}
   - component: {fileID: 3883699813347962353}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Desk.003
   m_TagString: Prop
   m_Icon: {fileID: 0}

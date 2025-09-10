@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5096475249354195744}
   - component: {fileID: 8664187637990008894}
   - component: {fileID: 3626989396424598058}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: napkins
   m_TagString: Prop
   m_Icon: {fileID: 0}

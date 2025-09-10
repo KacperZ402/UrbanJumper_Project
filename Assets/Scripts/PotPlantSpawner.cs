@@ -8,15 +8,23 @@ public class PotPlantSpawner : MonoBehaviour
 
     private GameObject spawnedFlower;
 
-    void Start()
+    void OnEnable()
     {
         SpawnFlower();
     }
 
     public void SpawnFlower()
     {
+        if (flowerPrefabs == null || flowerPrefabs.Count == 0)
+        {
+            Debug.LogWarning("Brak prefabów w flowerPrefabs!");
+            return;
+        }
+
         GameObject prefab = flowerPrefabs[Random.Range(0, flowerPrefabs.Count)];
-        spawnedFlower = Instantiate(prefab, transform.position, Quaternion.identity, transform);
+
+        spawnedFlower = SingleObjectPool.Instance.Get(prefab, transform.position, Quaternion.identity, transform);
+
         spawnedFlower.transform.rotation = Quaternion.identity;
         spawnedFlower.SetActive(true);
     }

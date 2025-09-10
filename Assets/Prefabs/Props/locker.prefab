@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2714257419683478795}
   - component: {fileID: 190211470689627167}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: locker
   m_TagString: Prop
   m_Icon: {fileID: 0}

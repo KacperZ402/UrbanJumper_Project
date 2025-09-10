@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4070877373635861176}
   - component: {fileID: 6357078916583083360}
   - component: {fileID: -506449343222212946}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Headphones
   m_TagString: Prop
   m_Icon: {fileID: 0}

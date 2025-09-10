@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2331751481336744071}
   - component: {fileID: 8736083823277203321}
   - component: {fileID: -1224627554046401384}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Chair.002
   m_TagString: Prop
   m_Icon: {fileID: 0}

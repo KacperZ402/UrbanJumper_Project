@@ -25,7 +25,7 @@ public class ShelfPropSpawner : MonoBehaviour
 
     private List<Vector3> spawnedPositions = new List<Vector3>();
 
-    private void Start()
+    private void OnEnable()
     {
         SpawnProps();
     }

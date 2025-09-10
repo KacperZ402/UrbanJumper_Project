@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8619122649036302651}
   - component: {fileID: 3891384199198998183}
   - component: {fileID: 8418287033829612790}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Mug
   m_TagString: Prop
   m_Icon: {fileID: 0}

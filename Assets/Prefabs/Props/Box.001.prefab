@@ -136,7 +136,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3669545968939579767}
   - component: {fileID: 2441312743884175032}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Box.001
   m_TagString: Prop
   m_Icon: {fileID: 0}

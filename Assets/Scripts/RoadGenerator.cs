@@ -9,7 +9,7 @@ public class RoadGenerator : MonoBehaviour
     [Header("Settings")]
     public int maxSegments = 50;
 
-    void Start()
+    void OnEnable()
     {
         GenerateRoad(transform.position, 0, 0);
     }

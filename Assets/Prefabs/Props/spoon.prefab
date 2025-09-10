@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7113360799644004824}
   - component: {fileID: 4826224600168959288}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: spoon
   m_TagString: Prop
   m_Icon: {fileID: 0}

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,13 +7,13 @@ public class WallSurfacePropSet
 {
     public SurfaceType surfaceType;
 
-    [Header("Propy stoj¹ce przy œcianie")]
+    [Header("Propy stojÂ¹ce przy Å“cianie")]
     public List<GameObject> standingProps;
 
-    [Header("Propy wisz¹ce")]
+    [Header("Propy wiszÂ¹ce")]
     public List<GameObject> hangingProps;
 
-    [Header("Propy stoj¹ce z mo¿liwoœci¹ zawieszenia nad nimi")]
+    [Header("Propy stojÂ¹ce z moÂ¿liwoÅ“ciÂ¹ zawieszenia nad nimi")]
     public List<GameObject> standingWithHangingAllowed;
 }
 
@@ -25,10 +25,10 @@ public class WallPropSpawner : MonoBehaviour
     [Header("Referencja do FloorSpawnera")]
     public FloorPropSpawner floorSpawnerRef;
 
-    [Header("Zestawy propów do œcian")]
+    [Header("Zestawy propÃ³w do Å“cian")]
     public List<WallSurfacePropSet> wallSurfacePropSets;
 
-    [Header("Maksymalna iloœæ propów przy œcianie")]
+    [Header("Maksymalna iloÅ“Ã¦ propÃ³w przy Å“cianie")]
     public int maxStandingProps = 4;
     public int maxHangingProps = 2;
 
@@ -62,7 +62,7 @@ public class WallPropSpawner : MonoBehaviour
         WallSurfacePropSet set = wallSurfacePropSets.Find(s => s.surfaceType == type);
         if (set == null)
         {
-            Debug.LogWarning($"Brak danych propów œciennych dla: {type}");
+            Debug.LogWarning($"Brak danych propÃ³w Å“ciennych dla: {type}");
             return;
         }
 
@@ -77,7 +77,7 @@ public class WallPropSpawner : MonoBehaviour
             }
         }
 
-        // £¹czymy wszystkie typy propów w jedn¹ listê
+        // Â£Â¹czymy wszystkie typy propÃ³w w jednÂ¹ listÃª
         List<GameObject> allProps = new List<GameObject>();
         allProps.AddRange(set.standingProps);
         allProps.AddRange(set.hangingProps);
@@ -90,7 +90,7 @@ public class WallPropSpawner : MonoBehaviour
     {
         if (set == null) return;
 
-        // Podzia³ na grupy prefabów
+        // PodziaÂ³ na grupy prefabÃ³w
         List<GameObject> standing = set.standingProps;
         List<GameObject> hanging = set.hangingProps;
         List<GameObject> standingWithHanging = set.standingWithHangingAllowed;
@@ -139,7 +139,7 @@ public class WallPropSpawner : MonoBehaviour
             occupiedCells.Add(cellIndex);
             if (standingWithHanging.Contains(prefab))
             {
-                hangingAllowedCells.Add(cellIndex); // Zaznacz, ¿e mo¿na nad tym zawiesiæ
+                hangingAllowedCells.Add(cellIndex); // Zaznacz, e mona nad tym zawiesiÃ¦
             }
 
             spawned++;
@@ -180,7 +180,7 @@ public class WallPropSpawner : MonoBehaviour
             GameObject obj = SingleObjectPool.Instance.Get(hangingPrefab, hangingPos, transform.rotation, transform);
 
 
-            hangingOccupiedCells.Add(cellIndex); // Zaznacz, ¿e ta komórka ma hanging propa
+            hangingOccupiedCells.Add(cellIndex); // Zaznacz, e ta komÃ³rka ma hanging propa
             hangingSpawned++;
             hangingAttempts++;
         }

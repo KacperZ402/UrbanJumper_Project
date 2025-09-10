@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9132500164705491713}
   - component: {fileID: 5376807237661269356}
   - component: {fileID: -7116114111688987889}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Telephone
   m_TagString: Prop
   m_Icon: {fileID: 0}

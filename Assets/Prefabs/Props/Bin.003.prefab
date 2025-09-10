@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6824348957791699547}
   - component: {fileID: 9106872896611636800}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Bin.003
   m_TagString: Prop
   m_Icon: {fileID: 0}

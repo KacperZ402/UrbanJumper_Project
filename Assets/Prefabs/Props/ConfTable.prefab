@@ -1520,7 +1520,7 @@ GameObject:
   - component: {fileID: 5798991707713250300}
   - component: {fileID: 3267421522962917368}
   - component: {fileID: 7048444714813508677}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ConfTable
   m_TagString: Prop
   m_Icon: {fileID: 0}

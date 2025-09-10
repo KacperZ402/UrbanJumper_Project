@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 7469102558184810331}
   - component: {fileID: 2774657888813390849}
   - component: {fileID: 7092604796637594266}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: CafeTable
   m_TagString: Prop
   m_Icon: {fileID: 0}

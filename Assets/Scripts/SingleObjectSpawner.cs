@@ -13,7 +13,7 @@ public class SingleObjectSpawner : MonoBehaviour
     [Header("Ignoruj SpawnBlockery")]
     public bool ignoreSpawnBlockers = false;
 
-    void Start()
+    void OnEnable()
     {
         // Losowa szansa
         if (Random.value > spawnChance) return;

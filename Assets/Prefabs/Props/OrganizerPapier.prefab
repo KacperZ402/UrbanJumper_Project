@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 4135092679817126306}
   - component: {fileID: 5010947526280700242}
   - component: {fileID: -379836197188300111}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: OrganizerPapier
   m_TagString: Prop
   m_Icon: {fileID: 0}

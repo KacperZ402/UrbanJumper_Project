@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8783491663869616201}
   - component: {fileID: -9104022400601952350}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Clim_Split
   m_TagString: Prop
   m_Icon: {fileID: 0}
