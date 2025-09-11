@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1513306398777592056}
   - component: {fileID: 4060299427900234485}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CarSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}

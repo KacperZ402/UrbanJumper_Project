@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 5007688980718076100}
   - component: {fileID: 6704750061717886173}
   - component: {fileID: 6530590445907409432}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnBlocker (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
