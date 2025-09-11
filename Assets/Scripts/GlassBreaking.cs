@@ -23,18 +23,13 @@ public class GlassBreaking : MonoBehaviour
             // Podmień szybę na odłamki, przypisując do tego samego rodzica
             if (replacementPrefab != null)
             {
-                GameObject shards = SingleObjectPool.Instance.Get(
+                GameObject shards = Instantiate(
                     replacementPrefab,
                     transform.position,
                     transform.rotation,
                     transform.parent // <- tutaj przypisujemy do rodzica
                 );
             }
-            PoolableObject po = GetComponent<PoolableObject>();
-            if (po != null)
-                po.ReturnToPool();
-            else
-                gameObject.SetActive(false);
         }
     }
 }

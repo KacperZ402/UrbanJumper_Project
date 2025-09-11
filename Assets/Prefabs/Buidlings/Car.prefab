@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 671398448496272642}
+  preloadCount: 3
 --- !u!114 &3130440168277045951
 MonoBehaviour:
   m_ObjectHideFlags: 0

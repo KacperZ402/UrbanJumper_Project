@@ -266,6 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 5210366837589952615}
+  preloadCount: 6
 --- !u!1 &5461798908540350362
 GameObject:
   m_ObjectHideFlags: 0

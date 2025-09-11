@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 3694594354911353470}
+  preloadCount: 8
 --- !u!33 &5232866486777276255
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -97,3 +97,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 4625422117151618150, guid: f1f98a3ecd7e00540ae4d890391f3a76, type: 3}
+  preloadCount: 10

@@ -680,3 +680,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 8675578639384167832}
+  preloadCount: 6

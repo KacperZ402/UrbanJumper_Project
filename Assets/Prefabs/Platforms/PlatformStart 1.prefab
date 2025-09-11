@@ -852,7 +852,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765aa14c6871120459990c6631422da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player
 --- !u!1 &1308799752139205046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,7 +1066,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765aa14c6871120459990c6631422da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player
 --- !u!1 &1713437538170088321
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,7 +1400,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765aa14c6871120459990c6631422da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player
 --- !u!1 &2787985027836795881
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,7 +1466,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765aa14c6871120459990c6631422da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player
 --- !u!1 &2852449724275246379
 GameObject:
   m_ObjectHideFlags: 0
@@ -2433,7 +2429,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7259370659574161462}
-  - component: {fileID: -5890897171895506262}
   - component: {fileID: 4413616625105186522}
   - component: {fileID: 4411121864470215286}
   - component: {fileID: 1919783402457279563}
@@ -2508,19 +2503,6 @@ Transform:
   - {fileID: 6494364171009981430}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-5890897171895506262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3686148691040151828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 3686148691040151828}
 --- !u!33 &4413616625105186522
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2757,7 +2739,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765aa14c6871120459990c6631422da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player
 --- !u!1 &4189318012305797256
 GameObject:
   m_ObjectHideFlags: 0
@@ -3259,7 +3240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765aa14c6871120459990c6631422da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player
 --- !u!1 &4972587890890590872
 GameObject:
   m_ObjectHideFlags: 0
@@ -3622,7 +3602,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765aa14c6871120459990c6631422da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player
 --- !u!1 &5154240302905270993
 GameObject:
   m_ObjectHideFlags: 0
@@ -3689,7 +3668,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765aa14c6871120459990c6631422da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player
 --- !u!1 &5296065920720867595
 GameObject:
   m_ObjectHideFlags: 0
@@ -3756,7 +3734,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765aa14c6871120459990c6631422da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player
 --- !u!1 &5495923556266090034
 GameObject:
   m_ObjectHideFlags: 0
@@ -4244,7 +4221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765aa14c6871120459990c6631422da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player
 --- !u!1 &5947919289990126111
 GameObject:
   m_ObjectHideFlags: 0
@@ -4607,7 +4583,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765aa14c6871120459990c6631422da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player
 --- !u!1 &6091809422517177122
 GameObject:
   m_ObjectHideFlags: 0
@@ -4956,7 +4931,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765aa14c6871120459990c6631422da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player
 --- !u!1 &6550892261565894901
 GameObject:
   m_ObjectHideFlags: 0
@@ -5674,7 +5648,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765aa14c6871120459990c6631422da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player
 --- !u!1 &7925080280553016284
 GameObject:
   m_ObjectHideFlags: 0
