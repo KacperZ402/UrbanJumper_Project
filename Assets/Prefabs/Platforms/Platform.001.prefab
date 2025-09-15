@@ -167,6 +167,7 @@ MonoBehaviour:
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   spawnChance: 0.457
   ignoreSpawnBlockers: 0
+  keepLayerName: Keep
 --- !u!1 &564862702319920436
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +418,7 @@ MonoBehaviour:
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   spawnChance: 0.5
   ignoreSpawnBlockers: 0
+  keepLayerName: Keep
 --- !u!1 &2378895315599020338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,7 +1128,7 @@ Transform:
   m_GameObject: {fileID: 7070851904321353903}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 16.6, z: 374.3}
+  m_LocalPosition: {x: 0, y: 16.6, z: 340.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

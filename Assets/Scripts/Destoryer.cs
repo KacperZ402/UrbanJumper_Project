@@ -23,21 +23,18 @@ public class SegmentReturnTrigger : MonoBehaviour
         Transform segmentTransform = transform.parent;
         if (segmentTransform != null)
         {
-            // 1. Zwróæ wszystkie dzieci
-            ReturnChildProps(segmentTransform);
-            // 2. Zniszcz Segment
-            Destroy(transform.parent.gameObject);
+            ReturnDirectChildren(segmentTransform);
+            Destroy(segmentTransform.gameObject);
         }
     }
 
-    private void ReturnChildProps(Transform parent)
+    private void ReturnDirectChildren(Transform parent)
     {
-        Transform[] children = new Transform[parent.childCount];
-        for (int i = 0; i < parent.childCount; i++)
-            children[i] = parent.GetChild(i);
-
-        foreach (Transform child in children)
+        int childCount = parent.childCount;
+        for (int i = 0; i < childCount; i++)
         {
+            Transform child = parent.GetChild(i);
+
             if (child.gameObject.layer != keepLayer)
             {
                 PoolableObject po = child.GetComponent<PoolableObject>();
@@ -45,12 +42,6 @@ public class SegmentReturnTrigger : MonoBehaviour
                 {
                     po.ReturnToPool();
                 }
-            }
-
-            // Rekurencyjnie zwracamy dzieci dziecka
-            if (child.childCount > 0)
-            {
-                ReturnChildProps(child);
             }
         }
     }

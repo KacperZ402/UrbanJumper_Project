@@ -318,6 +318,7 @@ MonoBehaviour:
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   spawnChance: 0.597
   ignoreSpawnBlockers: 1
+  keepLayerName: Keep
 --- !u!1 &877210511798477462
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +369,7 @@ MonoBehaviour:
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   spawnChance: 0.597
   ignoreSpawnBlockers: 1
+  keepLayerName: Keep
 --- !u!1 &1043096005083859860
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,7 +397,7 @@ Transform:
   m_GameObject: {fileID: 1043096005083859860}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 16.6, z: 412.4}
+  m_LocalPosition: {x: 0, y: 16.6, z: 312.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1017,6 +1019,7 @@ MonoBehaviour:
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   spawnChance: 0.597
   ignoreSpawnBlockers: 1
+  keepLayerName: Keep
 --- !u!1 &2606175275945340180
 GameObject:
   m_ObjectHideFlags: 0
@@ -1173,6 +1176,7 @@ MonoBehaviour:
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   spawnChance: 0.597
   ignoreSpawnBlockers: 1
+  keepLayerName: Keep
 --- !u!1 &2787772547537680187
 GameObject:
   m_ObjectHideFlags: 0
@@ -1490,6 +1494,7 @@ MonoBehaviour:
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   spawnChance: 0.597
   ignoreSpawnBlockers: 1
+  keepLayerName: Keep
 --- !u!1 &5061052515263086410
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,6 +1706,7 @@ MonoBehaviour:
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   spawnChance: 0.597
   ignoreSpawnBlockers: 1
+  keepLayerName: Keep
 --- !u!1 &5357288901103698076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,6 +1824,7 @@ MonoBehaviour:
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   spawnChance: 0.597
   ignoreSpawnBlockers: 1
+  keepLayerName: Keep
 --- !u!1 &5513014987614514648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1868,6 +1875,7 @@ MonoBehaviour:
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   spawnChance: 0.597
   ignoreSpawnBlockers: 1
+  keepLayerName: Keep
 --- !u!1 &5952149228069869355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1918,6 +1926,7 @@ MonoBehaviour:
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   spawnChance: 0.597
   ignoreSpawnBlockers: 1
+  keepLayerName: Keep
 --- !u!1 &5956454515587033598
 GameObject:
   m_ObjectHideFlags: 0
@@ -3358,6 +3367,7 @@ MonoBehaviour:
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   spawnChance: 0.597
   ignoreSpawnBlockers: 1
+  keepLayerName: Keep
 --- !u!1 &9132782961692296297
 GameObject:
   m_ObjectHideFlags: 0

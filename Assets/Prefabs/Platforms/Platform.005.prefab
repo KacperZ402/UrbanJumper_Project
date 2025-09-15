@@ -589,7 +589,7 @@ Transform:
   m_GameObject: {fileID: 4375848327309092843}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 16.6, z: 482.7}
+  m_LocalPosition: {x: 0, y: 16.6, z: 437.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -680,6 +680,7 @@ MonoBehaviour:
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   spawnChance: 0.899
   ignoreSpawnBlockers: 1
+  keepLayerName: Keep
 --- !u!1 &5666231631814271111
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,6 +731,7 @@ MonoBehaviour:
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   spawnChance: 0.783
   ignoreSpawnBlockers: 1
+  keepLayerName: Keep
 --- !u!1 &5706076922437492382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1753,6 +1755,7 @@ MonoBehaviour:
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   spawnChance: 0.899
   ignoreSpawnBlockers: 1
+  keepLayerName: Keep
 --- !u!1 &8021584011716640682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1803,6 +1806,7 @@ MonoBehaviour:
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   spawnChance: 0.783
   ignoreSpawnBlockers: 1
+  keepLayerName: Keep
 --- !u!1 &8353782012011169484
 GameObject:
   m_ObjectHideFlags: 0

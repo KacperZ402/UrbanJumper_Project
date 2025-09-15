@@ -8,7 +8,7 @@ public class PotPlantSpawner : MonoBehaviour
 
     private GameObject spawnedFlower;
 
-    void OnEnable()
+    void Start()
     {
         SpawnFlower();
     }

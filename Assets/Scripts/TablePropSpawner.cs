@@ -22,13 +22,49 @@ public class TablePropSpawner : MonoBehaviour
     public List<BoxCollider> spawnAreas;
     public BoxCollider ownCollider;
 
+    [Header("Pooling Settings")]
+    public string keepLayerName = "Keep";
+    private int keepLayer;
+
     private List<Vector3> spawnedPositions = new List<Vector3>();
     private List<GameObject> availablePrefabs = new List<GameObject>();
 
+    private void Awake()
+    {
+        keepLayer = LayerMask.NameToLayer(keepLayerName);
+    }
+
     private void OnEnable()
     {
+        //Najpierw czyœcimy stare obiekty
+        ReturnSpawnedChildren();
+
+        //Reset pozycji
+        spawnedPositions.Clear();
+
+        //Spawn na nowo
         SpawnStaticProps();
         SpawnRandomProps();
+    }
+
+    private void ReturnSpawnedChildren()
+    {
+        // Zapisujemy dzieci w tablicy, ¿eby nie iterowaæ na ¿ywo
+        Transform[] children = new Transform[transform.childCount];
+        for (int i = 0; i < transform.childCount; i++)
+            children[i] = transform.GetChild(i);
+
+        foreach (Transform child in children)
+        {
+            if (child.gameObject.layer == keepLayer)
+                continue;
+
+            PoolableObject po = child.GetComponent<PoolableObject>();
+            if (po != null)
+                po.ReturnToPool();
+            else
+                Destroy(child.gameObject); // fallback, gdyby coœ nie mia³o PoolableObject
+        }
     }
 
     void SpawnStaticProps()
@@ -56,6 +92,7 @@ public class TablePropSpawner : MonoBehaviour
             }
         }
     }
+
     void SpawnRandomProps()
     {
         for (int i = 0; i < propCount; i++)
@@ -69,7 +106,12 @@ public class TablePropSpawner : MonoBehaviour
                 if (IsPositionValid(candidatePos))
                 {
                     GameObject prefab = GetRandomProp();
-                    GameObject obj = SingleObjectPool.Instance.Get(prefab, candidatePos, Quaternion.Euler(0, Random.Range(0f, 360f), 0), this.transform);
+                    GameObject obj = SingleObjectPool.Instance.Get(
+                        prefab,
+                        candidatePos,
+                        Quaternion.Euler(0, Random.Range(0f, 360f), 0),
+                        this.transform
+                    );
 
                     PoolableObject po = obj.GetComponent<PoolableObject>();
                     if (po != null && po.prefab == null)
@@ -82,6 +124,7 @@ public class TablePropSpawner : MonoBehaviour
             }
         }
     }
+
     private GameObject GetRandomProp()
     {
         if (allowDuplicateProps)
@@ -91,9 +134,7 @@ public class TablePropSpawner : MonoBehaviour
         else
         {
             if (availablePrefabs.Count == 0)
-            {
                 availablePrefabs = new List<GameObject>(randomProps);
-            }
 
             int index = Random.Range(0, availablePrefabs.Count);
             GameObject chosen = availablePrefabs[index];

@@ -163,9 +163,9 @@ MonoBehaviour:
   - {fileID: 1557153987380402888, guid: c1e076bf0d0ec434cbf3afb21d11ffad, type: 3}
   - {fileID: 7363166912716445862, guid: 8b0952968147abe4f826adb021030467, type: 3}
   endPlatformPrefab: {fileID: 7572382710790843361, guid: b9fc41ddbbf8b7e4d884279368cadf62, type: 3}
-  minSegments: 10
-  maxSegments: 20
-  initialSegments: 3
+  minSegments: 3
+  maxSegments: 5
+  initialSegments: 2
   disableTriggersInInitial: 1
 --- !u!4 &97776565
 Transform:

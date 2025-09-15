@@ -23,11 +23,46 @@ public class ShelfPropSpawner : MonoBehaviour
     public float spacing = 0.3f;
     public int maxPropsPerZone = 5;
 
+    [Header("Pooling Settings")]
+    public string keepLayerName = "Keep";
+    private int keepLayer;
+
     private List<Vector3> spawnedPositions = new List<Vector3>();
+
+    private void Awake()
+    {
+        keepLayer = LayerMask.NameToLayer(keepLayerName);
+    }
 
     private void OnEnable()
     {
+        //Najpierw oddajemy dzieci do puli
+        ReturnSpawnedChildren();
+
+        //Resetujemy zapisane pozycje
+        spawnedPositions.Clear();
+
+        //Spawn na nowo
         SpawnProps();
+    }
+
+    private void ReturnSpawnedChildren()
+    {
+        Transform[] children = new Transform[transform.childCount];
+        for (int i = 0; i < transform.childCount; i++)
+            children[i] = transform.GetChild(i);
+
+        foreach (Transform child in children)
+        {
+            if (child.gameObject.layer == keepLayer)
+                continue;
+
+            PoolableObject po = child.GetComponent<PoolableObject>();
+            if (po != null)
+                po.ReturnToPool();
+            else
+                Destroy(child.gameObject); // fallback, jeœli coœ nie ma PoolableObject
+        }
     }
 
     public void SpawnProps()

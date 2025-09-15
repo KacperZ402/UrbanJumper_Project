@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2495999083866698712}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: NoteBook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9055057412377016099}
   - component: {fileID: 4792012079003592641}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3212569977399784840}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Monitor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1178311777921003386}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Monitor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 949107095100314023}
   - component: {fileID: 5408865989410460028}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChairSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,6 +196,7 @@ MonoBehaviour:
   - {fileID: 2187849760024080149, guid: 1e68b8c40c9133743b2ce5214fe68cbf, type: 3}
   spawnChance: 1
   ignoreSpawnBlockers: 0
+  keepLayerName: Keep
 --- !u!1 &8262014439473995349
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,3 +366,4 @@ MonoBehaviour:
   - {fileID: 8581063576903747485, guid: 12537395faac0074ca04efde1c1c50df, type: 3}
   spawnAreas: []
   ownCollider: {fileID: 4792012079003592641}
+  keepLayerName: Keep
