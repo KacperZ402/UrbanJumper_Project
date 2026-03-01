@@ -2008,6 +2008,7 @@ GameObject:
   - component: {fileID: 702040451165612455}
   - component: {fileID: 1803030513667769796}
   - component: {fileID: 9092131767294365848}
+  - component: {fileID: 6463395735786594717}
   - component: {fileID: 5135955468086474933}
   m_Layer: 0
   m_Name: DoorOpenable.003
@@ -2082,6 +2083,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6463395735786594717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3149690983399866790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84cee546d856ad54b8f7ef89f6f9a850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTag: Player
+  oneTimeOnly: 1
+  yDegrees: -90
 --- !u!65 &5135955468086474933
 BoxCollider:
   m_ObjectHideFlags: 0
