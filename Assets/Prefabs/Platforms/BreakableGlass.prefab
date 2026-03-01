@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7f3a698287443684b83a1135603fe22f, type: 2}
+  - {fileID: 2100000, guid: 7b9923bb51ab0d0468b8e6aff30c26b1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,7 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea41f7cb3dc47204d817241666f23a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlassPane: {fileID: 6795741831541170303}
   replacementPrefab: {fileID: 7809761977016381330, guid: 2fbd46eee4f32a549a45a056b35f01e8, type: 3}
   breakSound: {fileID: 8300000, guid: 4a40fc7d4504b3549be16433292ec799, type: 3}
 --- !u!54 &5444681172313981598
