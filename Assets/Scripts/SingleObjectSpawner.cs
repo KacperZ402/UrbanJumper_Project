@@ -1,9 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class SingleObjectSpawner : MonoBehaviour
 {
     private const string SpawnBlockerTag = "SpawnBlocker";
+    private const int MaxSpawnersPerFrame = 40;
+    private const float MaxQueueTimePerFrameMs = 1.5f;
+    private static readonly Collider[] BlockerHitsBuffer = new Collider[16];
+
+    private static readonly Queue<SingleObjectSpawner> PendingSpawners = new Queue<SingleObjectSpawner>();
+    private static bool isProcessingQueue;
 
     [Header("Lista prefabów")]
     public List<GameObject> prefabs;
@@ -18,7 +25,11 @@ public class SingleObjectSpawner : MonoBehaviour
     [Header("Layer, które nie są czyszczone")]
     public string keepLayerName = "Keep";
 
+    [Header("Batch spawn")]
+    public bool useBatchedSpawn = true;
+
     private int keepLayer;
+    private bool isQueuedForSpawn;
 
     private void Awake()
     {
@@ -29,6 +40,86 @@ public class SingleObjectSpawner : MonoBehaviour
     {
         // Najpierw wyczyść poprzednie dzieci
         ClearChildren();
+
+        if (useBatchedSpawn)
+        {
+            SpawnWorkQueue.Enqueue(this, QueueSpawn);
+            return;
+        }
+
+        TrySpawnNow();
+    }
+
+    private void OnDisable()
+    {
+        isQueuedForSpawn = false;
+    }
+
+    private void QueueSpawn()
+    {
+        if (isQueuedForSpawn)
+            return;
+
+        isQueuedForSpawn = true;
+        PendingSpawners.Enqueue(this);
+
+        if (!isProcessingQueue)
+        {
+            if (SingleObjectPool.Instance != null)
+                SingleObjectPool.Instance.StartCoroutine(ProcessSpawnQueue());
+            else
+                StartCoroutine(ProcessSpawnQueue());
+        }
+    }
+
+    private static IEnumerator ProcessSpawnQueue()
+    {
+        isProcessingQueue = true;
+
+        while (PendingSpawners.Count > 0)
+        {
+            float frameStart = Time.realtimeSinceStartup;
+            int processedThisFrame = 0;
+
+            while (processedThisFrame < MaxSpawnersPerFrame && PendingSpawners.Count > 0)
+            {
+                float elapsedMs = (Time.realtimeSinceStartup - frameStart) * 1000f;
+                if (elapsedMs >= MaxQueueTimePerFrameMs)
+                    break;
+
+                SingleObjectSpawner spawner = PendingSpawners.Dequeue();
+                if (spawner == null)
+                    continue;
+
+                spawner.isQueuedForSpawn = false;
+
+                if (!spawner.isActiveAndEnabled)
+                    continue;
+
+                spawner.TrySpawnNow();
+                processedThisFrame++;
+            }
+
+            if (PendingSpawners.Count > 0)
+                yield return null;
+        }
+
+        isProcessingQueue = false;
+    }
+
+    private void TrySpawnNow()
+    {
+
+        if (SingleObjectPool.Instance == null)
+        {
+            // Pool jeszcze się nie zainicjalizował — spróbuj ponownie w kolejnych klatkach.
+            if (!isQueuedForSpawn)
+            {
+                isQueuedForSpawn = true;
+                PendingSpawners.Enqueue(this);
+            }
+            return;
+        }
 
         // Losowa szansa
         if (Random.value > spawnChance) return;
@@ -65,10 +156,11 @@ public class SingleObjectSpawner : MonoBehaviour
 
     private bool IsBlocked()
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, 0.1f);
+        int hitCount = Physics.OverlapSphereNonAlloc(transform.position, 0.1f, BlockerHitsBuffer);
 
-        foreach (var hit in hits)
+        for (int i = 0; i < hitCount; i++)
         {
+            Collider hit = BlockerHitsBuffer[i];
             if (hit.CompareTag(SpawnBlockerTag))
             {
                 return true;
@@ -86,7 +178,16 @@ public class SingleObjectSpawner : MonoBehaviour
             return;
         }
 
-        GameObject prefab = prefabs[Random.Range(0, prefabs.Count)];
+        GameObject prefab = null;
+        int attempts = prefabs.Count;
+        while (attempts-- > 0 && prefab == null)
+            prefab = prefabs[Random.Range(0, prefabs.Count)];
+
+        if (prefab == null)
+        {
+            Debug.LogWarning($"[SingleObjectSpawner] Wszystkie wpisy prefabów są null przy {gameObject.name}");
+            return;
+        }
 
         // pobieramy obiekt z puli i ustawiamy jako dziecko spawnera
         GameObject spawned = SingleObjectPool.Instance.Get(
@@ -97,6 +198,7 @@ public class SingleObjectSpawner : MonoBehaviour
         );
 
         // resetujemy skalę do tej z prefab’a (ważne np. dla budynków)
-        spawned.transform.localScale = prefab.transform.localScale;
+        if (spawned != null)
+            spawned.transform.localScale = prefab.transform.localScale;
     }
 }

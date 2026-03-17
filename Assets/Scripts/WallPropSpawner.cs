@@ -39,7 +39,12 @@ public class WallPropSpawner : MonoBehaviour
     [Header("Ręcznie przypisane blokery spawnu")]
     public List<BoxCollider> spawnBlockers;
 
+    [Header("Batch spawn")]
+    public bool useBatchedSpawn = true;
+    public int maxOpsPerFrame = 20;
+
     private List<Vector3> occupiedPositions = new List<Vector3>();
+    private Coroutine spawnRoutine;
 
     void Awake()
     {
@@ -87,12 +92,25 @@ public class WallPropSpawner : MonoBehaviour
         allProps.AddRange(set.hangingProps);
         allProps.AddRange(set.standingWithHangingAllowed);
 
-        SpawnWallProps(set); ;
+        WallSurfacePropSet targetSet = set;
+        SpawnWorkQueue.Enqueue(this, () => StartSpawnRoutine(targetSet));
     }
 
-    void SpawnWallProps(WallSurfacePropSet set)
+    void StartSpawnRoutine(WallSurfacePropSet set)
     {
-        if (set == null) return;
+        if (spawnRoutine != null)
+            StopCoroutine(spawnRoutine);
+
+        spawnRoutine = StartCoroutine(SpawnWallPropsRoutine(set));
+    }
+
+    IEnumerator SpawnWallPropsRoutine(WallSurfacePropSet set)
+    {
+        if (set == null)
+        {
+            spawnRoutine = null;
+            yield break;
+        }
 
         // Podzia³ na grupy prefabów
         List<GameObject> standing = set.standingProps;
@@ -109,6 +127,7 @@ public class WallPropSpawner : MonoBehaviour
 
         int spawned = 0;
         int attempts = 0;
+        int opsThisFrame = 0;
 
         // --- FAZA 1: Spawnowanie "standing" i "standingWithHangingAllowed"
         List<GameObject> baseProps = new List<GameObject>();
@@ -124,6 +143,13 @@ public class WallPropSpawner : MonoBehaviour
             if (occupiedCells.Contains(cellIndex))
             {
                 attempts++;
+                opsThisFrame++;
+
+                if (useBatchedSpawn && opsThisFrame >= Mathf.Max(1, maxOpsPerFrame))
+                {
+                    opsThisFrame = 0;
+                    yield return null;
+                }
                 continue;
             }
 
@@ -133,6 +159,13 @@ public class WallPropSpawner : MonoBehaviour
             if (IsBlocked(cellBounds))
             {
                 attempts++;
+                opsThisFrame++;
+
+                if (useBatchedSpawn && opsThisFrame >= Mathf.Max(1, maxOpsPerFrame))
+                {
+                    opsThisFrame = 0;
+                    yield return null;
+                }
                 continue;
             }
 
@@ -148,6 +181,13 @@ public class WallPropSpawner : MonoBehaviour
 
             spawned++;
             attempts++;
+            opsThisFrame++;
+
+            if (useBatchedSpawn && opsThisFrame >= Mathf.Max(1, maxOpsPerFrame))
+            {
+                opsThisFrame = 0;
+                yield return null;
+            }
         }
 
         // --- FAZA 2: Spawnowanie HangingProps
@@ -167,6 +207,13 @@ public class WallPropSpawner : MonoBehaviour
             if (!isEmpty && !isAboveAllowed)
             {
                 hangingAttempts++;
+                opsThisFrame++;
+
+                if (useBatchedSpawn && opsThisFrame >= Mathf.Max(1, maxOpsPerFrame))
+                {
+                    opsThisFrame = 0;
+                    yield return null;
+                }
                 continue;
             }
 
@@ -177,6 +224,13 @@ public class WallPropSpawner : MonoBehaviour
             if (IsBlocked(hangingBounds))
             {
                 hangingAttempts++;
+                opsThisFrame++;
+
+                if (useBatchedSpawn && opsThisFrame >= Mathf.Max(1, maxOpsPerFrame))
+                {
+                    opsThisFrame = 0;
+                    yield return null;
+                }
                 continue;
             }
 
@@ -187,7 +241,16 @@ public class WallPropSpawner : MonoBehaviour
             hangingOccupiedCells.Add(cellIndex); // Zaznacz, e ta komórka ma hanging propa
             hangingSpawned++;
             hangingAttempts++;
+            opsThisFrame++;
+
+            if (useBatchedSpawn && opsThisFrame >= Mathf.Max(1, maxOpsPerFrame))
+            {
+                opsThisFrame = 0;
+                yield return null;
+            }
         }
+
+        spawnRoutine = null;
     }
     Vector3 GetWorldPosition(BoxCollider area, Vector3 areaSize, int x, int z)
     {

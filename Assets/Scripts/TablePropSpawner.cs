@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 public class TablePropSpawner : MonoBehaviour
@@ -24,10 +25,16 @@ public class TablePropSpawner : MonoBehaviour
 
     [Header("Pooling Settings")]
     public string keepLayerName = "Keep";
+
+    [Header("Batch spawn")]
+    public bool useBatchedSpawn = true;
+    public int maxOpsPerFrame = 20;
+
     private int keepLayer;
 
     private List<Vector3> spawnedPositions = new List<Vector3>();
     private List<GameObject> availablePrefabs = new List<GameObject>();
+    private Coroutine spawnRoutine;
 
     private void Awake()
     {
@@ -42,9 +49,29 @@ public class TablePropSpawner : MonoBehaviour
         //Reset pozycji
         spawnedPositions.Clear();
 
+        if (spawnRoutine != null)
+            StopCoroutine(spawnRoutine);
+
         //Spawn na nowo
-        SpawnStaticProps();
-        SpawnRandomProps();
+        SpawnWorkQueue.Enqueue(this, StartSpawn);
+    }
+
+    private void StartSpawn()
+    {
+        if (useBatchedSpawn)
+            spawnRoutine = StartCoroutine(SpawnAllRoutine());
+        else
+        {
+            SpawnStaticProps();
+            SpawnRandomProps();
+        }
+    }
+
+    private IEnumerator SpawnAllRoutine()
+    {
+        yield return StartCoroutine(SpawnStaticPropsRoutine());
+        yield return StartCoroutine(SpawnRandomPropsRoutine());
+        spawnRoutine = null;
     }
 
     private void ReturnSpawnedChildren()
@@ -64,6 +91,83 @@ public class TablePropSpawner : MonoBehaviour
                 po.ReturnToPool();
             else
                 Destroy(child.gameObject); // fallback, gdyby coœ nie mia³o PoolableObject
+        }
+    }
+
+    private IEnumerator SpawnStaticPropsRoutine()
+    {
+        List<int> indices = new List<int>();
+        for (int i = 0; i < Mathf.Min(staticPropPoints.Count, staticProps.Count); i++)
+            indices.Add(i);
+
+        Shuffle(indices);
+
+        int opsThisFrame = 0;
+
+        foreach (int i in indices)
+        {
+            Transform point = staticPropPoints[i];
+            GameObject prefab = staticProps[i];
+
+            if (point != null && prefab != null && !spawnedPositions.Contains(point.position))
+            {
+                GameObject obj = SingleObjectPool.Instance.Get(prefab, point.position, point.rotation, this.transform);
+
+                PoolableObject po = obj.GetComponent<PoolableObject>();
+                if (po != null && po.prefab == null)
+                    po.Init(prefab);
+
+                spawnedPositions.Add(point.position);
+            }
+
+            opsThisFrame++;
+            if (opsThisFrame >= Mathf.Max(1, maxOpsPerFrame))
+            {
+                opsThisFrame = 0;
+                yield return null;
+            }
+        }
+    }
+
+    private IEnumerator SpawnRandomPropsRoutine()
+    {
+        int opsThisFrame = 0;
+
+        for (int i = 0; i < propCount; i++)
+        {
+            int attempts = 0;
+            bool spawned = false;
+
+            while (attempts < maxAttemptsPerProp && !spawned)
+            {
+                Vector3 candidatePos = GetRandomSpawnPosition();
+                if (IsPositionValid(candidatePos))
+                {
+                    GameObject prefab = GetRandomProp();
+                    GameObject obj = SingleObjectPool.Instance.Get(
+                        prefab,
+                        candidatePos,
+                        Quaternion.Euler(0, Random.Range(0f, 360f), 0),
+                        this.transform
+                    );
+
+                    PoolableObject po = obj.GetComponent<PoolableObject>();
+                    if (po != null && po.prefab == null)
+                        po.Init(prefab);
+
+                    spawnedPositions.Add(candidatePos);
+                    spawned = true;
+                }
+
+                attempts++;
+                opsThisFrame++;
+
+                if (opsThisFrame >= Mathf.Max(1, maxOpsPerFrame))
+                {
+                    opsThisFrame = 0;
+                    yield return null;
+                }
+            }
         }
     }
 
