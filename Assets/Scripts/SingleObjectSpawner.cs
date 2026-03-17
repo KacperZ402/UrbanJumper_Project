@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 public class SingleObjectSpawner : MonoBehaviour
 {
+    private const string SpawnBlockerTag = "SpawnBlocker";
+
     [Header("Lista prefabów")]
     public List<GameObject> prefabs;
 
@@ -49,8 +51,7 @@ public class SingleObjectSpawner : MonoBehaviour
         {
             if (child.gameObject.layer != keepLayer)
             {
-                PoolableObject po = child.GetComponent<PoolableObject>();
-                if (po != null)
+                if (child.TryGetComponent<PoolableObject>(out var po))
                 {
                     po.ReturnToPool();
                 }
@@ -68,7 +69,7 @@ public class SingleObjectSpawner : MonoBehaviour
 
         foreach (var hit in hits)
         {
-            if (hit.GetComponent<SpawnBlocker>() != null)
+            if (hit.CompareTag(SpawnBlockerTag))
             {
                 return true;
             }
@@ -97,7 +98,5 @@ public class SingleObjectSpawner : MonoBehaviour
 
         // resetujemy skalę do tej z prefab’a (ważne np. dla budynków)
         spawned.transform.localScale = prefab.transform.localScale;
-
-        spawned.SetActive(true);
     }
 }

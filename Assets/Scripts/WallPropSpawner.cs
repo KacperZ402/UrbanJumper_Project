@@ -36,6 +36,9 @@ public class WallPropSpawner : MonoBehaviour
     public float cellWidth = 1f;
     public float cellLength = 1f;
 
+    [Header("Ręcznie przypisane blokery spawnu")]
+    public List<BoxCollider> spawnBlockers;
+
     private List<Vector3> occupiedPositions = new List<Vector3>();
 
     void Awake()
@@ -67,13 +70,14 @@ public class WallPropSpawner : MonoBehaviour
         }
 
         blockerBounds.Clear();
-        SpawnBlocker[] blockers = FindObjectsOfType<SpawnBlocker>();
-        foreach (var blocker in blockers)
+        if (spawnBlockers != null)
         {
-            BoxCollider col = blocker.GetComponent<BoxCollider>();
-            if (col != null)
+            foreach (var col in spawnBlockers)
             {
-                blockerBounds.Add(col.bounds);
+                if (col != null)
+                {
+                    blockerBounds.Add(col.bounds);
+                }
             }
         }
 
@@ -133,7 +137,7 @@ public class WallPropSpawner : MonoBehaviour
             }
 
             GameObject prefab = baseProps[Random.Range(0, baseProps.Count)];
-            GameObject obj = SingleObjectPool.Instance.Get(prefab, worldSpawnPos, transform.rotation, transform);
+            SingleObjectPool.Instance.Get(prefab, worldSpawnPos, transform.rotation, transform);
 
 
             occupiedCells.Add(cellIndex);
@@ -177,7 +181,7 @@ public class WallPropSpawner : MonoBehaviour
             }
 
             GameObject hangingPrefab = hanging[Random.Range(0, hanging.Count)];
-            GameObject obj = SingleObjectPool.Instance.Get(hangingPrefab, hangingPos, transform.rotation, transform);
+            SingleObjectPool.Instance.Get(hangingPrefab, hangingPos, transform.rotation, transform);
 
 
             hangingOccupiedCells.Add(cellIndex); // Zaznacz, e ta komórka ma hanging propa

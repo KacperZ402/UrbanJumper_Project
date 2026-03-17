@@ -3,7 +3,292 @@ guid: c9bd46d303399f84d98fff2dd471597c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor
+    second: {fileID: 2100000, guid: 245ee3c69a9bb154b9c8bc59b4ec5c1d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor1
+    second: {fileID: 2100000, guid: d8be0a7b2968fd84c9f295e6af3eef2b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor10
+    second: {fileID: 2100000, guid: fd4670d625bb45d48ac3548e4bcf41bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor2
+    second: {fileID: 2100000, guid: 2ab3ec68ab3b4d242844962183b56267, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor5
+    second: {fileID: 2100000, guid: b3da277275df3044ca4ca7ce78a17bd0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor6
+    second: {fileID: 2100000, guid: eaa1c03565dc84146bafd944ad3e78bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 7b84829f9ed13bf43885a9dd37f5a974, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Partition_wall7
+    second: {fileID: 2100000, guid: e5cabea6b8a39274e94bc8c491883f5e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pot
+    second: {fileID: 2100000, guid: 8412ea7c41bbb354da5e4bd903a12044, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RestGray
+    second: {fileID: 2100000, guid: ad1019481a7dd1f44840a39789a64f18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RestWhite
+    second: {fileID: 2100000, guid: 80b4bed8201e76645a016bd8f7a54c14, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Soil
+    second: {fileID: 2100000, guid: 6f47b10ab520b9f49999e974b2a5db11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stairs6
+    second: {fileID: 2100000, guid: 67c4d180e14b1e9498b3de3cfd2075c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Szybka
+    second: {fileID: 2100000, guid: 0551575ae356a0549b25b26f51180fd5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall
+    second: {fileID: 2100000, guid: 246dedc549bfabb49aa38ba760f00b2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall10_1
+    second: {fileID: 2100000, guid: cef938d7fd01cfe4f99ccd98e5ad4381, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall10_2
+    second: {fileID: 2100000, guid: 8012874409b104042a5847c265082d61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall2
+    second: {fileID: 2100000, guid: a6590ae1fedf81a48bcb99e2c35b34fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall5
+    second: {fileID: 2100000, guid: a14571a92ad7ca448bd740c852a1d5ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall7
+    second: {fileID: 2100000, guid: 5fa707c22c1bc27418b3c393fc97f750, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Walls1
+    second: {fileID: 2100000, guid: fc7b16a75670ffb4dad5f1bdfc0a7b53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WhiteLaminate
+    second: {fileID: 2100000, guid: 516e5ff3a8f1350408267842b7b78733, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blackPlastic
+    second: {fileID: 2100000, guid: 4f3faf0066f6db745830b6af2a394d50, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ceiling6
+    second: {fileID: 2100000, guid: 0f4a29c68254cd1419e13a34560524b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor3
+    second: {fileID: 2100000, guid: 81f1be8b39ea1184583394e1c1f7abf6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor4
+    second: {fileID: 2100000, guid: 9589368461d3571478431fe4a0922715, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor9
+    second: {fileID: 2100000, guid: df6bf9b7bf42cf243a05516631b847c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall3
+    second: {fileID: 2100000, guid: 96895017e9669934ab93d24610b8eae0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall8
+    second: {fileID: 2100000, guid: c073366634386d4429b64ea75a47bb5a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall9
+    second: {fileID: 2100000, guid: 09c76887c44704f41b9f86a5cc836aa7, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bricks066_1K-JPG_Color
+    second: {fileID: 2800000, guid: f995a8af8dfdf6045bf78006d47f33ea, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Carpet005_1K-JPG_Color
+    second: {fileID: 2800000, guid: 390e1a6e7ae89ef40b52a63b415cf954, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Carpet006_1K-JPG_Color
+    second: {fileID: 2800000, guid: ed69d5b7fc9d6a841b3a98ab50f64bef, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Concrete031_1K-JPG_AmbientOcclusion
+    second: {fileID: 2800000, guid: 63bb151ac7ae87142aaccb2687d2f445, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Concrete031_1K-JPG_Color
+    second: {fileID: 2800000, guid: b09224cc882523446aca0789cd014344, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Concrete042A_1K-JPG_Color
+    second: {fileID: 2800000, guid: 66b7f782917f3ad4fac2aef65c9c7a20, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Fabric023_1K-JPG_Color
+    second: {fileID: 2800000, guid: 8d2393d5d76a1cf43ada8a08ede0e2a5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2800000, guid: e929d7bf2fba707468cae28b931f854e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: OfficeCeiling001_1K-JPG_Color
+    second: {fileID: 2800000, guid: c1e83a4dd6025084aa5368fe1f5b7205, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Plaster001_1K-JPG_Color
+    second: {fileID: 2800000, guid: 92b3398e0321f324faaec832aa126e51, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tiles015_1K-JPG_Color
+    second: {fileID: 2800000, guid: db3d1e7c46951034fbbd5f93f648ed3f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tiles043_1K-JPG_Color
+    second: {fileID: 2800000, guid: 3be0741b82473a54e9ea3baf643c516b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tiles054_1K-JPG_Color
+    second: {fileID: 2800000, guid: 039b3ac90b817374cb85cb1cd349a1e9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tiles075_1K-JPG_Color
+    second: {fileID: 2800000, guid: 1c3f14155d5c2fa4aa0f508177dff698, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WoodFloor011_1K-JPG_Color
+    second: {fileID: 2800000, guid: 2998db039fe927646a308eb60d12208e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WoodFloor039_1K-JPG_Color
+    second: {fileID: 2800000, guid: 65a99656845645e4289b0ae53302e812, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: black
+    second: {fileID: 2800000, guid: 084d87094d336fc419132d8452edc91f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: concrete_wall_001_diff_1k
+    second: {fileID: 2800000, guid: a80dc4f4596300b438c299bea5ae5b0f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: darkGray
+    second: {fileID: 2800000, guid: 1bf95be061ded05479fcb47e492d7d32, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: gray
+    second: {fileID: 2800000, guid: de2370d385296f34ba6e9a3a28a23857, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: painted_plaster_wall_diff_1k
+    second: {fileID: 2800000, guid: eb9e84543d3f8dc4ab59789e515de00d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: plaster_brick_pattern_diff_1k
+    second: {fileID: 2800000, guid: 45a4ef2912fa74b49b223c8355290e03, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: plastered_wall_02_diff_1k
+    second: {fileID: 2800000, guid: 7a0f35a3eb6478b4dabb176c8533fc65, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wall (6)
+    second: {fileID: 2800000, guid: 2e9b880208836e6479ef85c0c9c4ff2f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wall (9)
+    second: {fileID: 2800000, guid: 8cc18441176258245b6b3c44074aafc1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: white
+    second: {fileID: 2800000, guid: d4d6d3a24f262ec4bba5ba1c6770b55e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: whiteLaminte
+    second: {fileID: 2800000, guid: 790e9af7490bf2d4aa0a54f203b1de65, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

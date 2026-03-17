@@ -3,7 +3,62 @@ guid: fcf13579d9202b54ea7b6a9a2f77162d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BlueBodyWork
+    second: {fileID: 2100000, guid: bc49554b243981a449b92506e1ca0e7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CarBlackPlastic
+    second: {fileID: 2100000, guid: 30d43edbaea0d284ebf9189bbf2a2957, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CarGlass
+    second: {fileID: 2100000, guid: 9403f653ec2ca184f9f2d55e11631eef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GrayBodyWork
+    second: {fileID: 2100000, guid: c3e0599584ae2b44f9eaa18081bdc5ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightsRear
+    second: {fileID: 2100000, guid: 9a0ba18f3d3616b4fa8c4bf9a79c6077, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RedBodyWork
+    second: {fileID: 2100000, guid: 9e75aeef965139f45a28f8ace4408d5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Road
+    second: {fileID: 2100000, guid: 054be12f939efd44c8797c1e0091b0f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tire
+    second: {fileID: 2100000, guid: ac05fa33a7aa6d044bb0eb9d190cbffc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TrafficLights
+    second: {fileID: 2100000, guid: f5c6d7490ba0d9b44a1291e2311ee755, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tree
+    second: {fileID: 2100000, guid: 735f8faaaffb51542a818171cd11af7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WhiteBodyWork
+    second: {fileID: 2100000, guid: 11edb6c18cdb32d49900aa3d160dd922, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

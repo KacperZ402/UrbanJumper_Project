@@ -188,6 +188,7 @@ MonoBehaviour:
   maxHangingProps: 1
   cellWidth: 1
   cellLength: 25
+  spawnBlockers: []
 --- !u!1 &2494254321695228385
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,6 +410,7 @@ MonoBehaviour:
   minProps: 10
   maxProps: 15
   cellSize: 10
+  spawnBlockers: []
 --- !u!1 &3958545586895027172
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,10 +421,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4135135383461058842}
   - component: {fileID: 2872310271382646717}
-  - component: {fileID: 7828992797751983999}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (3)
-  m_TagString: Untagged
+  m_TagString: SpawnBlocker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -464,18 +465,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8, y: 30, z: 24}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7828992797751983999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3958545586895027172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4183709236792757050
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,11 +700,11 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5221085518038040441, guid: c9bd46d303399f84d98fff2dd471597c, type: 3}
-  - {fileID: 2771788124366072795, guid: c9bd46d303399f84d98fff2dd471597c, type: 3}
-  - {fileID: -7598064785168253244, guid: c9bd46d303399f84d98fff2dd471597c, type: 3}
-  - {fileID: 8556262120643298411, guid: c9bd46d303399f84d98fff2dd471597c, type: 3}
-  - {fileID: -4522910615893802343, guid: c9bd46d303399f84d98fff2dd471597c, type: 3}
+  - {fileID: 2100000, guid: 96895017e9669934ab93d24610b8eae0, type: 2}
+  - {fileID: 2100000, guid: ad1019481a7dd1f44840a39789a64f18, type: 2}
+  - {fileID: 2100000, guid: 81f1be8b39ea1184583394e1c1f7abf6, type: 2}
+  - {fileID: 2100000, guid: 7b84829f9ed13bf43885a9dd37f5a974, type: 2}
+  - {fileID: 2100000, guid: 80b4bed8201e76645a016bd8f7a54c14, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1093,6 +1082,7 @@ MonoBehaviour:
   maxHangingProps: 2
   cellWidth: 1
   cellLength: 25
+  spawnBlockers: []
 --- !u!1 &7870494246363084574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1293,3 +1283,5 @@ MonoBehaviour:
   maxHangingProps: 3
   cellWidth: 1
   cellLength: 25
+  spawnBlockers:
+  - {fileID: 2872310271382646717}

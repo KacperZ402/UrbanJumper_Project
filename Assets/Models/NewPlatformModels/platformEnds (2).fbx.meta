@@ -3,7 +3,67 @@ guid: d5f76e993619cf54f941ca4f8ce77ddf
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor
+    second: {fileID: 2100000, guid: 7620e222cfd55d849bbaadbf1b1ec5c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor.002
+    second: {fileID: 2100000, guid: c73d2d64f5035e149af920825da99d3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RestGray
+    second: {fileID: 2100000, guid: 49bd89c84a1771842a9b96cd65ac91d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RestGray.002
+    second: {fileID: 2100000, guid: e347573734d9e9e45b738f81efca3bad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Szybka
+    second: {fileID: 2100000, guid: b8b038fbdc34bc242a3cff98da6bb082, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Szybka.002
+    second: {fileID: 2100000, guid: 13f2f360bf67b78478708aa35e03549f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall
+    second: {fileID: 2100000, guid: efd87e12c432d3245af1e5b7bbeaaa51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall.002
+    second: {fileID: 2100000, guid: f21edd922f02a0b43979d334bf13fdea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WhiteLaminate
+    second: {fileID: 2100000, guid: b505ff9f5ffc7c341be4394e00cd52be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blackPlastic
+    second: {fileID: 2100000, guid: 7453c6e7ba832a7419eecaf9b952046f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ceiling6
+    second: {fileID: 2100000, guid: 6617bb2c4d52d664393bf791ac2cdba3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ceiling6.002
+    second: {fileID: 2100000, guid: 53262d74a123aad4583c33bc9ed2bc4f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

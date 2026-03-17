@@ -10,8 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7933549753925479567}
   - component: {fileID: 7738415110595346131}
-  - component: {fileID: 3224001517317250176}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,18 +53,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 90, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3224001517317250176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 74333624455434372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &86349214992649085
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,8 +157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5506048602591335077}
   - component: {fileID: 1839729197192430413}
-  - component: {fileID: 2751651395241578759}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,18 +200,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 90, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2751651395241578759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195729700072886015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &740535229841262832
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,8 +276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6859046340226172219}
   - component: {fileID: 316188354445812468}
-  - component: {fileID: 5397291934266964497}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,18 +319,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5397291934266964497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 753849552697577747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1142762818427796849
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,8 +329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4379662195144924454}
   - component: {fileID: 3538887706180159225}
-  - component: {fileID: 8315866999392435357}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,18 +372,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8315866999392435357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1142762818427796849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1544882635362622154
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,8 +382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3324682915419898392}
   - component: {fileID: 3836103786626628470}
-  - component: {fileID: 8129690264991236921}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,18 +425,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8129690264991236921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544882635362622154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1562588223873188774
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,8 +486,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8687314976496020628}
   - component: {fileID: 8835216406171890885}
-  - component: {fileID: 3407249391768256373}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -595,18 +529,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3407249391768256373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1783275020055563416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1896717762242770118
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +539,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5078527671531326959}
   - component: {fileID: 1923051520444812287}
-  - component: {fileID: 6520040729315936874}
   m_Layer: 9
   m_Name: SpawnBlocker (36)
   m_TagString: Untagged
@@ -661,18 +582,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6520040729315936874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1896717762242770118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2194287397014366024
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,8 +592,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4644125527049534305}
   - component: {fileID: 3425778707285540619}
-  - component: {fileID: 3967453673512470763}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -727,18 +635,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 90, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3967453673512470763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2194287397014366024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2275981093763181385
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,8 +645,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8755397285432767134}
   - component: {fileID: 6432124353529859911}
-  - component: {fileID: 4134726381774970188}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -793,18 +688,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4134726381774970188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2275981093763181385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2281887663746255758
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,8 +698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8905560267150814593}
   - component: {fileID: 5880835916473774557}
-  - component: {fileID: 7719841748303162539}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -859,18 +741,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7719841748303162539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2281887663746255758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2310500028246925924
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,8 +783,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1916851941820169624}
   - component: {fileID: 5434757093582853648}
-  - component: {fileID: 8786383991842994856}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -957,18 +826,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8786383991842994856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2396379615653548886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2473125374536468115
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,8 +836,7 @@ GameObject:
   m_Component:
   - component: {fileID: 692661554139557484}
   - component: {fileID: 5485365308772535649}
-  - component: {fileID: 7741878225680618422}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (35)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1023,18 +879,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 90, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7741878225680618422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2473125374536468115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2939774097063209784
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,6 +1013,7 @@ MonoBehaviour:
   maxHangingProps: 1
   cellWidth: 1
   cellLength: 25
+  spawnBlockers: []
 --- !u!1 &3311401079502777873
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,8 +1024,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7561237908562753765}
   - component: {fileID: 2039698039907858481}
-  - component: {fileID: 7132424423096329235}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1224,18 +1068,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8, y: 30, z: 24}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7132424423096329235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3311401079502777873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3349279264823259798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,8 +1078,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6416085600164130003}
   - component: {fileID: 8104391745519473217}
-  - component: {fileID: 419596689368362538}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1290,18 +1121,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &419596689368362538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3349279264823259798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4225059353195838340
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,6 +1421,7 @@ MonoBehaviour:
   maxHangingProps: 1
   cellWidth: 1
   cellLength: 25
+  spawnBlockers: []
 --- !u!1 &5185889412585850119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1680,8 +1500,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2464723889800770277}
   - component: {fileID: 2296285465659644877}
-  - component: {fileID: 8797332243639716845}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1724,18 +1543,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8797332243639716845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5443867252031267040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5480801232081091557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1870,6 +1677,9 @@ MonoBehaviour:
   maxHangingProps: 4
   cellWidth: 1
   cellLength: 25
+  spawnBlockers:
+  - {fileID: 2039698039907858481}
+  - {fileID: 3211778942329564069}
 --- !u!1 &5940203021969582177
 GameObject:
   m_ObjectHideFlags: 0
@@ -2035,6 +1845,32 @@ MonoBehaviour:
   minProps: 10
   maxProps: 30
   cellSize: 10
+  spawnBlockers:
+  - {fileID: 6088221444457443537}
+  - {fileID: 43527350328886839}
+  - {fileID: 1839729197192430413}
+  - {fileID: 8104391745519473217}
+  - {fileID: 3471010043341408421}
+  - {fileID: 6082113809202554875}
+  - {fileID: 5757673481913474275}
+  - {fileID: 3849744376130232409}
+  - {fileID: 316188354445812468}
+  - {fileID: 3836103786626628470}
+  - {fileID: 2296285465659644877}
+  - {fileID: 1319219092374735144}
+  - {fileID: 8835216406171890885}
+  - {fileID: 4015550734665614691}
+  - {fileID: 8003381191775458073}
+  - {fileID: 2160875108078962465}
+  - {fileID: 5434757093582853648}
+  - {fileID: 5880835916473774557}
+  - {fileID: 6432124353529859911}
+  - {fileID: 3538887706180159225}
+  - {fileID: 8295237480399626186}
+  - {fileID: 3425778707285540619}
+  - {fileID: 7738415110595346131}
+  - {fileID: 5485365308772535649}
+  - {fileID: 1923051520444812287}
 --- !u!1 &6110528924012656064
 GameObject:
   m_ObjectHideFlags: 0
@@ -2134,12 +1970,12 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 946011267755385870, guid: c9bd46d303399f84d98fff2dd471597c, type: 3}
-  - {fileID: 5717230758250321250, guid: c9bd46d303399f84d98fff2dd471597c, type: 3}
-  - {fileID: 2741067513655924457, guid: c9bd46d303399f84d98fff2dd471597c, type: 3}
-  - {fileID: -4522910615893802343, guid: c9bd46d303399f84d98fff2dd471597c, type: 3}
-  - {fileID: 2771788124366072795, guid: c9bd46d303399f84d98fff2dd471597c, type: 3}
-  - {fileID: 8556262120643298411, guid: c9bd46d303399f84d98fff2dd471597c, type: 3}
+  - {fileID: 2100000, guid: 5fa707c22c1bc27418b3c393fc97f750, type: 2}
+  - {fileID: 2100000, guid: 2ab3ec68ab3b4d242844962183b56267, type: 2}
+  - {fileID: 2100000, guid: e5cabea6b8a39274e94bc8c491883f5e, type: 2}
+  - {fileID: 2100000, guid: 80b4bed8201e76645a016bd8f7a54c14, type: 2}
+  - {fileID: 2100000, guid: ad1019481a7dd1f44840a39789a64f18, type: 2}
+  - {fileID: 2100000, guid: 7b84829f9ed13bf43885a9dd37f5a974, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2193,8 +2029,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3053664760896970900}
   - component: {fileID: 3211778942329564069}
-  - component: {fileID: 5057976178296107547}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2238,18 +2073,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8, y: 30, z: 24}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5057976178296107547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6194204970440388358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6221267721316879475
 GameObject:
   m_ObjectHideFlags: 0
@@ -2260,8 +2083,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3230656751895170150}
   - component: {fileID: 1319219092374735144}
-  - component: {fileID: 7346726342133788298}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2304,18 +2126,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7346726342133788298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6221267721316879475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6222157268678157677
 GameObject:
   m_ObjectHideFlags: 0
@@ -2326,8 +2136,7 @@ GameObject:
   m_Component:
   - component: {fileID: 297598932102776235}
   - component: {fileID: 8295237480399626186}
-  - component: {fileID: 6652899958913411007}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2370,18 +2179,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 90, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6652899958913411007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6222157268678157677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6826926658775556811
 GameObject:
   m_ObjectHideFlags: 0
@@ -2498,8 +2295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3091461128899346724}
   - component: {fileID: 5757673481913474275}
-  - component: {fileID: 3191578309691983708}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2542,18 +2338,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3191578309691983708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6862644186158390628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7275184947094000750
 GameObject:
   m_ObjectHideFlags: 0
@@ -2564,8 +2348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 483222341928365852}
   - component: {fileID: 4015550734665614691}
-  - component: {fileID: 961717953131921178}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2608,18 +2391,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &961717953131921178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7275184947094000750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7438216696092976991
 GameObject:
   m_ObjectHideFlags: 0
@@ -2630,8 +2401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3069971127710245065}
   - component: {fileID: 43527350328886839}
-  - component: {fileID: 101369439490360251}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2674,18 +2444,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 90, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &101369439490360251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7438216696092976991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7743414502884929407
 GameObject:
   m_ObjectHideFlags: 0
@@ -2696,8 +2454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3727964054968528898}
   - component: {fileID: 3849744376130232409}
-  - component: {fileID: 3403679178159487784}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2740,18 +2497,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3403679178159487784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7743414502884929407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7892205125310171377
 GameObject:
   m_ObjectHideFlags: 0
@@ -2762,8 +2507,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7213108136712506324}
   - component: {fileID: 8003381191775458073}
-  - component: {fileID: 9052893352179336897}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2806,18 +2550,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &9052893352179336897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7892205125310171377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7952836512593397774
 GameObject:
   m_ObjectHideFlags: 0
@@ -2879,8 +2611,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3474476273716589457}
   - component: {fileID: 3471010043341408421}
-  - component: {fileID: 836235812952143891}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2923,18 +2654,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &836235812952143891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8565197101344140322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8716243150044304670
 GameObject:
   m_ObjectHideFlags: 0
@@ -2945,8 +2664,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5333837986826434555}
   - component: {fileID: 6088221444457443537}
-  - component: {fileID: 8711488810115102178}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2990,18 +2708,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8, y: 30, z: 24}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8711488810115102178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8716243150044304670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8939709200475109351
 GameObject:
   m_ObjectHideFlags: 0
@@ -3012,8 +2718,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6225417626001090395}
   - component: {fileID: 2160875108078962465}
-  - component: {fileID: 4224174386674195150}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3056,18 +2761,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4224174386674195150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8939709200475109351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &9166717720634814160
 GameObject:
   m_ObjectHideFlags: 0
@@ -3078,8 +2771,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5346070399440248705}
   - component: {fileID: 6082113809202554875}
-  - component: {fileID: 4288221524991878119}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3122,15 +2814,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4288221524991878119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9166717720634814160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

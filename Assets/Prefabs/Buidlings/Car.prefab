@@ -64,11 +64,11 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7966666216384106780, guid: fcf13579d9202b54ea7b6a9a2f77162d, type: 3}
-  - {fileID: 2858133786323817603, guid: fcf13579d9202b54ea7b6a9a2f77162d, type: 3}
-  - {fileID: 7173639907776545502, guid: fcf13579d9202b54ea7b6a9a2f77162d, type: 3}
-  - {fileID: 6470628660411565095, guid: fcf13579d9202b54ea7b6a9a2f77162d, type: 3}
-  - {fileID: 7880145283246143214, guid: fcf13579d9202b54ea7b6a9a2f77162d, type: 3}
+  - {fileID: 2100000, guid: c3e0599584ae2b44f9eaa18081bdc5ce, type: 2}
+  - {fileID: 2100000, guid: 30d43edbaea0d284ebf9189bbf2a2957, type: 2}
+  - {fileID: 2100000, guid: 7b84829f9ed13bf43885a9dd37f5a974, type: 2}
+  - {fileID: 2100000, guid: 9a0ba18f3d3616b4fa8c4bf9a79c6077, type: 2}
+  - {fileID: 2100000, guid: 9a0ba18f3d3616b4fa8c4bf9a79c6077, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118,11 +118,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   materialIndex: 0
   replacementMaterials:
-  - {fileID: 2858133786323817603, guid: fcf13579d9202b54ea7b6a9a2f77162d, type: 3}
-  - {fileID: -3151865717062477716, guid: fcf13579d9202b54ea7b6a9a2f77162d, type: 3}
-  - {fileID: -7966666216384106780, guid: fcf13579d9202b54ea7b6a9a2f77162d, type: 3}
-  - {fileID: -5911626295789547704, guid: fcf13579d9202b54ea7b6a9a2f77162d, type: 3}
-  - {fileID: 2065648166031764267, guid: fcf13579d9202b54ea7b6a9a2f77162d, type: 3}
+  - {fileID: 2100000, guid: 11edb6c18cdb32d49900aa3d160dd922, type: 2}
+  - {fileID: 2100000, guid: 9e75aeef965139f45a28f8ace4408d5f, type: 2}
+  - {fileID: 2100000, guid: c3e0599584ae2b44f9eaa18081bdc5ce, type: 2}
+  - {fileID: 2100000, guid: bc49554b243981a449b92506e1ca0e7a, type: 2}
+  - {fileID: 2100000, guid: 30d43edbaea0d284ebf9189bbf2a2957, type: 2}
 --- !u!1 &7356675081909620536
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,3 +173,4 @@ MonoBehaviour:
   - {fileID: 5653479237943151923, guid: ba063fc3060d19f488785f157a478e54, type: 3}
   spawnChance: 0.6
   ignoreSpawnBlockers: 1
+  keepLayerName: Keep

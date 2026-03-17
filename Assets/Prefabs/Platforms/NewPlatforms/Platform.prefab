@@ -327,11 +327,11 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2771788124366072795, guid: c9bd46d303399f84d98fff2dd471597c, type: 3}
-  - {fileID: -4522910615893802343, guid: c9bd46d303399f84d98fff2dd471597c, type: 3}
-  - {fileID: -5871493909716068798, guid: c9bd46d303399f84d98fff2dd471597c, type: 3}
-  - {fileID: -7548380857870734992, guid: c9bd46d303399f84d98fff2dd471597c, type: 3}
-  - {fileID: 8556262120643298411, guid: c9bd46d303399f84d98fff2dd471597c, type: 3}
+  - {fileID: 2100000, guid: fc7b16a75670ffb4dad5f1bdfc0a7b53, type: 2}
+  - {fileID: 2100000, guid: 80b4bed8201e76645a016bd8f7a54c14, type: 2}
+  - {fileID: 2100000, guid: efd87e12c432d3245af1e5b7bbeaaa51, type: 2}
+  - {fileID: 2100000, guid: d8be0a7b2968fd84c9f295e6af3eef2b, type: 2}
+  - {fileID: 2100000, guid: 7b84829f9ed13bf43885a9dd37f5a974, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -541,6 +541,8 @@ MonoBehaviour:
   maxHangingProps: 2
   cellWidth: 1
   cellLength: 25
+  spawnBlockers:
+  - {fileID: 8177709139232341933}
 --- !u!1 &3674636148011994188
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,8 +553,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5322455531922028719}
   - component: {fileID: 1463048253669000843}
-  - component: {fileID: 4109307367548974536}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -595,18 +596,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8, y: 1, z: 8}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4109307367548974536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3674636148011994188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4089997600226777706
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,8 +606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7349735309789810717}
   - component: {fileID: 8177709139232341933}
-  - component: {fileID: 1802649191636654822}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -662,18 +650,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8, y: 30, z: 24}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1802649191636654822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4089997600226777706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4611547575575539388
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,6 +991,10 @@ MonoBehaviour:
   minProps: 10
   maxProps: 20
   cellSize: 10
+  spawnBlockers:
+  - {fileID: 4037868454976223545}
+  - {fileID: 1463048253669000843}
+  - {fileID: 8177709139232341933}
 --- !u!1 &6491500100429730056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,8 +1077,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5289889601018056254}
   - component: {fileID: 4037868454976223545}
-  - component: {fileID: 6828540933460146964}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SpawnBlocker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1141,15 +1120,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8, y: 1, z: 8}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6828540933460146964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6582396686932403251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2929453afa8b248b2763962f6f36c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

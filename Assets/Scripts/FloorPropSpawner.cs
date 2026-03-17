@@ -43,6 +43,9 @@ public class FloorPropSpawner : MonoBehaviour
     [Header("Rozmiar jednej kratki (grid cell)")]
     public float cellSize = 1.0f;
 
+    [Header("Ręcznie przypisane blokery spawnu")]
+    public List<BoxCollider> spawnBlockers;
+
     private bool[,] grid;
     private Vector3 gridOrigin;
     private List<Bounds> blockerBounds = new List<Bounds>();
@@ -86,13 +89,15 @@ public class FloorPropSpawner : MonoBehaviour
             return;
         }
 
-        SpawnBlocker[] blockers = FindObjectsOfType<SpawnBlocker>();
-        foreach (var blocker in blockers)
+        blockerBounds.Clear();
+        if (spawnBlockers != null)
         {
-            BoxCollider col = blocker.GetComponent<BoxCollider>();
-            if (col != null)
+            foreach (var col in spawnBlockers)
             {
-                blockerBounds.Add(col.bounds);
+                if (col != null)
+                {
+                    blockerBounds.Add(col.bounds);
+                }
             }
         }
 
@@ -225,8 +230,7 @@ public class FloorPropSpawner : MonoBehaviour
             {
                 Vector3 worldPos = GridToWorld(x, z, size);
 
-                GameObject obj = SingleObjectPool.Instance.Get(prefab, worldPos, rotation, transform);
-                obj.SetActive(true);
+                SingleObjectPool.Instance.Get(prefab, worldPos, rotation, transform);
 
                 MarkOccupied(x, z, size);
                 break;
