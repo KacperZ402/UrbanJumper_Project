@@ -54,6 +54,7 @@ MonoBehaviour:
   spawnChance: 1
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &2422566029442315542
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,6 +190,8 @@ MonoBehaviour:
   cellWidth: 1
   cellLength: 25
   spawnBlockers: []
+  useBatchedSpawn: 1
+  maxOpsPerFrame: 20
 --- !u!1 &2494254321695228385
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,6 +414,8 @@ MonoBehaviour:
   maxProps: 15
   cellSize: 10
   spawnBlockers: []
+  useBatchedSpawn: 1
+  maxPropsPerFrame: 20
 --- !u!1 &3958545586895027172
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,6 +1088,8 @@ MonoBehaviour:
   cellWidth: 1
   cellLength: 25
   spawnBlockers: []
+  useBatchedSpawn: 1
+  maxOpsPerFrame: 20
 --- !u!1 &7870494246363084574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,6 +1156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765aa14c6871120459990c6631422da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  platformManager: {fileID: 8877436004359265411, guid: 0b792ea6a82b666409790f6273851417, type: 3}
 --- !u!1 &8611878018231303688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1285,3 +1293,5 @@ MonoBehaviour:
   cellLength: 25
   spawnBlockers:
   - {fileID: 2872310271382646717}
+  useBatchedSpawn: 1
+  maxOpsPerFrame: 20

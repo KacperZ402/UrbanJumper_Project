@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2, y: 0, z: -4.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -54,6 +54,7 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &162018587265833531
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,6 +110,7 @@ MonoBehaviour:
   spawnChance: 1
   ignoreSpawnBlockers: 0
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &751411842200999277
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +166,7 @@ MonoBehaviour:
   spawnChance: 1
   ignoreSpawnBlockers: 0
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &1532117022364465338
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +194,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8, y: 0, z: 2.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -218,6 +221,7 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &2318653164432856845
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +280,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6, y: 0, z: 4.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -303,6 +307,7 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &2633348486573383500
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +335,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8, y: 0, z: -4.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -357,6 +362,7 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &2715108191292516402
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,7 +496,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2, y: 0, z: -2.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -517,6 +523,7 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &3214625013174708662
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,7 +551,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6, y: 0, z: -4.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -571,6 +578,7 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &3259245862337332505
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,7 +606,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6, y: 0, z: -2.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -625,6 +633,7 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &3405154021857058142
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,7 +661,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4, y: 0, z: -4.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -679,6 +688,7 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &3823129440939988054
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,7 +716,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6, y: 0, z: 0.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -733,6 +743,7 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &3906549387720768563
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,7 +771,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4, y: 0, z: 2.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -787,6 +798,7 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &4373830820928383758
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,7 +826,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8, y: 0, z: 4.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -841,6 +853,7 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &4841565066937610150
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,7 +881,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8, y: 0, z: 0.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -895,6 +908,7 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &5213751167925990710
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,7 +1062,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4, y: 0, z: 0.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -1075,6 +1089,7 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &5686512388766746703
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,7 +1117,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2, y: 0, z: 0.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -1129,6 +1144,7 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &6514668585313959413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,7 +1172,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6, y: 0, z: -0.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -1183,6 +1199,7 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &6581392219450798427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,7 +1227,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2, y: 0, z: 2.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -1237,6 +1254,7 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &6759538210075580929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,7 +1282,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8, y: 0, z: -2.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -1291,6 +1309,7 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &7273197720666648375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1318,7 +1337,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4, y: 0, z: -0.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -1345,6 +1364,7 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &7602391146267304624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1372,7 +1392,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4, y: 0, z: 4.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -1399,6 +1419,7 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &7967296874860880844
 GameObject:
   m_ObjectHideFlags: 0
@@ -1426,7 +1447,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6, y: 0, z: 2.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -1453,6 +1474,7 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &8156850414202416485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,7 +1502,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2, y: 0, z: -0.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -1507,6 +1529,7 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &8333426807253248105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,7 +1557,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8, y: 0, z: -0.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -1561,6 +1584,7 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &9145454457261281845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1588,7 +1612,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2, y: 0, z: 4.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -1615,6 +1639,7 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &9182044310256354504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1642,7 +1667,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4, y: 0, z: -2.381}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6177093676433925023}
@@ -1669,3 +1694,4 @@ MonoBehaviour:
   spawnChance: 0.646
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1

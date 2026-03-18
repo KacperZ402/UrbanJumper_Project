@@ -53,7 +53,7 @@ public class PlatformManager : MonoBehaviour
         }
 
         int newIndex = GetRandomIndexDifferentFromLast();
-        GameObject segment = Instantiate(
+        Instantiate(
             regularPlatforms[newIndex],
             endPoint.position,
             endPoint.rotation

@@ -10,7 +10,7 @@ public static class SpawnWorkQueue
         public System.Action action;
     }
 
-    private const int MaxActionsPerFrame = 2;
+    private const int MaxActionsPerFrame = 1;
     private const float MaxQueueTimePerFrameMs = 1.0f;
 
     private static readonly Queue<WorkItem> queue = new Queue<WorkItem>();

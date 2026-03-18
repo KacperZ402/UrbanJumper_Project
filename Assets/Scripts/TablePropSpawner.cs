@@ -1,9 +1,25 @@
 using System.Collections.Generic;
 using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class TablePropSpawner : MonoBehaviour
 {
+    private struct AreaData
+    {
+        public float minX;
+        public float maxX;
+        public float minZ;
+        public float maxZ;
+        public float y;
+    }
+
+    private struct CandidateData
+    {
+        public Vector3 position;
+        public float rotationY;
+    }
+
     public enum TableType { CaffeTable, Desk, Reception, Conference }
 
     [Header("General Settings")]
@@ -131,7 +147,97 @@ public class TablePropSpawner : MonoBehaviour
 
     private IEnumerator SpawnRandomPropsRoutine()
     {
+        List<CandidateData> candidates = null;
+        int seed = Random.Range(int.MinValue, int.MaxValue);
+
+        AreaData ownArea = default;
+        bool hasOwnArea = false;
+        if (ownCollider != null)
+        {
+            Bounds b = ownCollider.bounds;
+            ownArea = new AreaData { minX = b.min.x, maxX = b.max.x, minZ = b.min.z, maxZ = b.max.z, y = b.max.y };
+            hasOwnArea = true;
+        }
+
+        Vector3 circleCenter = hasOwnArea ? ownCollider.bounds.center : transform.position;
+        float circleRadius = hasOwnArea ? Mathf.Max(0f, Mathf.Min(ownCollider.bounds.extents.x, ownCollider.bounds.extents.z) - 1f) : 0f;
+
+        List<AreaData> areas = new List<AreaData>();
+        if (spawnAreas != null)
+        {
+            foreach (BoxCollider area in spawnAreas)
+            {
+                if (area == null) continue;
+                Bounds b = area.bounds;
+                areas.Add(new AreaData { minX = b.min.x, maxX = b.max.x, minZ = b.min.z, maxZ = b.max.z, y = b.max.y });
+            }
+        }
+
+        Task<List<CandidateData>> planTask = Task.Run(() => BuildTableCandidates(
+            tableType,
+            propCount,
+            maxAttemptsPerProp,
+            allowSpawnOnFullSurface,
+            minDistanceBetweenProps,
+            hasOwnArea,
+            ownArea,
+            areas,
+            circleCenter,
+            circleRadius,
+            seed));
+
+        while (!planTask.IsCompleted)
+            yield return null;
+
+        if (!planTask.IsFaulted && !planTask.IsCanceled)
+            candidates = planTask.Result;
+
+        if (candidates == null)
+            candidates = new List<CandidateData>();
+
         int opsThisFrame = 0;
+
+        for (int i = 0; i < candidates.Count; i++)
+        {
+            CandidateData data = candidates[i];
+            GameObject prefab = GetRandomProp();
+            GameObject obj = SingleObjectPool.Instance.Get(
+                prefab,
+                data.position,
+                Quaternion.Euler(0, data.rotationY, 0),
+                this.transform
+            );
+
+            PoolableObject po = obj.GetComponent<PoolableObject>();
+            if (po != null && po.prefab == null)
+                po.Init(prefab);
+
+            spawnedPositions.Add(data.position);
+
+            opsThisFrame++;
+            if (opsThisFrame >= Mathf.Max(1, maxOpsPerFrame))
+            {
+                opsThisFrame = 0;
+                yield return null;
+            }
+        }
+    }
+
+    private static List<CandidateData> BuildTableCandidates(
+        TableType tableType,
+        int propCount,
+        int maxAttemptsPerProp,
+        bool allowSpawnOnFullSurface,
+        float minDistanceBetweenProps,
+        bool hasOwnArea,
+        AreaData ownArea,
+        List<AreaData> areas,
+        Vector3 circleCenter,
+        float circleRadius,
+        int seed)
+    {
+        List<CandidateData> result = new List<CandidateData>(Mathf.Max(0, propCount));
+        System.Random random = new System.Random(seed);
 
         for (int i = 0; i < propCount; i++)
         {
@@ -140,35 +246,95 @@ public class TablePropSpawner : MonoBehaviour
 
             while (attempts < maxAttemptsPerProp && !spawned)
             {
-                Vector3 candidatePos = GetRandomSpawnPosition();
-                if (IsPositionValid(candidatePos))
+                Vector3 pos = BuildRandomPosition(tableType, allowSpawnOnFullSurface, hasOwnArea, ownArea, areas, circleCenter, circleRadius, random);
+
+                if (IsPositionValidForPlan(result, pos, minDistanceBetweenProps))
                 {
-                    GameObject prefab = GetRandomProp();
-                    GameObject obj = SingleObjectPool.Instance.Get(
-                        prefab,
-                        candidatePos,
-                        Quaternion.Euler(0, Random.Range(0f, 360f), 0),
-                        this.transform
-                    );
+                    result.Add(new CandidateData
+                    {
+                        position = pos,
+                        rotationY = (float)(random.NextDouble() * 360.0)
+                    });
 
-                    PoolableObject po = obj.GetComponent<PoolableObject>();
-                    if (po != null && po.prefab == null)
-                        po.Init(prefab);
-
-                    spawnedPositions.Add(candidatePos);
                     spawned = true;
                 }
 
                 attempts++;
-                opsThisFrame++;
-
-                if (opsThisFrame >= Mathf.Max(1, maxOpsPerFrame))
-                {
-                    opsThisFrame = 0;
-                    yield return null;
-                }
             }
         }
+
+        return result;
+    }
+
+    private static Vector3 BuildRandomPosition(
+        TableType tableType,
+        bool allowSpawnOnFullSurface,
+        bool hasOwnArea,
+        AreaData ownArea,
+        List<AreaData> areas,
+        Vector3 circleCenter,
+        float circleRadius,
+        System.Random random)
+    {
+        switch (tableType)
+        {
+            case TableType.CaffeTable:
+                {
+                    if (circleRadius <= 0f)
+                        return circleCenter;
+
+                    double angle = random.NextDouble() * System.Math.PI * 2.0;
+                    double radius = System.Math.Sqrt(random.NextDouble()) * circleRadius;
+                    float x = circleCenter.x + (float)(System.Math.Cos(angle) * radius);
+                    float z = circleCenter.z + (float)(System.Math.Sin(angle) * radius);
+                    float y = hasOwnArea ? ownArea.y : circleCenter.y;
+                    return new Vector3(x, y, z);
+                }
+
+            case TableType.Desk:
+            case TableType.Reception:
+            case TableType.Conference:
+            default:
+                {
+                    AreaData area;
+                    if (allowSpawnOnFullSurface && areas != null && areas.Count > 0)
+                    {
+                        area = areas[random.Next(areas.Count)];
+                    }
+                    else if (hasOwnArea)
+                    {
+                        area = ownArea;
+                    }
+                    else
+                    {
+                        return circleCenter;
+                    }
+
+                    float x = Lerp(area.minX, area.maxX, (float)random.NextDouble());
+                    float z = Lerp(area.minZ, area.maxZ, (float)random.NextDouble());
+                    return new Vector3(x, area.y, z);
+                }
+        }
+    }
+
+    private static bool IsPositionValidForPlan(List<CandidateData> existing, Vector3 candidate, float minDistance)
+    {
+        for (int i = 0; i < existing.Count; i++)
+        {
+            Vector3 pos = existing[i].position;
+            float dx = candidate.x - pos.x;
+            float dz = candidate.z - pos.z;
+            float distSq = dx * dx + dz * dz;
+            if (distSq < minDistance * minDistance)
+                return false;
+        }
+
+        return true;
+    }
+
+    private static float Lerp(float a, float b, float t)
+    {
+        return a + (b - a) * t;
     }
 
     void SpawnStaticProps()

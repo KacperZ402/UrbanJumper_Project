@@ -1,16 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using System.Collections;
 
 public class SingleObjectSpawner : MonoBehaviour
 {
     private const string SpawnBlockerTag = "SpawnBlocker";
-    private const int MaxSpawnersPerFrame = 40;
-    private const float MaxQueueTimePerFrameMs = 1.5f;
     private static readonly Collider[] BlockerHitsBuffer = new Collider[16];
-
-    private static readonly Queue<SingleObjectSpawner> PendingSpawners = new Queue<SingleObjectSpawner>();
-    private static bool isProcessingQueue;
 
     [Header("Lista prefabów")]
     public List<GameObject> prefabs;
@@ -29,8 +23,6 @@ public class SingleObjectSpawner : MonoBehaviour
     public bool useBatchedSpawn = true;
 
     private int keepLayer;
-    private bool isQueuedForSpawn;
-
     private void Awake()
     {
         keepLayer = LayerMask.NameToLayer(keepLayerName);
@@ -43,68 +35,11 @@ public class SingleObjectSpawner : MonoBehaviour
 
         if (useBatchedSpawn)
         {
-            SpawnWorkQueue.Enqueue(this, QueueSpawn);
+            SpawnWorkQueue.Enqueue(this, TrySpawnNow);
             return;
         }
 
         TrySpawnNow();
-    }
-
-    private void OnDisable()
-    {
-        isQueuedForSpawn = false;
-    }
-
-    private void QueueSpawn()
-    {
-        if (isQueuedForSpawn)
-            return;
-
-        isQueuedForSpawn = true;
-        PendingSpawners.Enqueue(this);
-
-        if (!isProcessingQueue)
-        {
-            if (SingleObjectPool.Instance != null)
-                SingleObjectPool.Instance.StartCoroutine(ProcessSpawnQueue());
-            else
-                StartCoroutine(ProcessSpawnQueue());
-        }
-    }
-
-    private static IEnumerator ProcessSpawnQueue()
-    {
-        isProcessingQueue = true;
-
-        while (PendingSpawners.Count > 0)
-        {
-            float frameStart = Time.realtimeSinceStartup;
-            int processedThisFrame = 0;
-
-            while (processedThisFrame < MaxSpawnersPerFrame && PendingSpawners.Count > 0)
-            {
-                float elapsedMs = (Time.realtimeSinceStartup - frameStart) * 1000f;
-                if (elapsedMs >= MaxQueueTimePerFrameMs)
-                    break;
-
-                SingleObjectSpawner spawner = PendingSpawners.Dequeue();
-                if (spawner == null)
-                    continue;
-
-                spawner.isQueuedForSpawn = false;
-
-                if (!spawner.isActiveAndEnabled)
-                    continue;
-
-                spawner.TrySpawnNow();
-                processedThisFrame++;
-            }
-
-            if (PendingSpawners.Count > 0)
-                yield return null;
-        }
-
-        isProcessingQueue = false;
     }
 
     private void TrySpawnNow()
@@ -112,12 +47,8 @@ public class SingleObjectSpawner : MonoBehaviour
 
         if (SingleObjectPool.Instance == null)
         {
-            // Pool jeszcze się nie zainicjalizował — spróbuj ponownie w kolejnych klatkach.
-            if (!isQueuedForSpawn)
-            {
-                isQueuedForSpawn = true;
-                PendingSpawners.Enqueue(this);
-            }
+            // Pool jeszcze się nie zainicjalizował — spróbuj ponownie przez globalną kolejkę.
+            SpawnWorkQueue.Enqueue(this, TrySpawnNow);
             return;
         }
 
