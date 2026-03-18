@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class EndPointTrigger : MonoBehaviour
 {
+    [SerializeField] private PlatformManager platformManager;
+
     private bool triggered = false;
 
     private void OnTriggerEnter(Collider other)
@@ -9,10 +11,9 @@ public class EndPointTrigger : MonoBehaviour
         if (triggered || !other.CompareTag("Player")) return;
         triggered = true;
 
-        PlatformManager manager = FindObjectOfType<PlatformManager>();
-        if (manager != null)
+        if (platformManager != null)
         {
-            manager.OnTriggerActivated(transform.parent);
+            platformManager.OnTriggerActivated(transform.parent);
             // parent = endPoint
         }
     }

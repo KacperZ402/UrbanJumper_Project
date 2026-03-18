@@ -66,6 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765aa14c6871120459990c6631422da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  platformManager: {fileID: 8877436004359265411, guid: 0b792ea6a82b666409790f6273851417, type: 3}
 --- !u!1 &287950848954156328
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,6 +235,8 @@ MonoBehaviour:
   maxProps: 15
   cellSize: 10
   spawnBlockers: []
+  useBatchedSpawn: 1
+  maxPropsPerFrame: 20
 --- !u!1 &571629724586023287
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,6 +373,8 @@ MonoBehaviour:
   cellLength: 25
   spawnBlockers:
   - {fileID: 3924450693730472557}
+  useBatchedSpawn: 1
+  maxOpsPerFrame: 20
 --- !u!1 &623041801330461888
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,6 +426,7 @@ MonoBehaviour:
   spawnChance: 0.597
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &738561574748778406
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,6 +654,7 @@ MonoBehaviour:
   spawnChance: 0.597
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &1090835260284802024
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,6 +706,7 @@ MonoBehaviour:
   spawnChance: 0.597
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &1780304549508399003
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,6 +896,8 @@ MonoBehaviour:
   cellLength: 25
   spawnBlockers:
   - {fileID: 8362403264851415266}
+  useBatchedSpawn: 1
+  maxOpsPerFrame: 20
 --- !u!1 &2090279853969435868
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,6 +1035,8 @@ MonoBehaviour:
   spawnBlockers:
   - {fileID: 4799781168543717031}
   - {fileID: 6035235259121002528}
+  useBatchedSpawn: 1
+  maxOpsPerFrame: 20
 --- !u!1 &2407899852752429823
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,6 +1228,8 @@ MonoBehaviour:
   spawnBlockers:
   - {fileID: 1654886401388044376}
   - {fileID: 7916918584594156831}
+  useBatchedSpawn: 1
+  maxOpsPerFrame: 20
 --- !u!1 &2817003300503717569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,6 +1474,8 @@ MonoBehaviour:
   spawnBlockers:
   - {fileID: 4819494377096304778}
   - {fileID: 1663051560635076807}
+  useBatchedSpawn: 1
+  maxOpsPerFrame: 20
 --- !u!1 &3470210083538907688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1511,6 +1527,7 @@ MonoBehaviour:
   spawnChance: 0.597
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &3574550672816671968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1616,6 +1633,7 @@ MonoBehaviour:
   spawnChance: 0.597
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &4214758734163270643
 GameObject:
   m_ObjectHideFlags: 0
@@ -1721,6 +1739,7 @@ MonoBehaviour:
   spawnChance: 0.597
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &4545541676518687334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1879,6 +1898,7 @@ MonoBehaviour:
   spawnChance: 0.597
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &4958815651808608385
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,6 +2090,7 @@ MonoBehaviour:
   spawnChance: 0.597
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &5500691477932403075
 GameObject:
   m_ObjectHideFlags: 0
@@ -2174,6 +2195,7 @@ MonoBehaviour:
   spawnChance: 0.597
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &5791001191964011907
 GameObject:
   m_ObjectHideFlags: 0
@@ -2421,6 +2443,8 @@ MonoBehaviour:
   - {fileID: 5641540437618929686}
   - {fileID: 5559427688438155191}
   - {fileID: 9044719899184907025}
+  useBatchedSpawn: 1
+  maxPropsPerFrame: 20
 --- !u!1 &6058539556196379272
 GameObject:
   m_ObjectHideFlags: 0
@@ -2472,6 +2496,7 @@ MonoBehaviour:
   spawnChance: 0.597
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &6165393937090558007
 GameObject:
   m_ObjectHideFlags: 0
@@ -2895,6 +2920,8 @@ MonoBehaviour:
   spawnBlockers:
   - {fileID: 8452171798245249307}
   - {fileID: 6472438632447516827}
+  useBatchedSpawn: 1
+  maxOpsPerFrame: 20
 --- !u!1 &8196081961555919452
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,8 +6,6 @@ public class PotPlantSpawner : MonoBehaviour
     [Header("Lista mo¿liwych kwiatków do zrespienia")]
     public List<GameObject> flowerPrefabs;
 
-    private GameObject spawnedFlower;
-
     void Start()
     {
         SpawnFlower();
@@ -23,9 +21,8 @@ public class PotPlantSpawner : MonoBehaviour
 
         GameObject prefab = flowerPrefabs[Random.Range(0, flowerPrefabs.Count)];
 
-        spawnedFlower = SingleObjectPool.Instance.Get(prefab, transform.position, Quaternion.identity, transform);
-
-        spawnedFlower.transform.rotation = Quaternion.identity;
-        spawnedFlower.SetActive(true);
+        GameObject flower = SingleObjectPool.Instance.Get(prefab, transform.position, Quaternion.identity, transform);
+        if (flower != null)
+            flower.transform.rotation = Quaternion.identity;
     }
 }
