@@ -244,13 +244,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeedZ: 50
-  jumpForce: 25
   laneDistance: 10
-  laneChangeSpeed: 50
+  laneChangeSmoothTime: 0.3
+  laneChangeMaxSpeed: 25
+  jumpForce: 25
   fallMultiplier: 2.5
-  jumpRiseMultiplier: 2
-  gameOverVelocityThreshold: 1
-  gameOverTimeLimit: 0.01
+  jumpCutMultiplier: 2
+  startingLane: 1
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  groundCheckOffset: 0.05
+  groundCheckRadiusScale: 0.4
+  laneBlockMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  laneCheckHeightScale: 0.6
+  disableAnimatorRootMotion: 1
+  updateAnimator: 1
+  speedParam: Speed
+  groundedParam: IsGrounded
+  verticalSpeedParam: VerticalSpeed
 --- !u!54 &1077459173
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -400,13 +414,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeedZ: 50
-  jumpForce: 25
   laneDistance: 10
-  laneChangeSpeed: 50
+  laneChangeSmoothTime: 0.08
+  laneChangeMaxSpeed: 25
+  jumpForce: 25
   fallMultiplier: 2.5
-  jumpRiseMultiplier: 2
-  gameOverVelocityThreshold: 1
-  gameOverTimeLimit: 0.01
+  jumpCutMultiplier: 2
+  startingLane: 1
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  groundCheckOffset: 0.05
+  groundCheckRadiusScale: 0.4
+  laneBlockMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  laneCheckHeightScale: 0.6
+  disableAnimatorRootMotion: 1
+  updateAnimator: 1
+  speedParam: Speed
+  groundedParam: IsGrounded
+  verticalSpeedParam: VerticalSpeed
 --- !u!54 &1137467085
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -782,6 +810,42 @@ PrefabInstance:
       propertyPath: m_TagString
       value: SpawnBlocker
       objectReference: {fileID: 0}
+    - target: {fileID: 112169192268270544, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
+      propertyPath: platformManager
+      value: 
+      objectReference: {fileID: 8877436004359265411, guid: 0b792ea6a82b666409790f6273851417, type: 3}
+    - target: {fileID: 1322023989604397688, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
+      propertyPath: platformManager
+      value: 
+      objectReference: {fileID: 8877436004359265411, guid: 0b792ea6a82b666409790f6273851417, type: 3}
+    - target: {fileID: 1349578855362772548, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
+      propertyPath: platformManager
+      value: 
+      objectReference: {fileID: 8877436004359265411, guid: 0b792ea6a82b666409790f6273851417, type: 3}
+    - target: {fileID: 1434336886087345819, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
+      propertyPath: platformManager
+      value: 
+      objectReference: {fileID: 8877436004359265411, guid: 0b792ea6a82b666409790f6273851417, type: 3}
+    - target: {fileID: 1532769895287116998, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
+      propertyPath: platformManager
+      value: 
+      objectReference: {fileID: 8877436004359265411, guid: 0b792ea6a82b666409790f6273851417, type: 3}
+    - target: {fileID: 1604212248100951196, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
+      propertyPath: platformManager
+      value: 
+      objectReference: {fileID: 8877436004359265411, guid: 0b792ea6a82b666409790f6273851417, type: 3}
+    - target: {fileID: 2251526505497384102, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
+      propertyPath: platformManager
+      value: 
+      objectReference: {fileID: 8877436004359265411, guid: 0b792ea6a82b666409790f6273851417, type: 3}
+    - target: {fileID: 2278043446480691192, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
+      propertyPath: platformManager
+      value: 
+      objectReference: {fileID: 8877436004359265411, guid: 0b792ea6a82b666409790f6273851417, type: 3}
+    - target: {fileID: 2461870343883838453, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
+      propertyPath: platformManager
+      value: 
+      objectReference: {fileID: 8877436004359265411, guid: 0b792ea6a82b666409790f6273851417, type: 3}
     - target: {fileID: 4681726381007292052, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -822,6 +886,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5126016581547539583, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
+      propertyPath: platformManager
+      value: 
+      objectReference: {fileID: 8877436004359265411, guid: 0b792ea6a82b666409790f6273851417, type: 3}
+    - target: {fileID: 5589554128329806474, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
+      propertyPath: platformManager
+      value: 
+      objectReference: {fileID: 8877436004359265411, guid: 0b792ea6a82b666409790f6273851417, type: 3}
     - target: {fileID: 5674062476359851039, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
       propertyPath: m_Name
       value: PlatformStart
@@ -842,6 +914,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: SpawnBlocker
       objectReference: {fileID: 0}
+    - target: {fileID: 7087165328795332258, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
+      propertyPath: platformManager
+      value: 
+      objectReference: {fileID: 8877436004359265411, guid: 0b792ea6a82b666409790f6273851417, type: 3}
     - target: {fileID: 7141586097561591590, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -862,6 +938,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[5]
       value: 
       objectReference: {fileID: 2100000, guid: 516e5ff3a8f1350408267842b7b78733, type: 2}
+    - target: {fileID: 7428638109855330941, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
+      propertyPath: platformManager
+      value: 
+      objectReference: {fileID: 8877436004359265411, guid: 0b792ea6a82b666409790f6273851417, type: 3}
     - target: {fileID: 9092131767294365848, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

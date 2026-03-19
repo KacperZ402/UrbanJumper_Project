@@ -2,140 +2,233 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Ruch i skok")]
-    public float moveSpeedZ = 5f;               // Sta³a prêdkoœæ do przodu
-    public float jumpForce = 7f;                // Si³a skoku
-    public float laneDistance = 5f;             // Odleg³oœæ miêdzy torami (X)
-    public float laneChangeSpeed = 15f;         // Szybkoœæ przesuwania miêdzy torami
+    [Header("Ruch")]
+    public float moveSpeedZ = 10f;
+    public float laneDistance = 3f;
+    public float laneChangeSmoothTime = 0.08f;
+    public float laneChangeMaxSpeed = 25f;
 
-    [Header("Modyfikatory skoku")]
-    public float fallMultiplier = 3.5f;         // Przyspieszone opadanie
-    public float jumpRiseMultiplier = 2f;       // Dodatkowy multiplier gdy spacja nie jest przytrzymana
+    [Header("Skok")]
+    public float jumpForce = 8f;
+    public float fallMultiplier = 3.5f;
+    public float jumpCutMultiplier = 2f;
 
-    [Header("Game Over")]
-    private Vector3 lastPosition;
-    public float gameOverVelocityThreshold = 1f; // Minimalna prêdkoœæ w osi Z, by uznaæ, ¿e gracz siê porusza
-    public float gameOverTimeLimit = 0.01f;           // Czas, przez który prêdkoœæ musi byæ poni¿ej threshold, by zakoñczyæ grê
+    [Header("Tory")]
+    public int startingLane = 1; // 0 = lewy, 1 = œrodek, 2 = prawy
 
-    private int currentLane = 1;  // 0 = lewy, 1 = œrodek, 2 = prawy
-    private float targetX;        // Docelowa pozycja X dla aktualnego toru
+    [Header("Ground check")]
+    public LayerMask groundMask = ~0;
+    public float groundCheckOffset = 0.05f;
+    public float groundCheckRadiusScale = 0.4f;
+
+    [Header("Lane check")]
+    public LayerMask laneBlockMask = ~0;
+    public float laneCheckHeightScale = 0.6f;
+
+    [Header("Animator")]
+    public bool disableAnimatorRootMotion = true;
+    public bool updateAnimator = true;
+    public string speedParam = "Speed";
+    public string groundedParam = "IsGrounded";
+    public string verticalSpeedParam = "VerticalSpeed";
+
     private Rigidbody rb;
-    private bool isGrounded = true;
+    private Collider playerCollider;
+    private Animator animator;
 
+    private int currentLane;
+    private float laneVelocity;
+    private bool jumpRequested;
+    private bool isGrounded;
 
-    // Zmienne do monitorowania ruchu w osi Z
-    private float stopTimer = 0f;
+    private int speedHash;
+    private int groundedHash;
+    private int verticalSpeedHash;
+    private bool hasSpeedParam;
+    private bool hasGroundedParam;
+    private bool hasVerticalParam;
 
-    void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        currentLane = 1;  // Zak³adamy, ¿e zaczynamy na œrodku
-        targetX = transform.position.x;
-        lastPosition = transform.position;
+        playerCollider = GetComponent<Collider>();
+        animator = GetComponentInChildren<Animator>();
+
+        if (rb != null)
+            rb.constraints |= RigidbodyConstraints.FreezeRotation;
+
+        if (animator != null && disableAnimatorRootMotion)
+            animator.applyRootMotion = false;
+
+        currentLane = Mathf.Clamp(startingLane, 0, 2);
+        CacheAnimatorParams();
     }
 
-    void Update()
+    private void Start()
     {
-        // Obs³uga zmiany torów i skoku – input w Update
-        if (Input.GetKeyDown(KeyCode.RightArrow) && currentLane > 0)
-        {
-            int newLane = currentLane - 1;
-            if (CanChangeLane(newLane))
-            {
-                currentLane = newLane;
-                targetX = (currentLane - 1) * laneDistance; // Przy laneDistance = 5 => -5, 0, 5
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && currentLane < 2)
-        {
-            int newLane = currentLane + 1;
-            if (CanChangeLane(newLane))
-            {
-                currentLane = newLane;
-                targetX = (currentLane - 1) * laneDistance;
-            }
-        }
+        SetLanePositionImmediately(currentLane);
+    }
 
-        // Skakanie
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+            RequestLaneChange(1);
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+            RequestLaneChange(-1);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            jumpRequested = true;
+
+        if (updateAnimator)
+            UpdateAnimatorState();
+    }
+
+    private void FixedUpdate()
+    {
+        if (rb == null)
+            return;
+
+        isGrounded = CheckGrounded();
+
+        Vector3 velocity = rb.velocity;
+
+        float targetX = LaneToWorldX(currentLane);
+        float nextX = Mathf.SmoothDamp(rb.position.x, targetX, ref laneVelocity, laneChangeSmoothTime, laneChangeMaxSpeed, Time.fixedDeltaTime);
+        velocity.x = (nextX - rb.position.x) / Time.fixedDeltaTime;
+
+        velocity.z = moveSpeedZ;
+
+        if (jumpRequested && isGrounded)
         {
-            // Zerujemy pionow¹ prêdkoœæ dla spójnego skoku
-            rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            velocity.y = jumpForce;
             isGrounded = false;
         }
+        jumpRequested = false;
 
-        // G³adkie przesuwanie miêdzy torami na osi X – ruch niezale¿ny od osi Z
-        float newX = Mathf.MoveTowards(transform.position.x, targetX, laneChangeSpeed * Time.deltaTime);
-        transform.position = new Vector3(newX, transform.position.y, transform.position.z);
-    }
+        rb.velocity = velocity;
 
-    void FixedUpdate()
-    {
-        // Utrzymanie sta³ej prêdkoœci w osi Z
-        Vector3 currentVelocity = rb.velocity;
-        currentVelocity.z = moveSpeedZ;
-        rb.velocity = new Vector3(currentVelocity.x, currentVelocity.y, currentVelocity.z);
-
-        // Modyfikacja grawitacji – dynamiczny skok
-        if (rb.velocity.y < 0)
+        if (rb.velocity.y < 0f)
         {
             rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1f) * Time.fixedDeltaTime;
         }
-        else if (rb.velocity.y > 0 && !Input.GetKey(KeyCode.Space))
+        else if (rb.velocity.y > 0f && !Input.GetKey(KeyCode.Space))
         {
-            rb.velocity += Vector3.up * Physics.gravity.y * (jumpRiseMultiplier - 1f) * Time.fixedDeltaTime;
+            rb.velocity += Vector3.up * Physics.gravity.y * (jumpCutMultiplier - 1f) * Time.fixedDeltaTime;
         }
     }
 
-    // Sprawdza, czy w docelowym torze (nowej pozycji X) nie znajduje siê inny obiekt.
+    private void RequestLaneChange(int direction)
+    {
+        int targetLane = Mathf.Clamp(currentLane + direction, 0, 2);
+        if (targetLane == currentLane)
+            return;
+
+        if (!CanChangeLane(targetLane))
+            return;
+
+        currentLane = targetLane;
+    }
+
     private bool CanChangeLane(int targetLane)
     {
-        float targetXPos = (targetLane - 1) * laneDistance;
-        Vector3 targetPos = new Vector3(targetXPos, transform.position.y, transform.position.z);
-        Collider col = GetComponent<Collider>();
-        if (col != null)
-        {
-            // U¿ywamy rozmiaru kolidera jako obszaru do sprawdzenia,
-            // zmniejszonego nieco o margines (0.9) by unikn¹æ fa³szywych wykryæ.
-            Vector3 halfExtents = col.bounds.extents * 0.9f;
-            Collider[] hits = Physics.OverlapBox(targetPos, halfExtents, transform.rotation);
-            foreach (Collider hit in hits)
-            {
-                if (hit.gameObject != gameObject)
-                {
+        if (playerCollider == null)
+            return true;
 
-                    return false;  // Znaleziono inny obiekt – nie mo¿na zmieniæ toru
-                }
-            }
+        Bounds bounds = playerCollider.bounds;
+        Vector3 targetPos = new Vector3(LaneToWorldX(targetLane), bounds.center.y, bounds.center.z);
+
+        Vector3 halfExtents = bounds.extents * 0.9f;
+        halfExtents.y *= Mathf.Clamp01(laneCheckHeightScale);
+
+        Collider[] hits = Physics.OverlapBox(targetPos, halfExtents, transform.rotation, laneBlockMask, QueryTriggerInteraction.Ignore);
+        for (int i = 0; i < hits.Length; i++)
+        {
+            Collider hit = hits[i];
+            if (hit != null && hit.gameObject != gameObject)
+                return false;
         }
+
         return true;
+    }
+
+    private bool CheckGrounded()
+    {
+        if (playerCollider == null)
+            return false;
+
+        Bounds bounds = playerCollider.bounds;
+        Vector3 origin = new Vector3(bounds.center.x, bounds.min.y + groundCheckOffset, bounds.center.z);
+        float radius = Mathf.Max(0.05f, Mathf.Min(bounds.extents.x, bounds.extents.z) * groundCheckRadiusScale);
+
+        return Physics.CheckSphere(origin, radius, groundMask, QueryTriggerInteraction.Ignore);
+    }
+
+    private float LaneToWorldX(int lane)
+    {
+        return (lane - 1) * laneDistance;
+    }
+
+    private void SetLanePositionImmediately(int lane)
+    {
+        Vector3 pos = transform.position;
+        pos.x = LaneToWorldX(lane);
+        transform.position = pos;
+    }
+
+    private void CacheAnimatorParams()
+    {
+        if (animator == null)
+            return;
+
+        speedHash = Animator.StringToHash(speedParam);
+        groundedHash = Animator.StringToHash(groundedParam);
+        verticalSpeedHash = Animator.StringToHash(verticalSpeedParam);
+
+        hasSpeedParam = HasAnimatorParameter(speedParam, AnimatorControllerParameterType.Float);
+        hasGroundedParam = HasAnimatorParameter(groundedParam, AnimatorControllerParameterType.Bool);
+        hasVerticalParam = HasAnimatorParameter(verticalSpeedParam, AnimatorControllerParameterType.Float);
+    }
+
+    private bool HasAnimatorParameter(string paramName, AnimatorControllerParameterType type)
+    {
+        if (animator == null || string.IsNullOrEmpty(paramName))
+            return false;
+
+        AnimatorControllerParameter[] parameters = animator.parameters;
+        for (int i = 0; i < parameters.Length; i++)
+        {
+            if (parameters[i].type == type && parameters[i].name == paramName)
+                return true;
+        }
+
+        return false;
+    }
+
+    private void UpdateAnimatorState()
+    {
+        if (animator == null)
+            return;
+
+        if (hasSpeedParam)
+            animator.SetFloat(speedHash, moveSpeedZ);
+
+        if (hasGroundedParam)
+            animator.SetBool(groundedHash, isGrounded);
+
+        if (hasVerticalParam)
+            animator.SetFloat(verticalSpeedHash, rb != null ? rb.velocity.y : 0f);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        // Sprawdzenie czy gracz dotkn¹³ pod³o¿a (do skakania)
-        foreach (ContactPoint contact in collision.contacts)
-        {
-            if (Vector3.Dot(contact.normal, Vector3.up) > 0.5f)
-            {
-                isGrounded = true;
-                break;
-            }
-        }
-
-        // Sprawdzenie kolizji z przeszkod¹
         if (collision.gameObject.CompareTag("Obstacle"))
-        {
             GameOver();
-        }
     }
+
     private void GameOver()
     {
         Debug.Log("Game Over!");
-        this.enabled = false;
-
-        // Mo¿esz te¿ dodaæ np. wywo³anie UI, sceny itd.
-        // SceneManager.LoadScene("GameOverScene");
+        enabled = false;
     }
 }
