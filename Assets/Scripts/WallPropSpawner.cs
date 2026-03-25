@@ -74,10 +74,6 @@ public class WallPropSpawner : MonoBehaviour
         {
             floorSpawnerRef.OnSurfaceChosen += HandleSurfaceChosen;
         }
-        else
-        {
-            Debug.LogWarning("Brakuje referencji do FloorPropSpawner.");
-        }
     }
 
     void HandleSurfaceChosen(SurfaceType type)
@@ -88,8 +84,6 @@ public class WallPropSpawner : MonoBehaviour
             hasPendingSurface = true;
             return;
         }
-
-        Debug.Log($"[WallPropSpawner] Otrzymano typ przez event: {type}");
 
         WallSurfacePropSet set = wallSurfacePropSets.Find(s => s.surfaceType == type);
         if (set == null)

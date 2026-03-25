@@ -11,6 +11,7 @@ public class CeilingLampSpawner : MonoBehaviour
     [Tooltip("Szerokoœæ i g³êbokoœæ jednej kratki w metrach (X = szerokoœæ, Y = g³êbokoœæ)")]
     public Vector2 cellSize = new Vector2(2f, 2f);  // <-- kontrolowane z inspektora
 
+
     private void Start()
     {
         SpawnCeilingLamps();
