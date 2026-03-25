@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,55 +15,54 @@ public class PlayerMovement : MonoBehaviour
     public float fallMultiplier = 3.5f;
     public float jumpCutMultiplier = 2f;
 
+    [Header("Slide")]
+    public float slideDuration = 0.5f;
+    [Range(0.1f, 1f)] public float slideColliderYMultiplier = 0.45f;
+    public float slideDownVelocity = 8f;
+
     [Header("Tory")]
     public int startingLane = 1; // 0 = lewy, 1 = œrodek, 2 = prawy
 
-    [Header("Ground check")]
-    public LayerMask groundMask = ~0;
-    public float groundCheckOffset = 0.05f;
-    public float groundCheckRadiusScale = 0.4f;
+    [Header("Jump reset")]
+    public string platformTag = "Platform";
 
     [Header("Lane check")]
     public LayerMask laneBlockMask = ~0;
     public float laneCheckHeightScale = 0.6f;
 
-    [Header("Animator")]
-    public bool disableAnimatorRootMotion = true;
-    public bool updateAnimator = true;
-    public string speedParam = "Speed";
-    public string groundedParam = "IsGrounded";
-    public string verticalSpeedParam = "VerticalSpeed";
-
     private Rigidbody rb;
     private Collider playerCollider;
-    private Animator animator;
+    private CapsuleCollider capsuleCollider;
 
     private int currentLane;
     private float laneVelocity;
     private bool jumpRequested;
-    private bool isGrounded;
+    private bool slideRequested;
+    public bool isSliding;
+    public bool canJump;
+    public bool requireNewPlatformTouchAfterJump;
 
-    private int speedHash;
-    private int groundedHash;
-    private int verticalSpeedHash;
-    private bool hasSpeedParam;
-    private bool hasGroundedParam;
-    private bool hasVerticalParam;
+    private readonly HashSet<int> touchingPlatformIds = new HashSet<int>();
+    private Coroutine slideRoutine;
+    private float baseCapsuleHeight;
+    private Vector3 baseCapsuleCenter;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         playerCollider = GetComponent<Collider>();
-        animator = GetComponentInChildren<Animator>();
+        capsuleCollider = GetComponent<CapsuleCollider>();
 
         if (rb != null)
             rb.constraints |= RigidbodyConstraints.FreezeRotation;
 
-        if (animator != null && disableAnimatorRootMotion)
-            animator.applyRootMotion = false;
+        if (capsuleCollider != null)
+        {
+            baseCapsuleHeight = capsuleCollider.height;
+            baseCapsuleCenter = capsuleCollider.center;
+        }
 
         currentLane = Mathf.Clamp(startingLane, 0, 2);
-        CacheAnimatorParams();
     }
 
     private void Start()
@@ -80,16 +81,14 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
             jumpRequested = true;
 
-        if (updateAnimator)
-            UpdateAnimatorState();
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+            slideRequested = true;
     }
 
     private void FixedUpdate()
     {
         if (rb == null)
             return;
-
-        isGrounded = CheckGrounded();
 
         Vector3 velocity = rb.velocity;
 
@@ -99,12 +98,17 @@ public class PlayerMovement : MonoBehaviour
 
         velocity.z = moveSpeedZ;
 
-        if (jumpRequested && isGrounded)
+        if (jumpRequested && canJump)
         {
             velocity.y = jumpForce;
-            isGrounded = false;
+            canJump = false;
+            requireNewPlatformTouchAfterJump = true;
         }
         jumpRequested = false;
+
+        if (slideRequested && !isSliding)
+            StartSlide();
+        slideRequested = false;
 
         rb.velocity = velocity;
 
@@ -116,6 +120,47 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity += Vector3.up * Physics.gravity.y * (jumpCutMultiplier - 1f) * Time.fixedDeltaTime;
         }
+
+        if (isSliding)
+        {
+            Vector3 slideVelocity = rb.velocity;
+            slideVelocity.y = Mathf.Min(slideVelocity.y, -Mathf.Abs(slideDownVelocity));
+            rb.velocity = slideVelocity;
+        }
+    }
+
+    private void StartSlide()
+    {
+        if (slideRoutine != null)
+            StopCoroutine(slideRoutine);
+
+        slideRoutine = StartCoroutine(SlideRoutine());
+    }
+
+    private IEnumerator SlideRoutine()
+    {
+        isSliding = true;
+
+        if (capsuleCollider != null)
+        {
+            float newHeight = Mathf.Max(0.1f, baseCapsuleHeight * slideColliderYMultiplier);
+            capsuleCollider.height = newHeight;
+
+            Vector3 newCenter = baseCapsuleCenter;
+            newCenter.y = baseCapsuleCenter.y * slideColliderYMultiplier;
+            capsuleCollider.center = newCenter;
+        }
+
+        yield return new WaitForSeconds(slideDuration);
+
+        if (capsuleCollider != null)
+        {
+            capsuleCollider.height = baseCapsuleHeight;
+            capsuleCollider.center = baseCapsuleCenter;
+        }
+
+        isSliding = false;
+        slideRoutine = null;
     }
 
     private void RequestLaneChange(int direction)
@@ -152,18 +197,6 @@ public class PlayerMovement : MonoBehaviour
         return true;
     }
 
-    private bool CheckGrounded()
-    {
-        if (playerCollider == null)
-            return false;
-
-        Bounds bounds = playerCollider.bounds;
-        Vector3 origin = new Vector3(bounds.center.x, bounds.min.y + groundCheckOffset, bounds.center.z);
-        float radius = Mathf.Max(0.05f, Mathf.Min(bounds.extents.x, bounds.extents.z) * groundCheckRadiusScale);
-
-        return Physics.CheckSphere(origin, radius, groundMask, QueryTriggerInteraction.Ignore);
-    }
-
     private float LaneToWorldX(int lane)
     {
         return (lane - 1) * laneDistance;
@@ -176,54 +209,37 @@ public class PlayerMovement : MonoBehaviour
         transform.position = pos;
     }
 
-    private void CacheAnimatorParams()
-    {
-        if (animator == null)
-            return;
-
-        speedHash = Animator.StringToHash(speedParam);
-        groundedHash = Animator.StringToHash(groundedParam);
-        verticalSpeedHash = Animator.StringToHash(verticalSpeedParam);
-
-        hasSpeedParam = HasAnimatorParameter(speedParam, AnimatorControllerParameterType.Float);
-        hasGroundedParam = HasAnimatorParameter(groundedParam, AnimatorControllerParameterType.Bool);
-        hasVerticalParam = HasAnimatorParameter(verticalSpeedParam, AnimatorControllerParameterType.Float);
-    }
-
-    private bool HasAnimatorParameter(string paramName, AnimatorControllerParameterType type)
-    {
-        if (animator == null || string.IsNullOrEmpty(paramName))
-            return false;
-
-        AnimatorControllerParameter[] parameters = animator.parameters;
-        for (int i = 0; i < parameters.Length; i++)
-        {
-            if (parameters[i].type == type && parameters[i].name == paramName)
-                return true;
-        }
-
-        return false;
-    }
-
-    private void UpdateAnimatorState()
-    {
-        if (animator == null)
-            return;
-
-        if (hasSpeedParam)
-            animator.SetFloat(speedHash, moveSpeedZ);
-
-        if (hasGroundedParam)
-            animator.SetBool(groundedHash, isGrounded);
-
-        if (hasVerticalParam)
-            animator.SetFloat(verticalSpeedHash, rb != null ? rb.velocity.y : 0f);
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
+        if (IsPlatformCollision(collision))
+        {
+            touchingPlatformIds.Add(collision.collider.GetInstanceID());
+            if (!requireNewPlatformTouchAfterJump)
+                canJump = true;
+            else
+            {
+                canJump = true;
+                requireNewPlatformTouchAfterJump = false;
+            }
+        }
+
         if (collision.gameObject.CompareTag("Obstacle"))
             GameOver();
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (!IsPlatformCollision(collision))
+            return;
+
+        touchingPlatformIds.Remove(collision.collider.GetInstanceID());
+        if (touchingPlatformIds.Count == 0)
+            canJump = false;
+    }
+
+    private bool IsPlatformCollision(Collision collision)
+    {
+        return collision.gameObject.CompareTag(platformTag);
     }
 
     private void GameOver()
