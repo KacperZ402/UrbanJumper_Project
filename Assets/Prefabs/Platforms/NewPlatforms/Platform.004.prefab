@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765aa14c6871120459990c6631422da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugLogs: 1
 --- !u!1 &933275165576683925
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +417,8 @@ MonoBehaviour:
   cellWidth: 1
   cellLength: 25
   spawnBlockers: []
+  useBatchedSpawn: 1
+  maxOpsPerFrame: 20
 --- !u!1 &3026925828842252985
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +470,7 @@ MonoBehaviour:
   spawnChance: 0.807
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &3133508415190211830
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,6 +723,7 @@ MonoBehaviour:
   spawnChance: 0.807
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &4811340831218540635
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +945,8 @@ MonoBehaviour:
   cellLength: 25
   spawnBlockers:
   - {fileID: 6773309978407281371}
+  useBatchedSpawn: 1
+  maxOpsPerFrame: 20
 --- !u!1 &5406732430737268602
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +998,7 @@ MonoBehaviour:
   spawnChance: 0.807
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &5494191688864678086
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,6 +1050,7 @@ MonoBehaviour:
   spawnChance: 0.807
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &5607893688372912485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,6 +1243,8 @@ MonoBehaviour:
   - {fileID: 2361697071701850919}
   - {fileID: 9043558657613473116}
   - {fileID: 8825689742777906284}
+  useBatchedSpawn: 1
+  maxOpsPerFrame: 20
 --- !u!1 &6105539949142272312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1601,6 +1612,8 @@ MonoBehaviour:
   cellLength: 25
   spawnBlockers:
   - {fileID: 7535124901344577634}
+  useBatchedSpawn: 1
+  maxOpsPerFrame: 20
 --- !u!1 &7101777588052421964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,6 +1730,8 @@ MonoBehaviour:
   cellSize: 10
   spawnBlockers:
   - {fileID: 7535124901344577634}
+  useBatchedSpawn: 1
+  maxPropsPerFrame: 20
 --- !u!1 &7313781286084858176
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,7 +1746,7 @@ GameObject:
   - component: {fileID: 2602541154812003116}
   m_Layer: 0
   m_Name: Platform.004
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1905,6 +1920,7 @@ MonoBehaviour:
   spawnChance: 0.807
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &8232264338992263425
 GameObject:
   m_ObjectHideFlags: 0
@@ -2190,6 +2206,8 @@ MonoBehaviour:
   - {fileID: 7269728215873886349}
   - {fileID: 7040518753722903495}
   - {fileID: 2075000532993466847}
+  useBatchedSpawn: 1
+  maxPropsPerFrame: 20
 --- !u!1 &8699080398067858591
 GameObject:
   m_ObjectHideFlags: 0
@@ -2325,6 +2343,8 @@ MonoBehaviour:
   cellWidth: 1
   cellLength: 25
   spawnBlockers: []
+  useBatchedSpawn: 1
+  maxOpsPerFrame: 20
 --- !u!1 &8746400506022162910
 GameObject:
   m_ObjectHideFlags: 0
@@ -2376,6 +2396,7 @@ MonoBehaviour:
   spawnChance: 0.807
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &8998300462202300789
 GameObject:
   m_ObjectHideFlags: 0

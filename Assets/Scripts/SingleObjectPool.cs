@@ -42,7 +42,7 @@ public class SingleObjectPool : MonoBehaviour
             pools[key].Enqueue(obj);
         }
 
-        Debug.Log($"Preload: {prefab.name} x{count}");
+        //Debug.Log($"Preload: {prefab.name} x{count}");
     }
 
     public GameObject Get(GameObject prefab, Vector3 position, Quaternion rotation, Transform parent = null)
@@ -59,14 +59,14 @@ public class SingleObjectPool : MonoBehaviour
             obj.transform.SetPositionAndRotation(position, rotation);
             if (parent != null) obj.transform.SetParent(parent);
             obj.SetActive(true);
-            Debug.Log("Pobrano: "+ prefab.name + "Pozosta³o" + pools[key].Count);
+            //Debug.Log("Pobrano: "+ prefab.name + "Pozosta³o" + pools[key].Count);
         }
         else
         {
             obj = Instantiate(prefab, position, rotation, parent);
             PoolableObject po = obj.GetComponent<PoolableObject>();
             if (po != null) po.Init(prefab);
-            Debug.Log($"[Pooling] Brak w puli, stworzono nowy: {prefab.name}");
+            //Debug.Log($"[Pooling] Brak w puli, stworzono nowy: {prefab.name}");
         }
 
         return obj;

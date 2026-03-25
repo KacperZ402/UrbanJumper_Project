@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class EndPointTrigger : MonoBehaviour
 {
+    [SerializeField] private bool debugLogs = true;
+
+    private PlatformManager platformManager;
+
     private bool triggered = false;
 
     private void OnTriggerEnter(Collider other)
@@ -9,11 +13,25 @@ public class EndPointTrigger : MonoBehaviour
         if (triggered || !other.CompareTag("Player")) return;
         triggered = true;
 
-        PlatformManager manager = FindObjectOfType<PlatformManager>();
-        if (manager != null)
+        if (platformManager == null)
+            platformManager = FindObjectOfType<PlatformManager>();
+
+        if (debugLogs)
         {
-            manager.OnTriggerActivated(transform.parent);
+            string managerInfo = platformManager == null
+                ? "null"
+                : $"{platformManager.name}#{platformManager.GetInstanceID()}";
+            Debug.Log($"[EndPointTrigger:{name}] Triggered | parent={(transform.parent != null ? transform.parent.name : "null")} | manager={managerInfo}");
+        }
+
+        if (platformManager != null)
+        {
+            platformManager.OnTriggerActivated(transform.parent);
             // parent = endPoint
+        }
+        else if (debugLogs)
+        {
+            Debug.LogWarning($"[EndPointTrigger:{name}] Nie znaleziono PlatformManager na scenie.");
         }
     }
 }

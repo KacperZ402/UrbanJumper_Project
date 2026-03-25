@@ -51,6 +51,7 @@ MonoBehaviour:
   spawnChance: 0.5
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &1107491351654196487
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,6 +103,7 @@ MonoBehaviour:
   spawnChance: 0.5
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &1436123392910300857
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +418,7 @@ Transform:
   m_GameObject: {fileID: 3339805995787035460}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -35.56, y: 33.199997, z: 159.8}
+  m_LocalPosition: {x: -35.56, y: 31, z: 159.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -799,6 +801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPlatformPrefab: {fileID: 5674062476359851039, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
+  floorSpawnersPerStep: 1
 --- !u!33 &3144271800356243944
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1088,6 +1091,8 @@ MonoBehaviour:
   spawnBlockers:
   - {fileID: 740142364518915219}
   - {fileID: 3905195400777048385}
+  useBatchedSpawn: 1
+  maxOpsPerFrame: 20
 --- !u!1 &6258969935790373286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,7 +1119,7 @@ Transform:
   m_GameObject: {fileID: 6258969935790373286}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.00000004371139, z: -0, w: -1}
-  m_LocalPosition: {x: -274, y: -481, z: 88}
+  m_LocalPosition: {x: -462, y: -481, z: 88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1190,6 +1195,10 @@ MonoBehaviour:
   - {fileID: 6878449068442612945, guid: c762be45074ba7149977b846ee354002, type: 3}
   - {fileID: 829835764221397866, guid: a356712c3414bf34ca4f5c56327e9000, type: 3}
   maxSegments: 7
+  useBatchedSpawn: 1
+  maxSegmentsPerFrame: 5
+  queueChildSingleSpawners: 1
+  childSingleSpawnersPerFrame: 10
 --- !u!1 &7116605847722663463
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,8 +1305,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 60, y: 0, z: 220}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 60, y: 0, z: 205.97424}
+  m_Center: {x: 0, y: 0, z: -7.0128784}
 --- !u!114 &1679495466214104970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1362,6 +1371,8 @@ MonoBehaviour:
   maxProps: 20
   cellSize: 10
   spawnBlockers: []
+  useBatchedSpawn: 1
+  maxPropsPerFrame: 20
 --- !u!1 &7719703442524805316
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,7 +1399,7 @@ Transform:
   m_GameObject: {fileID: 7719703442524805316}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -35.56, y: 33.199997, z: 63.299995}
+  m_LocalPosition: {x: -35.56, y: 31, z: 63.299995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1470,7 +1481,7 @@ GameObject:
   - component: {fileID: -7320297201006927906}
   m_Layer: 0
   m_Name: PlatformEnd
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1608,7 +1619,7 @@ Transform:
   m_GameObject: {fileID: 8186405834279668770}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.00000004371139, z: -0, w: -1}
-  m_LocalPosition: {x: -274, y: -481, z: 548}
+  m_LocalPosition: {x: -462, y: -481, z: 548}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

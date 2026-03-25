@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: -937835358047772516}
   m_Layer: 0
   m_Name: Platform.009
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -554,6 +554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765aa14c6871120459990c6631422da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugLogs: 1
 --- !u!1 &9011138307579205332
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,3 +672,6 @@ MonoBehaviour:
   minProps: 2
   maxProps: 4
   cellSize: 10
+  spawnBlockers: []
+  useBatchedSpawn: 1
+  maxPropsPerFrame: 20

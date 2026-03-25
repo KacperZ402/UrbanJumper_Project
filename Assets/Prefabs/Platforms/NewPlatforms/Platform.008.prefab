@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: -181016389683998013}
   m_Layer: 0
   m_Name: Platform.008
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -503,6 +503,9 @@ MonoBehaviour:
   maxHangingProps: 1
   cellWidth: 1
   cellLength: 25
+  spawnBlockers: []
+  useBatchedSpawn: 1
+  maxOpsPerFrame: 20
 --- !u!1 &4558640714812975613
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,6 +900,9 @@ MonoBehaviour:
   maxHangingProps: 1
   cellWidth: 1
   cellLength: 25
+  spawnBlockers: []
+  useBatchedSpawn: 1
+  maxOpsPerFrame: 20
 --- !u!1 &7296708102122670129
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,6 +969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765aa14c6871120459990c6631422da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugLogs: 1
 --- !u!1 &7381712152858234509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,6 +1087,9 @@ MonoBehaviour:
   minProps: 10
   maxProps: 15
   cellSize: 10
+  spawnBlockers: []
+  useBatchedSpawn: 1
+  maxPropsPerFrame: 20
 --- !u!1 &7746444845563722124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,6 +1207,9 @@ MonoBehaviour:
   minProps: 10
   maxProps: 15
   cellSize: 10
+  spawnBlockers: []
+  useBatchedSpawn: 1
+  maxPropsPerFrame: 20
 --- !u!1 &8708878077422940985
 GameObject:
   m_ObjectHideFlags: 0

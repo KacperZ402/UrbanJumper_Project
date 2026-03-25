@@ -14,6 +14,9 @@ public class PlatformManager : MonoBehaviour
     public int initialSegments = 3;              // ile segmentów na start
     public bool disableTriggersInInitial = true; // wyłączać triggery w początkowych segmentach?
 
+    [Header("Debug")]
+    public bool debugLogs = true;
+
     private int lastIndex = -1;   // kontrola żeby nie powtarzać tego samego segmentu
     private int spawnedCount = 0;
     private int targetCount = 0;
@@ -21,6 +24,11 @@ public class PlatformManager : MonoBehaviour
 
     private void Start()
     {
+        PlatformManager[] managers = FindObjectsOfType<PlatformManager>();
+        if (managers.Length > 1)
+            Debug.LogWarning($"[PlatformManager#{GetInstanceID()}] Wykryto {managers.Length} instancji PlatformManager w scenie!");
+
+        Log($"Start | instanceId={GetInstanceID()} | initial cycleStarted={cycleStarted} | spawnedCount={spawnedCount} | targetCount={targetCount}");
         StartNewCycle();
     }
 
@@ -29,24 +37,32 @@ public class PlatformManager : MonoBehaviour
     /// </summary>
     public void OnTriggerActivated(Transform endPoint)
     {
+        Log($"OnTriggerActivated | instanceId={GetInstanceID()} | cycleStarted={cycleStarted} | spawnedCount={spawnedCount} | targetCount={targetCount} | endPoint={(endPoint != null ? endPoint.name : "null")}");
+
         if (!cycleStarted)
         {
             // pierwszy trigger w tym cyklu – spawn sekwencji początkowej
+            Log($"START initial sequence | initialSegments={initialSegments}");
             SpawnInitialSequence(endPoint);
             cycleStarted = true;
+            Log($"END initial sequence | spawnedCount={spawnedCount} | targetCount={targetCount}");
             return;
         }
 
+        Log("SpawnNext requested by trigger");
         SpawnNext(endPoint);
     }
 
     private void SpawnNext(Transform endPoint)
     {
+        Log($"SpawnNext ENTER | spawnedCount={spawnedCount} | targetCount={targetCount}");
+
         if (spawnedCount >= targetCount)
         {
             // Postaw końcową platformę
             Instantiate(endPlatformPrefab, endPoint.position, endPoint.rotation);
             Debug.Log("Postawiono EndPlatform – cykl zakończony!");
+            Log("EndPlatform spawned -> StartNewCycle()");
 
             StartNewCycle();
             return;
@@ -58,9 +74,11 @@ public class PlatformManager : MonoBehaviour
             endPoint.position,
             endPoint.rotation
         );
+        Log($"Spawned segment | index={newIndex} | name={segment.name} | at={endPoint.position}");
 
         lastIndex = newIndex;
         spawnedCount++;
+        Log($"SpawnNext EXIT | spawnedCount={spawnedCount} | targetCount={targetCount}");
     }
 
     private void StartNewCycle()
@@ -71,6 +89,7 @@ public class PlatformManager : MonoBehaviour
         cycleStarted = false;
 
         Debug.Log($"Nowy cykl: do wygenerowania {targetCount} segmentów.");
+        Log($"StartNewCycle | min={minSegments} | max={maxSegments} | target={targetCount}");
     }
 
     private void SpawnInitialSequence(Transform spawnPoint)
@@ -92,6 +111,7 @@ public class PlatformManager : MonoBehaviour
             // pobieramy endpoint
             Transform endPoint = segment.transform.Find("endPoint");
             if (endPoint != null) currentPoint = endPoint;
+            else Log($"Initial[{i}] WARNING: brak endPoint w {segment.name}");
 
             // ogarniamy trigger
             EndPointTrigger trigger = segment.GetComponentInChildren<EndPointTrigger>();
@@ -99,6 +119,8 @@ public class PlatformManager : MonoBehaviour
             {
                 trigger.gameObject.SetActive(false); // wyłączamy triggery we wcześniejszych segmentach
             }
+
+            Log($"Initial[{i}] | index={newIndex} | segment={segment.name} | triggerActive={(trigger != null && trigger.gameObject.activeSelf)} | spawnedCount={spawnedCount}");
         }
     }
 
@@ -113,5 +135,13 @@ public class PlatformManager : MonoBehaviour
         } while (newIndex == lastIndex);
 
         return newIndex;
+    }
+
+    private void Log(string message)
+    {
+        if (!debugLogs)
+            return;
+
+        Debug.Log($"[PlatformManager#{GetInstanceID()}] {message}");
     }
 }

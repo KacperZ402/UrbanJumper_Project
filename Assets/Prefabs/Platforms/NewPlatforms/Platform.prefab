@@ -54,6 +54,7 @@ MonoBehaviour:
   spawnChance: 1
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &863045263653307951
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,7 +187,7 @@ Transform:
   m_GameObject: {fileID: 1211597211233642622}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -37.6, y: 32.078, z: 67.2}
+  m_LocalPosition: {x: -37.6, y: 30.868, z: 67.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -268,7 +269,7 @@ GameObject:
   - component: {fileID: -6648804419375937426}
   m_Layer: 0
   m_Name: Platform
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -543,6 +544,8 @@ MonoBehaviour:
   cellLength: 25
   spawnBlockers:
   - {fileID: 8177709139232341933}
+  useBatchedSpawn: 1
+  maxOpsPerFrame: 20
 --- !u!1 &3674636148011994188
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,6 +787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765aa14c6871120459990c6631422da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugLogs: 1
 --- !u!1 &5257216719493788023
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,7 +814,7 @@ Transform:
   m_GameObject: {fileID: 5257216719493788023}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -37.6, y: 32.71, z: 178.3}
+  m_LocalPosition: {x: -37.6, y: 31.5, z: 178.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -995,6 +999,8 @@ MonoBehaviour:
   - {fileID: 4037868454976223545}
   - {fileID: 1463048253669000843}
   - {fileID: 8177709139232341933}
+  useBatchedSpawn: 1
+  maxPropsPerFrame: 20
 --- !u!1 &6491500100429730056
 GameObject:
   m_ObjectHideFlags: 0

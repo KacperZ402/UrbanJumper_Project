@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
+using System.Threading.Tasks;
 
 public enum SurfaceType
 {
@@ -27,6 +29,16 @@ public class SurfacePropSet
 [RequireComponent(typeof(BoxCollider))]
 public class FloorPropSpawner : MonoBehaviour
 {
+    private class FloorSpawnPlan
+    {
+        public List<int[]> groupPrefabIndices;
+        public int[] universalPrefabIndices;
+    }
+
+    private const int MaxFloorSpawnersStartedPerFrame = 1;
+    private static readonly Queue<FloorPropSpawner> PendingFloorSpawners = new Queue<FloorPropSpawner>();
+    private static bool isProcessingFloorQueue;
+
     [Header("Mo¿liwe typy przestrzeni (checklista)")]
     public List<SurfaceType> allowedSurfaceTypes;
 
@@ -46,6 +58,10 @@ public class FloorPropSpawner : MonoBehaviour
     [Header("Ręcznie przypisane blokery spawnu")]
     public List<BoxCollider> spawnBlockers;
 
+    [Header("Batch spawn")]
+    public bool useBatchedSpawn = true;
+    public int maxPropsPerFrame = 20;
+
     private bool[,] grid;
     private Vector3 gridOrigin;
     private List<Bounds> blockerBounds = new List<Bounds>();
@@ -53,6 +69,8 @@ public class FloorPropSpawner : MonoBehaviour
     // readonly pola inicjalizowane w InitGrid()
     private int gridSizeX;
     private int gridSizeZ;
+    private Coroutine spawnRoutine;
+    private bool isQueuedForStart;
 
     // Mapowanie nazw prefabów na rozmiary, unikamy magicznych liczb
     private readonly Dictionary<string, Vector2Int> prefabSizes = new Dictionary<string, Vector2Int>()
@@ -66,17 +84,78 @@ public class FloorPropSpawner : MonoBehaviour
     public event System.Action<SurfaceType> OnSurfaceChosen;
     void Start()
     {
-        GenerateProps();
+        SpawnWorkQueue.Enqueue(this, QueueStart);
+    }
+
+    void OnDisable()
+    {
+        isQueuedForStart = false;
+    }
+
+    void QueueStart()
+    {
+        if (isQueuedForStart)
+            return;
+
+        isQueuedForStart = true;
+        PendingFloorSpawners.Enqueue(this);
+
+        if (!isProcessingFloorQueue)
+        {
+            if (SingleObjectPool.Instance != null)
+                SingleObjectPool.Instance.StartCoroutine(ProcessFloorQueue());
+            else
+                StartCoroutine(ProcessFloorQueue());
+        }
+    }
+
+    static IEnumerator ProcessFloorQueue()
+    {
+        isProcessingFloorQueue = true;
+
+        while (PendingFloorSpawners.Count > 0)
+        {
+            int started = 0;
+
+            while (started < MaxFloorSpawnersStartedPerFrame && PendingFloorSpawners.Count > 0)
+            {
+                FloorPropSpawner spawner = PendingFloorSpawners.Dequeue();
+                if (spawner == null)
+                    continue;
+
+                spawner.isQueuedForStart = false;
+
+                if (!spawner.isActiveAndEnabled)
+                    continue;
+
+                spawner.GenerateProps();
+                started++;
+            }
+
+            if (PendingFloorSpawners.Count > 0)
+                yield return null;
+        }
+
+        isProcessingFloorQueue = false;
     }
 
     public SurfaceType chosenType { get; private set; }
 
     void GenerateProps()
     {
+        if (spawnRoutine != null)
+            StopCoroutine(spawnRoutine);
+
+        spawnRoutine = StartCoroutine(GeneratePropsRoutine());
+    }
+
+    IEnumerator GeneratePropsRoutine()
+    {
         if (allowedSurfaceTypes == null || allowedSurfaceTypes.Count == 0)
         {
             Debug.LogWarning("Brak dozwolonych typów przestrzeni.");
-            return;
+            spawnRoutine = null;
+            yield break;
         }
 
         chosenType = allowedSurfaceTypes[Random.Range(0, allowedSurfaceTypes.Count)];
@@ -86,7 +165,8 @@ public class FloorPropSpawner : MonoBehaviour
         if (selectedSet == null || selectedSet.propGroups.Count == 0)
         {
             Debug.LogWarning($"Brak propów dla typu przestrzeni: {chosenType}");
-            return;
+            spawnRoutine = null;
+            yield break;
         }
 
         blockerBounds.Clear();
@@ -105,30 +185,126 @@ public class FloorPropSpawner : MonoBehaviour
 
         int totalProps = Random.Range(minProps, maxProps + 1);
         int[] groupDistribution = GetGroupDistribution(chosenType, selectedSet.propGroups.Count, totalProps);
+        int spawnedThisFrame = 0;
+
+        List<int> groupPrefabCounts = new List<int>(selectedSet.propGroups.Count);
+        for (int g = 0; g < selectedSet.propGroups.Count; g++)
+        {
+            int count = selectedSet.propGroups[g] != null && selectedSet.propGroups[g].props != null
+                ? selectedSet.propGroups[g].props.Count
+                : 0;
+            groupPrefabCounts.Add(count);
+        }
+
+        int extraUniversal = Random.Range(0, 3);
+        int universalCount = universalProps != null ? universalProps.Count : 0;
+        int seed = Random.Range(int.MinValue, int.MaxValue);
+        Task<FloorSpawnPlan> planTask = Task.Run(() => BuildFloorSpawnPlan(groupDistribution, groupPrefabCounts, extraUniversal, universalCount, seed));
+        while (!planTask.IsCompleted)
+            yield return null;
+
+        FloorSpawnPlan plan = (!planTask.IsFaulted && !planTask.IsCanceled) ? planTask.Result : null;
+        if (plan == null)
+        {
+            spawnRoutine = null;
+            yield break;
+        }
 
         for (int g = 0; g < selectedSet.propGroups.Count; g++)
         {
             PropGroup group = selectedSet.propGroups[g];
             if (group.props == null || group.props.Count == 0) continue;
 
-            for (int i = 0; i < groupDistribution[g]; i++)
+            int[] indices = g < plan.groupPrefabIndices.Count ? plan.groupPrefabIndices[g] : null;
+            if (indices == null) continue;
+
+            for (int i = 0; i < indices.Length; i++)
             {
-                GameObject prefab = GetRandomProp(group.props);
+                int idx = indices[i];
+                if (idx < 0 || idx >= group.props.Count)
+                    continue;
+
+                GameObject prefab = group.props[idx];
                 if (prefab == null) continue;
 
                 bool isMainProp = (chosenType == SurfaceType.MeetingRoom && g == 0 && i == 0);
                 TryPlaceProp(prefab, isMainProp);
+                spawnedThisFrame++;
+
+                if (useBatchedSpawn && spawnedThisFrame >= Mathf.Max(1, maxPropsPerFrame))
+                {
+                    spawnedThisFrame = 0;
+                    yield return null;
+                }
             }
         }
 
         // Uniwersalne propy
-        int extraUniversal = Random.Range(0, 3);
-        for (int i = 0; i < extraUniversal; i++)
+        for (int i = 0; i < plan.universalPrefabIndices.Length; i++)
         {
-            GameObject uProp = GetRandomProp(universalProps);
+            int idx = plan.universalPrefabIndices[i];
+            if (universalProps == null || idx < 0 || idx >= universalProps.Count)
+                continue;
+
+            GameObject uProp = universalProps[idx];
             if (uProp != null)
+            {
                 TryPlaceProp(uProp, false);
+                spawnedThisFrame++;
+
+                if (useBatchedSpawn && spawnedThisFrame >= Mathf.Max(1, maxPropsPerFrame))
+                {
+                    spawnedThisFrame = 0;
+                    yield return null;
+                }
+            }
         }
+
+        spawnRoutine = null;
+    }
+
+    private static FloorSpawnPlan BuildFloorSpawnPlan(int[] groupDistribution, List<int> groupPrefabCounts, int extraUniversal, int universalPrefabCount, int seed)
+    {
+        FloorSpawnPlan plan = new FloorSpawnPlan
+        {
+            groupPrefabIndices = new List<int[]>(groupDistribution.Length),
+            universalPrefabIndices = new int[Mathf.Max(0, extraUniversal)]
+        };
+
+        System.Random random = new System.Random(seed);
+
+        for (int g = 0; g < groupDistribution.Length; g++)
+        {
+            int spawnCount = Mathf.Max(0, groupDistribution[g]);
+            int prefabCount = g < groupPrefabCounts.Count ? groupPrefabCounts[g] : 0;
+            int[] arr = new int[spawnCount];
+
+            if (prefabCount > 0)
+            {
+                for (int i = 0; i < spawnCount; i++)
+                    arr[i] = random.Next(prefabCount);
+            }
+            else
+            {
+                for (int i = 0; i < spawnCount; i++)
+                    arr[i] = -1;
+            }
+
+            plan.groupPrefabIndices.Add(arr);
+        }
+
+        if (universalPrefabCount > 0)
+        {
+            for (int i = 0; i < plan.universalPrefabIndices.Length; i++)
+                plan.universalPrefabIndices[i] = random.Next(universalPrefabCount);
+        }
+        else
+        {
+            for (int i = 0; i < plan.universalPrefabIndices.Length; i++)
+                plan.universalPrefabIndices[i] = -1;
+        }
+
+        return plan;
     }
     void InitGrid()
     {
@@ -144,9 +320,6 @@ public class FloorPropSpawner : MonoBehaviour
         gridOrigin = transform.TransformPoint(localOrigin);
     }
 
-    // Wyra¿enie lambda dla losowego wyboru propa
-    GameObject GetRandomProp(List<GameObject> list) =>
-        list != null && list.Count > 0 ? list[Random.Range(0, list.Count)] : null;
     int[] GetGroupDistribution(SurfaceType type, int groupCount, int total)
     {
         int[] result = new int[groupCount];
