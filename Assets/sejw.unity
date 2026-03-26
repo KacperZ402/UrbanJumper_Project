@@ -321,21 +321,27 @@ MonoBehaviour:
   jumpForce: 25
   fallMultiplier: 2.5
   jumpCutMultiplier: 2
+  slideDuration: 0.5
+  slideColliderYMultiplier: 0.45
+  slideDownVelocity: 8
   startingLane: 1
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  groundCheckOffset: 0.05
-  groundCheckRadiusScale: 0.4
+  platformTag: Platform
   laneBlockMask:
     serializedVersion: 2
     m_Bits: 4294967295
   laneCheckHeightScale: 0.6
-  disableAnimatorRootMotion: 1
-  updateAnimator: 1
-  speedParam: Speed
-  groundedParam: IsGrounded
-  verticalSpeedParam: VerticalSpeed
+  useAnimator: 1
+  jumpTriggerName: Jump
+  slideTriggerName: Slide
+  turnLeftTriggerName: TurnLeft
+  turnRightTriggerName: TurnRight
+  isGroundedBoolName: IsGrounded
+  jumpStateTag: Jump
+  isFallingBoolName: IsFalling
+  jumpLockBoolName: JumpLock
+  isSliding: 0
+  canJump: 0
+  isGrounded: 0
 --- !u!54 &1137467085
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -381,7 +387,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 923cae37390912f4f8cbcb7133d9b7b8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 35.2
+      value: 13.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 923cae37390912f4f8cbcb7133d9b7b8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -991,21 +997,27 @@ MonoBehaviour:
   jumpForce: 25
   fallMultiplier: 2.5
   jumpCutMultiplier: 2
+  slideDuration: 0.5
+  slideColliderYMultiplier: 0.45
+  slideDownVelocity: 8
   startingLane: 1
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  groundCheckOffset: 0.05
-  groundCheckRadiusScale: 0.4
+  platformTag: Platform
   laneBlockMask:
     serializedVersion: 2
     m_Bits: 4294967295
   laneCheckHeightScale: 0.6
-  disableAnimatorRootMotion: 1
-  updateAnimator: 1
-  speedParam: Speed
-  groundedParam: IsGrounded
-  verticalSpeedParam: VerticalSpeed
+  useAnimator: 1
+  jumpTriggerName: Jump
+  slideTriggerName: Slide
+  turnLeftTriggerName: TurnLeft
+  turnRightTriggerName: TurnRight
+  isGroundedBoolName: IsGrounded
+  jumpStateTag: Jump
+  isFallingBoolName: isFalling
+  jumpLockBoolName: JumpLock
+  isSliding: 0
+  canJump: 0
+  isGrounded: 0
 --- !u!54 &1904894898
 Rigidbody:
   m_ObjectHideFlags: 0

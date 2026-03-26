@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public float slideDownVelocity = 8f;
 
     [Header("Tory")]
-    public int startingLane = 1; // 0 = lewy, 1 = œrodek, 2 = prawy
+    public int startingLane = 1; // 0 = lewy, 1 = Å“rodek, 2 = prawy
 
     [Header("Jump reset")]
     public string platformTag = "Platform";
@@ -30,9 +30,21 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask laneBlockMask = ~0;
     public float laneCheckHeightScale = 0.6f;
 
+    [Header("Animator")]
+    public bool useAnimator = true;
+    public string jumpTriggerName = "Jump";
+    public string slideTriggerName = "Slide";
+    public string turnLeftTriggerName = "TurnLeft";
+    public string turnRightTriggerName = "TurnRight";
+    public string isGroundedBoolName = "IsGrounded";
+    public string jumpStateTag = "Jump"; // Ustaw tag "Jump" na stanie animacji skoku
+    public string isFallingBoolName = "IsFalling";
+    public string jumpLockBoolName = "JumpLock";
+
     private Rigidbody rb;
     private Collider playerCollider;
     private CapsuleCollider capsuleCollider;
+    private Animator animator;
 
     private int currentLane;
     private float laneVelocity;
@@ -40,18 +52,29 @@ public class PlayerMovement : MonoBehaviour
     private bool slideRequested;
     public bool isSliding;
     public bool canJump;
-    public bool requireNewPlatformTouchAfterJump;
+    public bool isGrounded;
 
     private readonly HashSet<int> touchingPlatformIds = new HashSet<int>();
     private Coroutine slideRoutine;
     private float baseCapsuleHeight;
     private Vector3 baseCapsuleCenter;
 
+    private int jumpTriggerHash;
+    private int slideTriggerHash;
+    private int turnLeftTriggerHash;
+    private int turnRightTriggerHash;
+    private int isGroundedBoolHash;
+    private int isFallingBoolHash;
+    private int jumpLockBoolHash;
+
+    private bool jumpAnimationLock;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         playerCollider = GetComponent<Collider>();
         capsuleCollider = GetComponent<CapsuleCollider>();
+        animator = GetComponentInChildren<Animator>();
 
         if (rb != null)
             rb.constraints |= RigidbodyConstraints.FreezeRotation;
@@ -63,11 +86,20 @@ public class PlayerMovement : MonoBehaviour
         }
 
         currentLane = Mathf.Clamp(startingLane, 0, 2);
+
+        jumpTriggerHash = Animator.StringToHash(jumpTriggerName);
+        slideTriggerHash = Animator.StringToHash(slideTriggerName);
+        turnLeftTriggerHash = Animator.StringToHash(turnLeftTriggerName);
+        turnRightTriggerHash = Animator.StringToHash(turnRightTriggerName);
+        isGroundedBoolHash = Animator.StringToHash(isGroundedBoolName);
+        isFallingBoolHash = Animator.StringToHash(isFallingBoolName);
+        jumpLockBoolHash = Animator.StringToHash(jumpLockBoolName);
     }
 
     private void Start()
     {
         SetLanePositionImmediately(currentLane);
+        UpdateAnimatorGroundedState();
     }
 
     private void Update()
@@ -90,19 +122,24 @@ public class PlayerMovement : MonoBehaviour
         if (rb == null)
             return;
 
+        isGrounded = touchingPlatformIds.Count > 0;
+
         Vector3 velocity = rb.velocity;
 
         float targetX = LaneToWorldX(currentLane);
         float nextX = Mathf.SmoothDamp(rb.position.x, targetX, ref laneVelocity, laneChangeSmoothTime, laneChangeMaxSpeed, Time.fixedDeltaTime);
         velocity.x = (nextX - rb.position.x) / Time.fixedDeltaTime;
-
         velocity.z = moveSpeedZ;
 
-        if (jumpRequested && canJump)
+        if (jumpRequested && canJump && isGrounded)
         {
             velocity.y = jumpForce;
             canJump = false;
-            requireNewPlatformTouchAfterJump = true;
+            isGrounded = false;
+            jumpAnimationLock = true;
+
+            if (useAnimator && animator != null)
+                animator.SetTrigger(jumpTriggerHash);
         }
         jumpRequested = false;
 
@@ -133,6 +170,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if (slideRoutine != null)
             StopCoroutine(slideRoutine);
+
+        UpdateAnimatorGroundedState();
+    }
+
+    private void StartSlide()
+    {
+        if (slideRoutine != null)
+            StopCoroutine(slideRoutine);
+
+        if (useAnimator && animator != null)
+            animator.SetTrigger(slideTriggerHash);
 
         slideRoutine = StartCoroutine(SlideRoutine());
     }
@@ -172,6 +220,14 @@ public class PlayerMovement : MonoBehaviour
         if (!CanChangeLane(targetLane))
             return;
 
+        if (useAnimator && animator != null)
+        {
+            if (direction > 0)
+                animator.SetTrigger(turnRightTriggerHash);
+            else
+                animator.SetTrigger(turnLeftTriggerHash);
+        }
+
         currentLane = targetLane;
     }
 
@@ -197,6 +253,35 @@ public class PlayerMovement : MonoBehaviour
         return true;
     }
 
+    private void UpdateAnimatorGroundedState()
+    {
+        if (!useAnimator || animator == null)
+            return;
+
+        if (jumpAnimationLock)
+        {
+            AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
+            bool inJumpState = state.IsTag(jumpStateTag);
+
+            if (inJumpState)
+            {
+                if (state.normalizedTime >= 0.98f && !animator.IsInTransition(0))
+                    jumpAnimationLock = false;
+            }
+            else
+            {
+                jumpAnimationLock = false;
+            }
+        }
+
+        bool animatorGrounded = isGrounded || jumpAnimationLock;
+        bool animatorFalling = !isGrounded && !jumpAnimationLock;
+
+        animator.SetBool(isGroundedBoolHash, animatorGrounded);
+        animator.SetBool(isFallingBoolHash, animatorFalling);
+        animator.SetBool(jumpLockBoolHash, jumpAnimationLock);
+    }
+
     private float LaneToWorldX(int lane)
     {
         return (lane - 1) * laneDistance;
@@ -214,17 +299,21 @@ public class PlayerMovement : MonoBehaviour
         if (IsPlatformCollision(collision))
         {
             touchingPlatformIds.Add(collision.collider.GetInstanceID());
-            if (!requireNewPlatformTouchAfterJump)
-                canJump = true;
-            else
-            {
-                canJump = true;
-                requireNewPlatformTouchAfterJump = false;
-            }
+            canJump = true;
+            isGrounded = true;
         }
 
         if (collision.gameObject.CompareTag("Obstacle"))
             GameOver();
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (IsPlatformCollision(collision))
+        {
+            canJump = true;
+            isGrounded = true;
+        }
     }
 
     private void OnCollisionExit(Collision collision)
@@ -234,7 +323,10 @@ public class PlayerMovement : MonoBehaviour
 
         touchingPlatformIds.Remove(collision.collider.GetInstanceID());
         if (touchingPlatformIds.Count == 0)
+        {
             canJump = false;
+            isGrounded = false;
+        }
     }
 
     private bool IsPlatformCollision(Collision collision)
