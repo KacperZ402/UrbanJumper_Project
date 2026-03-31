@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public float slideDownVelocity = 8f;
 
     [Header("Tory")]
-    public int startingLane = 1; // 0 = lewy, 1 = œrodek, 2 = prawy
+    public int startingLane = 1; // 0 = lewy, 1 = Å“rodek, 2 = prawy
 
     [Header("Jump reset")]
     public string platformTag = "Platform";
@@ -164,6 +164,12 @@ public class PlayerMovement : MonoBehaviour
             slideVelocity.y = Mathf.Min(slideVelocity.y, -Mathf.Abs(slideDownVelocity));
             rb.velocity = slideVelocity;
         }
+    }
+
+    private void StartSlide()
+    {
+        if (slideRoutine != null)
+            StopCoroutine(slideRoutine);
 
         UpdateAnimatorGroundedState();
     }
