@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 475608047454107974}
   - component: {fileID: 8491685277883937685}
   - component: {fileID: 8133677428929160838}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: paperHolder
   m_TagString: Prop
   m_Icon: {fileID: 0}
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1974967344400006511}
+  preloadCount: 1
 --- !u!33 &475608047454107974
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -64,7 +65,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1974967344400006511}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0

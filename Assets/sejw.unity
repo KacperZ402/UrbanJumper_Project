@@ -161,8 +161,8 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
+    m_Bias: 0.01
+    m_NormalBias: 1
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
       e00: 1
@@ -383,11 +383,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 923cae37390912f4f8cbcb7133d9b7b8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.55
+      value: 11.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 923cae37390912f4f8cbcb7133d9b7b8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.5
+      value: -2.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 923cae37390912f4f8cbcb7133d9b7b8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1091,8 +1091,8 @@ MonoBehaviour:
   - {fileID: 3498708594043627312, guid: 98fedca05408b0f49beb3fc597b19b64, type: 3}
   - {fileID: 4235296636196388389, guid: 5d884cb58e4151c4aac50c877f35779f, type: 3}
   endPlatformPrefab: {fileID: 7915325367264222088, guid: 3a3364117102a6d40a36f3b0fd98951e, type: 3}
-  minSegments: 10
-  maxSegments: 20
+  minSegments: 0
+  maxSegments: 3
   initialSegments: 3
   disableTriggersInInitial: 1
   debugLogs: 1
