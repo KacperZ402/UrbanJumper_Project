@@ -164,12 +164,6 @@ public class PlayerMovement : MonoBehaviour
             slideVelocity.y = Mathf.Min(slideVelocity.y, -Mathf.Abs(slideDownVelocity));
             rb.velocity = slideVelocity;
         }
-    }
-
-    private void StartSlide()
-    {
-        if (slideRoutine != null)
-            StopCoroutine(slideRoutine);
 
         UpdateAnimatorGroundedState();
     }
