@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 public class SingleObjectSpawner : MonoBehaviour
 {
-    private const string SpawnBlockerTag = "SpawnBlocker";
     private static readonly Collider[] BlockerHitsBuffer = new Collider[16];
 
     [Header("Lista prefabów")]
@@ -16,6 +15,9 @@ public class SingleObjectSpawner : MonoBehaviour
     [Header("Ignoruj SpawnBlockery")]
     public bool ignoreSpawnBlockers = false;
 
+    [Header("Spawn blocker layer")]
+    public string spawnBlockerLayerName = "SpawnBlocker";
+
     [Header("Layer, które nie są czyszczone")]
     public string keepLayerName = "Keep";
 
@@ -23,14 +25,16 @@ public class SingleObjectSpawner : MonoBehaviour
     public bool useBatchedSpawn = true;
 
     private int keepLayer;
+    private int spawnBlockerLayer;
+
     private void Awake()
     {
         keepLayer = LayerMask.NameToLayer(keepLayerName);
+        spawnBlockerLayer = LayerMask.NameToLayer(spawnBlockerLayerName);
     }
 
     private void OnEnable()
     {
-        // Najpierw wyczyść poprzednie dzieci
         ClearChildren();
 
         if (useBatchedSpawn)
@@ -44,27 +48,21 @@ public class SingleObjectSpawner : MonoBehaviour
 
     private void TrySpawnNow()
     {
-
         if (SingleObjectPool.Instance == null)
         {
-            // Pool jeszcze się nie zainicjalizował — spróbuj ponownie przez globalną kolejkę.
             SpawnWorkQueue.Enqueue(this, TrySpawnNow);
             return;
         }
 
-        // Losowa szansa
         if (Random.value > spawnChance) return;
 
-        // Sprawdzenie blockerów (jeśli nie ignorujemy)
         if (!ignoreSpawnBlockers && IsBlocked()) return;
 
-        // Spawn nowego obiektu
         SpawnObject();
     }
 
     private void ClearChildren()
     {
-        // kopiujemy listę, żeby nie leciało "na żywo" po hierarchii
         List<Transform> children = new List<Transform>();
         for (int i = 0; i < transform.childCount; i++)
             children.Add(transform.GetChild(i));
@@ -74,13 +72,9 @@ public class SingleObjectSpawner : MonoBehaviour
             if (child.gameObject.layer != keepLayer)
             {
                 if (child.TryGetComponent<PoolableObject>(out var po))
-                {
                     po.ReturnToPool();
-                }
                 else
-                {
-                    Destroy(child.gameObject); // fallback gdyby coś nie było poolowane
-                }
+                    Destroy(child.gameObject);
             }
         }
     }
@@ -92,10 +86,8 @@ public class SingleObjectSpawner : MonoBehaviour
         for (int i = 0; i < hitCount; i++)
         {
             Collider hit = BlockerHitsBuffer[i];
-            if (hit.CompareTag(SpawnBlockerTag))
-            {
+            if (hit != null && hit.gameObject.layer == spawnBlockerLayer)
                 return true;
-            }
         }
 
         return false;
@@ -120,15 +112,13 @@ public class SingleObjectSpawner : MonoBehaviour
             return;
         }
 
-        // pobieramy obiekt z puli i ustawiamy jako dziecko spawnera
         GameObject spawned = SingleObjectPool.Instance.Get(
             prefab,
             transform.position,
             transform.rotation,
-            this.transform // <<< WAŻNE – dziecko spawnera
+            transform
         );
 
-        // resetujemy skalę do tej z prefab’a (ważne np. dla budynków)
         if (spawned != null)
             spawned.transform.localScale = prefab.transform.localScale;
     }

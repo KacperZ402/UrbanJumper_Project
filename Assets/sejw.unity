@@ -161,8 +161,8 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.01
-    m_NormalBias: 1
+    m_Bias: 0.371
+    m_NormalBias: 1.01
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
       e00: 1
@@ -647,7 +647,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.5304379, g: 0.61765754, b: 0.754717, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -788,6 +788,10 @@ PrefabInstance:
       propertyPath: platformManager
       value: 
       objectReference: {fileID: 8877436004359265411, guid: 0b792ea6a82b666409790f6273851417, type: 3}
+    - target: {fileID: 7141586097561591590, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ad1019481a7dd1f44840a39789a64f18, type: 2}
     - target: {fileID: 7428638109855330941, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
       propertyPath: platformManager
       value: 

@@ -55,6 +55,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &162018587265833531
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,6 +114,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 0
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.45
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &751411842200999277
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,6 +173,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 0
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.45
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &1532117022364465338
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,6 +231,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &2318653164432856845
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,6 +320,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &2633348486573383500
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,6 +378,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &2715108191292516402
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +542,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &3214625013174708662
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,6 +600,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &3259245862337332505
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,6 +658,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &3405154021857058142
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,6 +716,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &3823129440939988054
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,6 +774,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &3906549387720768563
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,6 +832,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &4373830820928383758
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,6 +890,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &4841565066937610150
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,6 +948,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &5213751167925990710
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,6 +1132,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &5686512388766746703
 GameObject:
   m_ObjectHideFlags: 0
@@ -1145,6 +1190,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &6514668585313959413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,6 +1248,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &6581392219450798427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,6 +1306,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &6759538210075580929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,6 +1364,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &7273197720666648375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,6 +1422,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &7602391146267304624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,6 +1480,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &7967296874860880844
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,6 +1538,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &8156850414202416485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,6 +1596,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &8333426807253248105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,6 +1654,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &9145454457261281845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,6 +1712,9 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
 --- !u!1 &9182044310256354504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1695,3 +1770,6 @@ MonoBehaviour:
   ignoreSpawnBlockers: 1
   keepLayerName: Keep
   useBatchedSpawn: 1
+  blockerCheckRadius: 0.35
+  syncTransformsBeforeCheck: 1
+  delayFramesBeforeSpawnCheck: 1
