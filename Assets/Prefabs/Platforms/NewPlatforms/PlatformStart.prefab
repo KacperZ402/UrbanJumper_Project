@@ -467,6 +467,7 @@ MonoBehaviour:
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   spawnChance: 0.5
   ignoreSpawnBlockers: 1
+  spawnBlockerLayerName: SpawnBlocker
   keepLayerName: Keep
   useBatchedSpawn: 1
 --- !u!1 &936046224386237921
@@ -3384,7 +3385,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5674062476359851039}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -3715,6 +3716,7 @@ MonoBehaviour:
   - {fileID: 2934754657304379234, guid: e25259ef6ba3f3746a3a759dedfe2d4d, type: 3}
   spawnChance: 0.5
   ignoreSpawnBlockers: 1
+  spawnBlockerLayerName: SpawnBlocker
   keepLayerName: Keep
   useBatchedSpawn: 1
 --- !u!1 &6071970222355917813

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c5a3455e09fc5394094da8d720551403
+guid: 1ecc6bac35d7b4349b3aa0d5b2b99ba5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -402,18 +402,18 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: Carriers(Clone)
+    - name: CharHumper2(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Cube.001
-      parentName: Carriers(Clone)
+      parentName: CharHumper2(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: metarig.001
-      parentName: Carriers(Clone)
+      parentName: CharHumper2(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
@@ -470,28 +470,28 @@ ModelImporter:
     - name: forearm.L
       parentName: upper_arm.L
       position: {x: -0.000000059604645, y: 2.2964103, z: -0.0000001937151}
-      rotation: {x: 0.6089482, y: 0.48748142, z: 0.3133204, w: 0.5416404}
-      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+      rotation: {x: 0.051928468, y: 0.56497324, z: 0.27226073, w: 0.77716327}
+      scale: {x: 0.9999998, y: 1, z: 1}
     - name: palm.03.L
       parentName: forearm.L
-      position: {x: -0.020893633, y: 2.840783, z: -0.05977574}
-      rotation: {x: 0.0025451868, y: -0.24557112, z: -0.0011297805, w: 0.9693746}
-      scale: {x: 0.99999994, y: 1.0000001, z: 0.9999999}
+      position: {x: 0.010496914, y: 2.8574767, z: -0.08702475}
+      rotation: {x: 0.26280504, y: -0.2722222, z: 0.1602116, w: 0.9116803}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
     - name: f_ring.01.L
       parentName: palm.03.L
-      position: {x: -0.00000017881393, y: 0.6035422, z: -0.00000024586916}
-      rotation: {x: 0.28072578, y: 0.010435317, z: 0.007521711, w: 0.95970184}
-      scale: {x: 1, y: 1, z: 1}
+      position: {x: 0.0016861111, y: 0.59724116, z: -0.008003473}
+      rotation: {x: 0.33198342, y: 0.00783334, z: 0.026569583, w: 0.9428784}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
     - name: f_ring.02.L
       parentName: f_ring.01.L
-      position: {x: 0.00000029802322, y: 0.39264527, z: -0.000000834465}
-      rotation: {x: 0.07245892, y: 0.018145692, z: 0.021520665, w: 0.9969741}
-      scale: {x: 0.9999999, y: 1, z: 0.9999998}
+      position: {x: -0.00000015646219, y: 0.3926461, z: 0.0000004172325}
+      rotation: {x: 0.09811492, y: 0.019538837, z: 0.031352714, w: 0.9944892}
+      scale: {x: 1, y: 1.0000001, z: 0.99999994}
     - name: f_ring.03.L
       parentName: f_ring.02.L
-      position: {x: 0.000000059604645, y: 0.2792277, z: 0}
-      rotation: {x: 0.15281369, y: 0.03822638, z: 0.037074625, w: 0.98681927}
-      scale: {x: 0.99999994, y: 1, z: 0.99999976}
+      position: {x: 0.00000029802322, y: 0.27922714, z: 0.00000029802322}
+      rotation: {x: 0.15281372, y: 0.03822639, z: 0.037074614, w: 0.9868192}
+      scale: {x: 1, y: 1, z: 0.9999999}
     - name: f_ring.03.L_end
       parentName: f_ring.03.L
       position: {x: -0, y: 0.1631042, z: 0}
@@ -510,28 +510,28 @@ ModelImporter:
     - name: forearm.R
       parentName: upper_arm.R
       position: {x: 0.00000059604645, y: 2.2964106, z: 0}
-      rotation: {x: 0.60918766, y: -0.32273337, z: -0.048818707, w: 0.7227381}
-      scale: {x: 0.99999994, y: 1, z: 1.0000001}
+      rotation: {x: 0.049649134, y: -0.2856966, z: -0.14409092, w: 0.94612384}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
     - name: palm.03.R
       parentName: forearm.R
-      position: {x: 0.020609304, y: 2.8413599, z: -0.058958028}
-      rotation: {x: -0.07756558, y: 0.28385442, z: -0.027807252, w: 0.95532036}
-      scale: {x: 0.99999994, y: 1.0000001, z: 0.99999994}
+      position: {x: 0.027158886, y: 2.8224175, z: -0.018898368}
+      rotation: {x: 0.23211846, y: 0.27570263, z: 0.008597474, w: 0.9327568}
+      scale: {x: 0.9999998, y: 0.99999994, z: 0.99999994}
     - name: f_ring.01.R
       parentName: palm.03.R
-      position: {x: 0.0000002682209, y: 0.6035115, z: 0.0000005364418}
-      rotation: {x: 0.28076947, y: -0.01034526, z: -0.0067944257, w: 0.95969546}
-      scale: {x: 1.0000001, y: 1, z: 0.99999994}
+      position: {x: -0.003717661, y: 0.60798043, z: 0.008532524}
+      rotation: {x: 0.3310475, y: -0.0028688652, z: 0.014039728, w: 0.9435053}
+      scale: {x: 0.99999994, y: 1, z: 1}
     - name: f_ring.02.R
       parentName: f_ring.01.R
-      position: {x: -0.00000059604645, y: 0.39264667, z: -0.0000012516975}
-      rotation: {x: 0.07245815, y: -0.018145815, z: -0.02152155, w: 0.9969741}
-      scale: {x: 1, y: 1, z: 1}
+      position: {x: 0.00000035762787, y: 0.3926469, z: -0.000001013279}
+      rotation: {x: 0.097919814, y: -0.01063668, z: -0.014133768, w: 0.99503714}
+      scale: {x: 0.99999994, y: 0.9999998, z: 1.0000001}
     - name: f_ring.03.R
       parentName: f_ring.02.R
-      position: {x: 0.000000059604645, y: 0.27922672, z: -0.0000005364418}
-      rotation: {x: 0.15282045, y: -0.03822604, z: -0.03707742, w: 0.98681813}
-      scale: {x: 1, y: 0.99999994, z: 1.0000001}
+      position: {x: 0.00000017881393, y: 0.27922773, z: -0.00000029802322}
+      rotation: {x: 0.15282044, y: -0.03822603, z: -0.037077412, w: 0.98681813}
+      scale: {x: 0.99999994, y: 0.9999999, z: 1}
     - name: f_ring.03.R_end
       parentName: f_ring.03.R
       position: {x: -0, y: 0.16310404, z: 0}
