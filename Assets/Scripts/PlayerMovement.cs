@@ -115,6 +115,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             slideRequested = true;
+
+        //Wyciete z FIXedUpdate
     }
 
     private void FixedUpdate()

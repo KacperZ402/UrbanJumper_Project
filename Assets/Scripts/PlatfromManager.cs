@@ -25,10 +25,6 @@ public class PlatformManager : MonoBehaviour
     private void Start()
     {
         PlatformManager[] managers = FindObjectsOfType<PlatformManager>();
-        if (managers.Length > 1)
-            Debug.LogWarning($"[PlatformManager#{GetInstanceID()}] Wykryto {managers.Length} instancji PlatformManager w scenie!");
-
-        Log($"Start | instanceId={GetInstanceID()} | initial cycleStarted={cycleStarted} | spawnedCount={spawnedCount} | targetCount={targetCount}");
         StartNewCycle();
     }
 
@@ -61,8 +57,6 @@ public class PlatformManager : MonoBehaviour
         {
             // Postaw końcową platformę
             Instantiate(endPlatformPrefab, endPoint.position, endPoint.rotation);
-            Debug.Log("Postawiono EndPlatform – cykl zakończony!");
-            Log("EndPlatform spawned -> StartNewCycle()");
 
             StartNewCycle();
             return;
@@ -74,11 +68,9 @@ public class PlatformManager : MonoBehaviour
             endPoint.position,
             endPoint.rotation
         );
-        Log($"Spawned segment | index={newIndex} | name={segment.name} | at={endPoint.position}");
 
         lastIndex = newIndex;
         spawnedCount++;
-        Log($"SpawnNext EXIT | spawnedCount={spawnedCount} | targetCount={targetCount}");
     }
 
     private void StartNewCycle()
@@ -88,8 +80,6 @@ public class PlatformManager : MonoBehaviour
         targetCount = Random.Range(minSegments, maxSegments + 1);
         cycleStarted = false;
 
-        Debug.Log($"Nowy cykl: do wygenerowania {targetCount} segmentów.");
-        Log($"StartNewCycle | min={minSegments} | max={maxSegments} | target={targetCount}");
     }
 
     private void SpawnInitialSequence(Transform spawnPoint)
@@ -120,7 +110,6 @@ public class PlatformManager : MonoBehaviour
                 trigger.gameObject.SetActive(false); // wyłączamy triggery we wcześniejszych segmentach
             }
 
-            Log($"Initial[{i}] | index={newIndex} | segment={segment.name} | triggerActive={(trigger != null && trigger.gameObject.activeSelf)} | spawnedCount={spawnedCount}");
         }
     }
 
@@ -141,7 +130,5 @@ public class PlatformManager : MonoBehaviour
     {
         if (!debugLogs)
             return;
-
-        Debug.Log($"[PlatformManager#{GetInstanceID()}] {message}");
     }
 }
