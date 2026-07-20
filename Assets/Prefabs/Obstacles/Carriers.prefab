@@ -45,7 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 0}
+  - {fileID: 5730973505550276196, guid: 55f31c52f0bb756449840e52b001492c, type: 3}
+  - {fileID: 5355091324363903455, guid: a64d61744b2f6804f92128d84b099650, type: 3}
+  - {fileID: 5282033231866243942, guid: 242ed70defb91114e8289d7e435a7148, type: 3}
+  - {fileID: 8262014439473995349, guid: 2efe4c1c35dcacb4e816ef2cc4de6ad3, type: 3}
   spawnChance: 1
   ignoreSpawnBlockers: 0
   spawnBlockerLayerName: SpawnBlocker
@@ -149,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pullWorker: {fileID: 8188790475607880731}
   pushWorker: {fileID: 343691828019037297}
-  movementSpeed: 3
+  movementSpeed: 9
 --- !u!95 &8188790475607880731 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 1ecc6bac35d7b4349b3aa0d5b2b99ba5, type: 3}
