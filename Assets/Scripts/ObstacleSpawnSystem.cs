@@ -1,29 +1,104 @@
 using UnityEngine;
 
-public class ObstacleSpawnSystem : MonoBehaviour
+public class SegmentObstacleSpawner : MonoBehaviour
 {
-    [Header("Ustawienia Torów")]
-    public Transform startAnchor; // Pusty obiekt na początku (X:0, Y:0, Z:0 lokalnie)
-    public float segmentLength = 50f; // Jak długa jest ta platforma w osi Z
-    public float laneWidth = 10f;    // Odstęp między torami
+    public enum ObstacleType { None, Jump, Slide, Wall }
 
-    // Szybki sposób na pobranie pozycji konkretnego toru na początku platformy
-    public Vector3 GetLaneStartPoint(int laneIndex)
+    [Header("Prefaby Przeszkód")]
+    public GameObject[] jumpObstaclePrefab;
+    public GameObject[] slideObstaclePrefab;
+    public GameObject[] wallObstaclePrefab;
+
+    [Header("Ustawienia Torów i Platformy")]
+    public Transform startAnchor;     // Pusty obiekt na początku (X:0, Y:0, Z:0 lokalnie)
+    public float segmentLength = 50f; // Długość platformy w osi Z
+    public float laneWidth = 10f;     // Odstęp między torami
+
+    [Header("Ustawienia Spawnu")]
+    public float distanceBetweenRows = 10f; // Co ile metrów w osi Z stawiać rząd
+    public float startOffsetZ = 5f;         // Margines od krawędzi segmentu
+
+    // Statyczna zmienna – współdzielona przez WSZYSTKIE instancje tego skryptu.
+    // Dzięki temu, gdy kończy się Segment A i zaczyna Segment B, 
+    // wirtualny gracz płynnie przechodzi między nimi bez teleportacji.
+    private static int currentSafeLane = 0;
+
+    private void Start()
     {
-        // laneIndex: -1 (lewy), 0 (środek), 1 (prawy)
-        float xOffset = laneIndex * laneWidth;
-        return startAnchor.TransformPoint(new Vector3(xOffset, 0, 0));
+        // Generujemy przeszkody od razu, gdy segment pojawia się na scenie
+        GenerateObstacles();
     }
 
-    // Szybki sposób na pobranie pozycji konkretnego toru na końcu platformy
-    public Vector3 GetLaneEndPoint(int laneIndex)
+    public void GenerateObstacles()
     {
-        float xOffset = laneIndex * laneWidth;
-        // Dodajemy długość w osi Z
-        return startAnchor.TransformPoint(new Vector3(xOffset, 0, segmentLength));
+        if (startAnchor == null)
+        {
+            Debug.LogError("Brak przypisanego startAnchor w segmencie!");
+            return;
+        }
+
+        float currentLocalZ = startOffsetZ;
+
+        // Idziemy wzdłuż segmentu i stawiamy rzędy
+        while (currentLocalZ < segmentLength - startOffsetZ)
+        {
+            SpawnRow(currentLocalZ);
+            currentLocalZ += distanceBetweenRows;
+        }
     }
 
-    // Rysowanie pomocniczych linii w Editorze (Gizmos)
+    private void SpawnRow(float localZ)
+    {
+        // 1. Zmieniamy tor ratunkowy o max 1 (w zakresie od -1 do 1)
+        int laneChange = Random.Range(-1, 2);
+        currentSafeLane = Mathf.Clamp(currentSafeLane + laneChange, -1, 1);
+
+        // 2. Losujemy przeszkodę na bezpieczny tor (0 = None, 1 = Jump, 2 = Slide)
+        ObstacleType safeObstacle = (ObstacleType)Random.Range(0, 3);
+
+        // 3. Wypełniamy wszystkie 3 tory
+        for (int lane = -1; lane <= 1; lane++)
+        {
+            // Liczymy pozycję lokalną względem startAnchor
+            float xOffset = lane * laneWidth;
+            Vector3 localPosition = new Vector3(xOffset, 0, localZ);
+
+            // Konwersja na pozycję globalną (uwzględnia obrót całego segmentu)
+            Vector3 worldPosition = startAnchor.TransformPoint(localPosition);
+
+            if (lane == currentSafeLane)
+            {
+                SpawnObstacle(safeObstacle, worldPosition);
+            }
+            else
+            {
+                // Pozostałe tory dostają losowe przeszkody, włącznie ze ścianami
+                ObstacleType randomObstacle = (ObstacleType)Random.Range(0, 4);
+                SpawnObstacle(randomObstacle, worldPosition);
+            }
+        }
+    }
+
+    private void SpawnObstacle(ObstacleType type, Vector3 position)
+    {
+        if (type == ObstacleType.None) return;
+
+        GameObject prefabToSpawn = type switch
+        {
+            ObstacleType.Jump => jumpObstaclePrefab[Random.Range(0, jumpObstaclePrefab.Length)],
+            ObstacleType.Slide => slideObstaclePrefab[Random.Range(0, slideObstaclePrefab.Length)],
+            ObstacleType.Wall => wallObstaclePrefab[Random.Range(0, wallObstaclePrefab.Length)],
+            _ => null
+        };
+
+        if (prefabToSpawn != null)
+        {
+            // Tworzymy przeszkodę i od razu podpinamy ją pod ten segment (transform)
+            // Jak usuniesz segment, przeszkody znikną razem z nim.
+            Instantiate(prefabToSpawn, position, Quaternion.identity, transform);
+        }
+    }
+
     private void OnDrawGizmos()
     {
         if (startAnchor == null) return;
@@ -31,12 +106,11 @@ public class ObstacleSpawnSystem : MonoBehaviour
         Gizmos.color = Color.cyan;
         for (int i = -1; i <= 1; i++)
         {
-            Vector3 start = GetLaneStartPoint(i);
-            Vector3 end = GetLaneEndPoint(i);
-            
-            // Rysujemy linie torów
+            float xOffset = i * laneWidth;
+            Vector3 start = startAnchor.TransformPoint(new Vector3(xOffset, 0, 0));
+            Vector3 end = startAnchor.TransformPoint(new Vector3(xOffset, 0, segmentLength));
+
             Gizmos.DrawLine(start, end);
-            // Rysujemy punkty końcowe
             Gizmos.DrawWireSphere(end, 0.5f);
         }
     }

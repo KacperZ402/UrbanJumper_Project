@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8376950704531570595}
   - component: {fileID: 1797108658420521264}
   - component: {fileID: 6061465961535846634}
+  - component: {fileID: 5632378048222346804}
   m_Layer: 0
   m_Name: CoffeCart_OBS
   m_TagString: Untagged
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5632378048222346804
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4875134034114907845}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.200239, y: 10.476516, z: 7.643548}
+  m_Center: {x: -0.016731739, y: 5.167915, z: -0.120645404}
