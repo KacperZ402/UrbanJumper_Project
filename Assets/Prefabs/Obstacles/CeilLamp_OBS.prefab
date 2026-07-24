@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4825184751793580613}
   - component: {fileID: 3707302418623670253}
   - component: {fileID: 2096325764361846804}
+  - component: {fileID: 6512943329267124041}
   m_Layer: 0
   m_Name: CeilLamp_OBS
   m_TagString: Untagged
@@ -105,3 +106,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0000036, y: 15.075787, z: 2.3497944}
   m_Center: {x: 0.15548, y: 22.899527, z: 0.085755825}
+--- !u!114 &6512943329267124041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3744871368196997854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3744871368196997854}
+  preloadCount: 4

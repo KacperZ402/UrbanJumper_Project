@@ -1105,6 +1105,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2803774934902812411}
   - {fileID: 7939757387242374715}
   - {fileID: 7116045796173945644}
   - {fileID: 5615105660118655842}
@@ -1166,7 +1167,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: 8412ea7c41bbb354da5e4bd903a12044, type: 2}
   - {fileID: 2100000, guid: b3da277275df3044ca4ca7ce78a17bd0, type: 2}
   - {fileID: 2100000, guid: a14571a92ad7ca448bd740c852a1d5ad, type: 2}
-  - {fileID: 2100000, guid: 6f47b10ab520b9f49999e974b2a5db11, type: 2}
+  - {fileID: 2100000, guid: 4f3faf0066f6db745830b6af2a394d50, type: 2}
   - {fileID: 2100000, guid: ad1019481a7dd1f44840a39789a64f18, type: 2}
   - {fileID: 2100000, guid: 7b84829f9ed13bf43885a9dd37f5a974, type: 2}
   - {fileID: 2100000, guid: 80b4bed8201e76645a016bd8f7a54c14, type: 2}
@@ -1667,6 +1668,71 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 40, y: 1, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &7267914275616749662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2803774934902812411}
+  - component: {fileID: 4851511202895197440}
+  m_Layer: 0
+  m_Name: ObstacleLane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2803774934902812411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7267914275616749662}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.85, z: 24.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6871921709311882200}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4851511202895197440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7267914275616749662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e364e7147827ec942928e6e3104253cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpObstaclePrefab:
+  - {fileID: 2425824887418694349, guid: 2684a380c82df084197a4de6428f80a5, type: 3}
+  - {fileID: 8449932981160728341, guid: 071d629863af59741b00c7935e69c8de, type: 3}
+  - {fileID: 4875134034114907845, guid: 6c83a211d7e3a4048b4a0c9ac96c087d, type: 3}
+  slideObstaclePrefab:
+  - {fileID: 3279358890978071227, guid: 253614755f02c6a44b615138adc0994f, type: 3}
+  - {fileID: 3744871368196997854, guid: 99cc981c4f0b780478de3a496c331090, type: 3}
+  wallObstaclePrefab:
+  - {fileID: 8449932981160728341, guid: 9a96b83d6697d7c4f8676bd2064a4881, type: 3}
+  - {fileID: 8449932981160728341, guid: 166d931470340c942b5c3743c6b22fb2, type: 3}
+  - {fileID: 8449932981160728341, guid: 153427db59957514bb842f2523978a4b, type: 3}
+  - {fileID: 8449932981160728341, guid: d60fad9a65fc2374e97277aded7472a7, type: 3}
+  - {fileID: 6497148326904038282, guid: f4376a69902ca4142929e6fde9597459, type: 3}
+  - {fileID: 6497148326904038282, guid: 4d08a01e7a8480b4abfca97c6fca25a0, type: 3}
+  - {fileID: 3174916744602465499, guid: 3359cf61d4fc58344ae5731de1c306ec, type: 3}
+  - {fileID: 657795716894905429, guid: 148d353ffaddf8346a30707ae9de8e1d, type: 3}
+  startAnchor: {fileID: 2803774934902812411}
+  segmentLength: 280
+  laneWidth: 15
+  distanceBetweenRows: 60
+  startOffsetZ: 0
 --- !u!1 &7406461840581005739
 GameObject:
   m_ObjectHideFlags: 0

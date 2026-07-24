@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8126243796119646852}
   - component: {fileID: 561655082021672567}
   - component: {fileID: 4873176262792455294}
+  - component: {fileID: 4604121107514495975}
   m_Layer: 0
   m_Name: ladder_OBS
   m_TagString: Untagged
@@ -106,3 +107,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7615351814832087667, guid: f1f515c2f2356ac42903adc883419897, type: 3}
+--- !u!114 &4604121107514495975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3279358890978071227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3279358890978071227}
+  preloadCount: 4

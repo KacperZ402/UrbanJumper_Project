@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEditor.FilePathAttribute;
 
 public class SegmentObstacleSpawner : MonoBehaviour
 {
@@ -95,7 +96,7 @@ public class SegmentObstacleSpawner : MonoBehaviour
         {
             // Tworzymy przeszkodę i od razu podpinamy ją pod ten segment (transform)
             // Jak usuniesz segment, przeszkody znikną razem z nim.
-            Instantiate(prefabToSpawn, position, Quaternion.identity, transform);
+            SingleObjectPool.Instance.Get(prefabToSpawn, position, Quaternion.identity, transform);
         }
     }
 

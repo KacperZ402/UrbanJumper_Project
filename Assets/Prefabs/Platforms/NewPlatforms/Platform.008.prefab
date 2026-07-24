@@ -1,5 +1,70 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1120412709747060198
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4491726658449867344}
+  - component: {fileID: 7701970084946679067}
+  m_Layer: 0
+  m_Name: ObstacleLane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4491726658449867344
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120412709747060198}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.85, z: 34.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8650747384435809022}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7701970084946679067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120412709747060198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e364e7147827ec942928e6e3104253cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpObstaclePrefab:
+  - {fileID: 2425824887418694349, guid: 2684a380c82df084197a4de6428f80a5, type: 3}
+  - {fileID: 8449932981160728341, guid: 071d629863af59741b00c7935e69c8de, type: 3}
+  - {fileID: 4875134034114907845, guid: 6c83a211d7e3a4048b4a0c9ac96c087d, type: 3}
+  slideObstaclePrefab:
+  - {fileID: 3279358890978071227, guid: 253614755f02c6a44b615138adc0994f, type: 3}
+  - {fileID: 3744871368196997854, guid: 99cc981c4f0b780478de3a496c331090, type: 3}
+  wallObstaclePrefab:
+  - {fileID: 8449932981160728341, guid: 9a96b83d6697d7c4f8676bd2064a4881, type: 3}
+  - {fileID: 8449932981160728341, guid: 166d931470340c942b5c3743c6b22fb2, type: 3}
+  - {fileID: 8449932981160728341, guid: 153427db59957514bb842f2523978a4b, type: 3}
+  - {fileID: 8449932981160728341, guid: d60fad9a65fc2374e97277aded7472a7, type: 3}
+  - {fileID: 6497148326904038282, guid: f4376a69902ca4142929e6fde9597459, type: 3}
+  - {fileID: 6497148326904038282, guid: 4d08a01e7a8480b4abfca97c6fca25a0, type: 3}
+  - {fileID: 3174916744602465499, guid: 3359cf61d4fc58344ae5731de1c306ec, type: 3}
+  - {fileID: 657795716894905429, guid: 148d353ffaddf8346a30707ae9de8e1d, type: 3}
+  startAnchor: {fileID: 4491726658449867344}
+  segmentLength: 170
+  laneWidth: 15
+  distanceBetweenRows: 60
+  startOffsetZ: 0
 --- !u!1 &1748806968377200384
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,6 +343,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4491726658449867344}
   - {fileID: 6571934931725642519}
   - {fileID: 6341376277746549587}
   - {fileID: 4399177100720664856}

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4951771587139091462}
   - component: {fileID: 5996543597919964073}
   - component: {fileID: -3007829934522383575}
+  - component: {fileID: -6961558363654644200}
   m_Layer: 0
   m_Name: CardboardBox_OBS
   m_TagString: Untagged
@@ -123,3 +124,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7.4273543, y: 7.427354, z: 7.4273543}
   m_Center: {x: 0, y: 3.7136736, z: 0}
+--- !u!114 &-6961558363654644200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449932981160728341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074de2aa7019c438ce847471dc24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8449932981160728341}
+  preloadCount: 4
