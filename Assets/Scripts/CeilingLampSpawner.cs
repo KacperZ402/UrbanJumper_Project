@@ -9,7 +9,7 @@ public class CeilingLampSpawner : MonoBehaviour
 
     [Header("Rozmiar siatki")]
     [Tooltip("Szerokoœæ i g³êbokoœæ jednej kratki w metrach (X = szerokoœæ, Y = g³êbokoœæ)")]
-    public Vector2 cellSize = new Vector2(2f, 2f);  // <-- kontrolowane z inspektora
+    public Vector2 cellSize = new Vector2(2f, 2f);
 
 
     private void Start()
@@ -33,7 +33,7 @@ public class CeilingLampSpawner : MonoBehaviour
 
         float startX = center.x - areaSize.x / 2f;
         float startZ = center.z - areaSize.z / 2f;
-        float y = center.y + areaSize.y / 2f; // sufit
+        float y = center.y + areaSize.y / 2f;
 
         int gridCountX = Mathf.FloorToInt(areaSize.x / cellSize.x);
         int gridCountZ = Mathf.FloorToInt(areaSize.z / cellSize.y);

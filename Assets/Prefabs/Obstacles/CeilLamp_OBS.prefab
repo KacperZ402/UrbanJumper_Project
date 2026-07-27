@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3707302418623670253}
   - component: {fileID: 2096325764361846804}
   - component: {fileID: 6512943329267124041}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CeilLamp_OBS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,6 +64,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2850208003977643989, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+  - {fileID: 2100000, guid: e006558f9507a164d8bc181b3b025fc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

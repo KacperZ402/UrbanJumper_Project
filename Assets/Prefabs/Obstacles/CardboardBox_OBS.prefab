@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5996543597919964073}
   - component: {fileID: -3007829934522383575}
   - component: {fileID: -6961558363654644200}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CardboardBox_OBS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1148933938359929623, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+  - {fileID: 2100000, guid: 96632261828aadf48ae03207a6ce3ed4, type: 2}
+  - {fileID: 2100000, guid: e006558f9507a164d8bc181b3b025fc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

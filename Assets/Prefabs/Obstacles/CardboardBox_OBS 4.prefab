@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6559957785594905391}
   - component: {fileID: 1912323573446909273}
   - component: {fileID: 7800731207069338927}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CardboardBox_OBS 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,6 +64,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 1148933938359929623, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+  - {fileID: 2100000, guid: e006558f9507a164d8bc181b3b025fc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -136,7 +137,7 @@ GameObject:
   - component: {fileID: 7018073954918682405}
   - component: {fileID: 8775855433977416681}
   - component: {fileID: 496128942125276474}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CardboardBox_OBS 4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,6 +188,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 1148933938359929623, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+  - {fileID: 2100000, guid: e006558f9507a164d8bc181b3b025fc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -260,7 +262,7 @@ GameObject:
   - component: {fileID: 5996543597919964073}
   - component: {fileID: -3007829934522383575}
   - component: {fileID: -5219858211310201802}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CardboardBox_OBS 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,6 +316,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 1148933938359929623, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+  - {fileID: 2100000, guid: e006558f9507a164d8bc181b3b025fc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -400,7 +403,7 @@ GameObject:
   - component: {fileID: 4349482862489214694}
   - component: {fileID: 2140102002189028746}
   - component: {fileID: 8695112094517705020}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CardboardBox_OBS 4 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,6 +454,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 1148933938359929623, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+  - {fileID: 2100000, guid: e006558f9507a164d8bc181b3b025fc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8933504833618230169}
   - component: {fileID: 6170776616289247294}
   - component: {fileID: 2912408627161677096}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Desk.001_Empty
   m_TagString: Prop
   m_Icon: {fileID: 0}
@@ -79,6 +79,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: -6803337679141779942, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
   - {fileID: 1951357261179755002, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+  - {fileID: 2100000, guid: e006558f9507a164d8bc181b3b025fc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

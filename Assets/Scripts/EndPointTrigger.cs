@@ -27,7 +27,6 @@ public class EndPointTrigger : MonoBehaviour
         if (platformManager != null)
         {
             platformManager.OnTriggerActivated(transform.parent);
-            // parent = endPoint
         }
         else if (debugLogs)
         {

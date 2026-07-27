@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6892601517857643492}
   - component: {fileID: 6797032898484642034}
   - component: {fileID: 6058781237464648242}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CardboardBox_OBS (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,6 +64,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 1148933938359929623, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+  - {fileID: 2100000, guid: e006558f9507a164d8bc181b3b025fc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -137,7 +138,7 @@ GameObject:
   - component: {fileID: 5996543597919964073}
   - component: {fileID: -3007829934522383575}
   - component: {fileID: 7613843831692376068}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CardboardBox_OBS 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,6 +191,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 1148933938359929623, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+  - {fileID: 2100000, guid: e006558f9507a164d8bc181b3b025fc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -276,7 +278,7 @@ GameObject:
   - component: {fileID: 4203880165758401559}
   - component: {fileID: 261630838877489066}
   - component: {fileID: 2176778393710922239}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CardboardBox_OBS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,6 +329,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 1148933938359929623, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+  - {fileID: 2100000, guid: e006558f9507a164d8bc181b3b025fc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

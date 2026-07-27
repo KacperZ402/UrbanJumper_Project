@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1508779845004830854}
   - component: {fileID: 6117680583696001211}
   - component: {fileID: 519012766095923263}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WetSign_OBS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,6 +64,8 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 4023837545477616411, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+  - {fileID: 4023837545477616411, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+  - {fileID: 2100000, guid: e006558f9507a164d8bc181b3b025fc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
