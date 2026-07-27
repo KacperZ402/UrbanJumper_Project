@@ -1821,6 +1821,7 @@ GameObject:
   - component: {fileID: 9092131767294365848}
   - component: {fileID: 6463395735786594717}
   - component: {fileID: 5135955468086474933}
+  - component: {fileID: 4163849511413095454}
   m_Layer: 0
   m_Name: DoorOpenable.003
   m_TagString: Untagged
@@ -1930,6 +1931,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.8887448, y: 623.59155, z: 12.719388}
   m_Center: {x: -6.98, y: -5.9578705, z: -6.3601403}
+--- !u!114 &4163849511413095454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3149690983399866790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb007a97ef38c5e458e0eda78ac593d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialIndex: 0
+  replacementMaterials:
+  - {fileID: -5372075423663368731, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+  - {fileID: 1951357261179755002, guid: d9b09a3e5df09a4419f3a21f69792308, type: 3}
+  - {fileID: 2100000, guid: 4f3faf0066f6db745830b6af2a394d50, type: 2}
 --- !u!1 &3240049471256710399
 GameObject:
   m_ObjectHideFlags: 0

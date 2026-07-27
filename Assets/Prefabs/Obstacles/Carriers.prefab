@@ -172,6 +172,12 @@ MonoBehaviour:
   pullWorker: {fileID: 8188790475607880731}
   pushWorker: {fileID: 343691828019037297}
   movementSpeed: 9
+  boxSize: {x: 5, y: 15.97, z: 5.37}
+  boxOffset: {x: 0, y: 8.76, z: 1}
+  vehicleLength: 19.1
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!114 &9178695741174150250
 MonoBehaviour:
   m_ObjectHideFlags: 0

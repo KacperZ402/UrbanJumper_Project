@@ -3,36 +3,31 @@ using UnityEngine;
 public class OfficeDuoController : MonoBehaviour
 {
     [Header("Animators")]
-    [SerializeField] private Animator pullWorker; // Ten, który idzie przodem
-    [SerializeField] private Animator pushWorker; // Ten, który pcha z tyłu
+    [SerializeField] private Animator pullWorker;
+    [SerializeField] private Animator pushWorker;
 
     [Header("Movement Settings")]
     [SerializeField] private float movementSpeed = 3f;
 
-    // Zmienne stanu - gotowe do nadpisania przez Twój przyszły system
-    private bool _isMoving;
-    private int _currentDirection = 1; // Możesz tu potem dodać logikę kierunków
+    [Header("Collision Detection")]
+    [SerializeField] private Vector3 boxSize = new Vector3(2f, 2f, 0.5f);
+    [SerializeField] private Vector3 boxOffset = new Vector3(0f, 1f, -1.5f);
+    [SerializeField] private float vehicleLength = 3f;
 
-    /// <summary>
-    /// Wywoływane przez Object Pooler przy spawnowaniu segmentu.
-    /// </summary>
+    // Zmienne stanu 
+    private bool _isMoving;
+    private int _currentDirection = 1;
+
     void OnEnable()
     {
-        // Tu na razie dajemy prosty template losowania, 
-        // który potem zastąpimy Twoim pełnym systemem.
         bool randomState = Random.value > 0.5f;
         SetState(randomState);
     }
 
-    /// <summary>
-    /// Główna metoda sterująca stanem przeszkody. 
-    /// Możesz ją wywołać z zewnętrznego skryptu (np. Managera Przeszkód).
-    /// </summary>
     public void SetState(bool moving)
     {
         _isMoving = moving;
 
-        // Synchronizacja obu animatorów
         if (pullWorker != null) pullWorker.SetBool("isMoving", _isMoving);
         if (pushWorker != null) pushWorker.SetBool("isMoving", _isMoving);
     }
@@ -47,21 +42,41 @@ public class OfficeDuoController : MonoBehaviour
 
     private void ApplyMovement()
     {
-        // Ruch całego zestawu (Rodzic + Dzieci)
-        // Używamy Space.World lub Space.Self w zależności od tego, jak rotujesz segmenty
-        transform.Translate(Vector3.forward * _currentDirection * movementSpeed * Time.deltaTime);
+        Vector3 moveDirection = Vector3.forward * _currentDirection;
+        float moveDistance = movementSpeed * Time.deltaTime;
+        float totalCastDistance = vehicleLength + moveDistance;
+
+        Vector3 startPosition = transform.TransformPoint(boxOffset);
+
+        bool isBlocked = Physics.BoxCast(
+            startPosition,
+            boxSize / 2f,
+            transform.TransformDirection(moveDirection),
+            out RaycastHit hit,
+            transform.rotation,
+            totalCastDistance
+        );
+
+        if (isBlocked)
+        {
+            Debug.Log("Zatrzymano przed: " + hit.collider.name);
+            return;
+        }
+
+        transform.Translate(moveDirection * moveDistance);
     }
 
-    // Opcjonalnie: Debugowanie w edytorze
-    private void OnValidate()
+    private void OnDrawGizmos()
     {
-        // Pomaga szybko sprawdzić w edytorze, czy przypisałeś animatorów
-        if (pullWorker == null || pushWorker == null)
-        {
-            Debug.LogWarning($"[OfficeDuo] Brakuje animatorów na obiekcie {gameObject.name}!");
-        }
+        Gizmos.color = Color.red;
+        Vector3 moveDirection = Vector3.forward * _currentDirection;
+
+        Vector3 startPosition = transform.TransformPoint(boxOffset);
+
+        Gizmos.matrix = Matrix4x4.TRS(startPosition, transform.rotation, Vector3.one);
+        Gizmos.DrawWireCube(Vector3.zero, boxSize);
+
+        Vector3 localMoveDir = transform.InverseTransformDirection(transform.TransformDirection(moveDirection));
+        Gizmos.DrawWireCube(localMoveDir * vehicleLength, boxSize);
     }
 }
-
-//Ten skrypt i tak bedzie jeszcze eydtowany, tylko taki zamysł w jaki 
-//sposób bedzie wybierany stan przeszkody
