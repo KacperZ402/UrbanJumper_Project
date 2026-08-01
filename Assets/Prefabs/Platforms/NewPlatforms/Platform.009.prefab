@@ -455,8 +455,9 @@ MonoBehaviour:
   - {fileID: 3174916744602465499, guid: 3359cf61d4fc58344ae5731de1c306ec, type: 3}
   - {fileID: 657795716894905429, guid: 148d353ffaddf8346a30707ae9de8e1d, type: 3}
   startAnchor: {fileID: 6150943369411555964}
-  segmentLength: 60
+  segmentLength: 75
   laneWidth: 15
+  DisabledLane: 0
   distanceBetweenRows: 60
   startOffsetZ: 0
 --- !u!1 &8514291925095193808

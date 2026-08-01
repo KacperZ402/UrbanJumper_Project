@@ -14,6 +14,8 @@ public class SegmentObstacleSpawner : MonoBehaviour
     public Transform startAnchor;     // Pusty obiekt na początku (X:0, Y:0, Z:0 lokalnie)
     public float segmentLength = 50f; // Długość platformy w osi Z
     public float laneWidth = 10f;     // Odstęp między torami
+    public bool[] LaneEnabled = new bool[3] { true, true, true };  // Czy lewy tor jest aktywny
+
 
     [Header("Ustawienia Spawnu")]
     public float distanceBetweenRows = 10f; // Co ile metrów w osi Z stawiać rząd
@@ -50,9 +52,15 @@ public class SegmentObstacleSpawner : MonoBehaviour
 
     private void SpawnRow(float localZ)
     {
+
         // 1. Zmieniamy tor ratunkowy o max 1 (w zakresie od -1 do 1)
         int laneChange = Random.Range(-1, 2);
         currentSafeLane = Mathf.Clamp(currentSafeLane + laneChange, -1, 1);
+        
+        while (!LaneEnabled[currentSafeLane + 1]) 
+        {
+            currentSafeLane = Mathf.Clamp(currentSafeLane + laneChange, -1, 1);
+        }
 
         // 2. Losujemy przeszkodę na bezpieczny tor (0 = None, 1 = Jump, 2 = Slide)
         ObstacleType safeObstacle = (ObstacleType)Random.Range(0, 3);
@@ -60,6 +68,10 @@ public class SegmentObstacleSpawner : MonoBehaviour
         // 3. Wypełniamy wszystkie 3 tory
         for (int lane = -1; lane <= 1; lane++)
         {
+            if (!LaneEnabled[lane + 1])
+            {
+                continue;
+            }
             // Liczymy pozycję lokalną względem startAnchor
             float xOffset = lane * laneWidth;
             Vector3 localPosition = new Vector3(xOffset, 0, localZ);

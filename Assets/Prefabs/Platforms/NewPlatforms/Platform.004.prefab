@@ -332,7 +332,6 @@ MonoBehaviour:
   - {fileID: 4875134034114907845, guid: 6c83a211d7e3a4048b4a0c9ac96c087d, type: 3}
   slideObstaclePrefab:
   - {fileID: 3279358890978071227, guid: 253614755f02c6a44b615138adc0994f, type: 3}
-  - {fileID: 3744871368196997854, guid: 99cc981c4f0b780478de3a496c331090, type: 3}
   wallObstaclePrefab:
   - {fileID: 8449932981160728341, guid: 9a96b83d6697d7c4f8676bd2064a4881, type: 3}
   - {fileID: 8449932981160728341, guid: 166d931470340c942b5c3743c6b22fb2, type: 3}
@@ -345,6 +344,7 @@ MonoBehaviour:
   startAnchor: {fileID: 3038854602122186885}
   segmentLength: 270
   laneWidth: 15
+  DisabledLane: 0
   distanceBetweenRows: 60
   startOffsetZ: 0
 --- !u!1 &2844406575478921361
