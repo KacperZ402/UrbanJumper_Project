@@ -1,6 +1,5 @@
 using UnityEngine;
-using static UnityEditor.FilePathAttribute;
-
+using System.Collections.Generic;
 public class SegmentObstacleSpawner : MonoBehaviour
 {
     public enum ObstacleType { None, Jump, Slide, Wall }
@@ -53,14 +52,21 @@ public class SegmentObstacleSpawner : MonoBehaviour
     private void SpawnRow(float localZ)
     {
 
-        // 1. Zmieniamy tor ratunkowy o max 1 (w zakresie od -1 do 1)
-        int laneChange = Random.Range(-1, 2);
-        currentSafeLane = Mathf.Clamp(currentSafeLane + laneChange, -1, 1);
-        
-        while (!LaneEnabled[currentSafeLane + 1]) 
+        List<int> availableLanes = new List<int>();
+        for (int i = -1; i <= 1; i++)
         {
-            currentSafeLane = Mathf.Clamp(currentSafeLane + laneChange, -1, 1);
+            if (LaneEnabled[i + 1] && Mathf.Abs(i - currentSafeLane) <= 1)
+            {
+                availableLanes.Add(i);
+            }
         }
+
+        if (availableLanes.Count == 0)
+        {
+            Debug.LogError("BŁĄD KRYTYCZNY: Brak dostępnych torów ucieczki! Sprawdź tablicę LaneEnabled.");
+            return; // Przerywamy spawnowanie tego rzędu, żeby nie zawiesić gry
+        }
+        currentSafeLane = availableLanes[Random.Range(0, availableLanes.Count)];
 
         // 2. Losujemy przeszkodę na bezpieczny tor (0 = None, 1 = Jump, 2 = Slide)
         ObstacleType safeObstacle = (ObstacleType)Random.Range(0, 3);
