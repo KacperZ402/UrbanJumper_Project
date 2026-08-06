@@ -55,10 +55,11 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded;
 
     private readonly HashSet<int> touchingPlatformIds = new HashSet<int>();
-    private Coroutine slideRoutine;
+    //private Coroutine slideRoutine;
+    private float currentSlideTimer = 0f;
     private float baseCapsuleHeight;
     private Vector3 baseCapsuleCenter;
-
+    //private float slideTimer = 0f;
     private int jumpTriggerHash;
     private int slideTriggerHash;
     private int turnLeftTriggerHash;
@@ -121,20 +122,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (rb == null)
-            return;
-
         isGrounded = touchingPlatformIds.Count > 0;
 
         Vector3 velocity = rb.velocity;
 
+        // 1. Zmiana toru
         float targetX = LaneToWorldX(currentLane);
         float nextX = Mathf.SmoothDamp(rb.position.x, targetX, ref laneVelocity, laneChangeSmoothTime, laneChangeMaxSpeed, Time.fixedDeltaTime);
         velocity.x = (nextX - rb.position.x) / Time.fixedDeltaTime;
         velocity.z = moveSpeedZ;
 
+        // 2. SKOK (Priorytet)
         if (jumpRequested && canJump && isGrounded)
         {
+            EndSlide(); // <--- TWARDY RESET WŚLIZGU PRZED SKOKIEM!
+
             velocity.y = jumpForce;
             canJump = false;
             isGrounded = false;
@@ -145,12 +147,17 @@ public class PlayerMovement : MonoBehaviour
         }
         jumpRequested = false;
 
+        // 3. WŚLIZG (Tylko jeśli nie jesteśmy w trakcie)
         if (slideRequested && !isSliding)
+        {
             StartSlide();
+        }
         slideRequested = false;
 
+        // Aktualizujemy prędkość zanim nałożymy modyfikatory grawitacji i wślizgu
         rb.velocity = velocity;
 
+        // 4. Modyfikatory Grawitacji (Lepsze czucie skoku)
         if (rb.velocity.y < 0f)
         {
             rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1f) * Time.fixedDeltaTime;
@@ -160,11 +167,22 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity += Vector3.up * Physics.gravity.y * (jumpCutMultiplier - 1f) * Time.fixedDeltaTime;
         }
 
+        // 5. OBSŁUGA CZASU WŚLIZGU I DOCISK DO ZIEMI
         if (isSliding)
         {
-            Vector3 slideVelocity = rb.velocity;
-            slideVelocity.y = Mathf.Min(slideVelocity.y, -Mathf.Abs(slideDownVelocity));
-            rb.velocity = slideVelocity;
+            currentSlideTimer -= Time.fixedDeltaTime; // Odliczamy czas
+
+            if (currentSlideTimer <= 0f)
+            {
+                EndSlide(); // Koniec czasu - wstajemy
+            }
+            else
+            {
+                // Trwa wślizg - wymuszamy docisk do podłoża (zapobiega "lataniu" na rampach)
+                Vector3 slideVelocity = rb.velocity;
+                slideVelocity.y = Mathf.Min(slideVelocity.y, -Mathf.Abs(slideDownVelocity));
+                rb.velocity = slideVelocity;
+            }
         }
 
         UpdateAnimatorGroundedState();
@@ -172,19 +190,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void StartSlide()
     {
-        if (slideRoutine != null)
-            StopCoroutine(slideRoutine);
+        isSliding = true;
+        currentSlideTimer = slideDuration; // Zaczynamy odliczanie
 
         if (useAnimator && animator != null)
             animator.SetTrigger(slideTriggerHash);
 
-        slideRoutine = StartCoroutine(SlideRoutine());
-    }
-
-    private IEnumerator SlideRoutine()
-    {
-        isSliding = true;
-
+        // Błyskawiczna zmiana collidera
         if (capsuleCollider != null)
         {
             float newHeight = Mathf.Max(0.1f, baseCapsuleHeight * slideColliderYMultiplier);
@@ -194,26 +206,70 @@ public class PlayerMovement : MonoBehaviour
             newCenter.y = baseCapsuleCenter.y * slideColliderYMultiplier;
             capsuleCollider.center = newCenter;
         }
+    }
 
-        yield return new WaitForSeconds(slideDuration);
+    public void EndSlide()
+    {
+        if (!isSliding) return; // Zapobiega podwójnemu resetowaniu
 
+        isSliding = false;
+        currentSlideTimer = 0f;
+
+        // Błyskawiczny powrót collidera
         if (capsuleCollider != null)
         {
             capsuleCollider.height = baseCapsuleHeight;
             capsuleCollider.center = baseCapsuleCenter;
         }
-
-        isSliding = false;
-        slideRoutine = null;
     }
+
+    //private void StartSlide()
+    //{
+    //    isSliding = true;
+    //    slideTimer = slideDuration; // Ustawiamy stoper na np. 1 sekundę
+
+    //    if (useAnimator && animator != null)
+    //        animator.SetTrigger(slideTriggerHash);
+
+    //    // Spłaszczamy collider natychmiast
+    //    if (capsuleCollider != null)
+    //    {
+    //        capsuleCollider.height = Mathf.Max(0.1f, baseCapsuleHeight * slideColliderYMultiplier);
+    //        Vector3 newCenter = baseCapsuleCenter;
+    //        newCenter.y = baseCapsuleCenter.y * slideColliderYMultiplier;
+    //        capsuleCollider.center = newCenter;
+    //    }
+    //}
+    //private IEnumerator SlideRoutine()
+    //{
+    //    isSliding = true;
+
+    //    if (capsuleCollider != null)
+    //    {
+    //        float newHeight = Mathf.Max(0.1f, baseCapsuleHeight * slideColliderYMultiplier);
+    //        capsuleCollider.height = newHeight;
+
+    //        Vector3 newCenter = baseCapsuleCenter;
+    //        newCenter.y = baseCapsuleCenter.y * slideColliderYMultiplier;
+    //        capsuleCollider.center = newCenter;
+    //    }
+
+    //    yield return new WaitForSeconds(slideDuration);
+
+    //    if (capsuleCollider != null)
+    //    {
+    //        capsuleCollider.height = baseCapsuleHeight;
+    //        capsuleCollider.center = baseCapsuleCenter;
+    //    }
+
+    //    isSliding = false;
+    //    slideRoutine = null;
+    //}
 
     private void RequestLaneChange(int direction)
     {
         int targetLane = Mathf.Clamp(currentLane + direction, 0, 2);
         if (targetLane == currentLane)
-            return;
-
-        if (!CanChangeLane(targetLane))
             return;
 
         if (useAnimator && animator != null)
@@ -227,27 +283,6 @@ public class PlayerMovement : MonoBehaviour
         currentLane = targetLane;
     }
 
-    private bool CanChangeLane(int targetLane)
-    {
-        if (playerCollider == null)
-            return true;
-
-        Bounds bounds = playerCollider.bounds;
-        Vector3 targetPos = new Vector3(LaneToWorldX(targetLane), bounds.center.y, bounds.center.z);
-
-        Vector3 halfExtents = bounds.extents * 0.9f;
-        halfExtents.y *= Mathf.Clamp01(laneCheckHeightScale);
-
-        Collider[] hits = Physics.OverlapBox(targetPos, halfExtents, transform.rotation, laneBlockMask, QueryTriggerInteraction.Ignore);
-        for (int i = 0; i < hits.Length; i++)
-        {
-            Collider hit = hits[i];
-            if (hit != null && hit.gameObject != gameObject)
-                return false;
-        }
-
-        return true;
-    }
 
     private void UpdateAnimatorGroundedState()
     {
