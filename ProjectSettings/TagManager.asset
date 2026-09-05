@@ -9,6 +9,7 @@ TagManager:
   - PropsFirts
   - PropsSecond
   - SpawnBlocker
+  - GlassTrigger
   layers:
   - Default
   - TransparentFX

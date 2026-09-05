@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 public class PlayerMovement : MonoBehaviour
@@ -21,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public float slideDownVelocity = 8f;
 
     [Header("Tory")]
-    public int startingLane = 1; // 0 = lewy, 1 = œrodek, 2 = prawy
+    public int startingLane = 1;
 
     [Header("Jump reset")]
     public string platformTag = "Platform";
@@ -40,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
     public string jumpStateTag = "Jump"; // Ustaw tag "Jump" na stanie animacji skoku
     public string isFallingBoolName = "IsFalling";
     public string jumpLockBoolName = "JumpLock";
+    public string HeadCoverBoolName = "HeadCover";
+    private string glassTriggerTag = "GlassTrigger";
 
     private Rigidbody rb;
     private Collider playerCollider;
@@ -67,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
     private int isGroundedBoolHash;
     private int isFallingBoolHash;
     private int jumpLockBoolHash;
+    private int headCoverBoolHash;
 
     private bool jumpAnimationLock;
 
@@ -95,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
         isGroundedBoolHash = Animator.StringToHash(isGroundedBoolName);
         isFallingBoolHash = Animator.StringToHash(isFallingBoolName);
         jumpLockBoolHash = Animator.StringToHash(jumpLockBoolName);
+        headCoverBoolHash = Animator.StringToHash(HeadCoverBoolName);
     }
 
     private void Start()
@@ -223,48 +226,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    //private void StartSlide()
-    //{
-    //    isSliding = true;
-    //    slideTimer = slideDuration; // Ustawiamy stoper na np. 1 sekundę
-
-    //    if (useAnimator && animator != null)
-    //        animator.SetTrigger(slideTriggerHash);
-
-    //    // Spłaszczamy collider natychmiast
-    //    if (capsuleCollider != null)
-    //    {
-    //        capsuleCollider.height = Mathf.Max(0.1f, baseCapsuleHeight * slideColliderYMultiplier);
-    //        Vector3 newCenter = baseCapsuleCenter;
-    //        newCenter.y = baseCapsuleCenter.y * slideColliderYMultiplier;
-    //        capsuleCollider.center = newCenter;
-    //    }
-    //}
-    //private IEnumerator SlideRoutine()
-    //{
-    //    isSliding = true;
-
-    //    if (capsuleCollider != null)
-    //    {
-    //        float newHeight = Mathf.Max(0.1f, baseCapsuleHeight * slideColliderYMultiplier);
-    //        capsuleCollider.height = newHeight;
-
-    //        Vector3 newCenter = baseCapsuleCenter;
-    //        newCenter.y = baseCapsuleCenter.y * slideColliderYMultiplier;
-    //        capsuleCollider.center = newCenter;
-    //    }
-
-    //    yield return new WaitForSeconds(slideDuration);
-
-    //    if (capsuleCollider != null)
-    //    {
-    //        capsuleCollider.height = baseCapsuleHeight;
-    //        capsuleCollider.center = baseCapsuleCenter;
-    //    }
-
-    //    isSliding = false;
-    //    slideRoutine = null;
-    //}
+    public void HeadCover()
+    {
+        if (useAnimator && animator != null)
+        {
+            animator.SetTrigger(headCoverBoolHash);
+        }
+    }
 
     private void RequestLaneChange(int direction)
     {
@@ -333,9 +301,6 @@ public class PlayerMovement : MonoBehaviour
             canJump = true;
             isGrounded = true;
         }
-
-        if (collision.gameObject.CompareTag("Obstacle"))
-            GameOver();
     }
 
     private void OnCollisionStay(Collision collision)
@@ -365,9 +330,25 @@ public class PlayerMovement : MonoBehaviour
         return collision.gameObject.CompareTag(platformTag);
     }
 
-    private void GameOver()
+
+    //Do poprawy, odrazu sie triger wyłącza i jest chujnia
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Game Over!");
-        enabled = false;
+        if (other.CompareTag(glassTriggerTag))
+        {
+            // Używamy boola zamiast triggera, żeby animacja trwała dopóki gracz jest w strefie
+            if (animator != null)
+                animator.SetTrigger(headCoverBoolHash);
+        }
+
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag(glassTriggerTag))
+        {
+            // Gracz rozbił szybę i przez nią przeszedł – opuszczamy ręce
+            if (animator != null)
+                animator.SetBool(headCoverBoolHash, false);
+        }
     }
 }
