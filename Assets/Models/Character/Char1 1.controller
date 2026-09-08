@@ -174,9 +174,6 @@ AnimatorStateMachine:
     m_State: {fileID: -7759725107414879267}
     m_Position: {x: 370, y: 0, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -726579842694234885}
-    m_Position: {x: 400, y: 110, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: -6166216503674156032}
     m_Position: {x: 380, y: -130, z: 0}
   - serializedVersion: 1
@@ -199,7 +196,7 @@ AnimatorStateMachine:
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: -130, y: -140, z: 0}
-  m_EntryPosition: {x: 140, y: 260, z: 0}
+  m_EntryPosition: {x: 230, y: 250, z: 0}
   m_ExitPosition: {x: 420, y: 240, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -1646186338778332242}
@@ -224,32 +221,6 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 2088286773317925085, guid: 1b07014b4d3567e4bae5d0f0fec1c316, type: 3}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &-726579842694234885
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: metarig_001|HeadCover
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: -150094765962788051, guid: 1b07014b4d3567e4bae5d0f0fec1c316, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -328,6 +299,12 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
   - m_Name: IsGrounded
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: HeadCover
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -493,16 +470,19 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: HeadCover
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8353122832372217495}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.2
+  m_TransitionDuration: 0.52
   m_TransitionOffset: 0
-  m_ExitTime: 1
+  m_ExitTime: 0.3508774
   m_HasExitTime: 0
   m_HasFixedDuration: 0
   m_InterruptionSource: 0
