@@ -1604,6 +1604,13 @@ MonoBehaviour:
   - {fileID: 6497148326904038282, guid: 4d08a01e7a8480b4abfca97c6fca25a0, type: 3}
   - {fileID: 3174916744602465499, guid: 3359cf61d4fc58344ae5731de1c306ec, type: 3}
   - {fileID: 657795716894905429, guid: 148d353ffaddf8346a30707ae9de8e1d, type: 3}
+  coinPrefabs:
+  - {fileID: 495585615112625829, guid: 29a5da82b7fe1b5408c79a9629f1528a, type: 3}
+  coinInRowChance: 0.4
+  coinBetweenRowsChance: 0.6
+  coinDefaultHeight: 3
+  coinJumpHeight: 10
+  coinSlideHeight: 1
   startAnchor: {fileID: 30426450761791554}
   segmentLength: 170
   laneWidth: 15

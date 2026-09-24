@@ -12,7 +12,6 @@ public class OfficeDuoController : MonoBehaviour
     [Header("Collision Detection")]
     [SerializeField] private Vector3 boxSize = new Vector3(2f, 2f, 0.5f);
     [SerializeField] private Vector3 boxOffset = new Vector3(0f, 1f, -1.5f);
-    [SerializeField] private float vehicleLength = 3f;
 
     // Zmienne stanu 
     private bool _isMoving;
@@ -42,41 +41,35 @@ public class OfficeDuoController : MonoBehaviour
 
     private void ApplyMovement()
     {
-        Vector3 moveDirection = Vector3.forward * _currentDirection;
-        float moveDistance = movementSpeed * Time.deltaTime;
-        float totalCastDistance = vehicleLength + moveDistance;
+        Vector3 boxCenter = transform.TransformPoint(boxOffset);
 
-        Vector3 startPosition = transform.TransformPoint(boxOffset);
-
-        bool isBlocked = Physics.BoxCast(
-            startPosition,
+        bool isBlocked = Physics.CheckBox(
+            boxCenter,
             boxSize / 2f,
-            transform.TransformDirection(moveDirection),
-            out RaycastHit hit,
             transform.rotation,
-            totalCastDistance
+            ~0,
+            QueryTriggerInteraction.Ignore
         );
 
         if (isBlocked)
         {
-            Debug.Log("Zatrzymano przed: " + hit.collider.name);
             return;
         }
 
+        // 3. Ruch
+        Vector3 moveDirection = Vector3.forward * _currentDirection;
+        float moveDistance = movementSpeed * Time.deltaTime;
         transform.Translate(moveDirection * moveDistance);
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Vector3 moveDirection = Vector3.forward * _currentDirection;
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Vector3 moveDirection = Vector3.forward * _currentDirection;
 
-        Vector3 startPosition = transform.TransformPoint(boxOffset);
+    //    Vector3 startPosition = transform.TransformPoint(boxOffset);
 
-        Gizmos.matrix = Matrix4x4.TRS(startPosition, transform.rotation, Vector3.one);
-        Gizmos.DrawWireCube(Vector3.zero, boxSize);
-
-        Vector3 localMoveDir = transform.InverseTransformDirection(transform.TransformDirection(moveDirection));
-        Gizmos.DrawWireCube(localMoveDir * vehicleLength, boxSize);
-    }
+    //    Gizmos.matrix = Matrix4x4.TRS(startPosition, transform.rotation, Vector3.one);
+    //    Gizmos.DrawWireCube(Vector3.zero, boxSize);
+    //}
 }

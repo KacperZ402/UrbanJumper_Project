@@ -9,6 +9,17 @@ public class SegmentObstacleSpawner : MonoBehaviour
     public GameObject[] slideObstaclePrefab;
     public GameObject[] wallObstaclePrefab;
 
+    [Header("Prefaby Monet")]
+    public GameObject[] coinPrefabs;
+    [Range(0f, 1f)] public float coinInRowChance = 0.4f;       // Szansa na monetę w rzędzie
+    [Range(0f, 1f)] public float coinBetweenRowsChance = 0.6f; // Szansa na monetę pomiędzy rzędami
+
+    [Header("Wysokości Monet")]
+
+    public float coinDefaultHeight = 3.0f; // Dla pustego pola i pomiędzy rzędami
+    public float coinJumpHeight = 10f;
+    public float coinSlideHeight = 1f;  // Pod przeszkodą do wślizgu
+
     [Header("Ustawienia Torów i Platformy")]
     public Transform startAnchor;     // Pusty obiekt na początku (X:0, Y:0, Z:0 lokalnie)
     public float segmentLength = 50f; // Długość platformy w osi Z
@@ -44,7 +55,16 @@ public class SegmentObstacleSpawner : MonoBehaviour
         // Idziemy wzdłuż segmentu i stawiamy rzędy
         while (currentLocalZ < segmentLength - startOffsetZ)
         {
+            // 1. Spawnowanie właściwego rzędu z przeszkodami i monetami
             SpawnRow(currentLocalZ);
+
+            // 2. Spawnowanie pojedynczej monety POMIĘDZY rzędami
+            float midRowZ = currentLocalZ + (distanceBetweenRows * 0.5f);
+            if (midRowZ < segmentLength - startOffsetZ)
+            {
+                SpawnBetweenRowsCoin(midRowZ);
+            }
+
             currentLocalZ += distanceBetweenRows;
         }
     }
@@ -63,7 +83,7 @@ public class SegmentObstacleSpawner : MonoBehaviour
 
         if (availableLanes.Count == 0)
         {
-            Debug.LogError("BŁĄD KRYTYCZNY: Brak dostępnych torów ucieczki! Sprawdź tablicę LaneEnabled.");
+           
             return; // Przerywamy spawnowanie tego rzędu, żeby nie zawiesić gry
         }
         currentSafeLane = availableLanes[Random.Range(0, availableLanes.Count)];
@@ -85,17 +105,57 @@ public class SegmentObstacleSpawner : MonoBehaviour
             // Konwersja na pozycję globalną (uwzględnia obrót całego segmentu)
             Vector3 worldPosition = startAnchor.TransformPoint(localPosition);
 
+            ObstacleType chosenType;
+
             if (lane == currentSafeLane)
             {
-                SpawnObstacle(safeObstacle, worldPosition);
+                chosenType = safeObstacle;
             }
             else
             {
-                // Pozostałe tory dostają losowe przeszkody, włącznie ze ścianami
-                ObstacleType randomObstacle = (ObstacleType)Random.Range(0, 4);
-                SpawnObstacle(randomObstacle, worldPosition);
+                chosenType = (ObstacleType)Random.Range(0, 4); // Tu może pojawić się Wall
+            }
+
+            // Spawnowanie przeszkody (jeśli nie None)
+            SpawnObstacle(chosenType, worldPosition);
+
+            // Spawnowanie monety w rzędzie (tylko None, Jump, Slide)
+            if (chosenType != ObstacleType.Wall && Random.value <= coinInRowChance)
+            {
+                SpawnCoinAt(chosenType, worldPosition);
             }
         }
+    }
+
+    private void SpawnBetweenRowsCoin(float localZ)
+    {
+        if (coinPrefabs == null || coinPrefabs.Length == 0) return;
+        if (Random.value > coinBetweenRowsChance) return;
+
+        // Monetę pomiędzy rzędami stawiamy na torze bezpiecznym
+        float xOffset = currentSafeLane * laneWidth;
+        Vector3 localPosition = new Vector3(xOffset, 0, localZ);
+        Vector3 worldPosition = startAnchor.TransformPoint(localPosition);
+
+        SpawnCoinAt(ObstacleType.None, worldPosition);
+    }
+
+    private void SpawnCoinAt(ObstacleType obstacleUnderneath, Vector3 baseGroundPosition)
+    {
+        if (coinPrefabs == null || coinPrefabs.Length == 0) return;
+
+        float targetHeight = obstacleUnderneath switch
+        {
+            ObstacleType.Jump => coinJumpHeight,
+            ObstacleType.Slide => coinSlideHeight,
+            _ => coinDefaultHeight
+        };
+
+        Vector3 spawnPos = baseGroundPosition + (startAnchor.up * targetHeight);
+        GameObject coinPrefab = coinPrefabs[Random.Range(0, coinPrefabs.Length)];
+        Quaternion defaultRotation = coinPrefab.transform.rotation;
+
+        SingleObjectPool.Instance.Get(coinPrefab, spawnPos, defaultRotation, transform);
     }
 
     private void SpawnObstacle(ObstacleType type, Vector3 position)

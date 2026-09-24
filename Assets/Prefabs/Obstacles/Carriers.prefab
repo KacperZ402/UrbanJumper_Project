@@ -175,9 +175,8 @@ MonoBehaviour:
   pullWorker: {fileID: 8188790475607880731}
   pushWorker: {fileID: 343691828019037297}
   movementSpeed: 9
-  boxSize: {x: 5, y: 15.97, z: 5.37}
-  boxOffset: {x: 0, y: 8.76, z: 1}
-  vehicleLength: 19.1
+  boxSize: {x: 5, y: 15.97, z: 1.49}
+  boxOffset: {x: 0, y: 8.76, z: 26}
 --- !u!114 &9178695741174150250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,8 +210,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.35, y: 16.91, z: 3.6}
-  m_Center: {x: 0, y: 8.59, z: 0}
+  m_Size: {x: 4.35, y: 16.91, z: 2.2593646}
+  m_Center: {x: 0, y: 8.59, z: -0.67031765}
 --- !u!95 &8188790475607880731 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 1ecc6bac35d7b4349b3aa0d5b2b99ba5, type: 3}
@@ -336,5 +335,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.35, y: 16.91, z: 3.6}
-  m_Center: {x: 0, y: 8.59, z: 0}
+  m_Size: {x: 4.35, y: 16.91, z: 2.512778}
+  m_Center: {x: -0, y: 8.59, z: -0.54361093}
