@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5271129460577371240}
   - component: {fileID: 1244167374546355225}
   - component: {fileID: -2854138057978891302}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Whiteboard
   m_TagString: Prop
   m_Icon: {fileID: 0}

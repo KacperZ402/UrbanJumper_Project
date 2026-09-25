@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 838369748172237766}
   - component: {fileID: -8176531841328581807}
   - component: {fileID: 5911656634105056358}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Receipt.002
   m_TagString: Prop
   m_Icon: {fileID: 0}
@@ -383,6 +383,9 @@ MonoBehaviour:
   - {fileID: 1724568686622494798}
   - {fileID: 5440245162055399272}
   ownCollider: {fileID: 0}
+  keepLayerName: Keep
+  useBatchedSpawn: 1
+  maxOpsPerFrame: 20
 --- !u!1 &6182190039214459520
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,6 +498,9 @@ MonoBehaviour:
   - {fileID: 2187849760024080149, guid: 1e68b8c40c9133743b2ce5214fe68cbf, type: 3}
   spawnChance: 1
   ignoreSpawnBlockers: 0
+  spawnBlockerLayerName: SpawnBlocker
+  keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &9114776543008708241
 GameObject:
   m_ObjectHideFlags: 0

@@ -51,6 +51,9 @@ MonoBehaviour:
   - {fileID: 7146157161883085742, guid: 27ca389b3ade98847b6d6e0d66af3ca8, type: 3}
   spawnChance: 0.7
   ignoreSpawnBlockers: 0
+  spawnBlockerLayerName: SpawnBlocker
+  keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &3257509533690607366
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,6 +105,9 @@ MonoBehaviour:
   - {fileID: 7146157161883085742, guid: 27ca389b3ade98847b6d6e0d66af3ca8, type: 3}
   spawnChance: 0.7
   ignoreSpawnBlockers: 0
+  spawnBlockerLayerName: SpawnBlocker
+  keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &4166608591133277653
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,6 +160,9 @@ MonoBehaviour:
   - {fileID: 7146157161883085742, guid: 27ca389b3ade98847b6d6e0d66af3ca8, type: 3}
   spawnChance: 0.7
   ignoreSpawnBlockers: 0
+  spawnBlockerLayerName: SpawnBlocker
+  keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &5416262828878117660
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,6 +214,9 @@ MonoBehaviour:
   - {fileID: 7146157161883085742, guid: 27ca389b3ade98847b6d6e0d66af3ca8, type: 3}
   spawnChance: 0.7
   ignoreSpawnBlockers: 0
+  spawnBlockerLayerName: SpawnBlocker
+  keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &6563589884813263465
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +231,7 @@ GameObject:
   - component: {fileID: 7134383001944323258}
   - component: {fileID: -6558268052552701683}
   - component: {fileID: 7574588399999564732}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CafeTable.001
   m_TagString: Prop
   m_Icon: {fileID: 0}
@@ -360,3 +372,6 @@ MonoBehaviour:
   staticProps: []
   spawnAreas: []
   ownCollider: {fileID: -6558268052552701683}
+  keepLayerName: Keep
+  useBatchedSpawn: 1
+  maxOpsPerFrame: 20

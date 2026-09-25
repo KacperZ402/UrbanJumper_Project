@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6137156046178615484}
   - component: {fileID: 1651735944267850358}
   - component: {fileID: -6854952250647428361}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Crossroad.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,9 @@ MonoBehaviour:
   - {fileID: 8271108313155889706, guid: c81607ea55b181445bb760629af777f5, type: 3}
   spawnChance: 1
   ignoreSpawnBlockers: 0
+  spawnBlockerLayerName: SpawnBlocker
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &4198400677384358441
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,7 +321,9 @@ MonoBehaviour:
   - {fileID: 5653479237943151923, guid: ba063fc3060d19f488785f157a478e54, type: 3}
   spawnChance: 0.7
   ignoreSpawnBlockers: 1
+  spawnBlockerLayerName: SpawnBlocker
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &7499417318619586036
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +378,9 @@ MonoBehaviour:
   - {fileID: 8271108313155889706, guid: c81607ea55b181445bb760629af777f5, type: 3}
   spawnChance: 1
   ignoreSpawnBlockers: 0
+  spawnBlockerLayerName: SpawnBlocker
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &7608716206628794454
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,7 +435,9 @@ MonoBehaviour:
   - {fileID: 8271108313155889706, guid: c81607ea55b181445bb760629af777f5, type: 3}
   spawnChance: 1
   ignoreSpawnBlockers: 0
+  spawnBlockerLayerName: SpawnBlocker
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &8598258829974154365
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,7 +489,9 @@ MonoBehaviour:
   - {fileID: 5653479237943151923, guid: ba063fc3060d19f488785f157a478e54, type: 3}
   spawnChance: 0.7
   ignoreSpawnBlockers: 1
+  spawnBlockerLayerName: SpawnBlocker
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1001 &1177293970552076583
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -573,7 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 383376e6c5823da4fb181ce3b355d385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allowedSurfaceTypes: 00000000
+  allowedSurfaceTypes: 0000000003000000
   surfacePropSets:
   - surfaceType: 0
     propGroups:

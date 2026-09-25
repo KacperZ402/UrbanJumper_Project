@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1929791553646842034}
   - component: {fileID: -6115684157927586060}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pot
   m_TagString: Prop
   m_Icon: {fileID: 0}

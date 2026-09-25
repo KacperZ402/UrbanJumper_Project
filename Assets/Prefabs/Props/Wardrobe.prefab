@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9026505474478855454}
   - component: {fileID: -7264367093443865607}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wardrobe
   m_TagString: Prop
   m_Icon: {fileID: 0}

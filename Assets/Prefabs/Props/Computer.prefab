@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2182482038496110211}
   - component: {fileID: -2467205823939266401}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Computer
   m_TagString: Prop
   m_Icon: {fileID: 0}
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 473143057477784760}
+  preloadCount: 1
 --- !u!1 &2005456803861646201
 GameObject:
   m_ObjectHideFlags: 0

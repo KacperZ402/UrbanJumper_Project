@@ -81,6 +81,7 @@ MonoBehaviour:
   - {fileID: 2187849760024080149, guid: 1e68b8c40c9133743b2ce5214fe68cbf, type: 3}
   spawnChance: 1
   ignoreSpawnBlockers: 0
+  spawnBlockerLayerName: SpawnBlocker
   keepLayerName: Keep
   useBatchedSpawn: 1
 --- !u!1 &4181316153237307007
@@ -181,7 +182,7 @@ GameObject:
   - component: {fileID: 4840266882132632198}
   - component: {fileID: 6147406100922369909}
   - component: {fileID: 6191142208875580871}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Desk
   m_TagString: Prop
   m_Icon: {fileID: 0}

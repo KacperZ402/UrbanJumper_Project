@@ -1699,6 +1699,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1588609108744686437, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
+      propertyPath: m_TagString
+      value: Prop
+      objectReference: {fileID: 0}
     - target: {fileID: 4681726381007292052, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1743,6 +1747,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformStart
       objectReference: {fileID: 0}
+    - target: {fileID: 6396426003963191832, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
+      propertyPath: surfacePropSets.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6396426003963191832, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
+      propertyPath: surfacePropSets.Array.data[4].surfaceType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6396426003963191832, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
+      propertyPath: surfacePropSets.Array.data[4].propGroups.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6396426003963191832, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
+      propertyPath: surfacePropSets.Array.data[4].propGroups.Array.data[0].groupName
+      value: Tables
+      objectReference: {fileID: 0}
+    - target: {fileID: 6396426003963191832, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
+      propertyPath: surfacePropSets.Array.data[4].propGroups.Array.data[0].props.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6396426003963191832, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
+      propertyPath: surfacePropSets.Array.data[4].propGroups.Array.data[0].props.Array.data[0]
+      value: 
+      objectReference: {fileID: 8670931874831189448, guid: 80415f8ba0d4be64cbee3a268da16d2e, type: 3}
+    - target: {fileID: 6396426003963191832, guid: 8a984882423ca284ea33b657e4605e13, type: 3}
+      propertyPath: surfacePropSets.Array.data[4].propGroups.Array.data[0].props.Array.data[1]
+      value: 
+      objectReference: {fileID: 6563589884813263465, guid: 3f2c6f186e46126479418dca84e5f8af, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

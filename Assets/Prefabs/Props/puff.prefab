@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 7927550291449543753}
   - component: {fileID: 2083327008123431702}
   - component: {fileID: 7252493239987175075}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: puff
   m_TagString: Prop
   m_Icon: {fileID: 0}

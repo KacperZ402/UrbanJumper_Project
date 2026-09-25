@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7067608188575603607}
   - component: {fileID: -7052854080108048077}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WhiteboardLegless
   m_TagString: Prop
   m_Icon: {fileID: 0}

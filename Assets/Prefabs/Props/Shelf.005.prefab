@@ -519,6 +519,9 @@ MonoBehaviour:
     spawnMultiple: 1
   spacing: 1.15
   maxPropsPerZone: 2
+  keepLayerName: Keep
+  useBatchedSpawn: 1
+  maxOpsPerFrame: 20
 --- !u!1 &5379008545857101852
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,7 +638,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2898752190235773068}
   - component: {fileID: -143239574833624204}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shelf.005
   m_TagString: Prop
   m_Icon: {fileID: 0}

@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8325705725051375204}
   - component: {fileID: 8013452605322193989}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vend.001
   m_TagString: Prop
   m_Icon: {fileID: 0}

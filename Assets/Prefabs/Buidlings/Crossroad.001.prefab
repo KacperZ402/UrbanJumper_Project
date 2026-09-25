@@ -82,7 +82,9 @@ MonoBehaviour:
   - {fileID: 5653479237943151923, guid: ba063fc3060d19f488785f157a478e54, type: 3}
   spawnChance: 0.7
   ignoreSpawnBlockers: 1
+  spawnBlockerLayerName: SpawnBlocker
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &6156089469039235956
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +203,7 @@ GameObject:
   - component: {fileID: 2234822080534135834}
   - component: {fileID: 7028447370665822769}
   - component: {fileID: -7799942847845697013}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Crossroad.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +347,9 @@ MonoBehaviour:
   - {fileID: 5653479237943151923, guid: ba063fc3060d19f488785f157a478e54, type: 3}
   spawnChance: 0.7
   ignoreSpawnBlockers: 1
+  spawnBlockerLayerName: SpawnBlocker
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1001 &536694774587692741
 PrefabInstance:
   m_ObjectHideFlags: 0

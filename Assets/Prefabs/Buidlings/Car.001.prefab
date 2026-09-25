@@ -50,7 +50,9 @@ MonoBehaviour:
   - {fileID: 5653479237943151923, guid: ba063fc3060d19f488785f157a478e54, type: 3}
   spawnChance: 0.6
   ignoreSpawnBlockers: 1
+  spawnBlockerLayerName: SpawnBlocker
   keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &5366085297838093322
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,7 +66,7 @@ GameObject:
   - component: {fileID: 7069675921860669372}
   - component: {fileID: -251141243295336396}
   - component: {fileID: 2173235468054056390}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

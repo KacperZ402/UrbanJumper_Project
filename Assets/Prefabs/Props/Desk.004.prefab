@@ -134,6 +134,9 @@ MonoBehaviour:
   - {fileID: 2187849760024080149, guid: 1e68b8c40c9133743b2ce5214fe68cbf, type: 3}
   spawnChance: 1
   ignoreSpawnBlockers: 0
+  spawnBlockerLayerName: SpawnBlocker
+  keepLayerName: Keep
+  useBatchedSpawn: 1
 --- !u!1 &6256467952428266225
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +266,7 @@ GameObject:
   - component: {fileID: 6053097401800644472}
   - component: {fileID: 2370781486790946400}
   - component: {fileID: 5556795275548659021}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Desk.004
   m_TagString: Prop
   m_Icon: {fileID: 0}
@@ -421,3 +424,6 @@ MonoBehaviour:
   - {fileID: 6129258711814263181}
   - {fileID: 5168532397242412904}
   ownCollider: {fileID: 0}
+  keepLayerName: Keep
+  useBatchedSpawn: 1
+  maxOpsPerFrame: 20
