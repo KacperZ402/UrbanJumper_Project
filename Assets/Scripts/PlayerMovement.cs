@@ -18,16 +18,21 @@ public class PlayerMovement : MonoBehaviour
     public float slideDuration = 0.5f;
     [Range(0.1f, 1f)] public float slideColliderYMultiplier = 0.45f;
     public float slideDownVelocity = 8f;
+    //public int startingLane = 1;
 
-    [Header("Tory")]
-    public int startingLane = 1;
+    private float lastZPosition;
+    [Header("Detekcja Śmierci przez Uderzenie")]
+    [SerializeField] private float minExpectedSpeedRatio = 0.5f; // Jeśli prędkość spadnie poniżej 50% normy -> śmierć
+
+    [Header("System Śmierci")]
+    [SerializeField] private Collider mainCollider;
+    [SerializeField] private Rigidbody mainRb;
+    [SerializeField] private GameObject ragdollRoot; // Przeciągnij tu główną kość w Inspektorze
+
+    private bool isDead = false;
 
     [Header("Jump reset")]
     public string platformTag = "Platform";
-
-    [Header("Lane check")]
-    public LayerMask laneBlockMask = ~0;
-    public float laneCheckHeightScale = 0.6f;
 
     [Header("Animator")]
     public bool useAnimator = true;
@@ -69,7 +74,6 @@ public class PlayerMovement : MonoBehaviour
     private int isFallingBoolHash;
     private int jumpLockBoolHash;
     private int headCoverBoolHash;
-
     private bool jumpAnimationLock;
 
     private void Awake()
@@ -88,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
             baseCapsuleCenter = capsuleCollider.center;
         }
 
-        currentLane = Mathf.Clamp(startingLane, 0, 2);
+        currentLane = Mathf.Clamp(1, 0, 2);
 
         jumpTriggerHash = Animator.StringToHash(jumpTriggerName);
         slideTriggerHash = Animator.StringToHash(slideTriggerName);
@@ -125,6 +129,24 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (rb == null) return;
+
+        // 1. Sprawdzamy FAKTYCZNĄ prędkość z poprzedniej klatki ZANIM nadpiszemy nową
+        float actualDeltaZ = rb.position.z - lastZPosition;
+        float actualSpeedZ = actualDeltaZ / Time.fixedDeltaTime;
+
+        // Jeżeli powinniśmy biec (moveSpeedZ > 0), ale faktyczny ruch drastycznie spadł (uderzenie w przeszkodę):
+        // Dajemy warunek na np. mniej niż połowę prędkości docelowej
+        if (actualSpeedZ < moveSpeedZ * minExpectedSpeedRatio && lastZPosition != 0f)
+        {
+            // Gracz wbił się w przeszkodę i fizyka go zablokowała!
+            TriggerDeath();
+            return;
+        }
+
+        // Zapamiętujemy aktualną pozycję do sprawdzenia w następnej klatce
+        lastZPosition = rb.position.z;
+
         isGrounded = touchingPlatformIds.Count > 0;
 
         Vector3 velocity = rb.velocity;
@@ -191,6 +213,46 @@ public class PlayerMovement : MonoBehaviour
         UpdateAnimatorGroundedState();
     }
 
+    private void TriggerDeath()
+    {
+        if (isDead) return;
+        isDead = true;
+
+        Vector3 ragdollMomentum = new Vector3(0f, mainRb.velocity.y, moveSpeedZ * 0.5f);
+
+        // 1. Wyłączamy Animatora (żeby nie trzymał póz)
+        if (animator != null)
+            animator.enabled = false;
+
+        // 2. Zabijamy główny collider i zamrażamy główne Rigidbody, żeby trup nie blokował świata
+        if (mainCollider != null)
+            mainCollider.enabled = false;
+
+        if (mainRb != null)
+        {
+            mainRb.isKinematic = true;
+            mainRb.detectCollisions = false;
+        }
+
+        // 3. Włączamy główną kość ragdolla (odpala całą zagnieżdżoną fizykę)
+        if (ragdollRoot != null)
+        {
+            ragdollRoot.SetActive(true);
+
+            // 5. PRZEKAZANIE ENERGII
+            // Pobieramy wszystkie rigidbody szmacianki (po jej włączeniu!) 
+            // i wstrzykujemy im naszą energię wejścia.
+            Rigidbody[] bones = ragdollRoot.GetComponentsInChildren<Rigidbody>();
+            foreach (Rigidbody bone in bones)
+            {
+                bone.velocity = ragdollMomentum;
+            }
+        }
+
+        // 4. Wyłączamy ten skrypt (zapobiega to wywoływaniu Update, FixedUpdate i sterowaniu)
+        this.enabled = false;
+    }
+
     private void StartSlide()
     {
         isSliding = true;
@@ -226,13 +288,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void HeadCover()
-    {
-        if (useAnimator && animator != null)
-        {
-            animator.SetTrigger(headCoverBoolHash);
-        }
-    }
+    //public void HeadCover()
+    //{
+    //    if (useAnimator && animator != null)
+    //    {
+    //        animator.SetTrigger(headCoverBoolHash);
+    //    }
+    //}
 
     private void RequestLaneChange(int direction)
     {
@@ -330,8 +392,6 @@ public class PlayerMovement : MonoBehaviour
         return collision.gameObject.CompareTag(platformTag);
     }
 
-
-    //Do poprawy, odrazu sie triger wyłącza i jest chujnia
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(glassTriggerTag))
