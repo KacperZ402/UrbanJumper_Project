@@ -31,6 +31,7 @@ public class GlassBreaking : MonoBehaviour
                     transform.parent // <- tutaj przypisujemy do rodzica
                 );
             }
+            GameObject.Destroy(gameObject); // Usuń oryginalną szybę
         }
     }
 }

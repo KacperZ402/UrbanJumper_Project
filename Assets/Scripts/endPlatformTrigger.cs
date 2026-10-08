@@ -37,7 +37,7 @@ public class endPlaftormTrigger : MonoBehaviour
             return;
         }
 
-        Vector3 spawnPosition = spawnPoint.position + new Vector3(0f, 0f, 150f);
+        Vector3 spawnPosition = spawnPoint.position + new Vector3(0f, 0f, 120f);
 
         GameObject platform = Instantiate(startPlatformPrefab, spawnPosition, Quaternion.identity);
 

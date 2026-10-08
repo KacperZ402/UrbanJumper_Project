@@ -137,13 +137,14 @@ public class PlayerMovement : MonoBehaviour
 
         // Jeżeli powinniśmy biec (moveSpeedZ > 0), ale faktyczny ruch drastycznie spadł (uderzenie w przeszkodę):
         // Dajemy warunek na np. mniej niż połowę prędkości docelowej
+        Debug.Log("Actual Speed: " + actualSpeedZ + " Border:" + (moveSpeedZ * minExpectedSpeedRatio));
         if (actualSpeedZ < moveSpeedZ * minExpectedSpeedRatio && lastZPosition != 0f)
         {
             // Gracz wbił się w przeszkodę i fizyka go zablokowała!
             TriggerDeath();
             return;
         }
-
+        
         // Zapamiętujemy aktualną pozycję do sprawdzenia w następnej klatce
         lastZPosition = rb.position.z;
 
