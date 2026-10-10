@@ -58,7 +58,6 @@ GameObject:
   - component: {fileID: 8082575881099165207}
   - component: {fileID: 4457286884585156715}
   - component: {fileID: 7037048408365922970}
-  - component: {fileID: 3597139902723015184}
   m_Layer: 9
   m_Name: PaperWrap
   m_TagString: Prop
@@ -131,24 +130,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3597139902723015184
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8399714440685677140}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.4136064, y: 0.36589733, z: 0.40625104}
-  m_Center: {x: -0.0074973777, y: -0.00008767843, z: -0.008767039}

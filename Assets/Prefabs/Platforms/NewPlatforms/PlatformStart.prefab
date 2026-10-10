@@ -66,7 +66,6 @@ GameObject:
   - component: {fileID: 1143082875260584951}
   - component: {fileID: 5257385442362366788}
   - component: {fileID: 2032694071132544758}
-  - component: {fileID: 654863915681495711}
   - component: {fileID: 5677991682316837403}
   m_Layer: 9
   m_Name: BreakableGlass (01)
@@ -154,33 +153,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   replacementPrefab: {fileID: 7809761977016381330, guid: 2fbd46eee4f32a549a45a056b35f01e8, type: 3}
   breakSound: {fileID: 8300000, guid: 4a40fc7d4504b3549be16433292ec799, type: 3}
---- !u!54 &654863915681495711
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 116222238935787107}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &5677991682316837403
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -281,7 +253,6 @@ GameObject:
   - component: {fileID: 4376274134286761307}
   - component: {fileID: 5602664732396002421}
   - component: {fileID: 3709192213161910075}
-  - component: {fileID: 2733171280212258096}
   - component: {fileID: 2111043718336146246}
   m_Layer: 9
   m_Name: BreakableGlass (18)
@@ -369,33 +340,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   replacementPrefab: {fileID: 7809761977016381330, guid: 2fbd46eee4f32a549a45a056b35f01e8, type: 3}
   breakSound: {fileID: 8300000, guid: 4a40fc7d4504b3549be16433292ec799, type: 3}
---- !u!54 &2733171280212258096
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 496301974783765037}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &2111043718336146246
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -479,7 +423,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7302605801947754186}
-  - component: {fileID: 6330016010894329649}
   m_Layer: 9
   m_Name: endPoint (10)
   m_TagString: Untagged
@@ -503,33 +446,6 @@ Transform:
   - {fileID: 5503102150471252298}
   m_Father: {fileID: 4681726381007292052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &6330016010894329649
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 936046224386237921}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1552768801472921549
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,7 +458,6 @@ GameObject:
   - component: {fileID: 5974661106287901529}
   - component: {fileID: 8037057579401501940}
   - component: {fileID: 5433621171476191405}
-  - component: {fileID: 2064682508501362513}
   - component: {fileID: 7962723783986798170}
   m_Layer: 9
   m_Name: BreakableGlass (04)
@@ -630,33 +545,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   replacementPrefab: {fileID: 7809761977016381330, guid: 2fbd46eee4f32a549a45a056b35f01e8, type: 3}
   breakSound: {fileID: 8300000, guid: 4a40fc7d4504b3549be16433292ec799, type: 3}
---- !u!54 &2064682508501362513
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1552768801472921549}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &7962723783986798170
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -874,7 +762,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5213880651428964221}
-  - component: {fileID: 4900604122755653044}
   m_Layer: 9
   m_Name: endPoint (08)
   m_TagString: Untagged
@@ -898,33 +785,6 @@ Transform:
   - {fileID: 5904613575016961716}
   m_Father: {fileID: 4681726381007292052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &4900604122755653044
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755195572837446065}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1879478351478341874
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,7 +797,6 @@ GameObject:
   - component: {fileID: 3516220171533957542}
   - component: {fileID: 7585311600906469069}
   - component: {fileID: 742305530963148564}
-  - component: {fileID: 5032402707189099128}
   - component: {fileID: 1405435619681121348}
   m_Layer: 9
   m_Name: BreakableGlass (02)
@@ -1025,33 +884,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   replacementPrefab: {fileID: 7809761977016381330, guid: 2fbd46eee4f32a549a45a056b35f01e8, type: 3}
   breakSound: {fileID: 8300000, guid: 4a40fc7d4504b3549be16433292ec799, type: 3}
---- !u!54 &5032402707189099128
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1879478351478341874}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &1405435619681121348
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1082,7 +914,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4595460347219992285}
-  - component: {fileID: 1390556049023399144}
   m_Layer: 9
   m_Name: endPoint (12)
   m_TagString: Untagged
@@ -1106,33 +937,6 @@ Transform:
   - {fileID: 1193861246788349108}
   m_Father: {fileID: 4681726381007292052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1390556049023399144
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1883016131141558125}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &2011560186731397853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1142,7 +946,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6892722671207860115}
-  - component: {fileID: 6374988231914919101}
   m_Layer: 9
   m_Name: endPoint (1)
   m_TagString: Untagged
@@ -1166,33 +969,6 @@ Transform:
   - {fileID: 4422414178842695977}
   m_Father: {fileID: 4681726381007292052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &6374988231914919101
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011560186731397853}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &2353621002421843894
 GameObject:
   m_ObjectHideFlags: 0
@@ -1243,7 +1019,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 120, y: 1, z: 220}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1277,7 +1053,6 @@ GameObject:
   - component: {fileID: 2914483119588421337}
   - component: {fileID: 5447070876381694448}
   - component: {fileID: 1712594179816798482}
-  - component: {fileID: 4652793144900951965}
   - component: {fileID: 151544440967328933}
   m_Layer: 9
   m_Name: BreakableGlass (16)
@@ -1365,33 +1140,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   replacementPrefab: {fileID: 7809761977016381330, guid: 2fbd46eee4f32a549a45a056b35f01e8, type: 3}
   breakSound: {fileID: 8300000, guid: 4a40fc7d4504b3549be16433292ec799, type: 3}
---- !u!54 &4652793144900951965
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2446902573880726854}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &151544440967328933
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1690,7 +1438,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3266691794827794057}
-  - component: {fileID: 2911938274933557778}
   m_Layer: 9
   m_Name: endPoint (5)
   m_TagString: Untagged
@@ -1714,33 +1461,6 @@ Transform:
   - {fileID: 2733468321874178945}
   m_Father: {fileID: 4681726381007292052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &2911938274933557778
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2996741770499783845}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &3011734338594802099
 GameObject:
   m_ObjectHideFlags: 0
@@ -1791,7 +1511,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 60, y: 0, z: 220}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1870,7 +1590,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2006663226524577843}
-  - component: {fileID: 4252809363516466494}
   m_Layer: 9
   m_Name: endPoint (7)
   m_TagString: Untagged
@@ -1894,33 +1613,6 @@ Transform:
   - {fileID: 2328493580173691634}
   m_Father: {fileID: 4681726381007292052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &4252809363516466494
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3240049471256710399}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &3560408078408491328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1933,7 +1625,6 @@ GameObject:
   - component: {fileID: 6775647115447383942}
   - component: {fileID: 1787634821419442278}
   - component: {fileID: 8632427745805769268}
-  - component: {fileID: 3960978173887774208}
   - component: {fileID: 3036152458545238233}
   m_Layer: 9
   m_Name: BreakableGlass (12)
@@ -2021,33 +1712,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   replacementPrefab: {fileID: 7809761977016381330, guid: 2fbd46eee4f32a549a45a056b35f01e8, type: 3}
   breakSound: {fileID: 8300000, guid: 4a40fc7d4504b3549be16433292ec799, type: 3}
---- !u!54 &3960978173887774208
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3560408078408491328}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &3036152458545238233
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2081,7 +1745,6 @@ GameObject:
   - component: {fileID: 2532335528161236767}
   - component: {fileID: 140219289119045160}
   - component: {fileID: 5797834885190559522}
-  - component: {fileID: 1009267995747740795}
   - component: {fileID: 8196574125321662992}
   m_Layer: 9
   m_Name: BreakableGlass (10)
@@ -2169,33 +1832,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   replacementPrefab: {fileID: 7809761977016381330, guid: 2fbd46eee4f32a549a45a056b35f01e8, type: 3}
   breakSound: {fileID: 8300000, guid: 4a40fc7d4504b3549be16433292ec799, type: 3}
---- !u!54 &1009267995747740795
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3562524384323601398}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &8196574125321662992
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2296,7 +1932,6 @@ GameObject:
   - component: {fileID: 563553109890379228}
   - component: {fileID: 8710387917249811229}
   - component: {fileID: 2983580674394062317}
-  - component: {fileID: 4319606734058303592}
   - component: {fileID: 3452124473776500206}
   m_Layer: 9
   m_Name: BreakableGlass
@@ -2384,33 +2019,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   replacementPrefab: {fileID: 7809761977016381330, guid: 2fbd46eee4f32a549a45a056b35f01e8, type: 3}
   breakSound: {fileID: 8300000, guid: 4a40fc7d4504b3549be16433292ec799, type: 3}
---- !u!54 &4319606734058303592
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3742478100919361185}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &3452124473776500206
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2482,7 +2090,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 0, z: 200}
   m_Center: {x: 0, y: 0, z: 0}
@@ -2578,7 +2186,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7707877612461705993}
-  - component: {fileID: 3627024755024777832}
   m_Layer: 9
   m_Name: endPoint (11)
   m_TagString: Untagged
@@ -2602,33 +2209,6 @@ Transform:
   - {fileID: 519157730876831272}
   m_Father: {fileID: 4681726381007292052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &3627024755024777832
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4361459330122074756}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &4626965832393899841
 GameObject:
   m_ObjectHideFlags: 0
@@ -2641,7 +2221,6 @@ GameObject:
   - component: {fileID: 6986087675618846162}
   - component: {fileID: 5114254389544749396}
   - component: {fileID: 3408728859838483608}
-  - component: {fileID: 8603550700339778262}
   - component: {fileID: 1920501664728452758}
   m_Layer: 9
   m_Name: BreakableGlass (08)
@@ -2729,33 +2308,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   replacementPrefab: {fileID: 7809761977016381330, guid: 2fbd46eee4f32a549a45a056b35f01e8, type: 3}
   breakSound: {fileID: 8300000, guid: 4a40fc7d4504b3549be16433292ec799, type: 3}
---- !u!54 &8603550700339778262
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4626965832393899841}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &1920501664728452758
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2827,7 +2379,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 0, z: 200}
   m_Center: {x: 0, y: 0, z: 0}
@@ -2923,7 +2475,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6651056502172404901}
-  - component: {fileID: 558841366032705290}
   m_Layer: 9
   m_Name: endPoint (09)
   m_TagString: Untagged
@@ -2947,33 +2498,6 @@ Transform:
   - {fileID: 6991324717475234772}
   m_Father: {fileID: 4681726381007292052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &558841366032705290
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4730170830392098366}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &4769924802417900882
 GameObject:
   m_ObjectHideFlags: 0
@@ -3050,7 +2574,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4252651327402309598}
-  - component: {fileID: 5047659240591534705}
   m_Layer: 9
   m_Name: endPoint (4)
   m_TagString: Untagged
@@ -3074,33 +2597,6 @@ Transform:
   - {fileID: 6901216167814188193}
   m_Father: {fileID: 4681726381007292052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &5047659240591534705
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4812645967541874877}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &5656846751985277774
 GameObject:
   m_ObjectHideFlags: 0
@@ -3151,7 +2647,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 60, y: 0, z: 220}
   m_Center: {x: 0, y: 0, z: 0}
@@ -3393,7 +2889,6 @@ GameObject:
   - component: {fileID: 5584859378783354086}
   - component: {fileID: 4017675977841128568}
   - component: {fileID: 3409392255493686769}
-  - component: {fileID: 7667388640138134681}
   - component: {fileID: 1294225177486838259}
   m_Layer: 9
   m_Name: BreakableGlass (11)
@@ -3481,33 +2976,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   replacementPrefab: {fileID: 7809761977016381330, guid: 2fbd46eee4f32a549a45a056b35f01e8, type: 3}
   breakSound: {fileID: 8300000, guid: 4a40fc7d4504b3549be16433292ec799, type: 3}
---- !u!54 &7667388640138134681
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5786802197486332423}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &1294225177486838259
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3579,7 +3047,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 120, y: 1, z: 220}
   m_Center: {x: 0, y: 0, z: 0}
@@ -3800,7 +3268,6 @@ GameObject:
   - component: {fileID: 6993295539748753304}
   - component: {fileID: 3781087695804902330}
   - component: {fileID: 7305287073122710616}
-  - component: {fileID: 3694968481021921128}
   - component: {fileID: 6819787901931972302}
   m_Layer: 9
   m_Name: BreakableGlass (09)
@@ -3888,33 +3355,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   replacementPrefab: {fileID: 7809761977016381330, guid: 2fbd46eee4f32a549a45a056b35f01e8, type: 3}
   breakSound: {fileID: 8300000, guid: 4a40fc7d4504b3549be16433292ec799, type: 3}
---- !u!54 &3694968481021921128
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6442729260013246018}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &6819787901931972302
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3948,7 +3388,6 @@ GameObject:
   - component: {fileID: 321046879856718456}
   - component: {fileID: 3834679666878797527}
   - component: {fileID: 3161102672386544016}
-  - component: {fileID: 6285731775347268705}
   - component: {fileID: 5657303883507675257}
   m_Layer: 9
   m_Name: BreakableGlass (19)
@@ -4036,33 +3475,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   replacementPrefab: {fileID: 7809761977016381330, guid: 2fbd46eee4f32a549a45a056b35f01e8, type: 3}
   breakSound: {fileID: 8300000, guid: 4a40fc7d4504b3549be16433292ec799, type: 3}
---- !u!54 &6285731775347268705
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6723452202692174264}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &5657303883507675257
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4285,7 +3697,6 @@ GameObject:
   - component: {fileID: 5381209771176017128}
   - component: {fileID: 4595820442378094347}
   - component: {fileID: 1318015330781384872}
-  - component: {fileID: 5614165824985908283}
   - component: {fileID: 6511938347590040991}
   m_Layer: 9
   m_Name: BreakableGlass (07)
@@ -4373,33 +3784,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   replacementPrefab: {fileID: 7809761977016381330, guid: 2fbd46eee4f32a549a45a056b35f01e8, type: 3}
   breakSound: {fileID: 8300000, guid: 4a40fc7d4504b3549be16433292ec799, type: 3}
---- !u!54 &5614165824985908283
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7209322986049409338}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &6511938347590040991
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4433,7 +3817,6 @@ GameObject:
   - component: {fileID: 9053520131082665535}
   - component: {fileID: 7922436229009840536}
   - component: {fileID: 6352328498766920289}
-  - component: {fileID: 7905912469277878391}
   - component: {fileID: 8978907821180687447}
   m_Layer: 9
   m_Name: BreakableGlass (06)
@@ -4521,33 +3904,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   replacementPrefab: {fileID: 7809761977016381330, guid: 2fbd46eee4f32a549a45a056b35f01e8, type: 3}
   breakSound: {fileID: 8300000, guid: 4a40fc7d4504b3549be16433292ec799, type: 3}
---- !u!54 &7905912469277878391
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7386447029074010887}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &8978907821180687447
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4581,7 +3937,6 @@ GameObject:
   - component: {fileID: 7649725132549735775}
   - component: {fileID: 6244993333981815176}
   - component: {fileID: 3522309138436800897}
-  - component: {fileID: 6514727925286578988}
   - component: {fileID: 3265947602503207272}
   m_Layer: 9
   m_Name: BreakableGlass (15)
@@ -4669,33 +4024,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   replacementPrefab: {fileID: 7809761977016381330, guid: 2fbd46eee4f32a549a45a056b35f01e8, type: 3}
   breakSound: {fileID: 8300000, guid: 4a40fc7d4504b3549be16433292ec799, type: 3}
---- !u!54 &6514727925286578988
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7754528785301186881}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &3265947602503207272
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4729,7 +4057,6 @@ GameObject:
   - component: {fileID: 990967550289105740}
   - component: {fileID: 7711982786240508977}
   - component: {fileID: 9150936258904814891}
-  - component: {fileID: 7648908456999349182}
   - component: {fileID: 4708561893761737525}
   m_Layer: 9
   m_Name: BreakableGlass (13)
@@ -4817,33 +4144,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   replacementPrefab: {fileID: 7809761977016381330, guid: 2fbd46eee4f32a549a45a056b35f01e8, type: 3}
   breakSound: {fileID: 8300000, guid: 4a40fc7d4504b3549be16433292ec799, type: 3}
---- !u!54 &7648908456999349182
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7758638605210841521}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &4708561893761737525
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4930,7 +4230,6 @@ GameObject:
   - component: {fileID: 3530002364015597077}
   - component: {fileID: 8657896421836673900}
   - component: {fileID: 5559000147010305633}
-  - component: {fileID: 915569341168343998}
   - component: {fileID: 7106203140107592607}
   m_Layer: 9
   m_Name: BreakableGlass (17)
@@ -5018,33 +4317,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   replacementPrefab: {fileID: 7809761977016381330, guid: 2fbd46eee4f32a549a45a056b35f01e8, type: 3}
   breakSound: {fileID: 8300000, guid: 4a40fc7d4504b3549be16433292ec799, type: 3}
---- !u!54 &915569341168343998
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7809867175203600384}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &7106203140107592607
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5116,7 +4388,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 0, z: 200}
   m_Center: {x: 0, y: 0, z: 0}
@@ -5217,7 +4489,6 @@ GameObject:
   - component: {fileID: 9030443560833782029}
   - component: {fileID: 469942799426414316}
   - component: {fileID: 1265400893956607533}
-  - component: {fileID: 3747762301027884702}
   - component: {fileID: 2515129302140380433}
   m_Layer: 9
   m_Name: BreakableGlass (14)
@@ -5305,33 +4576,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   replacementPrefab: {fileID: 7809761977016381330, guid: 2fbd46eee4f32a549a45a056b35f01e8, type: 3}
   breakSound: {fileID: 8300000, guid: 4a40fc7d4504b3549be16433292ec799, type: 3}
---- !u!54 &3747762301027884702
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8322492208959874201}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &2515129302140380433
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5364,7 +4608,6 @@ GameObject:
   - component: {fileID: 8047299225978252120}
   - component: {fileID: 6858865711975129813}
   - component: {fileID: 8452712840082066193}
-  - component: {fileID: 1064458228195526873}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -5437,28 +4680,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1064458228195526873
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8389039985468891567}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &8405318424428828572
 GameObject:
   m_ObjectHideFlags: 0
@@ -5468,7 +4689,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6311628757081335492}
-  - component: {fileID: 6485507858946266978}
   m_Layer: 9
   m_Name: endPoint
   m_TagString: Untagged
@@ -5492,33 +4712,6 @@ Transform:
   - {fileID: 5596987366450963595}
   m_Father: {fileID: 4681726381007292052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &6485507858946266978
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8405318424428828572}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &8497183905505476792
 GameObject:
   m_ObjectHideFlags: 0
@@ -5569,7 +4762,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 60, y: 0, z: 200.28839}
   m_Center: {x: 0, y: 0, z: 9.855804}
@@ -5718,7 +4911,6 @@ GameObject:
   - component: {fileID: 4619296765342303917}
   - component: {fileID: 5629291237673260979}
   - component: {fileID: 3960907052996901927}
-  - component: {fileID: 3352673585481210608}
   - component: {fileID: 6318601829897926966}
   m_Layer: 9
   m_Name: BreakableGlass (03)
@@ -5806,33 +4998,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   replacementPrefab: {fileID: 7809761977016381330, guid: 2fbd46eee4f32a549a45a056b35f01e8, type: 3}
   breakSound: {fileID: 8300000, guid: 4a40fc7d4504b3549be16433292ec799, type: 3}
---- !u!54 &3352673585481210608
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8708410699549198337}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &6318601829897926966
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5863,7 +5028,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7036078070666659414}
-  - component: {fileID: 6461386737253708650}
   m_Layer: 9
   m_Name: endPoint (6)
   m_TagString: Untagged
@@ -5887,33 +5051,6 @@ Transform:
   - {fileID: 6779070491268728378}
   m_Father: {fileID: 4681726381007292052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &6461386737253708650
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8722294860802192563}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &8761569086644709164
 GameObject:
   m_ObjectHideFlags: 0
@@ -5923,7 +5060,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8179800098308424012}
-  - component: {fileID: 1941149131742832044}
   m_Layer: 9
   m_Name: endPoint (2)
   m_TagString: Untagged
@@ -5947,33 +5083,6 @@ Transform:
   - {fileID: 6823689149078026463}
   m_Father: {fileID: 4681726381007292052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1941149131742832044
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8761569086644709164}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &8767167351744796903
 GameObject:
   m_ObjectHideFlags: 0
@@ -6024,7 +5133,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 120, y: 1, z: 220}
   m_Center: {x: 0, y: 0, z: 0}
@@ -6128,7 +5237,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4542243915663466863}
-  - component: {fileID: 8630584062235835110}
   m_Layer: 9
   m_Name: endPoint (3)
   m_TagString: Untagged
@@ -6152,33 +5260,6 @@ Transform:
   - {fileID: 2258009556755003260}
   m_Father: {fileID: 4681726381007292052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &8630584062235835110
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9084250185850722219}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &5905223463764957330
 PrefabInstance:
   m_ObjectHideFlags: 0

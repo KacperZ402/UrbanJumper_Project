@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8305499860227218645}
   - component: {fileID: 8099952069236841212}
   - component: {fileID: 3773652721091057801}
-  - component: {fileID: 5444681172313981598}
   - component: {fileID: 1244671219992198548}
   m_Layer: 9
   m_Name: BreakableGlass
@@ -100,33 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   replacementPrefab: {fileID: 7809761977016381330, guid: 2fbd46eee4f32a549a45a056b35f01e8, type: 3}
   breakSound: {fileID: 8300000, guid: 4a40fc7d4504b3549be16433292ec799, type: 3}
---- !u!54 &5444681172313981598
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6795741831541170303}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &1244671219992198548
 BoxCollider:
   m_ObjectHideFlags: 0

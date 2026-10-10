@@ -929,6 +929,37 @@ Transform:
   - {fileID: 1888707736}
   m_Father: {fileID: 1485744126}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &597046049
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 597046050}
+  m_Layer: 0
+  m_Name: GroundDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &597046050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597046049}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.001, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1485744126}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &601254029
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,17 +1732,20 @@ MonoBehaviour:
   laneDistance: 15
   laneChangeSmoothTime: 0.1
   laneChangeMaxSpeed: 50
-  jumpForce: 25
-  fallMultiplier: 2.5
+  jumpForce: 50
+  riseMultiplier: 4
+  fallMultiplier: 2
   jumpCutMultiplier: 2
+  groundCheck: {fileID: 597046050}
+  groundDistance: 0.2
+  jumpBufferTime: 0.15
   slideDuration: 0.7
   slideColliderYMultiplier: 0.45
-  slideDownVelocity: 5
-  minExpectedSpeedRatio: 0.05
+  slideDownVelocity: 10
+  minExpectedSpeedRatio: 0.002
   mainCollider: {fileID: 1485744124}
   mainRb: {fileID: 1485744123}
   ragdollRoot: {fileID: 1888707732}
-  platformTag: Platform
   useAnimator: 1
   jumpTriggerName: Jump
   slideTriggerName: Slide
@@ -1722,8 +1756,8 @@ MonoBehaviour:
   isFallingBoolName: isFalling
   jumpLockBoolName: JumpLock
   HeadCoverBoolName: HeadCover
+  jumpAvailable: 0
   isSliding: 0
-  canJump: 0
   isGrounded: 0
 --- !u!54 &1485744123
 Rigidbody:
@@ -1784,13 +1818,14 @@ Transform:
   m_GameObject: {fileID: 1485744121}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.5, z: -3.09}
+  m_LocalPosition: {x: 0, y: 10.035002, z: -2.1205597}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1740123024}
   - {fileID: 1554727735}
   - {fileID: 524799534}
+  - {fileID: 597046050}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1485744127
@@ -3243,8 +3278,8 @@ MonoBehaviour:
   - {fileID: 3498708594043627312, guid: 98fedca05408b0f49beb3fc597b19b64, type: 3}
   - {fileID: 4235296636196388389, guid: 5d884cb58e4151c4aac50c877f35779f, type: 3}
   endPlatformPrefab: {fileID: 7915325367264222088, guid: 3a3364117102a6d40a36f3b0fd98951e, type: 3}
-  minSegments: 0
-  maxSegments: 3
+  minSegments: 5
+  maxSegments: 10
   initialSegments: 3
   disableTriggersInInitial: 1
   debugLogs: 1
@@ -3340,11 +3375,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4994806799957437529, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.5
+      value: 10.035002
       objectReference: {fileID: 0}
     - target: {fileID: 4994806799957437529, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.09
+      value: -2.1205597
       objectReference: {fileID: 0}
     - target: {fileID: 4994806799957437529, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3414,6 +3449,30 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: 7fdd38212ba71f74492a99ec096eae48, type: 2}
+    - target: {fileID: 8234404227510399062, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
+      propertyPath: jumpForce
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234404227510399062, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
+      propertyPath: fallMultiplier
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234404227510399062, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
+      propertyPath: jumpBufferTime
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234404227510399062, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
+      propertyPath: riseMultiplier
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234404227510399062, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
+      propertyPath: slideDownVelocity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234404227510399062, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
+      propertyPath: minExpectedSpeedRatio
+      value: 0.002
+      objectReference: {fileID: 0}
     - target: {fileID: 8490672650167248324, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
       propertyPath: m_Mass
       value: 3

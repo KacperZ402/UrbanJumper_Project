@@ -11,14 +11,21 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Skok")]
     public float jumpForce = 8f;
+    public float riseMultiplier = 2.5f;
     public float fallMultiplier = 3.5f;
     public float jumpCutMultiplier = 2f;
+
+    [Header("Detekcja Podłoża")]
+    [SerializeField] private Transform groundCheck; // Tu podepniesz ten swój punkcik pod graczem
+    [SerializeField] private float groundDistance = 0.2f;
+    [SerializeField] private float jumpBufferTime = 0.35f;
+
+    private float jumpBufferCounter;
 
     [Header("Slide")]
     public float slideDuration = 0.5f;
     [Range(0.1f, 1f)] public float slideColliderYMultiplier = 0.45f;
     public float slideDownVelocity = 8f;
-    //public int startingLane = 1;
 
     private float lastZPosition;
     [Header("Detekcja Śmierci przez Uderzenie")]
@@ -30,9 +37,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject ragdollRoot; // Przeciągnij tu główną kość w Inspektorze
 
     private bool isDead = false;
-
-    [Header("Jump reset")]
-    public string platformTag = "Platform";
 
     [Header("Animator")]
     public bool useAnimator = true;
@@ -54,18 +58,14 @@ public class PlayerMovement : MonoBehaviour
 
     private int currentLane;
     private float laneVelocity;
-    private bool jumpRequested;
     private bool slideRequested;
+    public bool jumpAvailable;
     public bool isSliding;
-    public bool canJump;
     public bool isGrounded;
 
-    private readonly HashSet<int> touchingPlatformIds = new HashSet<int>();
-    //private Coroutine slideRoutine;
     private float currentSlideTimer = 0f;
     private float baseCapsuleHeight;
     private Vector3 baseCapsuleCenter;
-    //private float slideTimer = 0f;
     private int jumpTriggerHash;
     private int slideTriggerHash;
     private int turnLeftTriggerHash;
@@ -119,7 +119,7 @@ public class PlayerMovement : MonoBehaviour
             RequestLaneChange(-1);
 
         if (Input.GetKeyDown(KeyCode.Space))
-            jumpRequested = true;
+            jumpBufferCounter = jumpBufferTime;
 
         if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             slideRequested = true;
@@ -129,51 +129,67 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (rb == null) return;
+        // 1. Zbijanie bufora skoku
+        if (jumpBufferCounter > 0)
+        {
+            jumpBufferCounter -= Time.fixedDeltaTime;
+        }
 
-        // 1. Sprawdzamy FAKTYCZNĄ prędkość z poprzedniej klatki ZANIM nadpiszemy nową
+        // 2. Detekcja zderzenia (śmierć)
         float actualDeltaZ = rb.position.z - lastZPosition;
         float actualSpeedZ = actualDeltaZ / Time.fixedDeltaTime;
 
-        // Jeżeli powinniśmy biec (moveSpeedZ > 0), ale faktyczny ruch drastycznie spadł (uderzenie w przeszkodę):
-        // Dajemy warunek na np. mniej niż połowę prędkości docelowej
-        Debug.Log("Actual Speed: " + actualSpeedZ + " Border:" + (moveSpeedZ * minExpectedSpeedRatio));
         if (actualSpeedZ < moveSpeedZ * minExpectedSpeedRatio && lastZPosition != 0f)
         {
-            // Gracz wbił się w przeszkodę i fizyka go zablokowała!
             TriggerDeath();
             return;
         }
-        
-        // Zapamiętujemy aktualną pozycję do sprawdzenia w następnej klatce
+
         lastZPosition = rb.position.z;
 
-        isGrounded = touchingPlatformIds.Count > 0;
+        // 3.detekcja podłoża na podstawie punkcika pod graczem
+        isGrounded = false;
+        if (groundCheck != null)
+        {
+            Collider[] colliders = Physics.OverlapSphere(groundCheck.position, groundDistance);
+            foreach (Collider col in colliders)
+            {
+                // Ignoruje główny collider gracza i triggery (np. monety)
+                if (col != mainCollider)
+                {
+                    isGrounded = true;
+                    jumpAvailable = true; // Dotknięcie ładuje skok
+                    break;
+                }
+            }
+        }
 
         Vector3 velocity = rb.velocity;
 
-        // 1. Zmiana toru
+        // 4. Zmiana toru
         float targetX = LaneToWorldX(currentLane);
         float nextX = Mathf.SmoothDamp(rb.position.x, targetX, ref laneVelocity, laneChangeSmoothTime, laneChangeMaxSpeed, Time.fixedDeltaTime);
         velocity.x = (nextX - rb.position.x) / Time.fixedDeltaTime;
         velocity.z = moveSpeedZ;
 
-        // 2. SKOK (Priorytet)
-        if (jumpRequested && canJump && isGrounded)
+        // 5. skok (na podstawie bufora)
+        if (jumpBufferCounter > 0f && jumpAvailable)
         {
-            EndSlide(); // <--- TWARDY RESET WŚLIZGU PRZED SKOKIEM!
+            EndSlide(); // Przerywamy wślizg jeśli był aktywny
 
+            velocity.y = 0f; // Zerujemy pęd przed wybiciem w powietrzu
             velocity.y = jumpForce;
-            canJump = false;
+
+            jumpBufferCounter = 0f; // Zużyto bufor
+            jumpAvailable = false;  // Zużyto prawo do skoku
             isGrounded = false;
             jumpAnimationLock = true;
 
             if (useAnimator && animator != null)
                 animator.SetTrigger(jumpTriggerHash);
         }
-        jumpRequested = false;
 
-        // 3. WŚLIZG (Tylko jeśli nie jesteśmy w trakcie)
+        // 6. WŚLIZG
         if (slideRequested && !isSliding)
         {
             StartSlide();
@@ -183,28 +199,29 @@ public class PlayerMovement : MonoBehaviour
         // Aktualizujemy prędkość zanim nałożymy modyfikatory grawitacji i wślizgu
         rb.velocity = velocity;
 
-        // 4. Modyfikatory Grawitacji (Lepsze czucie skoku)
-        if (rb.velocity.y < 0f)
+        // 7. Modyfikatory Grawitacji
+        if (rb.velocity.y <= 0f)
         {
+            // Spadanie 
             rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1f) * Time.fixedDeltaTime;
         }
-        else if (rb.velocity.y > 0f && !Input.GetKey(KeyCode.Space))
+        else
         {
-            rb.velocity += Vector3.up * Physics.gravity.y * (jumpCutMultiplier - 1f) * Time.fixedDeltaTime;
+            // WZNOSZENIE (wciśnięta spacja) - to jest ten Twój szybki skok
+            rb.velocity += Vector3.up * Physics.gravity.y * (riseMultiplier - 1f) * Time.fixedDeltaTime;
         }
 
-        // 5. OBSŁUGA CZASU WŚLIZGU I DOCISK DO ZIEMI
+        // 8. OBSŁUGA CZASU WŚLIZGU I DOCISK DO ZIEMI
         if (isSliding)
         {
-            currentSlideTimer -= Time.fixedDeltaTime; // Odliczamy czas
+            currentSlideTimer -= Time.fixedDeltaTime;
 
             if (currentSlideTimer <= 0f)
             {
-                EndSlide(); // Koniec czasu - wstajemy
+                EndSlide();
             }
             else
             {
-                // Trwa wślizg - wymuszamy docisk do podłoża (zapobiega "lataniu" na rampach)
                 Vector3 slideVelocity = rb.velocity;
                 slideVelocity.y = Mathf.Min(slideVelocity.y, -Mathf.Abs(slideDownVelocity));
                 rb.velocity = slideVelocity;
@@ -221,11 +238,11 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 ragdollMomentum = new Vector3(0f, mainRb.velocity.y, moveSpeedZ * 0.5f);
 
-        // 1. Wyłączamy Animatora (żeby nie trzymał póz)
+        // Wyłączamy Animatora (żeby nie trzymał póz)
         if (animator != null)
             animator.enabled = false;
 
-        // 2. Zabijamy główny collider i zamrażamy główne Rigidbody, żeby trup nie blokował świata
+        // Zabijamy główny collider i zamrażamy główne Rigidbody
         if (mainCollider != null)
             mainCollider.enabled = false;
 
@@ -235,14 +252,11 @@ public class PlayerMovement : MonoBehaviour
             mainRb.detectCollisions = false;
         }
 
-        // 3. Włączamy główną kość ragdolla (odpala całą zagnieżdżoną fizykę)
+        //  Włączamy główną kość ragdolla
         if (ragdollRoot != null)
         {
             ragdollRoot.SetActive(true);
 
-            // 5. PRZEKAZANIE ENERGII
-            // Pobieramy wszystkie rigidbody szmacianki (po jej włączeniu!) 
-            // i wstrzykujemy im naszą energię wejścia.
             Rigidbody[] bones = ragdollRoot.GetComponentsInChildren<Rigidbody>();
             foreach (Rigidbody bone in bones)
             {
@@ -250,7 +264,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        // 4. Wyłączamy ten skrypt (zapobiega to wywoływaniu Update, FixedUpdate i sterowaniu)
+        // Wyłączamy ten skrypt (zapobiega to wywoływaniu Update)
         this.enabled = false;
     }
 
@@ -288,14 +302,6 @@ public class PlayerMovement : MonoBehaviour
             capsuleCollider.center = baseCapsuleCenter;
         }
     }
-
-    //public void HeadCover()
-    //{
-    //    if (useAnimator && animator != null)
-    //    {
-    //        animator.SetTrigger(headCoverBoolHash);
-    //    }
-    //}
 
     private void RequestLaneChange(int direction)
     {
@@ -356,50 +362,13 @@ public class PlayerMovement : MonoBehaviour
         transform.position = pos;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (IsPlatformCollision(collision))
-        {
-            touchingPlatformIds.Add(collision.collider.GetInstanceID());
-            canJump = true;
-            isGrounded = true;
-        }
-    }
-
-    private void OnCollisionStay(Collision collision)
-    {
-        if (IsPlatformCollision(collision))
-        {
-            canJump = true;
-            isGrounded = true;
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (!IsPlatformCollision(collision))
-            return;
-
-        touchingPlatformIds.Remove(collision.collider.GetInstanceID());
-        if (touchingPlatformIds.Count == 0)
-        {
-            canJump = false;
-            isGrounded = false;
-        }
-    }
-
-    private bool IsPlatformCollision(Collision collision)
-    {
-        return collision.gameObject.CompareTag(platformTag);
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(glassTriggerTag))
         {
             // Używamy boola zamiast triggera, żeby animacja trwała dopóki gracz jest w strefie
             if (animator != null)
-                animator.SetTrigger(headCoverBoolHash);
+                animator.SetBool(headCoverBoolHash, true);
         }
 
     }
@@ -412,4 +381,12 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool(headCoverBoolHash, false);
         }
     }
+    //private void OnDrawGizmosSelected()
+    //{
+    //    if (groundCheck != null)
+    //    {
+    //        Gizmos.color = Color.green;
+    //        Gizmos.DrawWireSphere(groundCheck.position, groundDistance);
+    //    }
+    //}
 }
