@@ -13,7 +13,10 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 8f;
     public float riseMultiplier = 2.5f;
     public float fallMultiplier = 3.5f;
-    public float jumpCutMultiplier = 2f;
+    [Header("Lot między budynkami")]
+    public float floatyRiseMultiplier = 1.1f; // Powolne wznoszenie
+    public float floatyFallMultiplier = 1.5f; // Powolne opadanie
+    private bool isBetweenBuildings = false;
 
     [Header("Detekcja Podłoża")]
     [SerializeField] private Transform groundCheck; // Tu podepniesz ten swój punkcik pod graczem
@@ -76,6 +79,12 @@ public class PlayerMovement : MonoBehaviour
     private int headCoverBoolHash;
     private bool jumpAnimationLock;
 
+    private float actualDeltaZ;
+    private float actualSpeedZ;
+
+    private float targetX;
+    private float nextX;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -102,6 +111,7 @@ public class PlayerMovement : MonoBehaviour
         isFallingBoolHash = Animator.StringToHash(isFallingBoolName);
         jumpLockBoolHash = Animator.StringToHash(jumpLockBoolName);
         headCoverBoolHash = Animator.StringToHash(HeadCoverBoolName);
+        
     }
 
     private void Start()
@@ -134,17 +144,15 @@ public class PlayerMovement : MonoBehaviour
         {
             jumpBufferCounter -= Time.fixedDeltaTime;
         }
-
         // 2. Detekcja zderzenia (śmierć)
-        float actualDeltaZ = rb.position.z - lastZPosition;
-        float actualSpeedZ = actualDeltaZ / Time.fixedDeltaTime;
+        actualDeltaZ = rb.position.z - lastZPosition;
+        actualSpeedZ = actualDeltaZ / Time.fixedDeltaTime;
 
         if (actualSpeedZ < moveSpeedZ * minExpectedSpeedRatio && lastZPosition != 0f)
         {
             TriggerDeath();
             return;
         }
-
         lastZPosition = rb.position.z;
 
         // 3.detekcja podłoża na podstawie punkcika pod graczem
@@ -167,8 +175,8 @@ public class PlayerMovement : MonoBehaviour
         Vector3 velocity = rb.velocity;
 
         // 4. Zmiana toru
-        float targetX = LaneToWorldX(currentLane);
-        float nextX = Mathf.SmoothDamp(rb.position.x, targetX, ref laneVelocity, laneChangeSmoothTime, laneChangeMaxSpeed, Time.fixedDeltaTime);
+        targetX = LaneToWorldX(currentLane);
+        nextX = Mathf.SmoothDamp(rb.position.x, targetX, ref laneVelocity, laneChangeSmoothTime, laneChangeMaxSpeed, Time.fixedDeltaTime);
         velocity.x = (nextX - rb.position.x) / Time.fixedDeltaTime;
         velocity.z = moveSpeedZ;
 
@@ -193,6 +201,7 @@ public class PlayerMovement : MonoBehaviour
         if (slideRequested && !isSliding)
         {
             StartSlide();
+            velocity.y = -Mathf.Abs(slideDownVelocity);
         }
         slideRequested = false;
 
@@ -215,16 +224,9 @@ public class PlayerMovement : MonoBehaviour
         if (isSliding)
         {
             currentSlideTimer -= Time.fixedDeltaTime;
-
             if (currentSlideTimer <= 0f)
             {
                 EndSlide();
-            }
-            else
-            {
-                Vector3 slideVelocity = rb.velocity;
-                slideVelocity.y = Mathf.Min(slideVelocity.y, -Mathf.Abs(slideDownVelocity));
-                rb.velocity = slideVelocity;
             }
         }
 
@@ -249,7 +251,7 @@ public class PlayerMovement : MonoBehaviour
         if (mainRb != null)
         {
             mainRb.isKinematic = true;
-            mainRb.detectCollisions = false;
+            //mainRb.detectCollisions = false;
         }
 
         //  Włączamy główną kość ragdolla
@@ -263,6 +265,9 @@ public class PlayerMovement : MonoBehaviour
                 bone.velocity = ragdollMomentum;
             }
         }
+        riseMultiplier = 3.5f;
+        fallMultiplier = 3f;
+        isBetweenBuildings = false;
 
         // Wyłączamy ten skrypt (zapobiega to wywoływaniu Update)
         this.enabled = false;
@@ -369,6 +374,7 @@ public class PlayerMovement : MonoBehaviour
             // Używamy boola zamiast triggera, żeby animacja trwała dopóki gracz jest w strefie
             if (animator != null)
                 animator.SetBool(headCoverBoolHash, true);
+
         }
 
     }
@@ -379,6 +385,18 @@ public class PlayerMovement : MonoBehaviour
             // Gracz rozbił szybę i przez nią przeszedł – opuszczamy ręce
             if (animator != null)
                 animator.SetBool(headCoverBoolHash, false);
+            isBetweenBuildings = !isBetweenBuildings;
+            Debug.Log("isBetweenBuildings: " + isBetweenBuildings);
+            if (isBetweenBuildings)
+            {
+                riseMultiplier = floatyRiseMultiplier;
+                fallMultiplier = floatyFallMultiplier;
+            }
+            else
+            {
+                riseMultiplier = 3.5f;
+                fallMultiplier = 3f;
+            }
         }
     }
     //private void OnDrawGizmosSelected()

@@ -407,7 +407,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 1.5204742, y: 0.97021955, z: -0.397431}
+  m_ConnectedAnchor: {x: 1.5204742, y: 0.97022146, z: -0.39743102}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1081,7 +1081,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000000009313225, y: 4.0604153, z: 0.0000004768372}
+  m_ConnectedAnchor: {x: -0.000000009313225, y: 4.0604134, z: 0.0000004768372}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1591,7 +1591,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -1.5303191, y: 1.1250167, z: -0.34962174}
+  m_ConnectedAnchor: {x: -1.5303191, y: 1.1250186, z: -0.34962174}
   serializedVersion: 2
   m_SwingAxis: {x: -23.61, y: 0, z: -5.24}
   m_TwistLimitSpring:
@@ -1733,15 +1733,16 @@ MonoBehaviour:
   laneChangeSmoothTime: 0.1
   laneChangeMaxSpeed: 50
   jumpForce: 50
-  riseMultiplier: 4
-  fallMultiplier: 2
-  jumpCutMultiplier: 2
+  riseMultiplier: 3.5
+  fallMultiplier: 3
+  floatyRiseMultiplier: 2
+  floatyFallMultiplier: 2
   groundCheck: {fileID: 597046050}
   groundDistance: 0.2
   jumpBufferTime: 0.15
   slideDuration: 0.7
   slideColliderYMultiplier: 0.45
-  slideDownVelocity: 10
+  slideDownVelocity: 15
   minExpectedSpeedRatio: 0.002
   mainCollider: {fileID: 1485744124}
   mainRb: {fileID: 1485744123}
@@ -1806,9 +1807,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 3
-  m_Height: 18
+  m_Height: 16.2
   m_Direction: 1
-  m_Center: {x: 0, y: 9.03, z: 0}
+  m_Center: {x: 0, y: 8.1, z: 0}
 --- !u!4 &1485744126
 Transform:
   m_ObjectHideFlags: 0
@@ -1818,7 +1819,7 @@ Transform:
   m_GameObject: {fileID: 1485744121}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10.035002, z: -2.1205597}
+  m_LocalPosition: {x: 0, y: 10.035002, z: 14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2004,7 +2005,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 47.25, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0000013560059, y: 2.2964115, z: -0.00000023841855}
+  m_ConnectedAnchor: {x: -0.00000055134296, y: 2.2964115, z: -0.00000023841855}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -2508,7 +2509,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 90, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00000019371507, y: 2.2964113, z: -0.0000003576278}
+  m_ConnectedAnchor: {x: -0.0000016540289, y: 2.2964113, z: -0.0000003576278}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -3106,7 +3107,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00000001842709, y: 2.2279265, z: 0.22992362}
+  m_ConnectedAnchor: {x: 0.000000018427086, y: 2.2279284, z: 0.2299236}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -3278,8 +3279,8 @@ MonoBehaviour:
   - {fileID: 3498708594043627312, guid: 98fedca05408b0f49beb3fc597b19b64, type: 3}
   - {fileID: 4235296636196388389, guid: 5d884cb58e4151c4aac50c877f35779f, type: 3}
   endPlatformPrefab: {fileID: 7915325367264222088, guid: 3a3364117102a6d40a36f3b0fd98951e, type: 3}
-  minSegments: 5
-  maxSegments: 10
+  minSegments: 0
+  maxSegments: 2
   initialSegments: 3
   disableTriggersInInitial: 1
   debugLogs: 1
@@ -3379,7 +3380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4994806799957437529, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.1205597
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4994806799957437529, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3413,6 +3414,14 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: 7fdd38212ba71f74492a99ec096eae48, type: 2}
+    - target: {fileID: 5615131072201574389, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
+      propertyPath: m_Height
+      value: 16.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5615131072201574389, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
+      propertyPath: m_Center.y
+      value: 8.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5713640612052246438, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
       propertyPath: m_Material
       value: 
@@ -3455,7 +3464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8234404227510399062, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
       propertyPath: fallMultiplier
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8234404227510399062, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
       propertyPath: jumpBufferTime
@@ -3463,11 +3472,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8234404227510399062, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
       propertyPath: riseMultiplier
-      value: 4
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234404227510399062, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
+      propertyPath: jumpCutMultiplier
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8234404227510399062, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
       propertyPath: slideDownVelocity
-      value: 10
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234404227510399062, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
+      propertyPath: floatyFallMultiplier
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234404227510399062, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
+      propertyPath: floatyRiseMultiplier
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8234404227510399062, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
       propertyPath: minExpectedSpeedRatio
