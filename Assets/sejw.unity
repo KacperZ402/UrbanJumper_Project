@@ -1731,7 +1731,7 @@ MonoBehaviour:
   moveSpeedZ: 50
   laneDistance: 15
   laneChangeSmoothTime: 0.1
-  laneChangeMaxSpeed: 50
+  laneChangeMaxSpeed: 100
   jumpForce: 50
   riseMultiplier: 3.5
   fallMultiplier: 3
@@ -1747,6 +1747,15 @@ MonoBehaviour:
   mainCollider: {fileID: 1485744124}
   mainRb: {fileID: 1485744123}
   ragdollRoot: {fileID: 1888707732}
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  clearObstacleRadius: 50
+  reviveHeightOffset: 5
+  invincibilityDuration: 2
+  playerRenderers:
+  - {fileID: 1740123025}
+  blinkInterval: 0.15
   useAnimator: 1
   jumpTriggerName: Jump
   slideTriggerName: Slide
@@ -1819,7 +1828,7 @@ Transform:
   m_GameObject: {fileID: 1485744121}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10.035002, z: 14}
+  m_LocalPosition: {x: 0, y: 10.035002, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3380,7 +3389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4994806799957437529, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4994806799957437529, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3483,6 +3492,14 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8234404227510399062, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
+      propertyPath: laneChangeMaxSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234404227510399062, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
+      propertyPath: clearObstacleRadius
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234404227510399062, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
       propertyPath: floatyFallMultiplier
       value: 2
       objectReference: {fileID: 0}
@@ -3491,8 +3508,16 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8234404227510399062, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
+      propertyPath: obstacleLayer.m_Bits
+      value: 2048
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234404227510399062, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
       propertyPath: minExpectedSpeedRatio
       value: 0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234404227510399062, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
+      propertyPath: playerRenderers.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8490672650167248324, guid: 674842b192207f342b2a16bbff3bf64f, type: 3}
       propertyPath: m_Mass

@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 1322023989604397688}
   m_Layer: 9
   m_Name: SegTrigger
-  m_TagString: Untagged
+  m_TagString: SegTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,7 +201,7 @@ Transform:
   m_GameObject: {fileID: 185712864897817979}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 17.8, z: -207.8}
+  m_LocalPosition: {x: 0, y: 3.2000008, z: -207.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -227,7 +227,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 60, y: 20, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 9.26, z: 0}
 --- !u!114 &1322023989604397688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -632,7 +632,7 @@ GameObject:
   - component: {fileID: 7428638109855330941}
   m_Layer: 9
   m_Name: SegTrigger
-  m_TagString: Untagged
+  m_TagString: SegTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -646,7 +646,7 @@ Transform:
   m_GameObject: {fileID: 1704097283103798186}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 19.1, z: -207.8}
+  m_LocalPosition: {x: 0, y: 4.500002, z: -207.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -672,7 +672,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 60, y: 20, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 9.26, z: 0}
 --- !u!114 &7428638109855330941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -699,7 +699,7 @@ GameObject:
   - component: {fileID: 1604212248100951196}
   m_Layer: 9
   m_Name: SegTrigger
-  m_TagString: Untagged
+  m_TagString: SegTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -713,7 +713,7 @@ Transform:
   m_GameObject: {fileID: 1720386884305400887}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 18.1, z: -207.8}
+  m_LocalPosition: {x: 0, y: 3.500002, z: -207.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -739,7 +739,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 60, y: 20, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 9.26, z: 0}
 --- !u!114 &1604212248100951196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1174,7 +1174,7 @@ GameObject:
   - component: {fileID: 1349578855362772548}
   m_Layer: 9
   m_Name: SegTrigger
-  m_TagString: Untagged
+  m_TagString: SegTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1188,7 +1188,7 @@ Transform:
   m_GameObject: {fileID: 2451271671406886635}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 18.6, z: -207.8}
+  m_LocalPosition: {x: 0, y: 4.000002, z: -207.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1214,7 +1214,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 60, y: 20, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 9.26, z: 0}
 --- !u!114 &1349578855362772548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1241,7 +1241,7 @@ GameObject:
   - component: {fileID: 112169192268270544}
   m_Layer: 9
   m_Name: SegTrigger
-  m_TagString: Untagged
+  m_TagString: SegTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1255,7 +1255,7 @@ Transform:
   m_GameObject: {fileID: 2457900101635071174}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 17.2, z: -207.8}
+  m_LocalPosition: {x: 0, y: 2.6000023, z: -207.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1281,7 +1281,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 60, y: 20, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 9.26, z: 0}
 --- !u!114 &112169192268270544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1308,7 +1308,7 @@ GameObject:
   - component: {fileID: 1434336886087345819}
   m_Layer: 9
   m_Name: SegTrigger
-  m_TagString: Untagged
+  m_TagString: SegTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1322,7 +1322,7 @@ Transform:
   m_GameObject: {fileID: 2602189345749737241}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 15.8, z: -207.8}
+  m_LocalPosition: {x: 0, y: 1.2000017, z: -207.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1348,7 +1348,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 60, y: 20, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 9.26, z: 0}
 --- !u!114 &1434336886087345819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1375,7 +1375,7 @@ GameObject:
   - component: {fileID: 2251526505497384102}
   m_Layer: 9
   m_Name: SegTrigger
-  m_TagString: Untagged
+  m_TagString: SegTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1389,7 +1389,7 @@ Transform:
   m_GameObject: {fileID: 2764495479463310678}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 15.2, z: -207.8}
+  m_LocalPosition: {x: 0, y: 0.60000134, z: -207.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1415,7 +1415,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 60, y: 20, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 9.26, z: 0}
 --- !u!114 &2251526505497384102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1866,7 +1866,7 @@ GameObject:
   - component: {fileID: 7087165328795332258}
   m_Layer: 9
   m_Name: SegTrigger
-  m_TagString: Untagged
+  m_TagString: SegTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1880,7 +1880,7 @@ Transform:
   m_GameObject: {fileID: 3721400394432861385}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 18, z: -207.8}
+  m_LocalPosition: {x: 0, y: 3.4000015, z: -207.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1906,7 +1906,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 60, y: 20, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 9.26, z: 0}
 --- !u!114 &7087165328795332258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2511,7 +2511,7 @@ GameObject:
   - component: {fileID: 1532769895287116998}
   m_Layer: 9
   m_Name: SegTrigger
-  m_TagString: Untagged
+  m_TagString: SegTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2525,7 +2525,7 @@ Transform:
   m_GameObject: {fileID: 4769924802417900882}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 19, z: -207.8}
+  m_LocalPosition: {x: 0, y: 4.4000015, z: -207.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2551,7 +2551,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 60, y: 20, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 9.26, z: 0}
 --- !u!114 &1532769895287116998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3135,7 +3135,7 @@ GameObject:
   - component: {fileID: 5126016581547539583}
   m_Layer: 9
   m_Name: SegTrigger
-  m_TagString: Untagged
+  m_TagString: SegTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3149,7 +3149,7 @@ Transform:
   m_GameObject: {fileID: 6071970222355917813}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 14.8, z: -207.8}
+  m_LocalPosition: {x: 0, y: 3, z: -207.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3175,7 +3175,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 60, y: 20, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 9.26, z: 0}
 --- !u!114 &5126016581547539583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3202,7 +3202,7 @@ GameObject:
   - component: {fileID: 2278043446480691192}
   m_Layer: 9
   m_Name: SegTrigger
-  m_TagString: Untagged
+  m_TagString: SegTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3216,7 +3216,7 @@ Transform:
   m_GameObject: {fileID: 6081096229690220630}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 17, z: -207.8}
+  m_LocalPosition: {x: 0, y: 2.4000015, z: -207.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3242,7 +3242,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 60, y: 20, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 9.26, z: 0}
 --- !u!114 &2278043446480691192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3631,7 +3631,7 @@ GameObject:
   - component: {fileID: 2461870343883838453}
   m_Layer: 9
   m_Name: SegTrigger
-  m_TagString: Untagged
+  m_TagString: SegTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3645,7 +3645,7 @@ Transform:
   m_GameObject: {fileID: 7192973309277187980}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 17.5, z: -207.8}
+  m_LocalPosition: {x: 0, y: 2.9000015, z: -207.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3671,7 +3671,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 60, y: 20, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 9.26, z: 0}
 --- !u!114 &2461870343883838453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4191,7 +4191,7 @@ Transform:
   m_GameObject: {fileID: 7765365955711643741}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -237.8, z: -11.1}
+  m_LocalPosition: {x: 0, y: -237.8, z: -16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4845,7 +4845,7 @@ GameObject:
   - component: {fileID: 5589554128329806474}
   m_Layer: 9
   m_Name: SegTrigger
-  m_TagString: Untagged
+  m_TagString: SegTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4859,7 +4859,7 @@ Transform:
   m_GameObject: {fileID: 8516050462161590618}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 15, z: -207.8}
+  m_LocalPosition: {x: 0, y: 0.40000153, z: -207.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4885,7 +4885,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 60, y: 20, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 9.26, z: 0}
 --- !u!114 &5589554128329806474
 MonoBehaviour:
   m_ObjectHideFlags: 0

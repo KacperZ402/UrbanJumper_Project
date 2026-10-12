@@ -38,8 +38,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Collider mainCollider;
     [SerializeField] private Rigidbody mainRb;
     [SerializeField] private GameObject ragdollRoot; // Przeciągnij tu główną kość w Inspektorze
-
     private bool isDead = false;
+    private bool isInvincible = false;
+
+    [Header("Wskrzeszenie (Revive)")]
+    [SerializeField] private LayerMask obstacleLayer; // Ustawisz tu warstwę "Obstacle"
+    [SerializeField] private float clearObstacleRadius = 15f;
+    [SerializeField] private float reviveHeightOffset = 5f; // Zwiększ to, żeby spadał z wyższego pułapu
+    [SerializeField] private float invincibilityDuration = 2f;
+    private Vector3 lastPlatformPosition; // Trzyma pivot platformy
+    [SerializeField] private Renderer[] playerRenderers; // Wrzuć tu wszystkie meshe postaci
+    [SerializeField] private float blinkInterval = 0.15f; // Szybkość migania (w sekundach)
+    private Collider[] groundColliders = new Collider[5]; // Pamięć na optymalny detektor podłoża
 
     [Header("Animator")]
     public bool useAnimator = true;
@@ -53,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
     public string jumpLockBoolName = "JumpLock";
     public string HeadCoverBoolName = "HeadCover";
     private string glassTriggerTag = "GlassTrigger";
+    private string seqTriggerTag = "SegTrigger";
 
     private Rigidbody rb;
     private Collider playerCollider;
@@ -84,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float targetX;
     private float nextX;
+    private Collider currentFloorCollider;
 
     private void Awake()
     {
@@ -122,6 +134,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+
+        if (isDead && Input.GetKeyDown(KeyCode.R))
+        {
+            Revive();
+            return;
+        }
+
+        // Jeśli jest martwy, blokujemy całą resztę sterowania
+        if (isDead) return;
+
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
             RequestLaneChange(1);
 
@@ -139,6 +161,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Debug.Log(isBetweenBuildings);
         // 1. Zbijanie bufora skoku
         if (jumpBufferCounter > 0)
         {
@@ -148,7 +171,7 @@ public class PlayerMovement : MonoBehaviour
         actualDeltaZ = rb.position.z - lastZPosition;
         actualSpeedZ = actualDeltaZ / Time.fixedDeltaTime;
 
-        if (actualSpeedZ < moveSpeedZ * minExpectedSpeedRatio && lastZPosition != 0f)
+        if (!isInvincible &&actualSpeedZ < moveSpeedZ * minExpectedSpeedRatio && lastZPosition != 0f)
         {
             TriggerDeath();
             return;
@@ -157,20 +180,24 @@ public class PlayerMovement : MonoBehaviour
 
         // 3.detekcja podłoża na podstawie punkcika pod graczem
         isGrounded = false;
-        if (groundCheck != null)
-        {
-            Collider[] colliders = Physics.OverlapSphere(groundCheck.position, groundDistance);
-            foreach (Collider col in colliders)
+            int hitCount = Physics.OverlapSphereNonAlloc(groundCheck.position, groundDistance, groundColliders);
+            for (int i = 0; i < hitCount; i++)
             {
-                // Ignoruje główny collider gracza i triggery (np. monety)
-                if (col != mainCollider)
+                Collider col = groundColliders[i];
+                if (col != mainCollider && !col.isTrigger)
                 {
                     isGrounded = true;
-                    jumpAvailable = true; // Dotknięcie ładuje skok
+                    jumpAvailable = true;
+                    
+                    // Zapisuje platformę TYLKO gdy wejdziemy na NOWY kawałek podłogi
+                    if (!isBetweenBuildings && col != currentFloorCollider)
+                    {
+                        lastPlatformPosition = col.transform.position;
+                        currentFloorCollider = col; // Zapamiętuje ten kawałek, żeby go nie nadpisywać co klatkę
+                    }
                     break;
                 }
             }
-        }
 
         Vector3 velocity = rb.velocity;
 
@@ -235,7 +262,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void TriggerDeath()
     {
-        if (isDead) return;
+        if (isDead || isInvincible) return;
         isDead = true;
 
         Vector3 ragdollMomentum = new Vector3(0f, mainRb.velocity.y, moveSpeedZ * 0.5f);
@@ -267,10 +294,111 @@ public class PlayerMovement : MonoBehaviour
         }
         riseMultiplier = 3.5f;
         fallMultiplier = 3f;
-        isBetweenBuildings = false;
 
         // Wyłączamy ten skrypt (zapobiega to wywoływaniu Update)
-        this.enabled = false;
+        //this.enabled = false;
+    }
+
+    public void Revive()
+    {
+        if (!isDead) return;
+
+        // 1. TWARDY RESET PASA I PĘDU
+        laneVelocity = 0f; // Zabija resztki pędu z poprzedniego pasa!
+        currentLane = 1;
+
+        // Składamy pozycję na środek obecnej platformy
+        Vector3 revivePosition = lastPlatformPosition;
+        revivePosition.x = LaneToWorldX(currentLane);
+        revivePosition.y += reviveHeightOffset;
+
+        // 2. TWARDA TELEPORTACJA FIZYKI (nie samego Transform!)
+        if (mainRb != null)
+        {
+            mainRb.isKinematic = true; // Usypiamy fizykę, żeby nami nie szarpała
+            transform.position = revivePosition;
+            mainRb.position = revivePosition; // Przesuwamy właściwe ciało
+            mainRb.velocity = Vector3.zero;
+        }
+
+        // 3. Czyszczenie strefy zrzutu
+        ClearObstaclesAround(revivePosition);
+
+        // 4. Sprzątanie trupa i pobudka fizyki
+        if (ragdollRoot != null)
+            ragdollRoot.SetActive(false);
+
+        if (mainRb != null)
+        {
+            mainRb.isKinematic = false; // Budzimy fizykę w nowym miejscu
+            mainRb.detectCollisions = true;
+        }
+
+        if (mainCollider != null)
+            mainCollider.enabled = true;
+
+        if (animator != null)
+            animator.enabled = true;
+
+        // 5. Reset flag systemowych
+        isDead = false;
+        EndSlide();
+        jumpAvailable = false;
+        isGrounded = false;
+        jumpAnimationLock = false;
+        jumpBufferCounter = 0f;
+
+        riseMultiplier = 3.5f;
+        fallMultiplier = 3f;
+        isBetweenBuildings = false;
+
+        // 6. Zabezpieczenie przed natychmiastowym "death-loopem"
+        lastZPosition = revivePosition.z;
+
+        //this.enabled = true;
+        StartCoroutine(InvincibilityRoutine());
+
+    }
+    private void ClearObstaclesAround(Vector3 centerPosition)
+    {
+        // Tu nie trzeba NonAlloc, bo wywołujemy to tylko raz po obejrzeniu reklamy
+        Collider[] obstacles = Physics.OverlapSphere(centerPosition, clearObstacleRadius, obstacleLayer);
+        foreach (Collider obs in obstacles)
+        {
+            obs.gameObject.SetActive(false); // Wyłącza (nie niszczy!), żeby pooling działał
+        }
+    }
+
+    private System.Collections.IEnumerator InvincibilityRoutine()
+    {
+        isInvincible = true;
+
+        float timer = 0f;
+        bool isVisible = true;
+
+        // Pętla migania
+        while (timer < invincibilityDuration)
+        {
+            isVisible = !isVisible;
+
+            // Przełączamy widoczność wszystkich przypisanych części modelu
+            foreach (Renderer r in playerRenderers)
+            {
+                if (r != null) r.enabled = isVisible;
+            }
+
+            // Czekamy ułamek sekundy i dodajemy go do stopera
+            yield return new WaitForSeconds(blinkInterval);
+            timer += blinkInterval;
+        }
+
+        // TWARDY RESET: Po zakończeniu tarczy upewniamy się, że postać jest w 100% widoczna
+        foreach (Renderer r in playerRenderers)
+        {
+            if (r != null) r.enabled = true;
+        }
+
+        isInvincible = false;
     }
 
     private void StartSlide()
@@ -374,17 +502,6 @@ public class PlayerMovement : MonoBehaviour
             // Używamy boola zamiast triggera, żeby animacja trwała dopóki gracz jest w strefie
             if (animator != null)
                 animator.SetBool(headCoverBoolHash, true);
-
-        }
-
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag(glassTriggerTag))
-        {
-            // Gracz rozbił szybę i przez nią przeszedł – opuszczamy ręce
-            if (animator != null)
-                animator.SetBool(headCoverBoolHash, false);
             isBetweenBuildings = !isBetweenBuildings;
             Debug.Log("isBetweenBuildings: " + isBetweenBuildings);
             if (isBetweenBuildings)
@@ -397,6 +514,23 @@ public class PlayerMovement : MonoBehaviour
                 riseMultiplier = 3.5f;
                 fallMultiplier = 3f;
             }
+
+        }
+        if (other.CompareTag(seqTriggerTag))
+        {
+            // Zapisujemy pozycję samego Triggera jako punkt odrodzenia
+            lastPlatformPosition = other.transform.position;
+            Debug.Log("Zapisano punkt odrodzenia: " + lastPlatformPosition);
+        }
+
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag(glassTriggerTag))
+        {
+            // Gracz rozbił szybę i przez nią przeszedł – opuszczamy ręce
+            if (animator != null)
+                animator.SetBool(headCoverBoolHash, false);
         }
     }
     //private void OnDrawGizmosSelected()
