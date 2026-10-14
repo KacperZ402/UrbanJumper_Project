@@ -161,7 +161,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(isBetweenBuildings);
         // 1. Zbijanie bufora skoku
         if (jumpBufferCounter > 0)
         {
@@ -373,29 +372,42 @@ public class PlayerMovement : MonoBehaviour
     {
         isInvincible = true;
 
+        int playerLayer = LayerMask.NameToLayer("Player");
+        int obstacleLayer = LayerMask.NameToLayer("Obstacle");
+
+        // Wyłączamy kolizję między Player a Obstacle
+        if (playerLayer != -1 && obstacleLayer != -1)
+        {
+            Physics.IgnoreLayerCollision(playerLayer, obstacleLayer, true);
+        }
+
         float timer = 0f;
         bool isVisible = true;
 
-        // Pętla migania
+        // Pętla migania postaci
         while (timer < invincibilityDuration)
         {
             isVisible = !isVisible;
 
-            // Przełączamy widoczność wszystkich przypisanych części modelu
             foreach (Renderer r in playerRenderers)
             {
                 if (r != null) r.enabled = isVisible;
             }
 
-            // Czekamy ułamek sekundy i dodajemy go do stopera
             yield return new WaitForSeconds(blinkInterval);
             timer += blinkInterval;
         }
 
-        // TWARDY RESET: Po zakończeniu tarczy upewniamy się, że postać jest w 100% widoczna
+        // Upewniamy się, że model jest widoczny po zakończeniu
         foreach (Renderer r in playerRenderers)
         {
             if (r != null) r.enabled = true;
+        }
+
+        // Przywracamy kolizję z powrotem
+        if (playerLayer != -1 && obstacleLayer != -1)
+        {
+            Physics.IgnoreLayerCollision(playerLayer, obstacleLayer, false);
         }
 
         isInvincible = false;
@@ -503,7 +515,6 @@ public class PlayerMovement : MonoBehaviour
             if (animator != null)
                 animator.SetBool(headCoverBoolHash, true);
             isBetweenBuildings = !isBetweenBuildings;
-            Debug.Log("isBetweenBuildings: " + isBetweenBuildings);
             if (isBetweenBuildings)
             {
                 riseMultiplier = floatyRiseMultiplier;
@@ -520,7 +531,6 @@ public class PlayerMovement : MonoBehaviour
         {
             // Zapisujemy pozycję samego Triggera jako punkt odrodzenia
             lastPlatformPosition = other.transform.position;
-            Debug.Log("Zapisano punkt odrodzenia: " + lastPlatformPosition);
         }
 
     }
