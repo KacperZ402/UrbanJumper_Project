@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Lot między budynkami")]
     public float floatyRiseMultiplier = 1.1f; // Powolne wznoszenie
     public float floatyFallMultiplier = 1.5f; // Powolne opadanie
-    private bool isBetweenBuildings = false;
+    public bool isBetweenBuildings { get; private set; }
 
     [Header("Detekcja Podłoża")]
     [SerializeField] private Transform groundCheck; // Tu podepniesz ten swój punkcik pod graczem
@@ -49,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 lastPlatformPosition; // Trzyma pivot platformy
     [SerializeField] private Renderer[] playerRenderers; // Wrzuć tu wszystkie meshe postaci
     [SerializeField] private float blinkInterval = 0.15f; // Szybkość migania (w sekundach)
+    [SerializeField]private float fastBlinkInterval = 0.1f;
     private Collider[] groundColliders = new Collider[5]; // Pamięć na optymalny detektor podłoża
 
     [Header("Animator")]
@@ -169,7 +170,6 @@ public class PlayerMovement : MonoBehaviour
         // 2. Detekcja zderzenia (śmierć)
         actualDeltaZ = rb.position.z - lastZPosition;
         actualSpeedZ = actualDeltaZ / Time.fixedDeltaTime;
-
         if (!isInvincible &&actualSpeedZ < moveSpeedZ * minExpectedSpeedRatio && lastZPosition != 0f)
         {
             TriggerDeath();
@@ -371,7 +371,7 @@ public class PlayerMovement : MonoBehaviour
     private System.Collections.IEnumerator InvincibilityRoutine()
     {
         isInvincible = true;
-
+        
         int playerLayer = LayerMask.NameToLayer("Player");
         int obstacleLayer = LayerMask.NameToLayer("Obstacle");
 
@@ -383,19 +383,32 @@ public class PlayerMovement : MonoBehaviour
 
         float timer = 0f;
         bool isVisible = true;
+        float fastBlinkThreshold = invincibilityDuration * 0.7f;
+
+        WaitForSeconds normalWait = new WaitForSeconds(blinkInterval);
+        WaitForSeconds fastWait = new WaitForSeconds(fastBlinkInterval);
 
         // Pętla migania postaci
         while (timer < invincibilityDuration)
         {
             isVisible = !isVisible;
-
+            
             foreach (Renderer r in playerRenderers)
             {
                 if (r != null) r.enabled = isVisible;
             }
-
-            yield return new WaitForSeconds(blinkInterval);
-            timer += blinkInterval;
+            Debug.Log(timer);
+            // Sprawdzamy, czy weszliśmy w ostatnie 30% czasu
+            if (timer >= fastBlinkThreshold)
+            {
+                yield return fastWait;
+                timer += fastBlinkInterval;
+            }
+            else
+            {
+                yield return normalWait;
+                timer += blinkInterval;
+            }
         }
 
         // Upewniamy się, że model jest widoczny po zakończeniu
@@ -403,13 +416,13 @@ public class PlayerMovement : MonoBehaviour
         {
             if (r != null) r.enabled = true;
         }
-
+        
         // Przywracamy kolizję z powrotem
         if (playerLayer != -1 && obstacleLayer != -1)
         {
             Physics.IgnoreLayerCollision(playerLayer, obstacleLayer, false);
         }
-
+        
         isInvincible = false;
     }
 
