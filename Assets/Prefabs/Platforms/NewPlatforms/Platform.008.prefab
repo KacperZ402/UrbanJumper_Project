@@ -577,7 +577,7 @@ MonoBehaviour:
   cellLength: 25
   spawnBlockers: []
   useBatchedSpawn: 1
-  maxOpsPerFrame: 20
+  maxOpsPerFrame: 5
 --- !u!1 &5698895186798469499
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,7 +786,7 @@ MonoBehaviour:
   cellLength: 25
   spawnBlockers: []
   useBatchedSpawn: 1
-  maxOpsPerFrame: 20
+  maxOpsPerFrame: 5
 --- !u!1 &7296708102122670129
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,7 +973,7 @@ MonoBehaviour:
   cellSize: 10
   spawnBlockers: []
   useBatchedSpawn: 1
-  maxPropsPerFrame: 20
+  maxPropsPerFrame: 5
 --- !u!1 &7746444845563722124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,7 +1093,7 @@ MonoBehaviour:
   cellSize: 10
   spawnBlockers: []
   useBatchedSpawn: 1
-  maxPropsPerFrame: 20
+  maxPropsPerFrame: 5
 --- !u!1 &8708878077422940985
 GameObject:
   m_ObjectHideFlags: 0

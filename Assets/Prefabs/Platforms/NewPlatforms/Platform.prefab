@@ -451,7 +451,7 @@ MonoBehaviour:
   spawnBlockers:
   - {fileID: 8177709139232341933}
   useBatchedSpawn: 1
-  maxOpsPerFrame: 20
+  maxOpsPerFrame: 5
 --- !u!1 &3674636148011994188
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,7 +885,7 @@ MonoBehaviour:
   - {fileID: 1463048253669000843}
   - {fileID: 8177709139232341933}
   useBatchedSpawn: 1
-  maxPropsPerFrame: 20
+  maxPropsPerFrame: 5
 --- !u!1 &6491500100429730056
 GameObject:
   m_ObjectHideFlags: 0

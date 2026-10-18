@@ -65,6 +65,8 @@ public class PlayerMovement : MonoBehaviour
     public string HeadCoverBoolName = "HeadCover";
     private string glassTriggerTag = "GlassTrigger";
     private string seqTriggerTag = "SegTrigger";
+    public bool followCameraY { get; private set; } = false;
+    public float lockedFloorY { get; private set; }
 
     private Rigidbody rb;
     private Collider playerCollider;
@@ -113,7 +115,7 @@ public class PlayerMovement : MonoBehaviour
             baseCapsuleHeight = capsuleCollider.height;
             baseCapsuleCenter = capsuleCollider.center;
         }
-
+        lockedFloorY = transform.position.y;
         currentLane = Mathf.Clamp(1, 0, 2);
 
         jumpTriggerHash = Animator.StringToHash(jumpTriggerName);
@@ -350,12 +352,14 @@ public class PlayerMovement : MonoBehaviour
         riseMultiplier = 3.5f;
         fallMultiplier = 3f;
         isBetweenBuildings = false;
+        followCameraY = false;
 
         // 6. Zabezpieczenie przed natychmiastowym "death-loopem"
         lastZPosition = revivePosition.z;
 
         //this.enabled = true;
         StartCoroutine(InvincibilityRoutine());
+        lockedFloorY = transform.position.y;
 
     }
     private void ClearObstaclesAround(Vector3 centerPosition)
@@ -538,12 +542,15 @@ public class PlayerMovement : MonoBehaviour
                 riseMultiplier = 3.5f;
                 fallMultiplier = 3f;
             }
+            followCameraY = true;
 
         }
         if (other.CompareTag(seqTriggerTag))
         {
             // Zapisujemy pozycję samego Triggera jako punkt odrodzenia
             lastPlatformPosition = other.transform.position;
+            lockedFloorY = other.transform.position.y;
+            followCameraY = false;
         }
 
     }

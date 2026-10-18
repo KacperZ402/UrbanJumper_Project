@@ -653,4 +653,4 @@ MonoBehaviour:
   cellSize: 10
   spawnBlockers: []
   useBatchedSpawn: 1
-  maxPropsPerFrame: 20
+  maxPropsPerFrame: 5

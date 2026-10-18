@@ -236,7 +236,7 @@ MonoBehaviour:
   cellSize: 10
   spawnBlockers: []
   useBatchedSpawn: 1
-  maxPropsPerFrame: 20
+  maxPropsPerFrame: 5
 --- !u!1 &571629724586023287
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +374,7 @@ MonoBehaviour:
   spawnBlockers:
   - {fileID: 3924450693730472557}
   useBatchedSpawn: 1
-  maxOpsPerFrame: 20
+  maxOpsPerFrame: 5
 --- !u!1 &623041801330461888
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,7 +900,7 @@ MonoBehaviour:
   spawnBlockers:
   - {fileID: 8362403264851415266}
   useBatchedSpawn: 1
-  maxOpsPerFrame: 20
+  maxOpsPerFrame: 5
 --- !u!1 &2090279853969435868
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,7 +1039,7 @@ MonoBehaviour:
   - {fileID: 4799781168543717031}
   - {fileID: 6035235259121002528}
   useBatchedSpawn: 1
-  maxOpsPerFrame: 20
+  maxOpsPerFrame: 5
 --- !u!1 &2407899852752429823
 GameObject:
   m_ObjectHideFlags: 0
@@ -1232,7 +1232,7 @@ MonoBehaviour:
   - {fileID: 1654886401388044376}
   - {fileID: 7916918584594156831}
   useBatchedSpawn: 1
-  maxOpsPerFrame: 20
+  maxOpsPerFrame: 5
 --- !u!1 &2759603000461458925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,7 +1549,7 @@ MonoBehaviour:
   - {fileID: 4819494377096304778}
   - {fileID: 1663051560635076807}
   useBatchedSpawn: 1
-  maxOpsPerFrame: 20
+  maxOpsPerFrame: 5
 --- !u!1 &3470210083538907688
 GameObject:
   m_ObjectHideFlags: 0
@@ -2524,7 +2524,7 @@ MonoBehaviour:
   - {fileID: 5559427688438155191}
   - {fileID: 9044719899184907025}
   useBatchedSpawn: 1
-  maxPropsPerFrame: 20
+  maxPropsPerFrame: 5
 --- !u!1 &6058539556196379272
 GameObject:
   m_ObjectHideFlags: 0
@@ -3002,7 +3002,7 @@ MonoBehaviour:
   - {fileID: 8452171798245249307}
   - {fileID: 6472438632447516827}
   useBatchedSpawn: 1
-  maxOpsPerFrame: 20
+  maxOpsPerFrame: 5
 --- !u!1 &8196081961555919452
 GameObject:
   m_ObjectHideFlags: 0

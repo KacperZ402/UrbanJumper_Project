@@ -6,76 +6,49 @@ public class RunnerCamera : MonoBehaviour
     [SerializeField] private Transform playerTransform;
     [SerializeField] private PlayerMovement playerMovement;
 
-    [Header("Ustawienia osi Y (Góra / Dół)")]
-    [SerializeField] private float ySmoothSpeed = 8f; // Szybkość płynnego podążania w pionie
+    [Header("Płynność w osi Y")]
+    [SerializeField] private float ySmoothSpeed = 10f;
 
-    private Vector3 initialOffset;
-    private float lockedX;
-    private float lockedY;
-    private bool wasBetweenBuildings = false;
+    private float yDistance; // Święta odległość w osi Y (kamera <-> stopa gracza)
+    private float zDistance; // Stała odległość w osi Z
+    private float lockedX;   // Zamrożona oś X
+    private float targetY;
 
     private void Start()
     {
-        if (playerTransform == null)
+        if (playerTransform == null || playerMovement == null)
         {
-            Debug.LogError("Nie przypisano gracza do kamery!");
+            Debug.LogError("Brak referencji do gracza w RunnerCamera!");
             enabled = false;
             return;
         }
 
-        // Zapamiętujemy startowy dystans kamery względem gracza (ustawiony ręcznie na scenie)
-        initialOffset = transform.position - playerTransform.position;
-
-        // Blokujemy startowe osie X oraz Y
+        // 1. RAZ na starcie zapisujemy odległość w osi Y,Z oraz X
+        yDistance = transform.position.y - playerTransform.position.y;
+        zDistance = transform.position.z - playerTransform.position.z;
         lockedX = transform.position.x;
-        lockedY = transform.position.y;
     }
 
     private void LateUpdate()
     {
         if (playerTransform == null || playerMovement == null) return;
-
-        bool isFreeY = playerMovement.isBetweenBuildings;
-
-        // Moment WYJŚCIA z drugiego GlassTriggera (powrót na twardy dach)
-        if (wasBetweenBuildings && !isFreeY)
+        if (playerMovement.followCameraY)
         {
-            // Zamrażamy kamerę na wysokości NOWEGO budynku + nasz domyślny offset wysokości
-            lockedY = playerTransform.position.y + initialOffset.y;
-        }
-
-        wasBetweenBuildings = isFreeY;
-
-        // 1. Oś Z: Zawsze podąża na sztywno za graczem
-        float targetZ = playerTransform.position.z + initialOffset.z;
-
-        // 2. Oś X: Całkowicie zamrożona na środku toru
-        float targetX = lockedX;
-
-        // 3. Oś Y: Zależna od tego, czy lecimy między budynkami
-        float currentTargetY;
-        if (isFreeY)
-        {
-            // Odmrożona: Kamera podąża za wysokością gracza z zachowaniem startowego odstępu
-            currentTargetY = playerTransform.position.y + initialOffset.y;
+            // Stan 1 (GlassTrigger): Kamera swobodnie podąża za graczem w pionie
+            targetY = playerTransform.position.y + yDistance;
         }
         else
         {
-            // Zamrożona: Kamera trzyma stały pułap dachu (ignoruje zwykłe podskoki)
-            currentTargetY = lockedY;
+            // Stan 2 (SegmentTrigger): Kamera trzyma sztywny dystans nad poziomem podłogi
+            targetY = playerMovement.lockedFloorY + yDistance;
         }
 
-        // Płynne dociąganie osi Y (żeby przy wpadnięciu w szybę kamera nie szarpała ekranem)
-        float finalY = Mathf.Lerp(transform.position.y, currentTargetY, ySmoothSpeed * Time.deltaTime);
+        // Płynne przejście w osi Y (brak szarpnięć przy wejściu w triggery)
+        float finalY = Mathf.Lerp(transform.position.y, targetY, ySmoothSpeed * Time.deltaTime);
 
-        // Aplikujemy finalną pozycję (X = stały, Y = zamrożony lub płynny, Z = 1:1 za graczem)
-        transform.position = new Vector3(targetX, finalY, targetZ);
-    }
+        // Oś Z zawsze na sztywno za graczem
+        float finalZ = playerTransform.position.z + zDistance;
 
-    // Wywołaj to pod koniec metody Revive() w graczu, jeśli odradzasz się na innej wysokości!
-    public void SnapToPlayerAfterRevive()
-    {
-        lockedY = playerTransform.position.y + initialOffset.y;
-        transform.position = new Vector3(lockedX, lockedY, playerTransform.position.z + initialOffset.z);
+        transform.position = new Vector3(lockedX, finalY, finalZ);
     }
 }

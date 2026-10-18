@@ -1794,7 +1794,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &1485744124
@@ -1829,7 +1829,7 @@ Transform:
   m_GameObject: {fileID: 1485744121}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10.035002, z: 3}
+  m_LocalPosition: {x: 0, y: 2, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1886,8 +1886,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1554727734}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.42720008, z: -0, w: 0.90415716}
-  m_LocalPosition: {x: 36.7, y: 24.935001, z: -9.669997}
+  m_LocalRotation: {x: -0, y: -0.42720008, z: -0, w: 0.90415716}
+  m_LocalPosition: {x: 44.14, y: 16.9, z: -8.669997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1966,7 +1966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1485744126}
   playerMovement: {fileID: 1485744122}
-  ySmoothSpeed: 8
+  ySmoothSpeed: 5
 --- !u!1 &1584265961
 GameObject:
   m_ObjectHideFlags: 0
@@ -3309,7 +3309,7 @@ MonoBehaviour:
   - {fileID: 4235296636196388389, guid: 5d884cb58e4151c4aac50c877f35779f, type: 3}
   endPlatformPrefab: {fileID: 7915325367264222088, guid: 3a3364117102a6d40a36f3b0fd98951e, type: 3}
   minSegments: 0
-  maxSegments: 2
+  maxSegments: 0
   initialSegments: 3
   disableTriggersInInitial: 1
   debugLogs: 1

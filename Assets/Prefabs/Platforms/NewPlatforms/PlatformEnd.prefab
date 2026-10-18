@@ -972,7 +972,7 @@ MonoBehaviour:
   - {fileID: 740142364518915219}
   - {fileID: 3905195400777048385}
   useBatchedSpawn: 1
-  maxOpsPerFrame: 20
+  maxOpsPerFrame: 5
 --- !u!1 &6258969935790373286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1305,7 +1305,7 @@ MonoBehaviour:
   cellSize: 10
   spawnBlockers: []
   useBatchedSpawn: 1
-  maxPropsPerFrame: 20
+  maxPropsPerFrame: 5
 --- !u!1 &7785651608235394442
 GameObject:
   m_ObjectHideFlags: 0
