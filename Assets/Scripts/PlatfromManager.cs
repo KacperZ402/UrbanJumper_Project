@@ -26,7 +26,6 @@ public class PlatformManager : MonoBehaviour
     {
         PlatformManager[] managers = FindObjectsOfType<PlatformManager>();
         StartNewCycle();
-        Application.targetFrameRate = 60;
     }
 
     /// <summary>

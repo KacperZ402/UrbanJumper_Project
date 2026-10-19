@@ -296,8 +296,8 @@ public class PlayerMovement : MonoBehaviour
         riseMultiplier = 3.5f;
         fallMultiplier = 3f;
 
-        // Wyłączamy ten skrypt (zapobiega to wywoływaniu Update)
-        //this.enabled = false;
+        if (GameHUD.Instance != null)
+            GameHUD.Instance.SaveHighScoreOnDeath();
     }
 
     public void Revive()
@@ -401,7 +401,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (r != null) r.enabled = isVisible;
             }
-            Debug.Log(timer);
             // Sprawdzamy, czy weszliśmy w ostatnie 30% czasu
             if (timer >= fastBlinkThreshold)
             {

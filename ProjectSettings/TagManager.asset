@@ -12,6 +12,7 @@ TagManager:
   - GlassTrigger
   - Joints
   - SegTrigger
+  - Coin
   layers:
   - Default
   - TransparentFX

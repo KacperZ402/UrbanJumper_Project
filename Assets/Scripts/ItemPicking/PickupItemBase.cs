@@ -10,31 +10,37 @@ public abstract class PickupItem : MonoBehaviour
     [SerializeField] private float rotationSpeed = 45f;
 
     [Header("Animacja Podniesienia")]
-    [SerializeField] private float collectDuration = 0.25f; // Jak szybko znika (ułamki sekund)
-    [SerializeField] private float flyUpDistance = 1.5f;     // Ile leci w górę po zebraniu
-    [SerializeField] private AudioClip collectSound;        // Opcjonalny dźwięk
+    [SerializeField] private float collectDuration = 0.25f;
+    [SerializeField] private float flyUpDistance = 1.5f;
+    [SerializeField] private AudioClip collectSound;
     [SerializeField][Range(0f, 1f)] private float soundVolume = 0.8f;
-
-    [Header("Detekcja Gracza")]
-    [SerializeField] private string playerTag = "Player";
 
     private Vector3 basePosition;
     private Vector3 initialScale;
     private Collider itemCollider;
+    private PoolableObject poolableObject; // Cache'ujemy raz w Awake!
+
     private bool isCollected = false;
+    private bool basePositionInitialized = false;
+    private int playerLayer;
 
     protected virtual void Awake()
     {
         itemCollider = GetComponent<Collider>();
         itemCollider.isTrigger = true;
+
+        // Pobieramy raz na starcie zamiast przy każdym zebraniu
+        poolableObject = GetComponent<PoolableObject>();
+
         initialScale = transform.localScale;
+        playerLayer = LayerMask.NameToLayer("Player");
     }
 
     protected virtual void OnEnable()
     {
-        basePosition = transform.position;
-        transform.localScale = initialScale; // Reset skali po wyjęciu z Object Poola
+        transform.localScale = initialScale;
         isCollected = false;
+        basePositionInitialized = false; // Czekamy 1 klatkę, aż Spawner ustawi pozycję!
 
         if (itemCollider != null)
             itemCollider.enabled = true;
@@ -42,7 +48,14 @@ public abstract class PickupItem : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (isCollected) return; // Zatrzymujemy standardowy ruch po zebraniu
+        if (isCollected) return;
+
+        // Zapisujemy basePosition dopiero w pierwszym Update (po tym, jak Pool ustawi już transform.position)
+        if (!basePositionInitialized)
+        {
+            basePosition = transform.position;
+            basePositionInitialized = true;
+        }
 
         // Standardowe unoszenie
         float newY = basePosition.y + Mathf.Sin(Time.time * bobbingFrequency) * bobbingAmplitude;
@@ -59,24 +72,22 @@ public abstract class PickupItem : MonoBehaviour
     {
         if (isCollected) return;
 
-        if (other.CompareTag(playerTag))
+        // Porównanie warstwy (int == int) jest szybsze niż CompareTag, 
+        // ale zostawiam CompareTag jako fallback, gdybyś nie ustawił warstwy:
+        if (other.gameObject.layer == playerLayer || other.CompareTag("Player"))
         {
             isCollected = true;
 
-            // Wyłączamy collider natychmiast, żeby nie zaliczyć kolizji 2 razy
             if (itemCollider != null)
                 itemCollider.enabled = false;
 
-            // Dźwięk niezależny od zniszczenia obiektu (odpali się w miejscu podniesienia)
-            if (collectSound != null)
+            // Dźwięk przez GameHUD (PlayOneShot zamiast kosztownego PlayClipAtPoint!)
+            if (collectSound != null && GameHUD.Instance != null)
             {
-                AudioSource.PlayClipAtPoint(collectSound, transform.position, soundVolume);
+                GameHUD.Instance.PlaySound(collectSound, soundVolume);
             }
 
-            // Logika podklasy (punkty, HP)
             OnCollect(other.gameObject);
-
-            // Odpalamy animację zniknięcia
             StartCoroutine(CollectAnimationRoutine());
         }
     }
@@ -94,13 +105,8 @@ public abstract class PickupItem : MonoBehaviour
             elapsed += Time.deltaTime;
             float t = elapsed / collectDuration;
 
-            // Szybki obrót w trakcie zbierania dla lepszego efektu
             transform.Rotate(Vector3.up, rotationSpeed * 5f * Time.deltaTime, Space.World);
-
-            // Ruch w górę z wygładzeniem (EaseOut)
             transform.position = Vector3.Lerp(startPos, targetPos, Mathf.Sin(t * Mathf.PI * 0.5f));
-
-            // Zmniejszanie do zera (Fade out bez ruszania materiału)
             transform.localScale = Vector3.Lerp(startScale, Vector3.zero, t);
 
             yield return null;
@@ -113,12 +119,9 @@ public abstract class PickupItem : MonoBehaviour
 
     protected virtual void CollectAndDispose()
     {
-        PoolableObject po = GetComponent<PoolableObject>();
-        if (po != null)
+        if (poolableObject != null && SingleObjectPool.Instance != null)
         {
-            // Zakładam, że PoolableObject ma referencję do oryginału lub metodę ReturnToPool:
-            SingleObjectPool.Instance.Return(po.gameObject, gameObject);
-            // Jeśli Twój PoolableObject sam tego nie woła, wystarczy:
+            SingleObjectPool.Instance.Return(poolableObject.gameObject, gameObject);
         }
         else
         {
