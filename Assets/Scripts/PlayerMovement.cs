@@ -4,10 +4,20 @@ using System.Collections.Generic;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Ruch")]
-    public float moveSpeedZ = 10f;
+    public float moveSpeedZ = 50f;
+    [SerializeField] private float maxMoveSpeedZ = 100f;
+    [SerializeField] private float speedStepDistanceZ = 1000f; // 200 pkt * 5
+    [SerializeField] private float speedIncreasePerStep = 5.0f;
     public float laneDistance = 3f;
     public float laneChangeSmoothTime = 0.08f;
     public float laneChangeMaxSpeed = 25f;
+    [SerializeField] private float laneSpeedIncrease = 1.5f;
+    private float startMoveSpeedZ;
+    private float nextSpeedMilestoneZ;
+    private bool isMaxSpeedReached = false;
+
+    [Header("Skalowanie Animacji Biegu")]
+    [SerializeField] private float maxRunAnimMultiplier = 1.35f;
 
     [Header("Skok")]
     public float jumpForce = 8f;
@@ -29,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     public float slideDuration = 0.5f;
     [Range(0.1f, 1f)] public float slideColliderYMultiplier = 0.45f;
     public float slideDownVelocity = 8f;
+    [SerializeField] private float slideDownIncrease = 2.0f;
 
     private float lastZPosition;
     [Header("Detekcja Śmierci przez Uderzenie")]
@@ -43,7 +54,6 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Wskrzeszenie (Revive)")]
     [SerializeField] private LayerMask obstacleLayer; // Ustawisz tu warstwę "Obstacle"
-    [SerializeField] private float clearObstacleRadius = 15f;
     [SerializeField] private float reviveHeightOffset = 5f; // Zwiększ to, żeby spadał z wyższego pułapu
     [SerializeField] private float invincibilityDuration = 2f;
     private Vector3 lastPlatformPosition; // Trzyma pivot platformy
@@ -65,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
     public string HeadCoverBoolName = "HeadCover";
     private string glassTriggerTag = "GlassTrigger";
     private string seqTriggerTag = "SegTrigger";
+    private readonly int runSpeedMultHash = Animator.StringToHash("RunSpeedMultiplier");
     public bool followCameraY { get; private set; } = false;
     public float lockedFloorY { get; private set; }
 
@@ -133,6 +144,13 @@ public class PlayerMovement : MonoBehaviour
     {
         SetLanePositionImmediately(currentLane);
         UpdateAnimatorGroundedState();
+        startMoveSpeedZ = moveSpeedZ;
+        nextSpeedMilestoneZ = transform.position.z + speedStepDistanceZ;
+
+        if (useAnimator && animator != null)
+        {
+            animator.SetFloat(runSpeedMultHash, 1f);
+        }
     }
 
     private void Update()
@@ -178,6 +196,9 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         lastZPosition = rb.position.z;
+
+        UpdateSpeedByDistance();
+        //Debug.Log(moveSpeedZ);
 
         // 3.detekcja podłoża na podstawie punkcika pod graczem
         isGrounded = false;
@@ -261,6 +282,41 @@ public class PlayerMovement : MonoBehaviour
         UpdateAnimatorGroundedState();
     }
 
+    private void UpdateSpeedByDistance()
+    {
+        if (isMaxSpeedReached) return;
+
+        if (lastZPosition >= nextSpeedMilestoneZ)
+        {
+            nextSpeedMilestoneZ += speedStepDistanceZ;
+            moveSpeedZ = Mathf.Min(moveSpeedZ + speedIncreasePerStep, maxMoveSpeedZ);
+
+            // 2. Podbijamy bezpośrednio maxSpeed zmiany pasa
+            laneChangeMaxSpeed += laneSpeedIncrease;
+
+            // 3. Podbijamy siłę docisku wślizgu do ziemi
+            slideDownVelocity += slideDownIncrease;
+
+            // Aktualizujemy animację TYLKO raz na 200 punktów!
+            if (useAnimator && animator != null)
+            {
+                // Obliczamy na jakim procencie między startową a maksymalną prędkością jesteśmy (0.0 -> 1.0)
+                float t = (moveSpeedZ - startMoveSpeedZ) / (maxMoveSpeedZ - startMoveSpeedZ);
+
+                // Płynnie skalujemy mnożnik nóg od 1.0 do np. 1.35
+
+                float newAnimMult = Mathf.Lerp(1f, maxRunAnimMultiplier, t);
+                animator.SetFloat(runSpeedMultHash, newAnimMult);
+                Debug.Log(newAnimMult);
+            }
+
+            if (moveSpeedZ >= maxMoveSpeedZ)
+            {
+                isMaxSpeedReached = true;
+            }
+        }
+    }
+
     private void TriggerDeath()
     {
         if (isDead || isInvincible) return;
@@ -322,9 +378,6 @@ public class PlayerMovement : MonoBehaviour
             mainRb.velocity = Vector3.zero;
         }
 
-        // 3. Czyszczenie strefy zrzutu
-        ClearObstaclesAround(revivePosition);
-
         // 4. Sprzątanie trupa i pobudka fizyki
         if (ragdollRoot != null)
             ragdollRoot.SetActive(false);
@@ -361,15 +414,6 @@ public class PlayerMovement : MonoBehaviour
         StartCoroutine(InvincibilityRoutine());
         lockedFloorY = transform.position.y;
 
-    }
-    private void ClearObstaclesAround(Vector3 centerPosition)
-    {
-        // Tu nie trzeba NonAlloc, bo wywołujemy to tylko raz po obejrzeniu reklamy
-        Collider[] obstacles = Physics.OverlapSphere(centerPosition, clearObstacleRadius, obstacleLayer);
-        foreach (Collider obs in obstacles)
-        {
-            obs.gameObject.SetActive(false); // Wyłącza (nie niszczy!), żeby pooling działał
-        }
     }
 
     private System.Collections.IEnumerator InvincibilityRoutine()
