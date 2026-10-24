@@ -3,81 +3,121 @@ using UnityEngine.SceneManagement;
 
 public class PauseAndNavigationMenu : MonoBehaviour
 {
-    [Header("Główne kontenery")]
-    [Tooltip("Cały obiekt menu pauzy (włączany, gdy klikniesz pauzę)")]
+    public static bool IsGamePaused { get; private set; } = false;
+
+    [Header("Główne kontenery UI")]
+    [Tooltip("Panel z licznikami monet, dystansu i przyciskiem pauzy")]
+    [SerializeField] private GameObject gameplayHudPanel;
+
+    [Tooltip("Cały kontener menu pauzy (włączany po kliknięciu pauzy)")]
     [SerializeField] private GameObject pauseRootContainer;
 
-    [Tooltip("Domyślny panel z przyciskami: Wznów, Sklep, Skiny, Opcje, Menu Główne")]
+    [Tooltip("Domyślny panel z przyciskami: Wznów, Sklep, Skiny, Opcje")]
     [SerializeField] private GameObject mainButtonsPanel;
 
     [Header("Sceny")]
     [SerializeField] private string mainMenuSceneName = "MainMenu";
 
-    // Pamięta, które okno (np. Sklep albo Skiny) jest aktualnie otwarte
     private GameObject currentActiveSubPanel;
-    private bool isPaused = false;
 
-    private void Start()
+    private void Awake()
     {
-        // Na starcie gry upewniamy się, że menu jest schowane, a czas płynie normalnie
-        if (pauseRootContainer != null)
-            pauseRootContainer.SetActive(false);
-
+        // Resetujemy stan przy starcie sceny
+        IsGamePaused = false;
         Time.timeScale = 1f;
-    }
-
-    // 1. PAUZA / WZNOWIENIE GRY
-    public void PauseGame()
-    {
-        if (isPaused) return;
-        isPaused = true;
-
-        // Zatrzymujemy fizykę i czas w grze
-        Time.timeScale = 0f;
 
         if (pauseRootContainer != null)
             pauseRootContainer.SetActive(true);
+        if(mainButtonsPanel != null)
+            mainButtonsPanel.SetActive(false);
 
-        // Zawsze otwieramy główny widok z listą przycisków
+        if (gameplayHudPanel != null)
+            gameplayHudPanel.SetActive(true);
+    }
+
+    private void Update()
+    {
+        // Obsługa systemowego przycisku "Wstecz" na Androidzie (oraz klawisza ESC na PC)
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!IsGamePaused)
+            {
+                PauseGame();
+            }
+            else if (currentActiveSubPanel != null)
+            {
+                // Jeśli jesteśmy w pod-menu (np. Sklep), cofamy się do głównej listy pauzy
+                ShowMainButtonsPanel();
+            }
+            else
+            {
+                // Jeśli jesteśmy na głównej liście pauzy, wznawiamy grę
+                ResumeGame();
+            }
+        }
+    }
+
+    public void PauseGame()
+    {
+        if (IsGamePaused) return;
+        IsGamePaused = true;
+
+        Time.timeScale = 0f;
+
+        // Chowamy HUD z przyciskiem pauzy i licznikami
+        if (gameplayHudPanel != null)
+            gameplayHudPanel.SetActive(false);
+
+        // Pokazujemy kontener menu pauzy
+        if (pauseRootContainer != null)
+            pauseRootContainer.SetActive(false);
+
+        if(mainButtonsPanel != null)
+            mainButtonsPanel.SetActive(true);
+
         ShowMainButtonsPanel();
     }
 
     public void ResumeGame()
     {
-        if (!isPaused) return;
-        isPaused = false;
+        if (!IsGamePaused) return;
+        IsGamePaused = false;
 
-        // chowamy ewentualnie otwarty pod-panel i całe menu
         if (currentActiveSubPanel != null)
+        {
             currentActiveSubPanel.SetActive(false);
+            currentActiveSubPanel = null;
+        }
+        if(mainButtonsPanel != null)
+            mainButtonsPanel.SetActive(false);
 
         if (pauseRootContainer != null)
-            pauseRootContainer.SetActive(false);
+            pauseRootContainer.SetActive(true);
 
-        // Przywracamy czas w grze
+        // Przywracamy HUD gry
+        if (gameplayHudPanel != null)
+            gameplayHudPanel.SetActive(true);
+
+
         Time.timeScale = 1f;
     }
 
-    // 2. UNIWERSALNA NAWIGACJA (Sklep, Skiny, Opcje i wszystko, co dodasz w przyszłości!)
-    // Tę metodę podpinasz pod przyciski: Sklep, Skiny, Opcje itp.
+    // Uniwersalne otwieranie zakładek (Sklep, Skiny, Opcje itp.)
     public void OpenSubPanel(GameObject targetPanel)
     {
         if (targetPanel == null) return;
 
-        // Chowamy główną listę przycisków
         if (mainButtonsPanel != null)
             mainButtonsPanel.SetActive(false);
 
-        // Jeśli był otwarty jakiś inny pod-panel, chowamy go
         if (currentActiveSubPanel != null)
             currentActiveSubPanel.SetActive(false);
 
-        // Otwieramy wybrany panel (np. Skiny) i zapamiętujemy go
         targetPanel.SetActive(true);
         currentActiveSubPanel = targetPanel;
     }
 
-    // Tę metodę podpinasz pod przycisk "Wstecz / Powrót" wewnątrz Sklepu, Skinów czy Opcji
+    // Powrót z zakładki (np. ze Sklepu) do głównych przycisków pauzy
     public void ShowMainButtonsPanel()
     {
         if (currentActiveSubPanel != null)
@@ -90,12 +130,17 @@ public class PauseAndNavigationMenu : MonoBehaviour
             mainButtonsPanel.SetActive(true);
     }
 
-    // 3. WYJŚCIE DO MENU GŁÓWNEGO / RESTART
+    public void RestartGame()
+    {
+        Time.timeScale = 1f;
+        IsGamePaused = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void LoadMainMenu()
     {
-        // KRYTYCZNE: Przed zmianą sceny ZAWSZE musisz przywrócić Time.timeScale = 1f!
-        // Inaczej po załadowaniu Menu Głównego cała gra nadal będzie zamrożona.
         Time.timeScale = 1f;
+        IsGamePaused = false;
         SceneManager.LoadScene(mainMenuSceneName);
     }
 }

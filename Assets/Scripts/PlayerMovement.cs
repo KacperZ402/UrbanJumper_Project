@@ -155,6 +155,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (PauseAndNavigationMenu.IsGamePaused) return;
 
         if (isDead && Input.GetKeyDown(KeyCode.R))
         {
@@ -247,7 +248,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // 6. WŚLIZG
-        if (slideRequested && !isSliding)
+        if (slideRequested)
         {
             StartSlide();
             velocity.y = -Mathf.Abs(slideDownVelocity);
