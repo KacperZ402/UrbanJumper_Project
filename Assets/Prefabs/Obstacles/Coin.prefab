@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4175290893521592960}
   - component: {fileID: 2520241517616814003}
   - component: {fileID: 5401432587316783942}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,8 +126,7 @@ MonoBehaviour:
   flyUpDistance: 0
   collectSound: {fileID: 0}
   soundVolume: 0.8
-  playerTag: Player
-  scoreValue: 1
+  coinValue: 1
 --- !u!114 &5401432587316783942
 MonoBehaviour:
   m_ObjectHideFlags: 0

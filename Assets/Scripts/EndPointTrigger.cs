@@ -11,8 +11,15 @@ public class EndPointTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (triggered || !other.CompareTag("Player")) return;
+        ExecuteTrigger();
+    }
+    public void TriggerManually()
+    {
+        ExecuteTrigger();
+    }
+    private void ExecuteTrigger()
+    {
         triggered = true;
-
         if (platformManager == null)
             platformManager = FindObjectOfType<PlatformManager>();
 
