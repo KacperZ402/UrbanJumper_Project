@@ -19,6 +19,8 @@ public class MenuCameraTransition : MonoBehaviour
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject gameplayHudPanel;
 
+    public static bool IsRestarting = false;
+
     // Zapamiętane ustawienia kamery względem gracza (z ustawienia w scenie)
     private Vector3 targetOffsetFromPlayer;
     private Quaternion targetGameplayRotation;
@@ -57,7 +59,17 @@ public class MenuCameraTransition : MonoBehaviour
         // 4. Ustawiamy UI pod Menu Główne i blokujemy pauzę
         if (mainMenuPanel != null) mainMenuPanel.SetActive(true);
         if (gameplayHudPanel != null) gameplayHudPanel.SetActive(false);
+        if (IsRestarting)
+        {
+            // Kasujemy flagę od razu, żeby kolejne zwykłe wejście do gry pamiętało o Menu
+            IsRestarting = false;
+            Debug.Log("Restartujemy");
+
+            // Odpalamy bieg z pominięciem klikania w Menu Główne
+            StartGame();
+        }
     }
+
 
     // ---> TĘ METODĘ PODPINASZ POD PRZYCISK "PLAY" <---
     public void StartGame()
@@ -83,25 +95,31 @@ public class MenuCameraTransition : MonoBehaviour
 
         while (elapsed < transitionDuration)
         {
-            // Czekamy na koniec klatki (jak LateUpdate), żeby gracz wykonał już swój ruch
             yield return waitForLateUpdate;
 
             elapsed += Time.deltaTime;
             float t = Mathf.Clamp01(elapsed / transitionDuration);
 
-            // SmoothStep daje miękki start i miękkie wyhamowanie kamery za plecami
             float smoothT = t * t * (3f - 2f * t);
 
-            // 2. Dynamiczny punkt docelowy (bieżąca pozycja uciekającego gracza + offset kamery)
-            Vector3 currentTargetCamPos = playerTr.position + targetOffsetFromPlayer;
+            // Dynamiczny cel tylko dla osi Z (przód)
+            float targetCamZ = playerTr.position.z + targetOffsetFromPlayer.z;
 
-            // 3. Płynny lot i obrót kamery za plecy gracza
-            cameraTransform.position = Vector3.Lerp(startCamPos, currentTargetCamPos, smoothT);
+            // X oraz Y zostają sztywno na pozycji startowej, Lerp przesuwa tylko oś Z
+            cameraTransform.position = new Vector3(
+                startCamPos.x,
+                startCamPos.y,
+                Mathf.Lerp(startCamPos.z, targetCamZ, smoothT)
+            );
+
             cameraTransform.rotation = Quaternion.Slerp(startCamRot, targetGameplayRotation, smoothT);
         }
 
-        // Dopięcie idealnej pozycji na koniec i przekazanie pałeczki głównemu skryptowi kamery
-        cameraTransform.SetPositionAndRotation(playerTr.position + targetOffsetFromPlayer, targetGameplayRotation);
+        // Dopięcie na koniec (X i Y bez zmian, Z za graczem)
+        cameraTransform.SetPositionAndRotation(
+            new Vector3(startCamPos.x, startCamPos.y, playerTr.position.z + targetOffsetFromPlayer.z),
+            targetGameplayRotation
+        );
 
         if (mainCameraFollowScript != null)
             mainCameraFollowScript.enabled = true;

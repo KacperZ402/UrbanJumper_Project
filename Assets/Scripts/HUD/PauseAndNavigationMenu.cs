@@ -1,60 +1,118 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class PauseAndNavigationMenu : MonoBehaviour
 {
     public static bool IsGamePaused { get; private set; } = false;
 
     [Header("Główne kontenery UI")]
-    [Tooltip("Panel z licznikami monet, dystansu i przyciskiem pauzy")]
+    [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject gameplayHudPanel;
-
-    [Tooltip("Cały kontener menu pauzy (włączany po kliknięciu pauzy)")]
     [SerializeField] private GameObject pauseRootContainer;
-
-    [Tooltip("Domyślny panel z przyciskami: Wznów, Sklep, Skiny, Opcje")]
     [SerializeField] private GameObject mainButtonsPanel;
 
-    [Header("Sceny")]
-    [SerializeField] private string mainMenuSceneName = "MainMenu";
+    [Header("Ekran Śmierci (Death Screen)")]
+    [SerializeField] private GameObject gameOverPanel;
+    [Tooltip("Przycisk oglądania reklamy - wyłączymy go, jeśli gracz zużył już Revive w tym biegu")]
+    [SerializeField] private GameObject watchAdButton;
+
+    [Header("Co ma się stać po obejrzeniu reklamy (Revive)")]
+    [Tooltip("Podepnij tu np. metodę RevivePlayer() ze skryptu gracza oraz ClearZoneAhead z TrackObstacleCleaner")]
+    public UnityEvent onPlayerRevived;
 
     private GameObject currentActiveSubPanel;
+    private bool hasUsedRevive = false;
 
     private void Awake()
     {
-        // Resetujemy stan przy starcie sceny
         IsGamePaused = false;
+        hasUsedRevive = false;
         Time.timeScale = 1f;
 
         if (pauseRootContainer != null)
             pauseRootContainer.SetActive(true);
-        if(mainButtonsPanel != null)
+
+        if (mainButtonsPanel != null)
             mainButtonsPanel.SetActive(false);
 
-        if (gameplayHudPanel != null)
-            gameplayHudPanel.SetActive(true);
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(false);
     }
 
     private void Update()
     {
-        // Obsługa systemowego przycisku "Wstecz" na Androidzie (oraz klawisza ESC na PC)
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!IsGamePaused)
+            if (currentActiveSubPanel != null)
+            {
+                ShowMainButtonsPanel();
+                return;
+            }
+
+            bool isRunning = gameplayHudPanel != null && gameplayHudPanel.activeSelf;
+
+            if (!IsGamePaused && isRunning)
             {
                 PauseGame();
             }
-            else if (currentActiveSubPanel != null)
+            else if (IsGamePaused)
             {
-                // Jeśli jesteśmy w pod-menu (np. Sklep), cofamy się do głównej listy pauzy
-                ShowMainButtonsPanel();
-            }
-            else
-            {
-                // Jeśli jesteśmy na głównej liście pauzy, wznawiamy grę
                 ResumeGame();
             }
         }
+    }
+
+    // ---> WYWOŁYWANE PRZY ŚMIERCI GRACZA <---
+    public void TriggerGameOver()
+    {
+        IsGamePaused = false;
+
+        if (gameplayHudPanel != null)
+            gameplayHudPanel.SetActive(false);
+
+        if (pauseRootContainer != null)
+            pauseRootContainer.SetActive(false);
+
+        if (mainButtonsPanel != null)
+            mainButtonsPanel.SetActive(false);
+
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(true);
+
+        // Pokazujemy przycisk reklamy tylko wtedy, gdy gracz jeszcze się nie wskrzesił w tym biegu
+        if (watchAdButton != null)
+            watchAdButton.SetActive(!hasUsedRevive);
+    }
+
+    // ---> PODPINASZ POD PRZYCISK "OBEJRZYJ REKLAMĘ" <---
+    public void OnWatchAdForReviveClicked()
+    {
+        if (hasUsedRevive) return;
+
+        // TUTAJ w przyszłości wstawisz wywołanie SDK reklam (np. Unity Ads / AdMob):
+        // AdsManager.Instance.ShowRewardedAd(CompleteReviveAfterAd);
+
+        // Na razie (dopóki nie masz podpiętego SDK reklam) odpalamy wskrzeszenie od razu:
+        CompleteReviveAfterAd();
+    }
+
+    private void CompleteReviveAfterAd()
+    {
+        hasUsedRevive = true;
+
+        // Chowamy Death Screen i przywracamy HUD oraz przycisk pauzy
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(false);
+
+        if (gameplayHudPanel != null)
+            gameplayHudPanel.SetActive(true);
+
+        if (pauseRootContainer != null)
+            pauseRootContainer.SetActive(true);
+
+        // Odpalamy wszystko, co podpiąłeś w Inspektorze (czyszczenie toru + włączenie ruchu gracza)
+        onPlayerRevived?.Invoke();
     }
 
     public void PauseGame()
@@ -64,18 +122,14 @@ public class PauseAndNavigationMenu : MonoBehaviour
 
         Time.timeScale = 0f;
 
-        // Chowamy HUD z przyciskiem pauzy i licznikami
         if (gameplayHudPanel != null)
             gameplayHudPanel.SetActive(false);
 
-        // Pokazujemy kontener menu pauzy
         if (pauseRootContainer != null)
             pauseRootContainer.SetActive(false);
 
-        if(mainButtonsPanel != null)
+        if (mainButtonsPanel != null)
             mainButtonsPanel.SetActive(true);
-
-        ShowMainButtonsPanel();
     }
 
     public void ResumeGame()
@@ -88,27 +142,33 @@ public class PauseAndNavigationMenu : MonoBehaviour
             currentActiveSubPanel.SetActive(false);
             currentActiveSubPanel = null;
         }
-        if(mainButtonsPanel != null)
+
+        if (mainButtonsPanel != null)
             mainButtonsPanel.SetActive(false);
 
         if (pauseRootContainer != null)
             pauseRootContainer.SetActive(true);
 
-        // Przywracamy HUD gry
         if (gameplayHudPanel != null)
             gameplayHudPanel.SetActive(true);
-
 
         Time.timeScale = 1f;
     }
 
-    // Uniwersalne otwieranie zakładek (Sklep, Skiny, Opcje itp.)
     public void OpenSubPanel(GameObject targetPanel)
     {
         if (targetPanel == null) return;
 
-        if (mainButtonsPanel != null)
-            mainButtonsPanel.SetActive(false);
+        if (IsGamePaused)
+        {
+            if (mainButtonsPanel != null)
+                mainButtonsPanel.SetActive(false);
+        }
+        else
+        {
+            if (mainMenuPanel != null)
+                mainMenuPanel.SetActive(false);
+        }
 
         if (currentActiveSubPanel != null)
             currentActiveSubPanel.SetActive(false);
@@ -117,7 +177,6 @@ public class PauseAndNavigationMenu : MonoBehaviour
         currentActiveSubPanel = targetPanel;
     }
 
-    // Powrót z zakładki (np. ze Sklepu) do głównych przycisków pauzy
     public void ShowMainButtonsPanel()
     {
         if (currentActiveSubPanel != null)
@@ -126,21 +185,33 @@ public class PauseAndNavigationMenu : MonoBehaviour
             currentActiveSubPanel = null;
         }
 
-        if (mainButtonsPanel != null)
-            mainButtonsPanel.SetActive(true);
+        if (IsGamePaused)
+        {
+            if (mainButtonsPanel != null)
+                mainButtonsPanel.SetActive(true);
+        }
+        else
+        {
+            if (mainMenuPanel != null)
+                mainMenuPanel.SetActive(true);
+        }
     }
 
+    // ---> PODPINASZ POD PRZYCISK "RESTART" (W Pauzie i w Death Screenie) <---
     public void RestartGame()
     {
         Time.timeScale = 1f;
         IsGamePaused = false;
+        MenuCameraTransition.IsRestarting = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    // ---> PODPINASZ POD PRZYCISK "MAIN MENU" (W Pauzie i w Death Screenie) <---
     public void LoadMainMenu()
     {
         Time.timeScale = 1f;
         IsGamePaused = false;
-        SceneManager.LoadScene(mainMenuSceneName);
+        MenuCameraTransition.IsRestarting = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

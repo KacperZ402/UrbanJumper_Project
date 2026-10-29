@@ -31,6 +31,8 @@ public class TrackObstacleCleaner : MonoBehaviour
         // Czekamy chwilę, aż spawner i silnik fizyczny zbudują początkowe obiekty na scenie
         yield return new WaitForFixedUpdate();
         yield return null;
+        yield return null;
+        yield return null;
 
         ClearZoneAhead(defaultClearDistanceZ);
     }

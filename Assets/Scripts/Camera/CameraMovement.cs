@@ -14,6 +14,16 @@ public class RunnerCamera : MonoBehaviour
     private float lockedX;   // Zamrożona oś X
     private float targetY;
 
+    private void Awake()
+    {
+        if (playerTransform != null)
+        {
+            yDistance = transform.position.y - playerTransform.position.y;
+            zDistance = transform.position.z - playerTransform.position.z;
+            lockedX = transform.position.x;
+        }
+    }
+
     private void Start()
     {
         if (playerTransform == null || playerMovement == null)
@@ -22,11 +32,6 @@ public class RunnerCamera : MonoBehaviour
             enabled = false;
             return;
         }
-
-        // 1. RAZ na starcie zapisujemy odległość w osi Y,Z oraz X
-        yDistance = transform.position.y - playerTransform.position.y;
-        zDistance = transform.position.z - playerTransform.position.z;
-        lockedX = transform.position.x;
     }
 
     private void LateUpdate()

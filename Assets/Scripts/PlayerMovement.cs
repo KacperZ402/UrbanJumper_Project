@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Skalowanie Animacji Biegu")]
     [SerializeField] private float maxRunAnimMultiplier = 1.35f;
 
+
     [Header("Skok")]
     public float jumpForce = 8f;
     public float riseMultiplier = 2.5f;
@@ -49,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Collider mainCollider;
     [SerializeField] private Rigidbody mainRb;
     [SerializeField] private GameObject ragdollRoot; // Przeciągnij tu główną kość w Inspektorze
+    [SerializeField] private PauseAndNavigationMenu navigationMenu;
     private bool isDead = false;
     private bool isInvincible = false;
 
@@ -156,12 +158,6 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         if (PauseAndNavigationMenu.IsGamePaused) return;
-
-        if (isDead && Input.GetKeyDown(KeyCode.R))
-        {
-            Revive();
-            return;
-        }
 
         // Jeśli jest martwy, blokujemy całą resztę sterowania
         if (isDead) return;
@@ -355,6 +351,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (GameHUD.Instance != null)
             GameHUD.Instance.SaveHighScoreOnDeath();
+
+        if (navigationMenu != null)
+            navigationMenu.TriggerGameOver();
     }
 
     public void Revive()
