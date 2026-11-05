@@ -18,13 +18,13 @@ public class GameHUD : MonoBehaviour
     private AudioSource audioSource;
 
     private int sessionCoins = 0;
+    private int coinsAlreadySaved = 0; // chroni przed podwójnym dodaniem monet po Revive()
+    private bool runCounted = false;   // żeby Revive nie liczył biegu dwa razy
     private int currentDistanceMeters = 0;
     private int highScoreMeters = 0;
 
     private float startZ;
     private float maxReachedZ;
-
-    private const string HighScoreKey = "HighScoreMeters";
 
     private void Awake()
     {
@@ -53,8 +53,11 @@ public class GameHUD : MonoBehaviour
             Debug.LogError("Brak przypisanego PlayerTransform w GameHUD!");
         }
 
-        // Wczytanie rekordu z pamięci urządzenia
-        highScoreMeters = PlayerPrefs.GetInt(HighScoreKey, 0);
+        // Wczytanie rekordu z GameSaver
+        if (GameSaver.Instance != null)
+            highScoreMeters = GameSaver.Instance.Data.highScore;
+        else
+            Debug.LogError("Brak GameSaver w scenie! Dodaj go do pierwszej sceny.");
 
         // Inicjalizacja UI na starcie (SetText nie generuje śmieci dla Garbage Collectora)
         UpdateCoinsUI();
@@ -71,7 +74,7 @@ public class GameHUD : MonoBehaviour
         if (playerTransform.position.z > maxReachedZ)
         {
             maxReachedZ = playerTransform.position.z;
-            int newMeters = Mathf.FloorToInt((maxReachedZ - startZ)/ distanceDivider);
+            int newMeters = Mathf.FloorToInt((maxReachedZ - startZ) / distanceDivider);
 
             // Odświeżamy Canvas TYLKO wtedy, gdy zmieniła się pełna liczba metrów
             if (newMeters > currentDistanceMeters)
@@ -114,17 +117,23 @@ public class GameHUD : MonoBehaviour
     }
 
     // Wywołaj tę metodę w TriggerDeath() w PlayerMovement
-    public void SaveHighScoreOnDeath()
+    // Zapisuje rekord + monety z biegu. Bezpieczne przy wielokrotnym wywołaniu (Revive).
+    // Zwraca true, jeśli padł nowy rekord (np. do napisu "NEW BEST!" na Game Over).
+    public bool SaveRunOnDeath()
     {
-        int savedBest = PlayerPrefs.GetInt(HighScoreKey, 0);
-        if (currentDistanceMeters > savedBest)
-        {
-            PlayerPrefs.SetInt(HighScoreKey, currentDistanceMeters);
-            PlayerPrefs.Save();
-        }
+        if (GameSaver.Instance == null) return false;
+
+        int coinsToAdd = sessionCoins - coinsAlreadySaved;
+        coinsAlreadySaved = sessionCoins;
+
+        bool firstDeath = !runCounted;
+        runCounted = true;
+
+        return GameSaver.Instance.SubmitRun(currentDistanceMeters, coinsToAdd, firstDeath);
     }
 
     // Opcjonalne gettery, jeśli będziesz potrzebować tych danych na ekranie Game Over
     public int GetSessionCoins() => sessionCoins;
     public int GetCurrentDistance() => currentDistanceMeters;
+    public int GetTotalCoins() => GameSaver.Instance != null ? GameSaver.Instance.Data.coins : 0;
 }

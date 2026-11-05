@@ -350,7 +350,7 @@ public class PlayerMovement : MonoBehaviour
         fallMultiplier = 3f;
 
         if (GameHUD.Instance != null)
-            GameHUD.Instance.SaveHighScoreOnDeath();
+            GameHUD.Instance.SaveRunOnDeath();
 
         if (navigationMenu != null)
             navigationMenu.TriggerGameOver();
