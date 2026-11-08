@@ -12,6 +12,8 @@ public class PauseAndNavigationMenu : MonoBehaviour
     [SerializeField] private GameObject pauseRootContainer;
     [SerializeField] private GameObject mainButtonsPanel;
 
+    [SerializeField] private PlayerLife playerLife;
+
     [Header("Ekran Śmierci (Death Screen)")]
     [SerializeField] private GameObject gameOverPanel;
     [Tooltip("Przycisk oglądania reklamy - wyłączymy go, jeśli gracz zużył już Revive w tym biegu")]
@@ -111,8 +113,8 @@ public class PauseAndNavigationMenu : MonoBehaviour
         if (pauseRootContainer != null)
             pauseRootContainer.SetActive(true);
 
-        // Odpalamy wszystko, co podpiąłeś w Inspektorze (czyszczenie toru + włączenie ruchu gracza)
-        onPlayerRevived?.Invoke();
+        if (playerLife != null)
+            playerLife.Revive();
     }
 
     public void PauseGame()

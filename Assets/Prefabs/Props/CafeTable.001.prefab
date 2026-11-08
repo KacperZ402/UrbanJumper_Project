@@ -374,4 +374,4 @@ MonoBehaviour:
   ownCollider: {fileID: -6558268052552701683}
   keepLayerName: Keep
   useBatchedSpawn: 1
-  maxOpsPerFrame: 20
+  maxOpsPerFrame: 1

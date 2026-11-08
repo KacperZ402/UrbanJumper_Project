@@ -275,7 +275,7 @@ MonoBehaviour:
   ownCollider: {fileID: 116411878558692212}
   keepLayerName: Keep
   useBatchedSpawn: 1
-  maxOpsPerFrame: 20
+  maxOpsPerFrame: 1
 --- !u!23 &6147406100922369909
 MeshRenderer:
   m_ObjectHideFlags: 0

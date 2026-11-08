@@ -1542,7 +1542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00030517578, y: -97.81561}
+  m_AnchoredPosition: {x: 0.00024414062, y: -97.81561}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &308212773
@@ -4561,7 +4561,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsText: {fileID: 1239421581}
+  highScoreText: {fileID: 1387149345}
   format: '{0}'
+  highScoreFormat: 'HighScore: {0}'
 --- !u!114 &1239421581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5244,13 +5246,14 @@ MonoBehaviour:
   gameplayHudPanel: {fileID: 477384887}
   pauseRootContainer: {fileID: 47083946}
   mainButtonsPanel: {fileID: 1411692892}
+  playerLife: {fileID: 1485744128}
   gameOverPanel: {fileID: 646186114}
   watchAdButton: {fileID: 1081824646}
   onPlayerRevived:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1485744122}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+      - m_Target: {fileID: 1485744128}
+        m_TargetAssemblyTypeName: PlayerLife, Assembly-CSharp
         m_MethodName: Revive
         m_Mode: 1
         m_Arguments:
@@ -5306,6 +5309,8 @@ GameObject:
   - component: {fileID: 1485744124}
   - component: {fileID: 1485744123}
   - component: {fileID: 1485744122}
+  - component: {fileID: 1485744129}
+  - component: {fileID: 1485744128}
   m_Layer: 12
   m_Name: CharHumper1 1
   m_TagString: Player
@@ -5346,20 +5351,7 @@ MonoBehaviour:
   slideColliderYMultiplier: 0.45
   slideDownVelocity: 15
   slideDownIncrease: 5
-  minExpectedSpeedRatio: 0.002
   mainCollider: {fileID: 1485744124}
-  mainRb: {fileID: 1485744123}
-  ragdollRoot: {fileID: 1888707732}
-  navigationMenu: {fileID: 1419280139}
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 2048
-  reviveHeightOffset: 5
-  invincibilityDuration: 6
-  playerRenderers:
-  - {fileID: 1740123025}
-  blinkInterval: 0.3
-  fastBlinkInterval: 0.1
   useAnimator: 1
   jumpTriggerName: Jump
   slideTriggerName: Slide
@@ -5462,6 +5454,42 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1485744128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485744121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486cce79fa8698949b1d0a19eb58a064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minExpectedSpeedRatio: 0.01
+  mainCollider: {fileID: 1485744124}
+  mainRb: {fileID: 1485744123}
+  ragdollRoot: {fileID: 1888707732}
+  navigationMenu: {fileID: 1419280139}
+  reviveHeightOffset: 5
+  invincibilityDuration: 5
+--- !u!114 &1485744129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485744121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdff0257e6c4cbc4ea2d609aa70327b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRenderers:
+  - {fileID: 1740123025}
+  blinkInterval: 0.3
+  fastBlinkInterval: 0.1
+  fastBlinkFrom: 0.7
 --- !u!1 &1489778142
 GameObject:
   m_ObjectHideFlags: 0

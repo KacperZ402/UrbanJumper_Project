@@ -286,7 +286,7 @@ MonoBehaviour:
   ownCollider: {fileID: 3558523976849145149}
   keepLayerName: Keep
   useBatchedSpawn: 1
-  maxOpsPerFrame: 20
+  maxOpsPerFrame: 1
 --- !u!1 &7908430301413101121
 GameObject:
   m_ObjectHideFlags: 0
