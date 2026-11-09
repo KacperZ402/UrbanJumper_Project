@@ -254,11 +254,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: babda978807e55b4ebf2abb058914506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  regenerateOnEnable: 1
   tableType: 1
   allowDuplicateProps: 0
   allowSpawnOnFullSurface: 1
   minDistanceBetweenProps: 4
-  maxAttemptsPerProp: 2
+  maxAttemptsPerProp: 5
   propCount: 5
   randomProps:
   - {fileID: 3228408498422603129, guid: e61d997dcc6fd184c8b411901a88af8e, type: 3}
@@ -284,9 +285,7 @@ MonoBehaviour:
   - {fileID: 8581063576903747485, guid: 12537395faac0074ca04efde1c1c50df, type: 3}
   spawnAreas: []
   ownCollider: {fileID: 3558523976849145149}
-  keepLayerName: Keep
-  useBatchedSpawn: 1
-  maxOpsPerFrame: 1
+  circleEdgeMargin: 1
 --- !u!1 &7908430301413101121
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,6 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21129135d1b85114b9823deccda874b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  regenerateOnEnable: 1
   prefabs:
   - {fileID: 1032902127296263103, guid: 9c91223e5f17d7741b641fa28894ce3a, type: 3}
   - {fileID: 589631797816271865, guid: 64904f2ac1aa2c144afe06518c822d46, type: 3}
@@ -338,8 +338,7 @@ MonoBehaviour:
   spawnChance: 1
   ignoreSpawnBlockers: 0
   spawnBlockerLayerName: SpawnBlocker
-  keepLayerName: Keep
-  useBatchedSpawn: 1
+  blockerCheckRadius: 0.1
 --- !u!1 &8714359732231266105
 GameObject:
   m_ObjectHideFlags: 0

@@ -5466,7 +5466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 486cce79fa8698949b1d0a19eb58a064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minExpectedSpeedRatio: 0.01
+  minExpectedSpeedRatio: 0.005
   mainCollider: {fileID: 1485744124}
   mainRb: {fileID: 1485744123}
   ragdollRoot: {fileID: 1888707732}
@@ -8547,6 +8547,7 @@ MonoBehaviour:
   maxSegments: 0
   initialSegments: 4
   disableTriggersInInitial: 1
+  maxActiveSegments: 8
   debugLogs: 1
 --- !u!4 &2093272620
 Transform:
