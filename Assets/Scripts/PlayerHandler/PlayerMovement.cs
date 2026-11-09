@@ -44,6 +44,14 @@ public class PlayerMovement : MonoBehaviour
     public float slideDownVelocity = 8f;
     [SerializeField] private float slideDownIncrease = 2.0f;
 
+    [Header("Obrót przy zmianie pasa")]
+    [SerializeField] private Transform visualRoot;            // model postaci (puste = obiekt z Animatorem)
+    [SerializeField] private float laneTurnAngle = 30f;       // maks. skręt w stopniach
+    [SerializeField] private float laneTurnSharpness = 15f;   // jak szybko model dochodzi do kąta
+
+    private float currentTurnYaw;
+    private Quaternion visualBaseRotation;
+
     private float lastZPosition;
     [Header("Detekcja Śmierci przez Uderzenie")]
 
@@ -115,6 +123,12 @@ public class PlayerMovement : MonoBehaviour
             baseCapsuleHeight = capsuleCollider.height;
             baseCapsuleCenter = capsuleCollider.center;
         }
+
+        if (visualRoot == null && animator != null)
+            visualRoot = animator.transform;
+
+        if (visualRoot != null)
+            visualBaseRotation = visualRoot.localRotation;
         lockedFloorY = transform.position.y;
         currentLane = Mathf.Clamp(1, 0, 2);
 
@@ -126,7 +140,9 @@ public class PlayerMovement : MonoBehaviour
         isFallingBoolHash = Animator.StringToHash(isFallingBoolName);
         jumpLockBoolHash = Animator.StringToHash(jumpLockBoolName);
         headCoverBoolHash = Animator.StringToHash(HeadCoverBoolName);
-        
+
+
+
     }
 
     private void Start()
@@ -253,6 +269,20 @@ public class PlayerMovement : MonoBehaviour
         }
 
         UpdateAnimatorGroundedState();
+    }
+    private void LateUpdate()
+    {
+        if (visualRoot == null) return;
+
+        // pełny skręt przez pierwszą połowę zmiany pasa, potem płynny powrót do prosta
+        float offset = LaneToWorldX(currentLane) - transform.position.x;
+        float halfLane = Mathf.Max(0.01f, laneDistance * 0.5f);
+        float targetYaw = Mathf.Clamp(offset / halfLane, -1f, 1f) * laneTurnAngle;
+
+        float t = 1f - Mathf.Exp(-laneTurnSharpness * Time.deltaTime);
+        currentTurnYaw = Mathf.Lerp(currentTurnYaw, targetYaw, t);
+
+        visualRoot.localRotation = Quaternion.Euler(0f, currentTurnYaw, 0f) * visualBaseRotation;
     }
 
     private void UpdateSpeedByDistance()
