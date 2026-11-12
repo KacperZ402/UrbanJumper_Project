@@ -45,7 +45,7 @@ public class PlayerLife : MonoBehaviour
         if (IsDead) return;
 
         float actualSpeedZ = (mainRb.position.z - lastZPosition) / Time.fixedDeltaTime;
-        Debug.Log("Speed: " + actualSpeedZ + "Treshold: " + (movement.moveSpeedZ * minExpectedSpeedRatio));
+        //Debug.Log("Speed: " + actualSpeedZ + "Treshold: " + (movement.moveSpeedZ * minExpectedSpeedRatio));
         if (!invincibility.IsActive && actualSpeedZ < movement.moveSpeedZ * minExpectedSpeedRatio && lastZPosition != 0f)
         {
             Die();

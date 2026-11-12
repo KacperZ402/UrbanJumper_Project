@@ -5453,7 +5453,7 @@ MonoBehaviour:
   groundCheck: {fileID: 597046050}
   groundDistance: 0.2
   jumpBufferTime: 0.15
-  slideDuration: 0.73
+  slideDuration: 0.78
   slideColliderYMultiplier: 0.45
   slideDownVelocity: 15
   slideDownIncrease: 5
@@ -5464,8 +5464,6 @@ MonoBehaviour:
   useAnimator: 1
   jumpTriggerName: Jump
   slideTriggerName: Slide
-  turnLeftTriggerName: TurnLeft
-  turnRightTriggerName: TurnRight
   isGroundedBoolName: IsGrounded
   jumpStateTag: Jump
   isFallingBoolName: isFalling

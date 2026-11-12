@@ -63,8 +63,6 @@ public class PlayerMovement : MonoBehaviour
     public bool useAnimator = true;
     public string jumpTriggerName = "Jump";
     public string slideTriggerName = "Slide";
-    public string turnLeftTriggerName = "TurnLeft";
-    public string turnRightTriggerName = "TurnRight";
     public string isGroundedBoolName = "IsGrounded";
     public string jumpStateTag = "Jump"; // Ustaw tag "Jump" na stanie animacji skoku
     public string isFallingBoolName = "IsFalling";
@@ -101,12 +99,16 @@ public class PlayerMovement : MonoBehaviour
     private int headCoverBoolHash;
     private bool jumpAnimationLock;
 
-    private float actualDeltaZ;
-    private float actualSpeedZ;
-
     private float targetX;
     private float nextX;
     private Collider currentFloorCollider;
+
+    private bool CanControl => isActiveAndEnabled && !PauseAndNavigationMenu.IsGamePaused;
+
+    public void MoveLeft() { if (CanControl) RequestLaneChange(-1); }
+    public void MoveRight() { if (CanControl) RequestLaneChange(1); }
+    public void Jump() { if (CanControl) jumpBufferCounter = jumpBufferTime; }
+    public void Slide() { if (CanControl) slideRequested = true; }
 
     private void Awake()
     {
@@ -134,8 +136,6 @@ public class PlayerMovement : MonoBehaviour
 
         jumpTriggerHash = Animator.StringToHash(jumpTriggerName);
         slideTriggerHash = Animator.StringToHash(slideTriggerName);
-        turnLeftTriggerHash = Animator.StringToHash(turnLeftTriggerName);
-        turnRightTriggerHash = Animator.StringToHash(turnRightTriggerName);
         isGroundedBoolHash = Animator.StringToHash(isGroundedBoolName);
         isFallingBoolHash = Animator.StringToHash(isFallingBoolName);
         jumpLockBoolHash = Animator.StringToHash(jumpLockBoolName);
@@ -161,18 +161,10 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         if (PauseAndNavigationMenu.IsGamePaused) return;
-
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
-            RequestLaneChange(1);
-
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
-            RequestLaneChange(-1);
-
-        if (Input.GetKeyDown(KeyCode.Space))
-            jumpBufferCounter = jumpBufferTime;
-
-        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
-            slideRequested = true;
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) MoveRight();
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) MoveLeft();
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) Jump();
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) Slide();
 
         //Wyciete z FIXedUpdate
     }
@@ -250,12 +242,12 @@ public class PlayerMovement : MonoBehaviour
         if (rb.velocity.y <= 0f)
         {
             // Spadanie 
-            rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1f) * Time.fixedDeltaTime;
+            rb.velocity += (fallMultiplier - 1f) * Physics.gravity.y * Time.fixedDeltaTime * Vector3.up;
         }
         else
         {
             // WZNOSZENIE (wciśnięta spacja) - to jest ten Twój szybki skok
-            rb.velocity += Vector3.up * Physics.gravity.y * (riseMultiplier - 1f) * Time.fixedDeltaTime;
+            rb.velocity += (riseMultiplier - 1f) * Physics.gravity.y * Time.fixedDeltaTime * Vector3.up;
         }
 
         // 8. OBSŁUGA CZASU WŚLIZGU I DOCISK DO ZIEMI
